@@ -1,0 +1,94 @@
+<h2>Header format</h2>
+<table border="1"><tbody><tr><th>Field</th><th>Start</th><th>End</th><th>Size</th><th>Example data (Metroid demo)</th></tr>
+<tr><td>Game title</td><td><code>0x000</code></td><td><code>0x00B</code></td><td><code>12</code></td><td><code>"FIRST HUNT  "</code></td></tr>
+<tr><td>Game code</td><td><code>0x00C</code></td><td><code>0x00F</code></td><td><code>4</code></td><td><code>"AMFE"</code></td></tr>
+
+<tr><td>Maker code</td><td><code>0x010</code></td><td><code>0x011</code></td><td><code>2</code></td><td><code>"01"</code> (Nintendo)</td></tr>
+<tr><td>Unit code</td><td><code>0x012</code></td><td><code>0x012</code></td><td><code>1</code></td><td><code>0x00</code></td></tr>
+<tr><td>Device code</td><td><code>0x013</code></td><td><code>0x013</code></td><td><code>1</code></td><td><code>0x00</code></td></tr>
+
+<tr><td>Card size</td><td><code>0x014</code></td><td><code>0x014</code></td><td><code>1</code></td><td><code>0x07</code> (2^(20 + 7) = 128Mb = 16 MB)</td></tr>
+<tr><td>Card info</td><td><code>0x015</code></td><td><code>0x01E</code></td><td><code>10</code></td><td><code>0x00's</code></td></tr>
+<tr><td>Flags</td><td><code>0x01F</code></td><td><code>0x01F</code></td><td><code>1</code></td><td><code>0x00</code></td></tr>
+
+<tr><td><span class="wikiword">ARM9</span> source (ROM)</td><td><code>0x020</code></td><td><code>0x023</code></td><td><code>4</code></td><td><code>0x00004000</code> (must be 4 KB aligned)</td></tr>
+<tr><td><span class="wikiword">ARM9</span> execute addr</td><td><code>0x024</code></td><td><code>0x027</code></td><td><code>4</code></td><td><code>0x02004800</code></td></tr>
+
+<tr><td><span class="wikiword">ARM9</span> copy to addr</td><td><code>0x028</code></td><td><code>0x02B</code></td><td><code>4</code></td><td><code>0x02004000</code></td></tr>
+<tr><td><span class="wikiword">ARM9</span> binary size</td><td><code>0x02C</code></td><td><code>0x02F</code></td><td><code>4</code></td><td><code>0x00081D58</code></td></tr>
+<tr><td><span class="wikiword">ARM7</span> source (ROM)</td><td><code>0x030</code></td><td><code>0x033</code></td><td><code>4</code></td><td><code>0x000B3000</code></td></tr>
+
+<tr><td><span class="wikiword">ARM7</span> execute addr</td><td><code>0x034</code></td><td><code>0x037</code></td><td><code>4</code></td><td><code>0x02380000</code></td></tr>
+<tr><td><span class="wikiword">ARM7</span> copy to addr</td><td><code>0x038</code></td><td><code>0x03B</code></td><td><code>4</code></td><td><code>0x02380000</code></td></tr>
+<tr><td><span class="wikiword">ARM7</span> binary size</td><td><code>0x03C</code></td><td><code>0x03F</code></td><td><code>4</code></td><td><code>0x00026494</code></td></tr>
+
+<tr><td>Filename table offset (ROM)</td><td><code>0x040</code></td><td><code>0x043</code></td><td><code>4</code></td><td><code>0x000D9600</code></td></tr>
+<tr><td>Filename table size</td><td><code>0x044</code></td><td><code>0x047</code></td><td><code>4</code></td><td><code>0x11B6</code></td></tr>
+<tr><td>FAT offset (ROM)</td><td><code>0x048</code></td><td><code>0x04B</code></td><td><code>4</code></td><td><code>0x000DA800</code></td></tr>
+
+<tr><td>FAT size</td><td><code>0x04C</code></td><td><code>0x04F</code></td><td><code>4</code></td><td><code>0x678</code></td></tr>
+<tr><td><span class="wikiword">ARM9</span> overlay src (ROM)</td><td><code>0x050</code></td><td><code>0x053</code></td><td><code>4</code></td><td><code>0x00085E00</code></td></tr>
+<tr><td><span class="wikiword">ARM9</span> overlay size</td><td><code>0x054</code></td><td><code>0x057</code></td><td><code>4</code></td><td><code>0x60</code></td></tr>
+
+<tr><td><span class="wikiword">ARM7</span> overlay src (ROM)</td><td><code>0x058</code></td><td><code>0x05B</code></td><td><code>4</code></td><td><code>0</code></td></tr>
+<tr><td><span class="wikiword">ARM7</span> overlay size</td><td><code>0x05C</code></td><td><code>0x05F</code></td><td><code>4</code></td><td><code>0</code></td></tr>
+<tr><td>Control register flags for read</td><td><code>0x060</code></td><td><code>0x063</code></td><td><code>4</code></td><td><code>0x00586000</code></td></tr>
+
+<tr><td>Control register flags for init</td><td><code>0x064</code></td><td><code>0x067</code></td><td><code>4</code></td><td><code>0x001808F8</code></td></tr>
+<tr><td>Icon+titles (ROM)</td><td><code>0x068</code></td><td><code>0x06B</code></td><td><code>4</code></td><td><code>0x000DB000</code></td></tr>
+<tr><td>Secure <span class="wikiword">CRC16</span></td><td><code>0x06C</code></td><td><code>0x06D</code></td><td><code>2</code></td><td><code>0xC44D</code></td></tr>
+
+<tr><td>ROM timeout</td><td><code>0x06E</code></td><td><code>0x06F</code></td><td><code>2</code></td><td><code>0x051E</code></td></tr>
+<tr><td><span class="wikiword">ARM9</span> unk addr</td><td><code>0x070</code></td><td><code>0x073</code></td><td><code>4</code></td><td><code>0x020049EC</code></td></tr>
+<tr><td><span class="wikiword">ARM7</span> unk addr</td><td><code>0x074</code></td><td><code>0x077</code></td><td><code>4</code></td><td><code>0x02380110</code></td></tr>
+
+<tr><td>Magic number for unencrypted mode</td><td><code>0x078</code></td><td><code>0x07F</code></td><td><code>8</code></td><td><code>0x00's</code></td></tr>
+<tr><td>ROM size</td><td><code>0x080</code></td><td><code>0x083</code></td><td><code>4</code></td><td><code>0x00EE3E44</code></td></tr>
+<tr><td>Header size</td><td><code>0x084</code></td><td><code>0x087</code></td><td><code>4</code></td><td><code>0x4000</code></td></tr>
+
+<tr><td>Unknown 5</td><td><code>0x088</code></td><td><code>0x0BF</code></td><td><code>56</code></td><td><code>0x00's</code></td></tr>
+<tr><td>GBA logo</td><td><code>0x0C0</code></td><td><code>0x15B</code></td><td><code>156</code></td><td><code>data</code></td></tr>
+<tr><td>Logo <span class="wikiword">CRC16</span></td><td><code>0x15C</code></td><td><code>0x15D</code></td><td><code>2</code></td><td><code>0xCF56</code></td></tr>
+
+<tr><td>Header <span class="wikiword">CRC16</span></td><td><code>0x15E</code></td><td><code>0x15F</code></td><td><code>2</code></td><td><code>0x00F8</code></td></tr>
+<tr><td>Reserved</td><td><code>0x160</code></td><td><code>0x1FF</code></td><td><code>160</code></td><td><code>0x00's</code></td></tr>
+</tbody></table>
+<p class="vspace">The control register flags contain latency settings and depends on the ROM manufacturer (Macronix, Matrix Memory).
+</p>
+<p class="vspace">Unknown2a and 'Header Size' contain flags that are (somewhat) used during boot as part of card CR writes.  Unknown2b contains the size of a certain type of transfer done during boot, but it's range checked and cannot be reduced.  Unknown3c is seemingly unused, and some code paths get data from 0x160 onward (only 0x170 bytes of a header fetch are actually retained by the BIOS)
+
+</p>
+<p class="vspace">Secure <span class="wikiword">CRC16</span> calculation is performed on the ROM from 0x4000 to 0x7FFF, with an initial value of 0xFFFF.
+</p>
+<p class="vspace">Logo <span class="wikiword">CRC16</span> calculation is performed on the header from 0x0C0 to 0x15B, with an initial value of 0xFFFF.
+</p>
+<p class="vspace">Header <span class="wikiword">CRC16</span> calculation is performed on the header (after the previous two <span class="wikiword">CRCs</span> are filled) from 0x000 to 0x15D with an initial value of 0xFFFF.
+
+</p>
+<p class="vspace">Device code needs lower 3 bits to be 0. This is a similar behavior as GBA header.
+</p>
+<div class="vspace"></div><h2>Icon + logo format (the banner)</h2>
+<p>This is a structure of size 32+512+32+256*6 = 2112 bytes with the following format:
+</p>
+<div class="vspace"></div><h2>Banner structure</h2>
+<table border="1"><tbody><tr><td>Offset</td><td>Size</td><td>Description</td></tr>
+<tr><td>0</td><td>2</td><td>Version (always 1)</td></tr>
+
+<tr><td>2</td><td>2</td><td>CRC-16 of structure, not including first 32 bytes</td></tr>
+<tr><td>4</td><td>28</td><td>Reserved</td></tr>
+<tr><td>32</td><td>512</td><td>Tile Data</td></tr>
+<tr><td>544</td><td>32</td><td>Palette</td></tr>
+<tr><td>576</td><td>256</td><td>Japanese Title</td></tr>
+
+<tr><td>832</td><td>256</td><td>English Title</td></tr>
+<tr><td>1088</td><td>256</td><td>French Title</td></tr>
+<tr><td>1344</td><td>256</td><td>German Title</td></tr>
+<tr><td>1600</td><td>256</td><td>Italian Title</td></tr>
+<tr><td>1856</td><td>256</td><td>Spanish Title</td></tr>
+
+</tbody></table>
+<p class="vspace">The icon is a 32x32 picture formed out of 4x4 16 color tiles and a single 16 color palette.
+</p>
+<p class="vspace">Following the icon data (icon offset + 576 bytes), are 6 unicode game titles, displayed in the DS menu depending on the selected language mode.  Each title is padded to 128 characters (256 bytes).
+</p>
+<p class="vspace">The strings are in the same order as the language choice in <a class="wikilink" href="http://www.bottledlight.com/ds/index.php/Main/Firmware">Firmware</a>.
