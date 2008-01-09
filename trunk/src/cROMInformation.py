@@ -313,7 +313,7 @@ class cROMInformation( wx.Dialog ):
         self.Filename_Text.SetLabel( "N/A" )
         self.Saved_Games_Text.SetLabel( "%d" % self.ROM.Saves )
 
-        Str = ","
+        Str = ", "
         Str = Str.join ( self.ROM.Tags )
         if Str == "":
             Str = _( "None" )
