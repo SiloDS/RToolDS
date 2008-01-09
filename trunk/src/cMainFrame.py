@@ -14,6 +14,7 @@ import anydbm #DUMMY for py2exe
 import dbhash #DUMMY for py2exe
 
 from ROMS import MyROMS
+from ROMS import ROM as BlankROM
 import GFX
 import Config
 import Utils
@@ -1170,9 +1171,9 @@ class cMainFrame( wx.Frame ):
 
         Item = self.Current_Ctrl.GetFocusedItem()
         if Item == -1:
-            return
-
-        ROM = self.Current_Ctrl.Get_ROM ( Item )
+            ROM=BlankROM()
+        else:
+            ROM = self.Current_Ctrl.Get_ROM ( Item )
         
         self.Update_Pictures ( ROM )
 
