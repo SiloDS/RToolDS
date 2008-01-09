@@ -1,6 +1,6 @@
 @Echo Off
 
-set SRC="C:\Documents and Settings\Rich\workspace\RToolDS6"
+set SRC="C:\Documents and Settings\Rich\workspace\RToolDS"
 set WX="C:\Python25\Lib\site-packages\wx-2.8-msw-unicode\wx"
 set NSIS="C:\Program Files\NSIS\makensis.exe"
 
