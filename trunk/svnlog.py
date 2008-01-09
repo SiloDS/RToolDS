@@ -5,11 +5,13 @@ Ignore = [
 "v0.2.632",
 "v0.2.631",
 "v0.2.890",
-"v0.2.868"
+"v0.2.868",
+"v0.2.1064",
+"v0.2.1065"
 ]
 
 def Process (ReleasePre, ReleaseSuf, START_ENTRY, END_ENTRY):
-    CMD = '"c:\\Program Files\\Subversion\\bin\\svn.exe" log https://silo.dynalias.org/RToolDS -r' + START_ENTRY + ':' + END_ENTRY
+    CMD = '"c:\\Program Files\\Subversion\\bin\\svn.exe" log https://silo.dynalias.org/svn/RToolDS/trunk -r' + START_ENTRY + ':' + END_ENTRY
     
     File = os.popen (CMD)
     
@@ -45,7 +47,7 @@ def Process (ReleasePre, ReleaseSuf, START_ENTRY, END_ENTRY):
         if State == "Text2":
             if len (Line) == 0:
                 continue
-            print "           " + Line
+            print "            " + Line
             
     File.close()
     
