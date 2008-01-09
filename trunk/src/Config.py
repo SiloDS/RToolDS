@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 24
+Config_Version = 25
 Version_String = "2.0.1053 Beta"
 
 Config = {}
@@ -412,6 +412,8 @@ def Load_Defaults( Version ):
                                      "R":"RUS"}
     if Version < 24:
         Config ["UseShortSaveName"] = False
+    if Version < 25:
+        Config ["Country_Codes"]['W'] = "EUU"
 
 #        
 #        
