@@ -89,6 +89,7 @@ class cOptions( wx.Dialog ):
 
         self.Bind(wx.EVT_BUTTON, self.On_Alternate_Colour, self.Alternate_Colour)
         self.Bind(wx.EVT_BUTTON, self.On_Pending_Colour, self.Pending_Colour)
+        self.Bind(wx.EVT_CHOICE, self.On_Device_Type_Change, self.Default_Device)
         self.Bind(wx.EVT_CHECKBOX, self.On_Use_Renaming, self.Use_Renaming)
         self.Bind(wx.EVT_LIST_ITEM_DESELECTED, self.OnColumnsListCtrlItemDeSelected, self.ROM_Columns)
         self.Bind(wx.EVT_LIST_ITEM_SELECTED, self.OnColumnsListCtrlItemSelected, self.ROM_Columns)
@@ -568,5 +569,11 @@ class cOptions( wx.Dialog ):
         if event.EventObject.Parent == self.Device_Path and self.Orig_Device_Path != TmpDir:
             self.Save_Dir_On_Cart.SetValue ( TmpDir )
             self.Orig_Device_Path = TmpDir
+
+    def On_Device_Type_Change(self, event): # wxGlade: cOptions.<event_handler>
+        if event.String == "SuperCard DS One (.sav)":
+            self.UseShortSaveName.SetValue(True)
+        else:
+            self.UseShortSaveName.SetValue(False)
 
 # end of class cOptions
