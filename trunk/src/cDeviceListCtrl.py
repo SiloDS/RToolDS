@@ -67,13 +67,13 @@ class cDeviceListCtrl( wx.ListCtrl ):
             
     def Has_Save (self, Dir, Filename):
         Save = ["No", ""]
-        Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext( Filename )[0] + ".sav")
+        Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext( Filename )[0] + Utils.Get_Save_Extension())
         if os.path.isfile(Save_Filename):
             Save = ["Yes", Save_Filename]
         elif sys.platform == "win32":
             try:
                 Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], Filename ))
-                Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + ".SAV")
+                Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
                 if os.path.isfile (Short_Save_Filename):
                     Save = ["Yes", Short_Save_Filename]
             except:
@@ -363,7 +363,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     if Config.Config ["Use_Rename_Popup"] == False:
                         Utils.Write_Save (ROM, Save)
                     else:
-                        Name = os.path.splitext(Renamimg [Processed])[0] + ".sav"
+                        Name = os.path.splitext(Renamimg [Processed])[0] + Utils.Get_Save_Extension()
                         Utils.Write_Save (ROM, Save, Name)
 
                 FileOut.close ()
@@ -434,12 +434,12 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     if Config.Config ["Delete_Saves_with_ROM"]:
                         try:
                             Filename = os.path.join ( Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File )
-                            Filename = os.path.splitext(Filename)[0] + ".sav"
+                            Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension()
                             os.unlink( Filename )
                         except:
                             if sys.platform == "win32":
                                 try:
-                                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + ".SAV")
+                                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
                                     if os.path.isfile (Short_Save_Filename):
                                         os.unlink( Short_Save_Filename )
                                 except:
@@ -451,12 +451,12 @@ class cDeviceListCtrl( wx.ListCtrl ):
                         if Config.Config ["Delete_Saves_with_ROM"]:
                             try:
                                 Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.split (ROM.Name_On_Device)[1])
-                                Filename = os.path.splitext(Filename)[0] + ".sav"
+                                Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension()
                                 os.unlink( Filename )
                             except:
                                 if sys.platform == "win32":
                                     try:
-                                        Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + ".SAV")
+                                        Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
                                         if os.path.isfile (Short_Save_Filename):
                                             os.unlink( Short_Save_Filename )
                                     except:
@@ -505,12 +505,12 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File ))
                     try:
                         Filename = os.path.join ( Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File )
-                        Filename = os.path.splitext(Filename)[0] + ".sav"
+                        Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension() 
                         os.unlink( Filename )
                     except:
                         if sys.platform == "win32":
                             try:
-                                Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + ".SAV")
+                                Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
                                 if os.path.isfile (Short_Save_Filename):
                                     os.unlink( Short_Save_Filename )
                             except:
@@ -520,12 +520,12 @@ class cDeviceListCtrl( wx.ListCtrl ):
                         Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.Name_On_Device ))
                         try:
                             Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.split (ROM.Name_On_Device)[1])
-                            Filename = os.path.splitext(Filename)[0] + ".sav"
+                            Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension()
                             os.unlink( Filename )
                         except:
                             if sys.platform == "win32":
                                 try:
-                                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + ".SAV")
+                                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
                                     if os.path.isfile (Short_Save_Filename):
                                         os.unlink( Short_Save_Filename )
                                 except:

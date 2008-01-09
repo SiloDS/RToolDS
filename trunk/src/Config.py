@@ -271,7 +271,7 @@ def Load_Defaults( Version ):
                                 ["G6 DS Real (.0)", Utils.Device_Generic_512],
                                 ["G6 Lite (.0)", Utils.Device_Generic_256],
                                 ["M3 DS Real (.0)", Utils.Device_Generic_512],
-                                ["M3 DS Simply (.dat)", Utils.Device_Generic_512],
+                                ["M3 DS Simply (.sav)", Utils.Device_Generic_512],
                                 ["M3 SD (.dat)", Utils.Device_Generic_256],
                                 ["N-Card and Clones (.sav)", Utils.Device_Generic_256],
                                 ["NinjaDS (.sav)", Utils.Device_Generic_512],

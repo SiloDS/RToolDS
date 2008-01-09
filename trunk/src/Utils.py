@@ -457,7 +457,7 @@ def Get_Hash_Data ( Data ):
 
 def Add_Save (ROM, Save, SaveCommentsShelve, Save_ROMS):
     Save_Created = False
-    SaveName = os.path.join ( Config.Config ["Save_Path"], ROM.ROM_CRC + ".sav" )
+    SaveName = os.path.join ( Config.Config ["Save_Path"], ROM.ROM_CRC + Get_Save_Extension() )
     CartHash = Get_Hash( Save )
 
     if os.path.isfile ( SaveName + ".001" ):
@@ -515,16 +515,16 @@ def Get_Savename_on_Device (ROM):
     if Config.Config ["UseShortSaveName"] and sys.platform == "win32":
         try:
             Short_Save_Filename = win32api.GetShortPathName( ROM.Name_On_Device )
-            SaveFileName = os.path.splitext(Short_Save_Filename)[0] + ".SAV"
+            SaveFileName = os.path.splitext(Short_Save_Filename)[0] + Get_Save_Extension().upper()
             return SaveFileName
         except:
             pass
 
 #    try:
-#        SaveFilename = os.path.splitext (ROM.Name_On_Device)[0] + ".sav"
+#        SaveFilename = os.path.splitext (ROM.Name_On_Device)[0] + Get_Save_Extension()
 #    except:
     SaveFilename = Get_Name_on_Device (ROM, "Save_Dir_On_Cart" )
-    SaveFilename = os.path.splitext(SaveFilename)[0] + ".sav"
+    SaveFilename = os.path.splitext(SaveFilename)[0] + Get_Save_Extension()
     
     return SaveFilename
 
@@ -690,3 +690,8 @@ def Sort_Dict(d):
     backitems=[ [v[1],v[0]] for v in items]
     backitems.sort()
     return [ backitems[i][1] for i in range(0,len(backitems))]
+
+def Get_Save_Extension ():
+    Device = Config.Config ["Default_Device"]
+    exten = Device[Device.find('(')+1:Device.find(')')]
+    return exten
