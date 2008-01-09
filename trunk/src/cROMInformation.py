@@ -294,6 +294,9 @@ class cROMInformation( wx.Dialog ):
         for Language in Config.Config ["Languages"]:
             if self.ROM.Language & Language:
                 Language_String +=  Config.Config ["Languages"][Language]+ ", "
+
+        if Language_String == "":
+            Language_String = "Unknown, "
         self.Language_Text.SetLabel( Language_String[:-2] )
         
         self.Publisher_Text.SetLabel( self.ROM.Publisher )
@@ -302,7 +305,10 @@ class cROMInformation( wx.Dialog ):
         self.Save_Type_Text.SetLabel( self.ROM.Save_Type )
         self.ROM_CRC_Text.SetLabel( self.ROM.ROM_CRC )
         self.Internal_Name_Text.SetLabel( self.ROM.Internal_Name )
-        self.Serial_Text.SetLabel( self.ROM.Serial )
+        if self.ROM.Serial == "":
+            self.Serial_Text.SetLabel( _("Unknown") )
+        else:
+            self.Serial_Text.SetLabel( self.ROM.Serial )
         self.Version_Text.SetLabel( self.ROM.Version )
         if self.ROM.Wifi:
             self.Wifi_Text.SetLabel( _( "Yes" ) )

@@ -1226,7 +1226,10 @@ class cMainFrame( wx.Frame ):
 
         self.Internal_Name.SetLabel( _( "Internal Name : %s" ) % ROM.Internal_Name )
 
-        self.Serial.SetLabel( _( "Serial : %s" ) % ROM.Serial )
+        if ROM.Serial == "":
+            self.Serial.SetLabel( _( "Serial : Unknown" ) )
+        else:
+            self.Serial.SetLabel( _( "Serial : %s" ) % ROM.Serial )
 
         self.Version.SetLabel( _( "Version : %s, Dumped : %s" ) % (ROM.Version, ROM.Dump_Date ) )
 
