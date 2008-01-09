@@ -81,7 +81,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
         return Save
             
     def Populate ( self ):
-        Result = ""
+#        Result = ""
         self.CRC_List = []
 #        self.Saves_List = []
 #        self.Size_List = []
@@ -89,11 +89,11 @@ class cDeviceListCtrl( wx.ListCtrl ):
         self.ROM_Count = 0
         
         if os.path.isdir( Config.Config ["Device_Path"] ) == False:
-            self.Disable() 
+            self.Enable(False) 
             self.Drive_Free = 0
             self.Drive_Size = 0
             self.SetItemCount ( 0 )
-            return Result
+            return False
         
         self.Drive_Free = Utils.Drive_Free( Config.Config ["Device_Path"] )
         self.Drive_Size = Utils.Drive_Size( Config.Config ["Device_Path"] )
@@ -194,7 +194,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
 #            self.Enable()
 
         self.Refresh()
-        return Result
+        return True
     
     def Sort (self):
         tmpList = []

@@ -628,6 +628,14 @@ class cMainFrame( wx.Frame ):
         if "SAVES" in Options:
             MyROMS.Merge_Saves ()
             
+        if "STARTUP" in Options:
+            if Config.Config ["Show_Device_List"] == False:
+                self.Device_Sizer.ShowItems(False)
+                self.Device_List.Disable()
+            else:
+                self.Device_Sizer.ShowItems(True)
+                self.Device_List.Enable()
+
         if "STARTUP" in Options or "COLUMNS" in Options:
             self.ROMList.Local_Init()
             self.Device_List.Local_Init()
@@ -643,7 +651,8 @@ class cMainFrame( wx.Frame ):
         if "STARTUP" in Options or "ROMS" in Options or "DEVICE" in Options or "SAVES" in Options or "SORTCART" in Options:
             if not self.In_Device_Dir_Callback:
                 self.Device_Dir_Picker.SetValue( Config.Config ["Device_Path"] )
-            self.Device_List.Populate()
+            if self.Device_List.Populate() == False:
+                self.Device_List.Enable(False)
             self.Device_List.Resize_Columns()
             self.Device_List.Refresh()
             
@@ -665,12 +674,6 @@ class cMainFrame( wx.Frame ):
         if "STARTUP" in Options:
             self.Update_Main_Menu ()
             self.Show_Hide_Panels ()
-            if Config.Config ["Show_Device_List"] == False:
-                self.Device_Sizer.ShowItems(False)
-                self.Device_List.Disable()
-            else:
-                self.Device_Sizer.ShowItems(True)
-                self.Device_List.Enable()
             
         self.Device_Sizer.Layout()
         self.SplitPanel2_Sizer.Layout()
