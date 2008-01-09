@@ -979,7 +979,6 @@ class cMainFrame( wx.Frame ):
 #            Success = False
 #        else:
 #            Success = True
-        
         dlg.Destroy()
         
         self.__Local_Init( ["ROMS", "GFX", "ICONS"] )
@@ -1247,8 +1246,11 @@ class cMainFrame( wx.Frame ):
     def On_List_Focus ( self, event ):
         if event.EventObject.FocusedItem != -1 and self.In_Init == False:
             self.Current_Ctrl = event.EventObject
-            self.Update_Fields ()
-            self.Enable_Tasks()
+            try:
+                self.Update_Fields ()
+                self.Enable_Tasks()
+            except:
+                pass
 
         event.Skip()
     
