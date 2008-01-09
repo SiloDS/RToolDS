@@ -34,7 +34,7 @@ class cROMInformation( wx.Dialog ):
         self.Previous_Button = wx.BitmapButton(self.ROMInformation_Panel, -1, (GFX.catalog ["GFX_Icon_Previous16"].getBitmap()))
         self.Next_Button = wx.BitmapButton(self.ROMInformation_Panel, -1, (GFX.catalog ["GFX_Icon_Next16"].getBitmap()))
         self.View_NFO_Button = wx.BitmapButton(self.ROMInformation_Panel, -1, (GFX.catalog ["GFX_Icon_NFO16"].getBitmap()))
-        self.Save_Game_Button = wx.BitmapButton(self.ROMInformation_Panel, -1, (GFX.catalog ["GFX_Icon_SaveGamePopup16"].getBitmap()))
+        self.Save_Game_Button = wx.BitmapButton(self.ROMInformation_Panel, -1, (GFX.catalog ["GFX_Icon_SaveGameMgr16"].getBitmap()))
         self.Case_Bitmap = wx.StaticBitmap(self, -1, wx.NullBitmap)
         self.SS_Bitmap = wx.StaticBitmap(self, -1, wx.NullBitmap)
         self.Label_Icon = wx.StaticText(self, -1, _("Icon : "))
@@ -91,7 +91,7 @@ class cROMInformation( wx.Dialog ):
         self.Previous_Button.SetBitmapLabel( eval ( "GFX.getGFX_Icon_Previous"+ToolSize+"Bitmap" )() )
         self.Next_Button.SetBitmapLabel( eval ( "GFX.getGFX_Icon_Next"+ToolSize+"Bitmap" )() )
         self.View_NFO_Button.SetBitmapLabel( eval ( "GFX.getGFX_Icon_NFO"+ToolSize+"Bitmap" )() )
-        self.Save_Game_Button.SetBitmapLabel( eval ( "GFX.getGFX_Icon_SaveGamePopup"+ToolSize+"Bitmap" )())        
+        self.Save_Game_Button.SetBitmapLabel( eval ( "GFX.getGFX_Icon_SaveGameMgr"+ToolSize+"Bitmap" )())        
 
         # begin wxGlade: cROMInformation.__set_properties
         self.SetTitle(_("ROM Information"))
