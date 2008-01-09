@@ -35,7 +35,7 @@ def Process (ReleasePre, ReleaseSuf, START_ENTRY, END_ENTRY):
         if State == "Text1":
             if len (Line) == 0:
                 continue
-            if Line == "Backup":
+            if Line[0:6] == "Backup":
                 continue
             if Line == "Changelog":
                 continue
