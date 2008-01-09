@@ -81,7 +81,7 @@ class cSaveGameManager( wx.Dialog ):
         self.Duplicate_Button.SetBitmapLabel( eval ( "GFX.getGFX_Icon_SGM_Duplicate"+ToolSize+"Bitmap" )() )
 
     def __do_layout( self ):
-        self.Freeze()
+#        self.Freeze()
         # begin wxGlade: cSaveGameManager.__do_layout
         SaveGameManager_Sizer = wx.FlexGridSizer(2, 1, 0, 0)
         SaveGameManager_Panel_Sizer = wx.FlexGridSizer(1, 6, 0, 0)
@@ -101,7 +101,7 @@ class cSaveGameManager( wx.Dialog ):
         self.Layout()
         # end wxGlade
         self.__LocalInit ()        
-        self.Thaw()
+#        self.Thaw()
         
     def __LocalInit ( self ):
         self.SetSize( Config.Config ["SGM_Size"] )
@@ -316,11 +316,14 @@ class cSaveGameManager( wx.Dialog ):
         self.SGMTreeCtrl.Expand( self.root )
         self.SGMTreeCtrl.SortChildren( self.root )
         
+        self.SGMTreeCtrl.SetFocus()
         if Hilight:
             self.SGMTreeCtrl.Expand( Hilight )
+            self.SGMTreeCtrl.UnselectAll()
             self.SGMTreeCtrl.SelectItem( Hilight )
             self.SGMTreeCtrl.ScrollTo( Hilight )
             self.SGMTreeCtrl.EnsureVisible( Hilight )
+#            print self.SGMTreeCtrl.IsVisible(Hilight)
 
     def On_Copy( self, event ): # wxGlade: cSaveGameManager.<event_handler>
         CRC = self.SGMTreeCtrl.GetItemPyData( self.m_SelItem )
