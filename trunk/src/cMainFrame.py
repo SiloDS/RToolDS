@@ -153,9 +153,9 @@ class cMainFrame( wx.Frame ):
         self.UnTrim_Files = wx.MenuItem(wxglade_tmp_menu, ID_MENU_UNTRIM_FILES, _("UnTrim Files"), _("UnTrim Files"), wx.ITEM_NORMAL)
         wxglade_tmp_menu.AppendItem(self.UnTrim_Files)
         wxglade_tmp_menu.AppendSeparator()
-        self.Backup_All_Changed_Save_Games = wx.MenuItem(wxglade_tmp_menu, ID_MENU_BACKUP_ALL_SAVE_GAMES, _("Backup Recent Saves"), _("Backup Recent Saves"), wx.ITEM_NORMAL)
+        self.Backup_All_Changed_Save_Games = wx.MenuItem(wxglade_tmp_menu, ID_MENU_BACKUP_ALL_SAVE_GAMES, _("Backup All Recent Saves"), _("Backup All Recent Saves"), wx.ITEM_NORMAL)
         wxglade_tmp_menu.AppendItem(self.Backup_All_Changed_Save_Games)
-        self.Backup_Save_Game = wx.MenuItem(wxglade_tmp_menu, ID_MENU_BACKUP_SAVE_GAME, _("Backup Selected Saves"), _("Backup Selected Saves"), wx.ITEM_NORMAL)
+        self.Backup_Save_Game = wx.MenuItem(wxglade_tmp_menu, ID_MENU_BACKUP_SAVE_GAME, _("Backup Selected Save Game(s)"), _("Backup Selected Save Game(s)"), wx.ITEM_NORMAL)
         wxglade_tmp_menu.AppendItem(self.Backup_Save_Game)
         self.Import_Save_Game = wx.MenuItem(wxglade_tmp_menu, ID_MENU_IMPORT_SAVE_GAME, _("Import Save Game"), _("Import Save Game"), wx.ITEM_NORMAL)
         wxglade_tmp_menu.AppendItem(self.Import_Save_Game)
@@ -1627,10 +1627,10 @@ class cMainFrame( wx.Frame ):
 
         self.Toolbar.AddSeparator()
     
-        self.Toolbar.AddTool( ID_MENU_BACKUP_ALL_SAVE_GAMES, eval ( "GFX.getGFX_Icon_SaveGame"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Backup All Saved Games" ), longHelpString=_( "Backup All Saved Games" ) )
+        self.Toolbar.AddTool( ID_MENU_BACKUP_ALL_SAVE_GAMES, eval ( "GFX.getGFX_Icon_SaveGame"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Backup All Recent Saves" ), longHelpString=_( "Backup All Recent Saves" ) )
         self.Toolbar.AddTool( ID_MENU_IMPORT_SAVE_GAME, eval ( "GFX.getGFX_Icon_ImportSave"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Import Save Game" ), longHelpString=_( "Import Save Game" ) )
         self.Toolbar.AddTool( ID_MENU_BACKUP_SAVE_GAME, eval ( "GFX.getGFX_Icon_SaveGameSelected"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Backup Selected Save Game(s)" ), longHelpString=_( "Backup Selected Save Game(s)" ) )
-        self.Toolbar.AddTool( ID_MENU_SAVE_GAME_MANAGER_SELECTED, eval ( "GFX.getGFX_Icon_SaveGamePopup"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Save Games For Selected File" ), longHelpString=_( "Save Games For Selected File" ) )
+        self.Toolbar.AddTool( ID_MENU_SAVE_GAME_MANAGER_SELECTED, eval ( "GFX.getGFX_Icon_SaveGamePopup"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Save Game For Selected File" ), longHelpString=_( "Save Game For Selected File" ) )
         self.Toolbar.AddTool( ID_MENU_SAVE_GAME_MANAGER, eval ( "GFX.getGFX_Icon_SaveGameMgr"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Save Game Manager" ), longHelpString=_( "Save Game Manager" ) )
 
         self.Toolbar.AddSeparator()
@@ -2211,7 +2211,7 @@ class cMainFrame( wx.Frame ):
             Item = wx.MenuItem( Menu, self.Popup_Device_List_Browse, _("Browse Device with Explorer") )
             Menu.AppendItem( Item )
         if self.Backup_Save_Game.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_Device_List_Backup_Selected, _("Backup Selected Saves") )
+            Item = wx.MenuItem( Menu, self.Popup_Device_List_Backup_Selected, _("Backup Selected Save Game(s)") )
             Menu.AppendItem( Item )
         if self.Backup_All_Changed_Save_Games.IsEnabled():
             Item = wx.MenuItem( Menu, self.Popup_Device_List_Backup_All, _("Backup All Recent Saves") )
