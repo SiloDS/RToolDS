@@ -70,6 +70,16 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1089 - Bumped to 1089
+v0.2.1088 - Hopefully Fixed Aborting Find New ROMs
+v0.2.1087 - Fixed out of space on device
+            Space on device now decreases as pending roms are added
+v0.2.1086 - Fixed #22 - ROM Information Popup Layout
+            Added DuplicateID to Popup
+v0.2.1085 - Hopefully Fixed #11 - Save Game Directory Changing
+v0.2.1084 - Fixed Action Replay Save Type
+v0.2.1083 - Should Fix #20 - If no CRC, display unknown
+v0.2.1082 - Fixed #9 - Unknown Location Filter Now Works
 v0.2.1078 - Bumped to 1078
 v0.2.1077 - Added Missing Unknowns to ROM Information and Main Screen.
 v0.2.1076 - Added space after comma in Tag Fields
