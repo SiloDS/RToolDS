@@ -1742,7 +1742,11 @@ class cMainFrame( wx.Frame ):
         Row = self.ROMList.GetFirstSelected()
         while Row != -1:
             ROM = self.ROMList.Get_ROM ( Row )
-            self.Device_List.Add_Pending ( ROM )
+            if self.Device_List.Add_Pending ( ROM ) == False:
+                wx.MessageBox("There is not enough space on the Device" ,
+                              "Out of Space", wx.OK|wx.ICON_EXCLAMATION)
+                break
+
             Row = self.ROMList.GetNextSelected( Row )
 
         self.SetCursor( wx.StockCursor( wx.CURSOR_ARROW ) )

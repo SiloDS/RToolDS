@@ -80,6 +80,11 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 pass
         return Save
             
+    def Calc_FreeSpace (self):
+        self.Drive_Free = Utils.Drive_Free( Config.Config ["Device_Path"] )
+        for ROM in self.Pending:
+            self.Drive_Free -= ROM.Effective_Size
+        
     def Populate ( self ):
 #        Result = ""
         self.CRC_List = []
@@ -181,7 +186,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
             ROM.Saves_List = [ bool (ROM.Saves), None]
             self.Pending_Positions.append (self.ROM_Count)
             self.ROM_Count += 1
-            
+                        
 #            if self.CartList.GetItemCount() != 0:
 #                Config.Config ["Device_Path"] = Dir
 #                Result = Dir
@@ -194,6 +199,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
 #            self.Enable()
 
         self.Refresh()
+        self.Calc_FreeSpace()
         return True
     
     def Sort (self):
@@ -304,11 +310,17 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 ROM.Trimmed_On_Device = True
             else:
                 ROM.Trimmed_On_Device = False
+            if self.Drive_Free - ROM.Effective_Size < 0:
+                self.Calc_FreeSpace()
+                return False
             self.Pending.append(ROM)
-            
+        self.Calc_FreeSpace()
+        return True
+    
     def Clear_Pending (self):
         self.Pending = []
         self.Pending_Positions = []
+        self.Calc_FreeSpace()
 
     def Apply_Pending (self):
         Processed_ROMS = []
@@ -473,6 +485,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
 
         dlg.MakeModal( False )
         dlg.Destroy()
+        self.Calc_FreeSpace()
 
     def Delete_Selected_Saves (self):
         ToProcess = self.GetSelectedItemCount()
@@ -542,6 +555,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
 
         dlg.MakeModal( False )
         dlg.Destroy()
+        self.Calc_FreeSpace()
 
     def UpdateColour ( self ):
         if Config.Config ["Show_Alternate_Colours"]:
