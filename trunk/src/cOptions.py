@@ -566,9 +566,9 @@ class cOptions( wx.Dialog ):
     def dbbCallback( self, event ):
         TmpDir = event.GetString()
         
-        if event.EventObject.Parent == self.Device_Path and self.Orig_Device_Path != TmpDir:
-            self.Save_Dir_On_Cart.SetValue ( TmpDir )
-            self.Orig_Device_Path = TmpDir
+#        if event.EventObject.Parent == self.Device_Path and self.Orig_Device_Path != TmpDir:
+#            self.Save_Dir_On_Cart.SetValue ( TmpDir )
+#            self.Orig_Device_Path = TmpDir
 
     def On_Device_Type_Change(self, event): # wxGlade: cOptions.<event_handler>
         if event.String == "SuperCard DS One (.sav)":
