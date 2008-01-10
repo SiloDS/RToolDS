@@ -157,11 +157,17 @@ class cLogDialog( wx.Dialog ):
         if self.Aborted:
             self.Log.AppendText( "\n" + _("Aborted") + ".\n\n" )
             self.Todo.append ("Failed")
+            MyROMS.Load_Master_List (AltName=True)
+            MyROMS.Save_Master_List ()
         else:
             MyROMS.Sort_Current_List ()
             MyROMS.Populate_Current_List ()
             MyROMS.Save_Master_List ()
             self.Log.AppendText( "\n" + _("Done") + ".\n\n" )
+        try:
+            os.unlink ("RToolDS_Master_List.dat.bak")
+        except:
+            pass
 
     def Update_GFX (self):
         self.Log.AppendText( _("Checking and Updating Images") + " ...\n\n" )

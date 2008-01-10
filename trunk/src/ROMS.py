@@ -231,14 +231,17 @@ class ROMS:
         
         return Version
 
-    def Load_Master_List ( self ):
+    def Load_Master_List ( self, AltName=False ):
         global Master_List_Dat_Version
 
         Create_Master_List = False
         Merge_Master_List = False
         
         try:
-            Pickle_File = open ( "RToolDS_Master_List.dat", "rb" )
+            if AltName == False:
+                Pickle_File = open ( "RToolDS_Master_List.dat", "rb" )
+            else:
+                Pickle_File = open ( "RToolDS_Master_List.dat.bak", "rb" )
             
             tmp = cPickle.load( Pickle_File )
             if Master_List_Dat_Version != tmp:
@@ -389,10 +392,13 @@ class ROMS:
         
         return True
     
-    def Save_Master_List ( self ):
+    def Save_Master_List ( self, AltName = False ):
         global Master_List_Dat_Version
 
-        Pickle_File = open ( "RToolDS_Master_List.dat", "wb" )
+        if AltName == False:
+            Pickle_File = open ( "RToolDS_Master_List.dat", "wb" )
+        else:
+            Pickle_File = open ( "RToolDS_Master_List.dat.bak", "wb" )
         cPickle.dump( Master_List_Dat_Version, Pickle_File )
         cPickle.dump( self.Master_List_XML_Version, Pickle_File )
         cPickle.dump( self.Master_List, Pickle_File )
@@ -539,6 +545,7 @@ class ROMS:
                                                     self.Current_Count += 1
     
     def Start_ROM_Find ( self ):
+        self.Save_Master_List(AltName=True)
         self.Duplicates = []
         self.Originally_Found = []
         for Count in range ( len ( self.Master_List )-1,-1,-1 ):
