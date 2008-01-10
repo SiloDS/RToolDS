@@ -303,7 +303,10 @@ class cROMInformation( wx.Dialog ):
         self.Source_ROM_Text.SetLabel( self.ROM.Source_ROM )
         self.Genre_Text.SetLabel( self.ROM.Genre )
         self.Save_Type_Text.SetLabel( self.ROM.Save_Type )
-        self.ROM_CRC_Text.SetLabel( self.ROM.ROM_CRC )
+        if self.ROM.ROM_CRC == "":
+            self.ROM_CRC_Text.SetLabel( _("Unknown") )
+        else:
+            self.ROM_CRC_Text.SetLabel( self.ROM.ROM_CRC )
         self.Internal_Name_Text.SetLabel( self.ROM.Internal_Name )
         if self.ROM.Serial == "":
             self.Serial_Text.SetLabel( _("Unknown") )

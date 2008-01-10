@@ -1220,7 +1220,10 @@ class cMainFrame( wx.Frame ):
         
         self.ReleaseGroup.SetLabel( _( "Release Group : %s" ) % ROM.Source_ROM )
         
-        self.ROMCRC.SetLabel( _( "CRC : %s" ) % ROM.ROM_CRC )
+        if ROM.ROM_CRC == "":
+            self.ROMCRC.SetLabel( _( "CRC : Unknown" ))
+        else:
+            self.ROMCRC.SetLabel( _( "CRC : %s" ) % ROM.ROM_CRC )
 
         self.Publisher.SetLabel( _( "Publisher : %s" ) % ROM.Publisher )
 
