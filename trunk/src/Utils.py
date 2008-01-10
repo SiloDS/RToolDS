@@ -693,5 +693,9 @@ def Sort_Dict(d):
 
 def Get_Save_Extension ():
     Device = Config.Config ["Default_Device"]
-    exten = Device[Device.find('(')+1:Device.find(')')]
+    if Device == "Action Replay (.duc/.dss)":
+        exten = ".duc"
+    else:
+        exten = Device[Device.find('(')+1:Device.find(')')]
+
     return exten
