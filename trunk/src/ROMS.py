@@ -525,7 +525,7 @@ class ROMS:
             ROM = self.Master_List[Count]
             if ROM.Found:
                 if ROM.Title.lower().find ( Config.Config ["Current_Search"].lower() ) != -1:
-                    if Config.Config ["Filter_Location"] == 255 or ROM.Location == Config.Config ["Filter_Location"]:
+                    if Config.Config ["Filter_Location"] == 255 or ROM.Location == Config.Config ["Filter_Location"] or (Config.Config ["Filter_Location"] == 26 and ROM.Location == 254):
                         if Config.Config ["Filter_Language"] == 0 or ROM.Language & Config.Config ["Filter_Language"]:
                             if ( Config.Config ["Filter_Exact_Size"] == False and ( Config.Config ["Filter_Size"] == 0 or ROM.Effective_Size <= Config.Config ["Filter_Size"] ) ) or ( Config.Config ["Filter_Exact_Size"] == True and ( Config.Config ["Filter_Size"] == 0 or ROM.ROM_Size == Config.Config ["Filter_Size"] ) ):
                                 if Config.Config ["Filter_Genre"] == self._AllGenres or ROM.Genre == Config.Config ["Filter_Genre"]:
