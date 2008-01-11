@@ -82,7 +82,8 @@ class cWizard:
         Page7.sizer.Add ( wx.StaticText (Page7, -1, "\n" + _("Select Your Linker Device Type :")))
         self.Default_Device = wx.Choice ( Page7, -1, choices = [] )
         for Device in Config.Config ["Devices"]:
-            self.Default_Device.Append (Device[0][:Device[0].find ("(") - 1])
+            if Device[0] != "Action Replay (.dss)":
+                self.Default_Device.Append (Device[0][:Device[0].find ("(") - 1])
         Page7.sizer.Add ( self.Default_Device, 0, wx.EXPAND|wx.TOP|wx.LEFT, 10 )
         Page7.sizer.Add ( wx.StaticText( Page7, -1, "\n" + _( "Note: You can leave these options blank and select them at a")))
         Page7.sizer.Add ( wx.StaticText( Page7, -1, _("later time from the options menu. Completing these selections enables")))

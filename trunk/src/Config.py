@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 25
+Config_Version = 26
 Version_String = "2.0.1089 Beta"
 
 Config = {}
@@ -261,7 +261,8 @@ def Load_Defaults( Version ):
         Config ["Devices"] = [
                                 ["Generic 512k (.sav)", Utils.Device_Generic_512],
                                 ["Generic 256k (.sav)", Utils.Device_Generic_256],
-                                ["Action Replay (.duc/.dss)", Utils.Device_Action_Replay],
+                                ["Action Replay (.duc)", Utils.Device_Action_Replay],
+                                ["Action Replay (.dss)", Utils.Device_Action_Replay],
                                 ["CycloDS Evolution (.sav)", Utils.Device_Generic_512],
                                 ["CycloDS SD (.sav)", Utils.Device_Generic_512],
                                 ["DSLinker (.sav)", Utils.Device_Generic_256],
@@ -414,6 +415,8 @@ def Load_Defaults( Version ):
         Config ["UseShortSaveName"] = False
     if Version < 25:
         Config ["Country_Codes"]['W'] = "EUU"
+    if Version < 26:
+        Config ["Save_Extensions"] = [ ".sav", ".duc", ".dss", ".0", ".dat" ]
 
 #        
 #        

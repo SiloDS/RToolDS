@@ -67,17 +67,20 @@ class cDeviceListCtrl( wx.ListCtrl ):
             
     def Has_Save (self, Dir, Filename):
         Save = ["No", ""]
-        Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext( Filename )[0] + Utils.Get_Save_Extension())
-        if os.path.isfile(Save_Filename):
-            Save = ["Yes", Save_Filename]
-        elif sys.platform == "win32":
-            try:
-                Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], Filename ))
-                Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
-                if os.path.isfile (Short_Save_Filename):
-                    Save = ["Yes", Short_Save_Filename]
-            except:
-                pass
+        for extension in Config.Config ["Save_Extensions"]:
+            Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext( Filename )[0] + extension)
+            if os.path.isfile(Save_Filename):
+                Save = ["Yes", Save_Filename]
+                break
+            elif sys.platform == "win32":
+                try:
+                    Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], Filename ))
+                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
+                    if os.path.isfile (Short_Save_Filename):
+                        Save = ["Yes", Short_Save_Filename]
+                        break
+                except:
+                    pass
         return Save
             
     def Calc_FreeSpace (self):
