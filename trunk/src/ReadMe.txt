@@ -70,6 +70,11 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1095 - Bumped to 1095
+v0.2.1094 - Fixed #5 - Used Original Save Game Icon in ROM Info Popup
+v0.2.1093 - Fixed Finding of Save Games Other than Selected Device Type
+v0.2.1092 - Fixed #22 - Rom Information Changes
+v0.2.1091 - Fixed #24 - ROM Information for Unknown ROMs
 v0.2.1089 - Bumped to 1089
 v0.2.1088 - Hopefully Fixed Aborting Find New ROMs
 v0.2.1087 - Fixed out of space on device
