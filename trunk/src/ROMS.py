@@ -12,7 +12,7 @@ import wx
 import Config
 import Utils
 
-Master_List_Dat_Version = 5
+Master_List_Dat_Version = 6
 Unknown_Shelve = None # Unknown ROMs
 Trimmed_Shelve = None
 Tag_Shelve = None
@@ -50,7 +50,7 @@ class ROM:
         self.Trimmed_CRC    = ""
         self.Found          = False
         self.Dump_Date      = _( "Unknown" )
-        self.Duplicate_ID   = 0
+        self.Duplicate_ID   = "0"
         
     def Trim ( self ):
         global TrimmedShelve
