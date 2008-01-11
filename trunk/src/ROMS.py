@@ -12,7 +12,7 @@ import wx
 import Config
 import Utils
 
-Master_List_Dat_Version = 6
+Master_List_Dat_Version = 7
 Unknown_Shelve = None # Unknown ROMs
 Trimmed_Shelve = None
 Tag_Shelve = None
@@ -51,6 +51,7 @@ class ROM:
         self.Found          = False
         self.Dump_Date      = _( "Unknown" )
         self.Duplicate_ID   = "0"
+        self.Orig_Filename  = ""
         
     def Trim ( self ):
         global TrimmedShelve
@@ -334,8 +335,10 @@ class ROMS:
             tmpROM.Serial         = self.getText( Game.getElementsByTagName( "serial" ) )
             tmpROM.Version        = self.getText( Game.getElementsByTagName( "version" ) )
             tmpROM.Effective_Size = tmpROM.ROM_Size
-            tmpROM.Dump_Date       = self.getText( Game.getElementsByTagName( "dumpdate" ) )
-            tmpROM.Duplicate_ID    = self.getText( Game.getElementsByTagName( "duplicateid" ) )
+            tmpROM.Dump_Date      = self.getText( Game.getElementsByTagName( "dumpdate" ) )
+            tmpROM.Duplicate_ID   = self.getText( Game.getElementsByTagName( "duplicateid" ) )
+            tmpROM.Orig_Filename  = self.getText( Game.getElementsByTagName( "filename" ) )
+            
             if self.getText( Game.getElementsByTagName( "wifi" ) ).lower () == "no":
                 tmpROM.Wifi = False
             else:

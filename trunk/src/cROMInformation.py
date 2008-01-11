@@ -310,14 +310,14 @@ class cROMInformation( wx.Dialog ):
             self.Serial_Text.SetLabel( _("Unknown") )
         else:
             self.Serial_Text.SetLabel( self.ROM.Serial )
-        self.Version_Text.SetLabel( self.ROM.Version )
+        self.Version_Text.SetLabel( self.ROM.Version + ", Dumped : " + self.ROM.Dump_Date)
+#        self.Dump_Date_Text.SetLabel( self.ROM.Dump_Date )
         if self.ROM.Wifi:
             self.Wifi_Text.SetLabel( _( "Yes" ) )
         else:
             self.Wifi_Text.SetLabel( _( "No" ) )
             
-#        self.Dump_Date_Text.SetLabel( self.ROM.Dump_Date )
-        self.Filename_Text.SetLabel( self.ROM.ROM_File )
+        self.Filename_Text.SetLabel( self.ROM.Orig_Filename )
         self.Saved_Games_Text.SetLabel( "%d" % self.ROM.Saves )
         if self.ROM.Duplicate_ID == "0":
             self.Duplicates_Text.SetLabel( "None" )
