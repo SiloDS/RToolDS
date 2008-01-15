@@ -1435,8 +1435,8 @@ class cMainFrame( wx.Frame ):
         self.Backup_Save_Game.Enable( Device_Enabled and Device_List_Focus )
         self.Toolbar.EnableTool( ID_MENU_BACKUP_SAVE_GAME, Device_Enabled and Device_List_Focus )
         
-        self.Backup_All_Changed_Save_Games.Enable( Device_Enabled )
-        self.Toolbar.EnableTool( ID_MENU_BACKUP_ALL_SAVE_GAMES, Device_Enabled )
+        self.Backup_All_Changed_Save_Games.Enable( Device_Enabled and self.Device_List.GetItemCount()>0)
+        self.Toolbar.EnableTool( ID_MENU_BACKUP_ALL_SAVE_GAMES, Device_Enabled and self.Device_List.GetItemCount()>0)
 
         self.Save_Games_for_Selected_File.Enable( One_Selected and Save_Game )
         self.Toolbar.EnableTool( ID_MENU_SAVE_GAME_MANAGER_SELECTED, One_Selected and Save_Game )
