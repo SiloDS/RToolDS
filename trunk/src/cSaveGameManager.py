@@ -341,7 +341,9 @@ class cSaveGameManager( wx.Dialog ):
 
         try:
             SaveFileIn  = open ( OriginalSaveName, "rb" )
-            SaveFileOut = open ( Utils.Get_Savename_on_Device ( ROM ), "wb" )
+#            SaveFileOut = open ( Utils.Get_Savename_on_Device ( ROM ), "wb" )
+            SaveName = os.path.splitext (ROM.Name_On_Device)[0] + Utils.Get_Save_Extension()
+            SaveFileOut = open (SaveName, "wb")
             SaveFileOut.write ( SaveFileIn.read() )
             SaveFileOut.close()
             SaveFileIn.close()
