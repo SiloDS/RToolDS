@@ -155,7 +155,7 @@ class cMainFrame( wx.Frame ):
         wxglade_tmp_menu.AppendSeparator()
         self.Backup_All_Changed_Save_Games = wx.MenuItem(wxglade_tmp_menu, ID_MENU_BACKUP_ALL_SAVE_GAMES, _("Backup All Recent Saves"), _("Backup All Recent Saves"), wx.ITEM_NORMAL)
         wxglade_tmp_menu.AppendItem(self.Backup_All_Changed_Save_Games)
-        self.Backup_Save_Game = wx.MenuItem(wxglade_tmp_menu, ID_MENU_BACKUP_SAVE_GAME, _("Backup Selected Save Game(s)"), _("Backup Selected Save Game(s)"), wx.ITEM_NORMAL)
+        self.Backup_Save_Game = wx.MenuItem(wxglade_tmp_menu, ID_MENU_BACKUP_SAVE_GAME, _("Backup Selected Save Games"), _("Backup Selected Save Games"), wx.ITEM_NORMAL)
         wxglade_tmp_menu.AppendItem(self.Backup_Save_Game)
         self.Import_Save_Game = wx.MenuItem(wxglade_tmp_menu, ID_MENU_IMPORT_SAVE_GAME, _("Import Save Game"), _("Import Save Game"), wx.ITEM_NORMAL)
         wxglade_tmp_menu.AppendItem(self.Import_Save_Game)
