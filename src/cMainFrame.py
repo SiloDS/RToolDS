@@ -361,10 +361,12 @@ class cMainFrame( wx.Frame ):
         self.Bind(wx.EVT_LIST_ITEM_RIGHT_CLICK, self.On_ROMList_Right_Click, self.ROMList)
         self.Bind(wx.EVT_BUTTON, self.On_Device_Refresh, self.Device_Refresh_Button)
         self.Bind(wx.EVT_BUTTON, self.On_Device_Apply, self.Device_Apply_Button)
+        self.Bind(wx.EVT_LIST_ITEM_SELECTED, self.On_List_Item_Selected, self.Device_List)
+        self.Bind(wx.EVT_LIST_ITEM_FOCUSED, self.On_List_Item_Focused, self.Device_List)
         self.Bind(wx.EVT_LIST_COL_CLICK, self.On_Device_List_Col_Click, self.Device_List)
         self.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.On_ROM_Information, self.Device_List)
-        self.Bind(wx.EVT_LIST_ITEM_FOCUSED, self.On_List_Item_Focused, self.Device_List)
         self.Bind(wx.EVT_LIST_COL_END_DRAG, self.On_List_Col_Resize, self.Device_List)
+        self.Bind(wx.EVT_LIST_ITEM_DESELECTED, self.On_List_Item_Deselected, self.Device_List)
         self.Bind(wx.EVT_SPLITTER_SASH_POS_CHANGING, self.On_Sash_Changed, self.MainFrame_Splitter)
         self.Bind(wx.EVT_SPLITTER_SASH_POS_CHANGED, self.On_Sash_Changed, self.MainFrame_Splitter)
         self.Bind(wx.EVT_SPLITTER_DCLICK, self.On_Sash_Dbl_Clock, self.MainFrame_Splitter)
@@ -1434,10 +1436,15 @@ class cMainFrame( wx.Frame ):
         
         self.Toolbar.EnableTool( ID_BROWSE_DEVICE, Device_Enabled )
 
-        self.ROM_Information.Enable( MyROMS.Current_Count>0 )
-        self.Toolbar.EnableTool( ID_MENU_ROM_INFORMATION, MyROMS.Current_Count>0 )
-        self.View_NFO_File.Enable( MyROMS.Current_Count>0 )
-        self.Toolbar.EnableTool( ID_MENU_VIEW_NFO_FILE, MyROMS.Current_Count>0 )
+#        self.ROM_Information.Enable( MyROMS.Current_Count>0 )
+#        self.Toolbar.EnableTool( ID_MENU_ROM_INFORMATION, MyROMS.Current_Count>0 )
+#        self.View_NFO_File.Enable( MyROMS.Current_Count>0 )
+#        self.Toolbar.EnableTool( ID_MENU_VIEW_NFO_FILE, MyROMS.Current_Count>0 )
+
+        self.ROM_Information.Enable( One_Selected )
+        self.Toolbar.EnableTool( ID_MENU_ROM_INFORMATION, One_Selected )
+        self.View_NFO_File.Enable( One_Selected )
+        self.Toolbar.EnableTool( ID_MENU_VIEW_NFO_FILE, One_Selected )
         
         self.Trim_Files.Enable( ROMList_Focus and MyROMS.Current_Count>0 )
         self.Toolbar.EnableTool( ID_MENU_TRIM_FILES, ROMList_Focus and MyROMS.Current_Count>0 )
