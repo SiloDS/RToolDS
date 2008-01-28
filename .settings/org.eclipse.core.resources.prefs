@@ -1,0 +1,26 @@
+#Tue Dec 11 12:10:33 GMT 2007
+eclipse.preferences.version=1
+encoding//src/ColumnListCtrlMixin.py=ISO-8859-1
+encoding//src/Config.py=iso-8859-1
+encoding//src/ROMS.py=iso-8859-1
+encoding//src/RToolDS.py=iso-8859-15
+encoding//src/Utils.py=iso-8859-15
+encoding//src/cAboutDialog.py=iso-8859-15
+encoding//src/cDeviceListCtrl.py=iso-8859-1
+encoding//src/cDropTarget.py=ISO-8859-1
+encoding//src/cDummyFrame.py=iso-8859-15
+encoding//src/cLogDialog.py=iso-8859-15
+encoding//src/cMainFrame.py=iso-8859-15
+encoding//src/cNFODialog.py=iso-8859-15
+encoding//src/cOptions.py=iso-8859-15
+encoding//src/cProgressFrame.py=iso-8859-15
+encoding//src/cROMInformation.py=iso-8859-15
+encoding//src/cROMListCtrl.py=iso-8859-1
+encoding//src/cRenameFiles.py=iso-8859-15
+encoding//src/cSaveGameComments.py=iso-8859-15
+encoding//src/cSaveGameConvert.py=iso-8859-15
+encoding//src/cSaveGameManager.py=iso-8859-15
+encoding//src/cStatisticsDialog.py=iso-8859-15
+encoding//src/cTagDialog.py=iso-8859-15
+encoding//src/cWizard.py=iso-8859-1
+encoding//src/zipfile2.py=ISO-8859-1
