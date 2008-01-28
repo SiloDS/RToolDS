@@ -566,10 +566,17 @@ class ROMS:
         self.Unknown_Count = 1
             
     def Close_ROM_Find ( self ):
+        global Tag_Shelve
+
         del ( self.Duplicates )
         del ( self.Originally_Found )
         
         self.Master_List_Count = len (self.Master_List)
+        for Count in range ( len ( self.Master_List )-1,-1,-1 ):
+            ROM = self.Master_List[Count]
+            if Tag_Shelve.has_key( str ( ROM.ROM_CRC ) ):
+                ROM.Tags = Tag_Shelve [str ( ROM.ROM_CRC )]
+
         self.Save_Master_List()
     
     def Process_ROM ( self, Filename ):
