@@ -337,7 +337,7 @@ class cOptions( wx.Dialog ):
         if Config.Config ["Unknown_Name"] == "ARCHIVE":
             self.Unknown_Name.SetStringSelection( _( "Archive File Name" ) )
         elif Config.Config ["Unknown_Name"] == "FILENAME":
-            self.UnknownTitle.SetStringSelection( _( "ROM File Name" ) )
+            self.Unknown_Name.SetStringSelection( _( "ROM File Name" ) )
         
         self.ROM_Columns.InsertColumn ( 0, _( "Column Name" ) )
         self.ROM_Columns.InsertColumn ( 1, _( "Display Name" ) )
