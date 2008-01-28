@@ -1580,6 +1580,9 @@ class cMainFrame( wx.Frame ):
             Config.Config ["Hide_Tags"] = Checked
             self.Show_Hide_Item ( self.Hide_Tags, self.Tags, "Hide_Tags" )
 
+        if Id == ID_MENU_HIDE_SCREENSHOTS or Id == ID_MENU_HIDE_CASE_PICTURES or All:
+            self.On_Use_Smaller_Pictures (event, Change=False)
+        
         self.SplitPanel2_Sizer.Layout()
 
     def On_Show_All_Items( self, event ): # wxGlade: cMainFrame.<event_handler>
@@ -2232,8 +2235,9 @@ class cMainFrame( wx.Frame ):
     def On_ROMList_Right_Click( self, event ): # wxGlade: cMainFrame.<event_handler>
         event.Skip()
 
-    def On_Use_Smaller_Pictures(self, event): # wxGlade: cMainFrame.<event_handler>
-        Config.Config ["Use_Smaller_Pictures"] = not Config.Config ["Use_Smaller_Pictures"]
+    def On_Use_Smaller_Pictures(self, event, Change=True): # wxGlade: cMainFrame.<event_handler>
+        if Change:
+            Config.Config ["Use_Smaller_Pictures"] = not Config.Config ["Use_Smaller_Pictures"]
         
         if Config.Config ["Use_Smaller_Pictures"] == False:
             self.CaseW = 214
