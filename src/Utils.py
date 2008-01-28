@@ -501,7 +501,7 @@ def Rename_ROM (ROM):
     try:
         Mask = Mask.replace ("(R)", Config.Config ["Locations"][ROM.Location])
     except:
-        pass
+        Mask = Mask.replace ("(R)", _("Unknown"))
     
     Mask = Mask + (".nds")
     
