@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 28
+Config_Version = 29
 Version_String = "2.0.1164 Beta"
 
 Config = {}
@@ -425,6 +425,9 @@ def Load_Defaults( Version ):
         Config ["CartColumn_Sizes"]["ROM File (No Ext)"] = 321
     if Version < 28:
         Config ["Languages"][-1] = "Unknown"
+    if Version < 29:
+        Config ["Sizes"] = [0, 8*1024*1024, 16*1024*1024,
+                            32*1024*1024, 64*1024*1024, 128*1024*1024, 256*1024*1024 ]
 #        
 #        
 #        Config ["Screen_Maximized"] = False
