@@ -206,9 +206,9 @@ class cMainFrame( wx.Frame ):
         self.Use_Smaller_Pictures = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SMALL_PICTURES, _("Use Smaller Images"), _("Use Smaller Images"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Use_Smaller_Pictures)
         wxglade_tmp_menu.AppendSeparator()
-        self.Show_XXXX_Files = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_XXXX, _("Show XXXX Files"), _("Show XXXX (Demo) Files"), wx.ITEM_CHECK)
+        self.Show_XXXX_Files = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_XXXX, _("Show XXXX ROMs"), _("Show XXXX (Demo) ROMs"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Show_XXXX_Files)
-        self.Show_Unknown_Files = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_UNKNOWN, _("Show Unknown Files"), _("Show Unknown Files"), wx.ITEM_CHECK)
+        self.Show_Unknown_Files = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_UNKNOWN, _("Show Unknown ROMs"), _("Show Unknown ROMs"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Show_Unknown_Files)
         self.MenuBar.Append(wxglade_tmp_menu, _("&View"))
         wxglade_tmp_menu = wx.Menu()
@@ -1245,7 +1245,7 @@ class cMainFrame( wx.Frame ):
 
         self.ROMSize.SetLabel( ROMSize_String )
         
-        self.SavedGames.SetLabel( _( "Saved Games : %d" ) % ROM.Saves )
+        self.SavedGames.SetLabel( _( "Save Games : %d" ) % ROM.Saves )
         
         self.ReleaseGroup.SetLabel( _( "Release Group : %s" ) % ROM.Source_ROM )
         

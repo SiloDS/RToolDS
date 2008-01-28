@@ -142,7 +142,7 @@ class cSaveGameManager( wx.Dialog ):
         self.SGMTreeCtrl.SetImageList( self.ImageList )
 
         self.SGMTreeCtrl.AddColumn( _( "Title" ) )
-        self.SGMTreeCtrl.AddColumn( _( "Num Saves" ) )
+        self.SGMTreeCtrl.AddColumn( _( "Num" ) )
         self.SGMTreeCtrl.AddColumn( _( "Date / Time" ) )
         self.SGMTreeCtrl.AddColumn( _( "Save Type / Size" ) )
         self.SGMTreeCtrl.SetMainColumn( 0 )
@@ -357,7 +357,7 @@ class cSaveGameManager( wx.Dialog ):
         
         SaveName = ""
         if CRC not in self.Parent.Device_List.Get_CRC_List():
-            Res = wx.MessageBox( _('ROM is not on the Device\n\nDo You Wish to Copy it Anyway?'), _('ROM Missing'), wx.YES_NO| wx.ICON_QUESTION )
+            Res = wx.MessageBox( _('ROM is not on the Device\n\nDo You Wish to Copy it Anyway?'), _('ROM Not Found'), wx.YES_NO| wx.ICON_QUESTION )
             if Res != wx.YES:
                 return
             SaveName = os.path.splitext (Utils.Get_Name_on_Device (ROM))[0] + Utils.Get_Save_Extension()

@@ -33,7 +33,7 @@ class cTagDialog(wx.Dialog):
 
     def __set_properties(self):
         # begin wxGlade: cTagDialog.__set_properties
-        self.SetTitle(_("Add a Tag to Files"))
+        self.SetTitle(_("Add Tag to ROMs"))
         # end wxGlade
 
     def __do_layout(self):
