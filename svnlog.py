@@ -8,11 +8,13 @@ Ignore = [
 "v0.2.868",
 "v0.2.1064",
 "v0.2.1065",
-"v0.2.1106"
+"v0.2.1106",
+"v0.2.1159",
+"v0.2.1160"
 ]
 
 def Process (ReleasePre, ReleaseSuf, START_ENTRY, END_ENTRY):
-    CMD = '"c:\\Program Files\\Subversion\\bin\\svn.exe" log https://silo.dynalias.org/svn/RToolDS/trunk -r' + START_ENTRY + ':' + END_ENTRY
+    CMD = '"c:\\Program Files\\Subversion\\bin\\svn.exe" log https://silo.dynalias.org/svn/RToolDS -r' + START_ENTRY + ':' + END_ENTRY
     
     File = os.popen (CMD)
     
