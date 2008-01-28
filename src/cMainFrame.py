@@ -657,6 +657,11 @@ class cMainFrame( wx.Frame ):
             self.LoadIcons ()
 
         if "STARTUP" in Options or "ROMS" in Options or "SEARCH" in Options or "SORT" in Options:
+            Row = self.ROMList.GetFirstSelected()
+            while Row != -1:# and not dlg.Abort:
+                self.ROMList.SetItemState(Row, 0, wx.LIST_STATE_SELECTED)
+                Row = self.ROMList.GetNextSelected( Row )
+
             self.ROMList.SetItemCount ( MyROMS.Current_Count )
             self.ROMList.Resize_Columns()
             self.ROMList.Refresh()
