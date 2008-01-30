@@ -70,6 +70,12 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1179 - Bumped to 1179
+v0.2.1178 - Fixed #73 - Browse Directory Popup Dialogue Gap Bug
+v0.2.1177 - Added New Trim File
+v0.2.1176 - Fixed #71 - Updating Text Changes
+v0.2.1175 - Fixed #82 - Unknown/Homebrew Naming Bug
+v0.2.1174 - Fixed Yoshi Save Bug
 v0.2.1172 - Bumped to 1171
 v0.2.1171 - Fixed #73 - Extra Space in Directory Dialog Boxes
 v0.2.1170 - Fixed #64 - Change RToolDS Copyright Images to 2008
