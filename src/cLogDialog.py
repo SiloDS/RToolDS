@@ -103,7 +103,7 @@ class cLogDialog( wx.Dialog ):
             self.Close()
 
     def Update_Master_List (self):
-        self.Log.AppendText(_("Updating Database") + " ... ")
+        self.Log.AppendText(_("Checking for Database Updates") + " ... ")
         
         Version = Utils.Fetch_Master_List_Version()
         if Version > MyROMS.Master_List_XML_Version:
@@ -127,9 +127,11 @@ class cLogDialog( wx.Dialog ):
             self.Log.AppendText(_("No Updates Available") + "\n")
         
     def Update_ROM_List (self):
-        self.Log.AppendText(_("Finalising Updated Database") + " ...\n\n")
+        self.Log.AppendText(_("Finalising Updated Database") + " ... ")
 
         MyROMS.Start_ROM_Find ()
+        
+        self.Log.AppendText (_("Completed") + "\n\n")
             
         self.Log.AppendText(_("Finding New ROMs") + " ...\n\n")
 
@@ -156,7 +158,7 @@ class cLogDialog( wx.Dialog ):
         MyROMS.Close_ROM_Find ()
                 
         if self.Aborted:
-            self.Log.AppendText( "\n" + _("Aborted Updating") + ".\n\n" )
+            self.Log.AppendText( "\n" + _("Aborted Update") + ".\n\n" )
             self.Todo.append ("Failed")
             MyROMS.Load_Master_List (AltName=True)
             MyROMS.Save_Master_List ()
@@ -212,7 +214,7 @@ class cLogDialog( wx.Dialog ):
                         res += Utils.GetFromWeb ( MyUrl, nfoFilename )
                     
                     if res == 0:
-                        Display = _("Completed")
+                        Display = _("OK")
                     else:
                         Display = _("Failed")
                             
@@ -225,10 +227,10 @@ class cLogDialog( wx.Dialog ):
                 break
                 
         if self.Aborted:
-            self.Log.AppendText( "\n" + _("Aborted Updating") + ".\n\n" )
+            self.Log.AppendText( "\n" + _("Aborted Update") + ".\n\n" )
             self.Todo.append ("Failed")
         else:
-            self.Log.AppendText( "\n" + _("Done") + ".\n\n" )
+            self.Log.AppendText( "\n" + _("Completed") + ".\n\n" )
 
         MyROMS.Process_All = False
 
