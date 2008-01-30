@@ -283,7 +283,7 @@ class cMainFrame( wx.Frame ):
         self.SaveType = wx.StaticText(self.Split_Panel2, -1, _("Save Type : "))
         self.SavedGames = wx.StaticText(self.Split_Panel2, -1, _("Save Games : "))
         self.Tags = wx.StaticText(self.Split_Panel2, -1, _("Tags : "))
-        self.Device_Dir_Picker = filebrowse.DirBrowseButton(self.Split_Panel2, -1, changeCallback = self.Device_Dir_Picker_Callback, dialogTitle = _("Select Device Directory") + " : ", startDirectory = Config.Config ["Device_Path"])
+        self.Device_Dir_Picker = filebrowse.DirBrowseButton(self.Split_Panel2, -1, changeCallback = self.Device_Dir_Picker_Callback, dialogTitle = _("Select Device Directory") + " : ", startDirectory = Config.Config ["Device_Path"], labelText = _("Device") + " : ")
         self.Device_Refresh_Button = wx.Button(self.Split_Panel2, -1, _("Refresh"), style=wx.BU_EXACTFIT)
         self.Device_Apply_Button = wx.Button(self.Split_Panel2, -1, _("Apply"), style=wx.BU_EXACTFIT)
         self.Device_List = cDeviceListCtrl(self.Split_Panel2, -1, style=wx.LC_REPORT|wx.LC_VIRTUAL|wx.SUNKEN_BORDER|wx.WANTS_CHARS)
