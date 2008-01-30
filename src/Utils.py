@@ -457,7 +457,8 @@ def Get_Hash_Data ( Data ):
 
 def Add_Save (ROM, Save, SaveCommentsShelve, Save_ROMS):
     Save_Created = False
-    SaveName = os.path.join ( Config.Config ["Save_Path"], ROM.ROM_CRC + Get_Save_Extension() )
+#    SaveName = os.path.join ( Config.Config ["Save_Path"], ROM.ROM_CRC + Get_Save_Extension() )
+    SaveName = os.path.join ( Config.Config ["Save_Path"], ROM.ROM_CRC + ".sav" )
     CartHash = Get_Hash( Save )
 
     if os.path.isfile ( SaveName + ".001" ):

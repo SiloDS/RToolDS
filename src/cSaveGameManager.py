@@ -263,7 +263,10 @@ class cSaveGameManager( wx.Dialog ):
 
     def Populate( self ):
         self.SGMTreeCtrl.DeleteAllItems()
-        SearchStr = os.path.join ( Config.Config ["Save_Path"], "*.sav.*" )
+#        Config ["Save_Extensions"] = [ ".sav", ".duc", ".dss", ".0", ".dat" ]
+#        DirList = []
+#        for Extension in Config.Config["Save_Extensions"]:
+        SearchStr = os.path.join ( Config.Config ["Save_Path"], "*" + ".sav" + ".[0-9][0-9][0-9]" )
         DirList = glob.glob ( SearchStr )
 
         self.root = self.SGMTreeCtrl.AddRoot( "Saves" )

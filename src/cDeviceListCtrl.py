@@ -448,41 +448,52 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 del (self.Pending[Position])
                 del (self.Pending_Positions [Position])
             else:
+#                try:
+#                    Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File ))
                 try:
-                    Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File ))
                     os.unlink( os.path.join ( Config.Config ["Device_Path"], ROM.ROM_File ) )
-                    if Config.Config ["Delete_Saves_with_ROM"]:
-                        try:
-                            Filename = os.path.join ( Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File )
-                            Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension()
-                            os.unlink( Filename )
-                        except:
-                            if sys.platform == "win32":
-                                try:
-                                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
-                                    if os.path.isfile (Short_Save_Filename):
-                                        os.unlink( Short_Save_Filename )
-                                except:
-                                    pass
                 except:
                     try:
-                        Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.Name_On_Device ))
                         os.unlink( ROM.Name_On_Device )
-                        if Config.Config ["Delete_Saves_with_ROM"]:
-                            try:
-                                Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.split (ROM.Name_On_Device)[1])
-                                Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension()
-                                os.unlink( Filename )
-                            except:
-                                if sys.platform == "win32":
-                                    try:
-                                        Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
-                                        if os.path.isfile (Short_Save_Filename):
-                                            os.unlink( Short_Save_Filename )
-                                    except:
-                                        pass
                     except:
                         pass
+                if Config.Config ["Delete_Saves_with_ROM"]:
+                    try:
+                        Filename = ROM.Saves_List[1]
+                        os.unlink (Filename)
+                    except:
+                        pass
+#                        try:
+#                            Filename = os.path.join ( Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File )
+#                            Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension()
+#                            os.unlink( Filename )
+#                        except:
+#                            if sys.platform == "win32":
+#                                try:
+#                                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
+#                                    if os.path.isfile (Short_Save_Filename):
+#                                        os.unlink( Short_Save_Filename )
+#                                except:
+#                                    pass
+#                except:
+#                    try:
+#                        Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.Name_On_Device ))
+#                        os.unlink( ROM.Name_On_Device )
+#                        if Config.Config ["Delete_Saves_with_ROM"]:
+#                            try:
+#                                Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.split (ROM.Name_On_Device)[1])
+#                                Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension()
+#                                os.unlink( Filename )
+#                            except:
+#                                if sys.platform == "win32":
+#                                    try:
+#                                        Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
+#                                        if os.path.isfile (Short_Save_Filename):
+#                                            os.unlink( Short_Save_Filename )
+#                                    except:
+#                                        pass
+#                    except:
+#                        pass
                     
             Processed += 1
             dlg.Guage1.SetValue ( Processed )
@@ -528,36 +539,41 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 pass
             else:
                 try:
-                    Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File ))
-                    try:
-                        Filename = os.path.join ( Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File )
-                        Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension() 
-                        os.unlink( Filename )
-                    except:
-                        if sys.platform == "win32":
-                            try:
-                                Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
-                                if os.path.isfile (Short_Save_Filename):
-                                    os.unlink( Short_Save_Filename )
-                            except:
-                                pass
+                    Filename = ROM.Saves_List[1]
+                    os.unlink (Filename)
                 except:
-                    try:
-                        Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.Name_On_Device ))
-                        try:
-                            Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.split (ROM.Name_On_Device)[1])
-                            Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension()
-                            os.unlink( Filename )
-                        except:
-                            if sys.platform == "win32":
-                                try:
-                                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
-                                    if os.path.isfile (Short_Save_Filename):
-                                        os.unlink( Short_Save_Filename )
-                                except:
-                                    pass
-                    except:
-                        pass
+                    pass
+#                try:
+#                    Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File ))
+#                    try:
+#                        Filename = os.path.join ( Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File )
+#                        Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension() 
+#                        os.unlink( Filename )
+#                    except:
+#                        if sys.platform == "win32":
+#                            try:
+#                                Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
+#                                if os.path.isfile (Short_Save_Filename):
+#                                    os.unlink( Short_Save_Filename )
+#                            except:
+#                                pass
+#                except:
+#                    try:
+#                        Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.Name_On_Device ))
+#                        try:
+#                            Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.split (ROM.Name_On_Device)[1])
+#                            Filename = os.path.splitext(Filename)[0] + Utils.Get_Save_Extension()
+#                            os.unlink( Filename )
+#                        except:
+#                            if sys.platform == "win32":
+#                                try:
+#                                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
+#                                    if os.path.isfile (Short_Save_Filename):
+#                                        os.unlink( Short_Save_Filename )
+#                                except:
+#                                    pass
+#                    except:
+#                        pass
                     
             Processed += 1
             dlg.Guage1.SetValue ( Processed )
