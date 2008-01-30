@@ -2053,12 +2053,16 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["SORT", "TAGS"] )
 
     def On_Options( self, event ): # wxGlade: cMainFrame.<event_handler>
+        old_unknown = Config.Config ["Unknown_Name"]
         dlg = cOptions ( self )
         
         Result = dlg.ShowModal ()
         ColumnsChanged = dlg.ColumnsChanged
         
         dlg.Destroy ()
+        
+        if old_unknown != Config.Config ["Unknown_Name"]:
+            self.Rename_Unknowns()
         
         self.Process_Options(Result, ColumnsChanged)
         
@@ -2387,12 +2391,25 @@ class cMainFrame( wx.Frame ):
                 self.Save_Comments_Shelve = shelve.open( os.path.join ( Config.Config ["Save_Path"], "RToolDSComments.dat" ) )
                 break
             except:
-                wx.MessageBox( _('Save Game Database Path is Invallid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
+                wx.MessageBox( _('Save Game Database Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
                 dlg = wx.DirDialog(self, "Choose a directory:",
                                    style=wx.DD_DEFAULT_STYLE
                                        | wx.DD_DIR_MUST_EXIST, defaultPath = os.getcwd()
                            )
                 if dlg.ShowModal() == wx.ID_OK:
                     Config.Config ["Save_Path"] = dlg.GetPath()
+                    
+    def Rename_Unknowns (self):
+        MyROMS.Process_All = True
+
+        for ROM in MyROMS:
+            if ROM.Comment[0] == "U":
+                if Config.Config ["Unknown_Name"] == "FILENAME":
+                    ROM.Title = os.path.splitext( ROM.ROM_File )[0]
+                else:
+                    ROM.Title = os.path.splitext( os.path.basename ( ROM.Archive_File ) )[0]
+                
+        MyROMS.Process_All = False
+        MyROMS.Save_Master_List()
 
 # end of class cMainFrame
