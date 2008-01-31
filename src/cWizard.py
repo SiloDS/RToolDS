@@ -79,7 +79,7 @@ class cWizard:
         Page6.sizer.Add ( wx.StaticText( Page6, -1, _("to detect newly released ROMs and uncategorised homebrew files." ) ) )
 
         Page7.sizer.Add ( wx.StaticText ( Page7, -1, _( "Select Your Linker Device Drive :" ) ))
-        self.Device_Path = filebrowse.DirBrowseButton ( Page7, -1, labelText = "", dialogTitle = _("Select Device") + " : " )
+        self.Device_Path = filebrowse.DirBrowseButton ( Page7, -1, labelText = "", dialogTitle = _("Select Device Directory") + " : " )
         Page7.sizer.Add ( self.Device_Path, 0, wx.EXPAND|wx.TOP, 10 )
         Page7.sizer.Add ( wx.StaticText (Page7, -1, "\n" + _("Select Your Linker Device Type :")))
         self.Default_Device = wx.Choice ( Page7, -1, choices = [] )

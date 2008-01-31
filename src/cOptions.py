@@ -40,7 +40,7 @@ class cOptions( wx.Dialog ):
         self.Image_Path = filebrowse.DirBrowseButton(self.NotebookPanel1, -1, changeCallback = self.dbbCallback, startDirectory = Config.Config ["Image_Path"], dialogTitle = _("Select Images Directory") + " : ")
         self.NFO_Path = filebrowse.DirBrowseButton(self.NotebookPanel1, -1, changeCallback = self.dbbCallback, startDirectory = Config.Config ["NFO_Path"], dialogTitle = _("Select NFO Directory") + " : ")
         self.Save_Path = filebrowse.DirBrowseButton(self.NotebookPanel1, -1, changeCallback = self.dbbCallback, startDirectory = Config.Config ["Save_Path"], dialogTitle = _("Select Save Game Database Directory") + " : ")
-        self.Device_Path = filebrowse.DirBrowseButton(self.NotebookPanel1, -1, changeCallback = self.dbbCallback, startDirectory = Config.Config ["Device_Path"], dialogTitle = _("Select Device") + " : ")
+        self.Device_Path = filebrowse.DirBrowseButton(self.NotebookPanel1, -1, changeCallback = self.dbbCallback, startDirectory = Config.Config ["Device_Path"], dialogTitle = _("Select Device Directory") + " : ")
         self.Save_Dir_On_Cart = filebrowse.DirBrowseButton(self.NotebookPanel1, -1, changeCallback = self.dbbCallback, startDirectory = Config.Config ["Device_Path"], dialogTitle = _("Select Save Game Directory") + " : ")
         self.SlowLookups = wx.CheckBox(self.NotebookPanel1, -1, _("Try to Find Renamed ROMs on Device (Slow)"))
         self.Show_Splash = wx.CheckBox(self.NotebookPanel2, -1, _("Show Splash Screen on Start-up"))
