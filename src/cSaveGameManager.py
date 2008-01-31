@@ -72,6 +72,7 @@ class cSaveGameManager( wx.Dialog ):
         self.Duplicate_Button.SetToolTipString(_("Duplicate Save Game"))
         self.Duplicate_Button.SetSize(self.Duplicate_Button.GetBestSize())
         self.Convert_Saves_Button.SetToolTipString(_("Convert Save Type"))
+        self.Convert_Saves_Button.Hide()
         self.Convert_Saves_Button.SetSize(self.Convert_Saves_Button.GetBestSize())
         self.Delete_All_Button.SetToolTipString(_("Delete All Saves for Selected Game"))
         self.Delete_All_Button.SetSize(self.Delete_All_Button.GetBestSize())
