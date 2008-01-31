@@ -1633,6 +1633,9 @@ class cMainFrame( wx.Frame ):
                 Config.Config ["Hide_Tags"]
             ]
             self.On_Hide_Item( True )
+#        self.__Local_Init( ["DEVICE"] )
+#        self.Update_Fields()
+        self.On_Use_Smaller_Pictures(event, Change=False)
 
     def Populate_Toolbar ( self ):
         if Config.Config ["Show_Toolbar"]:
