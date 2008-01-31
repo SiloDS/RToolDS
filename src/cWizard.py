@@ -35,7 +35,7 @@ class cWizard:
         Page1.sizer.Add ( self.ROM_Path, 0, wx.EXPAND|wx.TOP, 10 )
         Page1.sizer.Add ( wx.StaticText ( Page1, -1, "\n" + _( "RToolDS accepts Uncompressed, Zip, 7-Zip and RAR archived ROM files." ) ) )
 
-        Page2.sizer.Add ( wx.StaticText ( Page2, -1, _( "Select a Directory where Saved Games will be Stored :" ) ) )
+        Page2.sizer.Add ( wx.StaticText ( Page2, -1, _( "Select a Default Save Game Database Directory :" ) ) )
         self.Save_Path = filebrowse.DirBrowseButton ( Page2, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Save Game Database Directory") + " : " )
         self.Save_Path.SetValue( os.path.join ( os.getcwd(), "cache", "saves" ) )
         Page2.sizer.Add ( self.Save_Path, 0, wx.EXPAND|wx.TOP, 10 )
@@ -78,7 +78,7 @@ class cWizard:
         Page6.sizer.Add ( wx.StaticText( Page6, -1, _("categorised in our database. This option is recommended and is required")))
         Page6.sizer.Add ( wx.StaticText( Page6, -1, _("to detect newly released ROMs and uncategorised homebrew files." ) ) )
 
-        Page7.sizer.Add ( wx.StaticText ( Page7, -1, _( "Select You Linker Device Drive :" ) ))
+        Page7.sizer.Add ( wx.StaticText ( Page7, -1, _( "Select Your Linker Device Drive :" ) ))
         self.Device_Path = filebrowse.DirBrowseButton ( Page7, -1, labelText = "", dialogTitle = _("Select Device") + " : " )
         Page7.sizer.Add ( self.Device_Path, 0, wx.EXPAND|wx.TOP, 10 )
         Page7.sizer.Add ( wx.StaticText (Page7, -1, "\n" + _("Select Your Linker Device Type :")))
