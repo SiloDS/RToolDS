@@ -70,6 +70,12 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1186 - Bumped to 1186
+v0.2.1185 - Fixed #57 - Invalid Save Directory Errors
+v0.2.1184 - Removed Import Conversion Stuff
+v0.2.1183 - Fixed #91 - Select ROM Image Display Bug
+v0.2.1182 - Fixed #73 - Browse Directory Popup Dialogue Gap Bug
+v0.2.1181 - Fixed #42 - Wizard Text Change
 v0.2.1179 - Bumped to 1179
 v0.2.1178 - Fixed #73 - Browse Directory Popup Dialogue Gap Bug
 v0.2.1177 - Added New Trim File
