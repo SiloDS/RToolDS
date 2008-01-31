@@ -5,6 +5,7 @@ import sys
 import wx
 import wx.lib.filebrowsebutton as filebrowse
 import copy
+import os
 
 from ColumnListCtrlMixin import ColumnListCtrlMixin
 import Config
@@ -511,6 +512,29 @@ class cOptions( wx.Dialog ):
             Config.Config [Key] = Value
 
     def On_OK( self, event ): # wxGlade: cOptions.<event_handler>
+#_("Select ROMs Directory") + " : ")
+#_("Select Images Directory") + " : ")
+#_("Select NFO Directory") + " : ")
+#_("Select Save Game Database Directory") + " : ")
+#_("Select Device Directory") + " : ")
+#_("Select Save Game Directory") + " : ")
+
+        Msg = ""
+        if os.path.isdir(self.ROM_Path.GetValue()) == False:
+            Msg = _("Invalid ROM Directory")
+        if os.path.isdir(self.Image_Path.GetValue()) == False:
+            Msg = _("Invalid Images Directory")
+        if os.path.isdir(self.NFO_Path.GetValue()) == False:
+            Msg = _("Invalid NFO Directory")
+        if os.path.isdir(self.Save_Path.GetValue()) == False:
+            Msg = _("Invalid Save Database Directory")
+        if os.path.isdir(self.Device_Path.GetValue()) == False:
+            Msg = _("Invalid Device Directory")
+            
+        if Msg != "":
+            wx.MessageBox( Msg, _('Invalid Directory'), wx.OK| wx.ICON_EXCLAMATION )
+            return
+
         self.ProcessOption ( "ROM_Path", self.ROM_Path.GetValue() )
         self.ProcessOption ( "Image_Path", self.Image_Path.GetValue() )
         self.ProcessOption ( "NFO_Path", self.NFO_Path.GetValue() )
