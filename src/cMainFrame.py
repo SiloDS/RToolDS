@@ -608,6 +608,8 @@ class cMainFrame( wx.Frame ):
                 self.Maximize()
 
             self.Set_Sash_Position ()
+            
+            self.MainFrame_Splitter.SetMinimumPaneSize(1)
                 
 #            self.ROMList_Sizer_staticbox.SetForegroundColour( wx.SystemSettings.GetColour ( wx.SYS_COLOUR_WINDOWTEXT ) )
 #            self.ROM_Information_Sizer_staticbox.SetForegroundColour( wx.SystemSettings.GetColour ( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -782,6 +784,7 @@ class cMainFrame( wx.Frame ):
         if Config.Config ["Sash_Position"] == -1:
             tmpSize = self.GetSize() [ 0 ] - self.ROM_Information_Sizer.GetMinSize() [ 0 ] - 20 #TODO: Fudge Factor in Sash?
             self.MainFrame_Splitter.SetSashPosition( tmpSize, True )
+            print tmpSize
         else:
             self.MainFrame_Splitter.SetSashPosition( Config.Config ["Sash_Position"], True )
             
@@ -827,6 +830,7 @@ class cMainFrame( wx.Frame ):
         event.Skip()
         
     def Run_Wizard ( self, UseDummy = True ):
+        wx.Yield()
         DLGFX = False
         if UseDummy:
             My_Wizard = cWizard.cWizard ( self.DummyFrame )
@@ -897,6 +901,7 @@ class cMainFrame( wx.Frame ):
             return False
 
     def Check_New_Files ( self ):
+        wx.Yield()
         if os.path.isfile( "RToolDS_Trimmed.dat.new" ) and os.path.isfile ("RToolDS_Trimmed.dat"):
             Res = wx.MessageBox( _('A New Trim Data File Has Been Created by the Installer\n\nDo You Wish to Overwrite Your Existing One?'), _('New Trim Data File'), wx.YES_NO| wx.ICON_QUESTION )
             if Res == wx.YES:
@@ -982,6 +987,7 @@ class cMainFrame( wx.Frame ):
         self.Device_List.UpdateIcons()
         
     def On_Update_Master_List( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
 #        self.ROMList.Freeze()
         dlg = cLogDialog( self, Todo = ["Master_List"], Auto_Close=False )
         dlg.ShowModal()
@@ -996,6 +1002,7 @@ class cMainFrame( wx.Frame ):
 #        self.ROMList.Thaw()
 
     def On_Find_New_ROMS( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
 #        self.ROMList.Freeze()
         dlg = cLogDialog( self, Todo = ["ROM_List"], Auto_Close=False )
         dlg.ShowModal()
@@ -1010,6 +1017,7 @@ class cMainFrame( wx.Frame ):
 #        self.ROMList.Thaw()
         
     def On_Update_GFX( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
 #        self.ROMList.Freeze()
         dlg = cLogDialog( self, Todo = ["GFX"], Auto_Close=False )
         dlg.ShowModal()
@@ -1024,6 +1032,7 @@ class cMainFrame( wx.Frame ):
 #        self.ROMList.Thaw()
 
     def On_Update_Everything( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
 #        self.ROMList.Freeze()
         dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close=False )
         dlg.ShowModal()
@@ -1081,6 +1090,7 @@ class cMainFrame( wx.Frame ):
             self.Search ()
 
     def On_Search_Clear( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.In_Search_Clear = True
         self.Search_TextCtrl.SetValue( "" )
         Config.Config ["Current_Search"] = ""
@@ -1088,6 +1098,7 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( "SEARCH" )
         
     def On_Search_Clear_All( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         Config.Config ["Filter_Location"] = 255
         Config.Config ["Filter_Language"] = 0
         Config.Config ["Filter_Genre"] = _( "All Genres" )
@@ -1156,6 +1167,7 @@ class cMainFrame( wx.Frame ):
         self.Thaw()
         
     def Handle_Filter( self, event, Var ):
+        wx.Yield()
         if self.In_Init:
             event.Skip()
         else:
@@ -1586,12 +1598,15 @@ class cMainFrame( wx.Frame ):
         self.SplitPanel2_Sizer.Layout()
 
     def On_Show_All_Items( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.On_Hide_Item( False )
         
     def On_Hide_All_Items( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.On_Hide_Item( True )
     
     def On_Toggle_Info ( self, event ):
+        wx.Yield()
         if event.Int == 0: # Show Info
             if self.ToggleBackup == []:
                 self.On_Show_All_Items ( event )
@@ -1792,6 +1807,7 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["DEVICE"] )
 
     def On_Delete_from_Device( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
 
         self.Device_List.Delete_Selected ()
@@ -1801,6 +1817,7 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["DEVICE"] )
 
     def On_Apply_Changes( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
         
         self.Device_List.Apply_Pending()
@@ -1820,6 +1837,7 @@ class cMainFrame( wx.Frame ):
         dlg.Destroy()
 
     def On_Browse_Device ( self, event ):
+        wx.Yield()
         if sys.platform == "win32":
             os.startfile( Config.Config ["Device_Path"] )
                 
@@ -1841,12 +1859,14 @@ class cMainFrame( wx.Frame ):
             self.In_Device_Dir_Callback = False
 
     def On_Device_Refresh( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.Device_List.Clear_Pending()
         self.__Local_Init( ["DEVICE"] )
         if self.Current_Ctrl == self.ROMList:
             self.Current_Ctrl.SetFocus()
 
     def On_Device_Apply( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.On_Apply_Changes( event )
 
     def On_ROMList_Begin_Drag( self, event ): # wxGlade: cMainFrame.<event_handler>
@@ -1861,6 +1881,7 @@ class cMainFrame( wx.Frame ):
             self.On_Copy_to_Device ( event )
 
     def On_ROM_Information( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         if self.Current_Ctrl == self.Device_List:
             From_Device = True
         else:
@@ -1871,16 +1892,19 @@ class cMainFrame( wx.Frame ):
         dlg.Destroy()
 
     def On_View_NFO_File( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         dlg = cNFODialog ( self, Current_Ctrl=self.Current_Ctrl )
         dlg.ShowModal()
         dlg.Destroy()
 
     def On_View_Statistics( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         dlg = cStatisticsDialog ( self )
         dlg.ShowModal()
         dlg.Destroy()
 
     def On_Trim_Files( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
 
         To_Process = self.ROMList.GetSelectedItemCount()
@@ -1918,6 +1942,7 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["SORT"] )
 
     def On_UnTrim_Files( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
 
         Row = self.ROMList.GetFirstSelected()
@@ -1934,6 +1959,7 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["SORT"] )
 
     def On_Recover_Trimmed_Sizes( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
         
         Trimmed_Shelve = MyROMS.Get_Trimmed_Shelve () 
@@ -1952,12 +1978,14 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["SORT"] )
         
     def On_Choose_Tag ( self, event ):
+        wx.Yield()
         if event == None or self.Tag_Choice.GetStringSelection() != Config.Config ["Current_Tag"]:
             Config.Config ["Current_Tag"] = self.Tag_Choice.GetStringSelection()
             self.__Local_Init( ["SORT"] )
             self.Enable_Tasks()
 
     def On_Tag_Add ( self, event ):
+        wx.Yield()
         dlg = cTagDialog ( self )
         
         Result = dlg.ShowModal()
@@ -1982,6 +2010,7 @@ class cMainFrame( wx.Frame ):
         self.Enable_Tasks()
         
     def On_Tag_Last (self, event):
+        wx.Yield()
         Tag = Config.Config ["Last_Tag"]
         Row = self.Current_Ctrl.GetFirstSelected()
         while Row != -1:
@@ -1995,6 +2024,7 @@ class cMainFrame( wx.Frame ):
         self.Enable_Tasks()
     
     def On_Tag_Remove ( self, event ):
+        wx.Yield()
         Row = self.Current_Ctrl.GetFirstSelected()
         while Row != -1:
             ROM = self.Current_Ctrl.Get_ROM ( Row )
@@ -2013,6 +2043,7 @@ class cMainFrame( wx.Frame ):
         self.Enable_Tasks()
 
     def On_Tag_Rename ( self, event ):
+        wx.Yield()
         dlg = wx.TextEntryDialog(self, _('New Tag Name for %s') % self.Tag_Choice.GetStringSelection(), _('Rename Tag'), '')
         if dlg.ShowModal() == wx.ID_OK:
             Res = True
@@ -2030,6 +2061,7 @@ class cMainFrame( wx.Frame ):
             self.Enable_Tasks()
     
     def On_Tag_Delete ( self, event ):
+        wx.Yield()
         Res = wx.MessageBox( _( 'Are you sure you want to delete the current tag?' ), _( 'Delete Tag' ), wx.YES_NO| wx.ICON_QUESTION )
         if Res == wx.YES:
             MyROMS.Delete_Tag ( self.Tag_Choice.GetStringSelection() )
@@ -2040,6 +2072,7 @@ class cMainFrame( wx.Frame ):
             self.Enable_Tasks()
 
     def On_Recover_Tags( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
         
         Tag_Shelve = MyROMS.Get_Tag_Shelve () 
@@ -2056,6 +2089,7 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["SORT", "TAGS"] )
 
     def On_Options( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         old_unknown = Config.Config ["Unknown_Name"]
         dlg = cOptions ( self )
         
@@ -2090,9 +2124,11 @@ class cMainFrame( wx.Frame ):
         self.Update_Main_Menu()
         
     def On_Backup_All_Saves( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.On_Backup_Save_Game( event, All=True )
 
     def On_Backup_Save_Game( self, event, All=False, In_Init=False ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
 
         To_Process = self.Device_List.GetSelectedItemCount()
@@ -2162,6 +2198,7 @@ class cMainFrame( wx.Frame ):
             self.__Local_Init( ["SORT", "DEVICE", "SAVES"] )
 
     def On_Import_Save_Game( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         ROM = self.ROMList.Get_ROM( self.ROMList.GetFocusedItem() )
 
         dlg = wx.FileDialog( self, message=_( "Select a Save File to Import to %s" ) %( ROM.Title ), defaultDir=Config.Config["Last_Import_Path"], defaultFile="", style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST )
@@ -2207,6 +2244,7 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["SORT", "DEVICE", "ROMS"] )
 
     def On_Save_Games_for_Selected_File( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         ROM = self.Current_Ctrl.Get_ROM ( self.Current_Ctrl.GetFocusedItem() )
         dlg = cSaveGameManager ( self, Save_Comments_Shelve=self.Save_Comments_Shelve, Select="%s - %s" % ( ROM.Comment, ROM.Title ) )
         
@@ -2224,6 +2262,7 @@ class cMainFrame( wx.Frame ):
             self.Process_Options(Result, ColumnsChanged)
 
     def On_Save_Game_Manager( self, event ): # wxGlade: cMainFrame.<event_handler>
+        wx.Yield()
         dlg = cSaveGameManager ( self, Save_Comments_Shelve=self.Save_Comments_Shelve, Select="" )
         
         dlg.ShowModal ()
@@ -2377,6 +2416,7 @@ class cMainFrame( wx.Frame ):
         wx.MessageBox( _( 'Finished.' ), _( 'Serials' ), wx.OK| wx.ICON_INFORMATION )
         
     def On_Delete_Save (self, event):
+        wx.Yield()
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
 
         self.Device_List.Delete_Selected_Saves ()
