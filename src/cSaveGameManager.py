@@ -142,8 +142,8 @@ class cSaveGameManager( wx.Dialog ):
 
         self.SGMTreeCtrl.SetImageList( self.ImageList )
 
-        self.SGMTreeCtrl.AddColumn( _( "Title" ) )
-        self.SGMTreeCtrl.AddColumn( _( "Num" ) )
+        self.SGMTreeCtrl.AddColumn( _( "Rel No / Title" ) )
+        self.SGMTreeCtrl.AddColumn( _( "No" ) )
         self.SGMTreeCtrl.AddColumn( _( "Date / Time" ) )
         self.SGMTreeCtrl.AddColumn( _( "Save Type / Size" ) )
         self.SGMTreeCtrl.SetMainColumn( 0 )
