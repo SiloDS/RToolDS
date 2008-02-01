@@ -1939,7 +1939,8 @@ class cMainFrame( wx.Frame ):
         
         dlg.MakeModal( False )
         dlg.Destroy()
-        self.__Local_Init( ["SORT"] )
+#        self.__Local_Init( ["SORT"] )
+        self.__Local_Init( [] )
 
     def On_UnTrim_Files( self, event ): # wxGlade: cMainFrame.<event_handler>
         wx.Yield()
@@ -1956,7 +1957,8 @@ class cMainFrame( wx.Frame ):
 
         self.SetCursor( wx.StockCursor( wx.CURSOR_ARROW ) )
         
-        self.__Local_Init( ["SORT"] )
+#        self.__Local_Init( ["SORT"] )
+        self.__Local_Init( [] )
 
     def On_Recover_Trimmed_Sizes( self, event ): # wxGlade: cMainFrame.<event_handler>
         wx.Yield()
@@ -2006,7 +2008,7 @@ class cMainFrame( wx.Frame ):
     
         dlg.Destroy()
         
-        self.__Local_Init( ["SORT", "TAGS" ] )
+        self.__Local_Init( ["TAGS" ] ) # had SORT
         self.Enable_Tasks()
         
     def On_Tag_Last (self, event):
@@ -2020,7 +2022,7 @@ class cMainFrame( wx.Frame ):
                 self.TagChoice.Append( Tag )
                 
             Row = self.Current_Ctrl.GetNextSelected( Row )
-        self.__Local_Init( ["SORT", "TAGS" ] )
+        self.__Local_Init( ["TAGS" ] ) # had SORT
         self.Enable_Tasks()
     
     def On_Tag_Remove ( self, event ):
@@ -2033,13 +2035,13 @@ class cMainFrame( wx.Frame ):
             
             Row = self.Current_Ctrl.GetNextSelected( Row )
         
-        self.__Local_Init( ["SORT", "TAGS" ] )
+        self.__Local_Init( ["TAGS" ] ) # had SORT
 
         if self.Current_Ctrl.GetItemCount() == 0 and self.Tag_Choice.GetStringSelection() != _( "Hidden ROMs" ):
             Config.Config ["Current_Tag"] = _( "All ROMs" )
             MyROMS.Remove_Tag ( self.Tag_Choice.GetStringSelection() )
 
-        self.__Local_Init( ["SORT", "TAGS" ] )
+        self.__Local_Init( ["TAGS" ] ) # had SORT
         self.Enable_Tasks()
 
     def On_Tag_Rename ( self, event ):
@@ -2057,7 +2059,7 @@ class cMainFrame( wx.Frame ):
             
             Config.Config ["Current_Tag"] = New_Tag
             
-            self.__Local_Init( ["SORT", "TAGS" ] )
+            self.__Local_Init( ["TAGS" ] ) # had SORT
             self.Enable_Tasks()
     
     def On_Tag_Delete ( self, event ):
@@ -2068,7 +2070,7 @@ class cMainFrame( wx.Frame ):
             
             Config.Config ["Current_Tag"] = _( "All ROMs" )
             
-            self.__Local_Init( ["SORT", "TAGS" ] )
+            self.__Local_Init( ["TAGS" ] ) # had SORT
             self.Enable_Tasks()
 
     def On_Recover_Tags( self, event ): # wxGlade: cMainFrame.<event_handler>
@@ -2086,7 +2088,7 @@ class cMainFrame( wx.Frame ):
         
         self.SetCursor( wx.StockCursor( wx.CURSOR_ARROW ) )
         
-        self.__Local_Init( ["SORT", "TAGS"] )
+        self.__Local_Init( ["TAGS" ] ) # had SORT
 
     def On_Options( self, event ): # wxGlade: cMainFrame.<event_handler>
         wx.Yield()
@@ -2195,7 +2197,7 @@ class cMainFrame( wx.Frame ):
             else:
                 wx.MessageBox( _( 'Nothing to Backup.' ), _( 'Save Backup' ), wx.OK| wx.ICON_INFORMATION )
     
-            self.__Local_Init( ["SORT", "DEVICE", "SAVES"] )
+            self.__Local_Init( ["DEVICE", "SAVES"] ) # had SORT
 
     def On_Import_Save_Game( self, event ): # wxGlade: cMainFrame.<event_handler>
         wx.Yield()
@@ -2241,7 +2243,7 @@ class cMainFrame( wx.Frame ):
         else:
             wx.MessageBox( _( 'Nothing to Import.' ), _( 'Save Import' ), wx.OK| wx.ICON_INFORMATION )
 
-        self.__Local_Init( ["SORT", "DEVICE", "ROMS"] )
+        self.__Local_Init( ["DEVICE", "ROMS"] ) # had SORT
 
     def On_Save_Games_for_Selected_File( self, event ): # wxGlade: cMainFrame.<event_handler>
         wx.Yield()
