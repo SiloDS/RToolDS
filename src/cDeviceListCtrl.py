@@ -186,7 +186,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
             ROM.Size_On_Device = ROM.Effective_Size
 #            self.Size_List.append ( ROM.Effective_Size )
 #            self.Saves_List.append ( [bool (ROM.Saves), None] )
-            print ROM.Title + ":" + str (ROM.Saves)
+#            print ROM.Title + ":" + str (ROM.Saves)
             ROM.Saves_List = [ Utils.cbool (ROM.Saves), None]
             self.Pending_Positions.append (self.ROM_Count)
             self.ROM_Count += 1
