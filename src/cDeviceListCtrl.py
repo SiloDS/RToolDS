@@ -186,6 +186,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
             ROM.Size_On_Device = ROM.Effective_Size
 #            self.Size_List.append ( ROM.Effective_Size )
 #            self.Saves_List.append ( [bool (ROM.Saves), None] )
+            print ROM.Title + ":" + str (ROM.Saves)
             ROM.Saves_List = [ Utils.cbool (ROM.Saves), None]
             self.Pending_Positions.append (self.ROM_Count)
             self.ROM_Count += 1
@@ -322,6 +323,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 self.Calc_FreeSpace()
                 return False
             self.Pending.append(ROM)
+            ROM.Saves_List = [ Utils.cbool (ROM.Saves), None]
         self.Calc_FreeSpace()
         return True
     
@@ -603,7 +605,11 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 return self.Get_ROM ( item ).Title
             elif Config.Config ["CartColumns"][col] == "Original Size":
 #                return Utils.Format_ROM_Size ( self.Size_List [ item ] )
-                return Utils.Format_ROM_Size ( self.Get_ROM ( item ).Size_On_Device )
+                try:
+                    s = Utils.Format_ROM_Size ( self.Get_ROM ( item ).Size_On_Device )
+                except:
+                    s = Utils.Format_ROM_Size(self.Get_ROM ( item ).ROM_Size)
+                return s
             elif Config.Config ["CartColumns"][col] == "Trimmed":
                 if self.Get_ROM ( item ).Trimmed_On_Device:
                     return _( "Yes" )
@@ -611,8 +617,12 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     return _( "No" )
             elif Config.Config ["CartColumns"][col] == "Saves":
 #                return self.Saves_List [ item ][0]
-                t = self.Get_ROM (item) 
-                return t.Saves_List [0]
+                r = self.Get_ROM (item)
+                try:
+                    t = r.Saves_List [0]
+                except:
+                    t = "Arg"  
+                return t 
             elif Config.Config ["CartColumns"][col] == "Location":
                 try:
                     Str = Config.Config ["Locations"][self.Get_ROM ( item ).Location]
@@ -624,9 +634,20 @@ class cDeviceListCtrl( wx.ListCtrl ):
             elif Config.Config ["CartColumns"][col] == "Archive":
                 return self.Get_ROM ( item ).Archive_File
             elif Config.Config ["CartColumns"][col] == "ROM File":
-                return self.Get_ROM ( item ).Name_On_Device
+                r = self.Get_ROM ( item )
+                try:
+                    s = r.Name_On_Device
+                except:
+                    s = r.ROM_File
+                if s == "":
+                    s = r.ROM_File
+                return s
             elif Config.Config ["CartColumns"][col] == "ROM File (No Ext)":
-                return os.path.splitext (self.Get_ROM ( item ).Name_On_Device)[0]
+                r = self.Get_ROM ( item )
+                if r.Name_On_Device != "":
+                    return os.path.splitext (r.Name_On_Device)[0]
+                else:
+                    return os.path.splitext (r.ROM_File)[0]
             elif Config.Config ["CartColumns"][col] == "CRC":
                 return self.Get_ROM ( item ).ROM_CRC
             elif Config.Config ["CartColumns"][col] == "Publisher":
@@ -637,7 +658,11 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 return self.Get_ROM ( item ).Save_Type
             elif Config.Config ["CartColumns"][col] == "Size":
 #                return Utils.Format_ROM_Size ( self.Size_List [ item ] )
-                return Utils.Format_ROM_Size ( self.Get_ROM ( item ).Size_On_Device )
+                try:
+                    s = Utils.Format_ROM_Size ( self.Get_ROM ( item ).Size_On_Device )
+                except:
+                    s = Utils.Format_ROM_Size(self.Get_ROM ( item ).Effective_Size)
+                return s
             elif Config.Config ["CartColumns"][col] == "Internal Name":
                 return self.Get_ROM ( item ).Internal_Name
             elif Config.Config ["CartColumns"][col] == "Serial":
