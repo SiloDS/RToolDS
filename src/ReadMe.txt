@@ -70,6 +70,12 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1196 - Bumped to 1195
+v0.2.1192 - Fixed #95 - ROM List Button Slection Bug
+v0.2.1191 - Fixed #93 - Disappearing Sash Bug
+v0.2.1190 - SGM Wording Changes
+v0.2.1189 - Added Create New Directory to Select Directory Buttons
+v0.2.1188 - Remove Convert Save from SGM Popup
 v0.2.1186 - Bumped to 1186
 v0.2.1185 - Fixed #57 - Invalid Save Directory Errors
 v0.2.1184 - Removed Import Conversion Stuff
