@@ -458,7 +458,10 @@ class ROMS:
         return self.Master_List [ self.Master_List_Serial_Dict [str ( MySerial )]]
     
     def Get_Current_List_ROM ( self, Position ):
-        return self.Master_List [ self.Current_List [Position]]
+        try:
+            return self.Master_List [ self.Current_List [Position]]
+        except:
+            return ROM()
 
     def Sort_Current_List ( self ):
         if Config.Config ["Sort"] == "Size":

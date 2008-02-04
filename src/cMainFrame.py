@@ -1167,7 +1167,6 @@ class cMainFrame( wx.Frame ):
         self.Thaw()
         
     def Handle_Filter( self, event, Var ):
-        wx.Yield()
         if self.In_Init:
             event.Skip()
         else:
