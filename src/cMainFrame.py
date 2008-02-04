@@ -2236,7 +2236,8 @@ class cMainFrame( wx.Frame ):
         else:
             wx.MessageBox( _( 'Nothing to Import.' ), _( 'Save Import' ), wx.OK| wx.ICON_INFORMATION )
 
-        self.__Local_Init( ["DEVICE", "ROMS"] ) # had SORT
+#        self.__Local_Init( ["DEVICE", "ROMS"] ) # had SORT
+        self.__Local_Init (["SAVES"])
 
     def On_Save_Games_for_Selected_File( self, event ): # wxGlade: cMainFrame.<event_handler>
         wx.Yield()
