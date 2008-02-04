@@ -19,7 +19,7 @@ class cTagDialog(wx.Dialog):
         kwds["style"] = wx.DEFAULT_DIALOG_STYLE
         wx.Dialog.__init__(self, *args, **kwds)
         self.TagDialog_Label = wx.StaticText(self, -1, _("Enter Tag : "))
-        self.Tag_Combo = wx.ComboBox(self, -1, choices=[], style=wx.CB_DROPDOWN|wx.CB_DROPDOWN|wx.CB_SORT)
+        self.Tag_Combo = wx.ComboBox(self, -1, choices=[], style=wx.CB_DROPDOWN|wx.CB_DROPDOWN)
         self.OK_Button = wx.Button(self, wx.ID_OK, _("OK"))
         self.Cancel_Button = wx.Button(self, wx.ID_CANCEL, _("Cancel"))
 
@@ -65,9 +65,9 @@ class cTagDialog(wx.Dialog):
         
     def __LocalInit (self):
         self.Tag_Combo.Clear()
-        self.Tag_Combo.Append(_("Hidden ROMs"))
-        for Tag in MyROMS.Get_All_Tags():
+        for Tag in sorted (MyROMS.Get_All_Tags()):
             self.Tag_Combo.Append ( Tag )
+        self.Tag_Combo.Append(_("Hidden ROMs"))
         self.Tag_Combo.SetValue (Config.Config ["Last_Tag"])
 
     def On_OK(self, event): # wxGlade: cTagDialog.<event_handler>
