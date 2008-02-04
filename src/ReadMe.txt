@@ -70,7 +70,15 @@
  -----------------
  |:. Changelog .:|
  -----------------
-v0.2.1196 - Bumped to 1195
+v0.2.1205 - Bumped to 1205
+v0.2.1204 - Fixed #104 - Release Number Search
+v0.2.1203 - Fixed #105 - Slow Performance Button/Task Delay Bug
+v0.2.1202 - Fixed 102 - Hidden ROMs tag Drop-down Tag Bug
+v0.2.1201 - Fixed #89 - Multiple ROM Search/Filter Selection Bug
+v0.2.1200 - Fixed #95 - ROM List Button Selection Bug in Import Save Game
+v0.2.1199 - Fixed #85 - Hopefully..  Tag Stuff
+v0.2.1198 - Fixed Wizard Bug
+v0.2.1196 - Bumoed to 1195
 v0.2.1192 - Fixed #95 - ROM List Button Slection Bug
 v0.2.1191 - Fixed #93 - Disappearing Sash Bug
 v0.2.1190 - SGM Wording Changes
