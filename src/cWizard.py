@@ -36,7 +36,7 @@ class cWizard:
         Page1.sizer.Add ( wx.StaticText ( Page1, -1, "\n" + _( "RToolDS accepts Uncompressed, Zip, 7-Zip and RAR archived ROM files." ) ) )
 
         Page2.sizer.Add ( wx.StaticText ( Page2, -1, _( "Select a Default Save Game Database Directory :" ) ) )
-        self.Save_Path = filebrowse.DirBrowseButton ( Page2, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Save Game Database Directory") + " : ", newDirectory = True )
+        self.Save_Path = filebrowse.DirBrowseButton ( Page2, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Save Game Database Directory") + " : " )
         self.Save_Path.SetValue( os.path.join ( os.getcwd(), "cache", "saves" ) )
         Page2.sizer.Add ( self.Save_Path, 0, wx.EXPAND|wx.TOP, 10 )
         Page2.sizer.Add ( wx.StaticText ( Page2, -1, "\n" + _("Note: Do not select a previous linker device save directory")))
@@ -46,11 +46,11 @@ class cWizard:
         
         Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "Select a Default Image Directory :" ) ) )
 #        Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "(It is Safe to Keep the Default)" ) ) )
-        self.Image_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Images Directory") + " : ", newDirectory = True )
+        self.Image_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Images Directory") + " : " )
         self.Image_Path.SetValue( os.path.join ( os.getcwd(), "cache", "img" ) )
         Page3.sizer.Add ( self.Image_Path, 0, wx.EXPAND|wx.TOP, 10 )
         Page3.sizer.Add ( wx.StaticText ( Page3, -1, "\n" + _("Select a Default NFO Directory :" ) ) )
-        self.NFO_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select NFO Directory") + " : ", newDirectory = True )
+        self.NFO_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select NFO Directory") + " : " )
         self.NFO_Path.SetValue( os.path.join ( os.getcwd(), "cache", "nfo" ) )
         Page3.sizer.Add ( self.NFO_Path, 0, wx.EXPAND|wx.TOP, 10 )
         Page3.sizer.Add ( wx.StaticText ( Page3, -1, "\n" + _( "Note: Keeping the default directories is recommended.")))
