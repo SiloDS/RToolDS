@@ -1980,14 +1980,12 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["SORT"] )
         
     def On_Choose_Tag ( self, event ):
-        wx.Yield()
         if event == None or self.Tag_Choice.GetStringSelection() != Config.Config ["Current_Tag"]:
             Config.Config ["Current_Tag"] = self.Tag_Choice.GetStringSelection()
             self.__Local_Init( ["SORT"] )
             self.Enable_Tasks()
 
     def On_Tag_Add ( self, event ):
-        wx.Yield()
         dlg = cTagDialog ( self )
         
         Result = dlg.ShowModal()
@@ -2012,7 +2010,6 @@ class cMainFrame( wx.Frame ):
         self.Enable_Tasks()
         
     def On_Tag_Last (self, event):
-        wx.Yield()
         Tag = Config.Config ["Last_Tag"]
         Row = self.Current_Ctrl.GetFirstSelected()
         while Row != -1:
@@ -2026,7 +2023,6 @@ class cMainFrame( wx.Frame ):
         self.Enable_Tasks()
     
     def On_Tag_Remove ( self, event ):
-        wx.Yield()
         Row = self.Current_Ctrl.GetFirstSelected()
         while Row != -1:
             ROM = self.Current_Ctrl.Get_ROM ( Row )
@@ -2035,7 +2031,7 @@ class cMainFrame( wx.Frame ):
             
             Row = self.Current_Ctrl.GetNextSelected( Row )
         
-        self.__Local_Init( ["TAGS" ] ) # had SORT
+        self.__Local_Init( ["TAGS", "SORT" ] ) # had SORT
 
         if self.Current_Ctrl.GetItemCount() == 0 and self.Tag_Choice.GetStringSelection() != _( "Hidden ROMs" ):
             Config.Config ["Current_Tag"] = _( "All ROMs" )
@@ -2045,7 +2041,6 @@ class cMainFrame( wx.Frame ):
         self.Enable_Tasks()
 
     def On_Tag_Rename ( self, event ):
-        wx.Yield()
         dlg = wx.TextEntryDialog(self, _('New Tag Name for %s') % self.Tag_Choice.GetStringSelection(), _('Rename Tag'), '')
         if dlg.ShowModal() == wx.ID_OK:
             Res = True
@@ -2063,7 +2058,6 @@ class cMainFrame( wx.Frame ):
             self.Enable_Tasks()
     
     def On_Tag_Delete ( self, event ):
-        wx.Yield()
         Res = wx.MessageBox( _( 'Are you sure you want to delete the current tag?' ), _( 'Delete Tag' ), wx.YES_NO| wx.ICON_QUESTION )
         if Res == wx.YES:
             MyROMS.Delete_Tag ( self.Tag_Choice.GetStringSelection() )
@@ -2074,7 +2068,6 @@ class cMainFrame( wx.Frame ):
             self.Enable_Tasks()
 
     def On_Recover_Tags( self, event ): # wxGlade: cMainFrame.<event_handler>
-        wx.Yield()
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
         
         Tag_Shelve = MyROMS.Get_Tag_Shelve () 
