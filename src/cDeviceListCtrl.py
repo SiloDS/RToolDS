@@ -359,9 +359,16 @@ class cDeviceListCtrl( wx.ListCtrl ):
         for ROM in self.Pending:
             OK, Data, Save = ROM.Get_ROM_Data ( Get_Save = True )
             if OK:
-                Data = Data [0:ROM.Effective_Size]
-                dlg.Guage1.SetRange ( ROM.Effective_Size )
-                Temp = ROM.Effective_Size
+                if Config.Config ["Use_Trimmed"]:
+                    Data = Data [0:ROM.Effective_Size]
+                    dlg.Guage1.SetRange ( ROM.Effective_Size )
+                    Temp = ROM.Effective_Size
+                    ES = Temp
+                else:
+                    Data = Data [0:ROM.ROM_Size]
+                    dlg.Guage1.SetRange ( ROM.ROM_Size )
+                    Temp = ROM.ROM_Size
+                    ES = Temp
                 Pos = 0
                 if Config.Config ["Use_Rename_Popup"] == False:
                     FileOutName = Utils.Get_Name_on_Device (ROM)
@@ -373,7 +380,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     Temp = Temp - ( self.BLK_SIZE )
                     Pos = Pos + self.BLK_SIZE
                     if Temp > 0:
-                        dlg.Guage1.SetValue ( ROM.Effective_Size - Temp )
+                        dlg.Guage1.SetValue ( ES - Temp )
                     else:
                         FileOut.write ( Data[Pos+self.BLK_SIZE:] )
                     dlg.Update()
@@ -392,7 +399,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 
                 if not dlg.Abort:
                     Processed_ROMS.append(ROM)
-                    dlg.Guage1.SetValue ( ROM.Effective_Size-1 )
+                    dlg.Guage1.SetValue ( ES-1 )
                 else:
                     try:
                         os.unlink ( os.path.join ( Config.Config["Device_Path"], ROM.ROM_File ) )
@@ -658,11 +665,22 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 return self.Get_ROM ( item ).Save_Type
             elif Config.Config ["CartColumns"][col] == "Size":
 #                return Utils.Format_ROM_Size ( self.Size_List [ item ] )
-                try:
-                    s = Utils.Format_ROM_Size ( self.Get_ROM ( item ).Size_On_Device )
-                except:
-                    s = Utils.Format_ROM_Size(self.Get_ROM ( item ).Effective_Size)
-                return s
+                if self.Get_ROM ( item ) not in self.Pending:
+                    try:
+                        s = Utils.Format_ROM_Size ( self.Get_ROM ( item ).Size_On_Device )
+                    except:
+    #                    s = Utils.Format_ROM_Size(self.Get_ROM ( item ).Effective_Size)
+                        if Config.Config ["Use_Trimmed"]:
+                            s = Utils.Format_ROM_Size (self.Get_ROM ( item ).Effective_Size)
+                        else:
+                            s = Utils.Format_ROM_Size (self.Get_ROM ( item ).ROM_Size)
+                    return s
+                else:
+                    if Config.Config ["Use_Trimmed"]:
+                        s = Utils.Format_ROM_Size (self.Get_ROM ( item ).Effective_Size)
+                    else:
+                        s = Utils.Format_ROM_Size (self.Get_ROM ( item ).ROM_Size)
+                    return s
             elif Config.Config ["CartColumns"][col] == "Internal Name":
                 return self.Get_ROM ( item ).Internal_Name
             elif Config.Config ["CartColumns"][col] == "Serial":

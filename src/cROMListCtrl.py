@@ -115,7 +115,10 @@ class cROMListCtrl( wx.ListCtrl ):
             elif Config.Config ["ROMColumns"][col] == "Save Type":
                 return self.Get_ROM ( item ).Save_Type
             elif Config.Config ["ROMColumns"][col] == "Size":
-                return Utils.Format_ROM_Size (self.Get_ROM ( item ).Effective_Size)
+                if Config.Config ["Use_Trimmed"]:
+                    return Utils.Format_ROM_Size (self.Get_ROM ( item ).Effective_Size)
+                else:
+                    return Utils.Format_ROM_Size (self.Get_ROM ( item ).ROM_Size)
             elif Config.Config ["ROMColumns"][col] == "Internal Name":
                 return self.Get_ROM ( item ).Internal_Name
             elif Config.Config ["ROMColumns"][col] == "Serial":
