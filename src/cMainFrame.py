@@ -861,6 +861,11 @@ class cMainFrame( wx.Frame ):
                 else:
                     Config.Config ["Use_Trimmed"] = False
                     Config.Config ["ROMColumns"] = [ "Icon", "Release Number", "Name", "Size" ]
+            else:
+                if My_Wizard.GetResult ( "Use_Trimmed" ):
+                    Config.Config ["Use_Trimmed"] = True
+                else:
+                    Config.Config ["Use_Trimmed"] = False
                 
             try:
                 os.mkdir ( "cache" )
