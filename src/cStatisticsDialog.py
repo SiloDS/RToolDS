@@ -112,8 +112,11 @@ class cStatisticsDialog(wx.Dialog):
         Size = 0
         AllXXXX = 0
         UnknownCount = 0
+        Current_Count = 0
         MyROMS.Process_All = True
         for ROM in MyROMS:
+            if ROM.Found:
+                Current_Count += 1
             if ROM.Comment [0].upper() == "U":
                 UnknownCount += 1
                 continue
@@ -142,11 +145,11 @@ class cStatisticsDialog(wx.Dialog):
         SummaryText += _("Demo ROMs") + " (XXXX) : %d\n\n" % AllXXXX
 
         SummaryText += _("My Library") + " :\n\n"
-        SummaryText += _("Total Official ROMs") + " : %d\n" % (MyROMS.Current_Count - UnknownCount)
-        SummaryText += _("Official Game ROMs") + " : %d\n" % (MyROMS.Current_Count - UnknownCount - MyXXXX)
+        SummaryText += _("Total Official ROMs") + " : %d\n" % (Current_Count - UnknownCount)
+        SummaryText += _("Official Game ROMs") + " : %d\n" % (Current_Count - UnknownCount - MyXXXX)
         SummaryText += _("Official Demo ROMs") + " : %d\n" % (MyXXXX)
         SummaryText += _("Unknown ROMs") + " : %d\n\n" % (UnknownCount)
-        SummaryText += _("Official Missing ROMs  : %d of which %d are Demo (XXXX) ROMs") % (MyROMS.Master_List_Count - MyROMS.Current_Count, len (XXXX)) + "\n\n"
+        SummaryText += _("Official Missing ROMs  : %d of which %d are Demo (XXXX) ROMs") % (MyROMS.Master_List_Count - Current_Count, len (XXXX)) + "\n\n"
 
         SummaryText += _("ROM Library Size") + " : %s" % (Utils.Format_Normal_Size (Size))
 
@@ -159,11 +162,14 @@ class cStatisticsDialog(wx.Dialog):
             if Key != 255:
                 Temp [Key] = 0
 
+        MyROMS.Process_All = True
         for ROM in MyROMS:
-            try:
-                Temp [ROM.Location] = Temp [ROM.Location] + 1
-            except:
-                pass
+            if ROM.Found:
+                try:
+                    Temp [ROM.Location] = Temp [ROM.Location] + 1
+                except:
+                    pass
+        MyROMS.Process_All = False
             
         for Key in Temp.keys():
             if Temp[Key] != 0:
@@ -176,13 +182,16 @@ class cStatisticsDialog(wx.Dialog):
             if Key != 0:
                 Temp [Key] = 0
 
+        MyROMS.Process_All = True
         for ROM in MyROMS:
-            try:
-                for t in Temp.keys():
-                    if t & ROM.Language: 
-                        Temp [t] = Temp [t] + 1
-            except:
-                pass
+            if ROM.Found:
+                try:
+                    for t in Temp.keys():
+                        if t & ROM.Language: 
+                            Temp [t] = Temp [t] + 1
+                except:
+                    pass
+        MyROMS.Process_All = False
             
         for Key in Temp.keys():
             if Temp[Key] != 0:
@@ -194,11 +203,14 @@ class cStatisticsDialog(wx.Dialog):
         for Key in MyROMS.Genres:
             Temp [Key] = 0
 
+        MyROMS.Process_All = True
         for ROM in MyROMS:
-            try:
-                Temp [ROM.Genre] = Temp [ROM.Genre] + 1
-            except:
-                pass
+            if ROM.Found:
+                try:
+                    Temp [ROM.Genre] = Temp [ROM.Genre] + 1
+                except:
+                    pass
+        MyROMS.Process_All = False
             
         for Key in Temp.keys():
             if Temp[Key] != 0:
