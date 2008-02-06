@@ -854,12 +854,13 @@ class cMainFrame( wx.Frame ):
             
             Config.Config ["Default_Device"] = My_Wizard.GetResult ( "Default_Device" )
             
-            if My_Wizard.GetResult ( "Use_Trimmed" ):
-                Config.Config ["Use_Trimmed"] = True
-                Config.Config ["ROMColumns"] = [ "Icon", "Release Number", "Name", "Size", "Trimmed" ]
-            else:
-                Config.Config ["Use_Trimmed"] = False
-                Config.Config ["ROMColumns"] = [ "Icon", "Release Number", "Name", "Size" ]
+            if UseDummy:
+                if My_Wizard.GetResult ( "Use_Trimmed" ):
+                    Config.Config ["Use_Trimmed"] = True
+                    Config.Config ["ROMColumns"] = [ "Icon", "Release Number", "Name", "Size", "Trimmed" ]
+                else:
+                    Config.Config ["Use_Trimmed"] = False
+                    Config.Config ["ROMColumns"] = [ "Icon", "Release Number", "Name", "Size" ]
                 
             try:
                 os.mkdir ( "cache" )
