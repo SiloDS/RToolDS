@@ -1117,6 +1117,7 @@ class cMainFrame( wx.Frame ):
         Config.Config ["Current_Search"] = ""
         self.In_Search_Clear = False
         self.__Local_Init( "SEARCH" )
+        self.ROMList.SetFocus()
         
     def On_Search_Clear_All( self, event ): # wxGlade: cMainFrame.<event_handler>
         try:
@@ -2171,9 +2172,9 @@ class cMainFrame( wx.Frame ):
             self.In_Init = True
 #            self.In_Device_Dir_Callback = True
             if ColumnsChanged:
-                self.__Local_Init ( ["ROMS", "DEVICE", "COLUMNS"] ) # Did have "GFX"
+                self.__Local_Init ( ["ROMS", "DEVICE", "COLUMNS", "SEARCH"] ) # Did have "GFX"
             else:
-                self.__Local_Init ( ["ROMS", "DEVICE"] )
+                self.__Local_Init ( ["ROMS", "DEVICE", "SEARCH"] )
             self.In_Init = False
 #            self.In_Device_Dir_Callback = False
         self.ROMList.UpdateIcons()
