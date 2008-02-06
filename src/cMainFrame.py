@@ -2129,7 +2129,7 @@ class cMainFrame( wx.Frame ):
             
             Config.Config ["Current_Tag"] = _( "All ROMs" )
             
-            self.__Local_Init( ["TAGS" ] ) # had SORT
+            self.__Local_Init( ["TAGS", "SORT", "SEARCH" ] ) # had SORT
             self.Enable_Tasks()
 
     def On_Recover_Tags( self, event ): # wxGlade: cMainFrame.<event_handler>
