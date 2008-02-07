@@ -180,7 +180,11 @@ class cDeviceListCtrl( wx.ListCtrl ):
                         pass
                     
         self.Sort ()
-                
+        
+#        for count in range (len (self.Pending)-1,-1,-1):
+#            if self.Pending[count].Found == False:
+#                del self.Pending[count]
+
         for ROM in self.Pending:
             self.CRC_List.append( ROM.ROM_CRC )
             ROM.Size_On_Device = ROM.Effective_Size

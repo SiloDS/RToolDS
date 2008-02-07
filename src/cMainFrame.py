@@ -2177,6 +2177,7 @@ class cMainFrame( wx.Frame ):
         if Result == wx.ID_OK:
             self.In_Init = True
 #            self.In_Device_Dir_Callback = True
+            self.Device_List.Clear_Pending()
             if ColumnsChanged:
                 self.__Local_Init ( ["ROMS", "DEVICE", "COLUMNS", "SEARCH"] ) # Did have "GFX"
             else:
@@ -2398,6 +2399,7 @@ class cMainFrame( wx.Frame ):
         Res = wx.MessageBox( _( "Are you sure you want to Run the Setup Wizard?\n\nThis will Delete All of RToolDS's Settings\nDownloaded Content will be Preserved" ), _( 'Setup Wizard' ), wx.YES_NO| wx.ICON_QUESTION )
         if Res == wx.YES:
             self.Run_Wizard(False)
+            self.Device_List.Clear_Pending()
             self.__Local_Init( ["SORT", "ROMS", "ICONS", "DEVICE", "SAVES" ] )
 
     def On_Device_List_Context_Menu( self, event ): # wxGlade: cMainFrame.<event_handler>
