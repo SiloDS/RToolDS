@@ -70,6 +70,15 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1218 - Bumped to 1218
+v0.2.1217 - Fixed 114 - Wizard/Update Linker Device Refresh Bug
+v0.2.1216 - Fixed 115 - Menu Directories > Invalid Directory Fixes in Wizard
+v0.2.1215 - Fixed #107 - Statistics Errors
+v0.2.1214 - Fixed 111 - Disable ROM Trimming Bugs
+v0.2.1213 - Fixed #112 - Options Menu Gap
+v0.2.1211 - Fixed Some of #110 - Re-Run Startup Wizard
+v0.2.1210 - Fixed #95 - ROM List Button Slection Bug
+v0.2.1209 - Fixed #85 - Delete Tag Not Updating List
 v0.2.1205 - Bumped to 1205
 v0.2.1204 - Fixed #104 - Release Number Search
 v0.2.1203 - Fixed #105 - Slow Performance Button/Task Delay Bug
