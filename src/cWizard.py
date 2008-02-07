@@ -105,6 +105,17 @@ class cWizard:
         Wizard.Fit()
         Wizard.Layout()
         
+        self.Wizard = Wizard
+        self.Page1 = Page1
+        self.Page2 = Page2
+        self.Page3 = Page3
+        self.Page4 = Page4
+        self.Page5 = Page5
+        self.Page6 = Page6
+        self.Page7 = Page7
+
+        Wizard.Bind(wiz.EVT_WIZARD_PAGE_CHANGING, self.OnWizPageChanging)
+
         Result = Wizard.RunWizard( Page1 )
 
         del ( Wizard )
@@ -147,6 +158,25 @@ class cWizard:
                             return Device[0]
                 return Config.Config ["Devices"][0]
 
+    def OnWizPageChanging (self, event):
+        if event.Page == self.Page1:
+            if os.path.isdir (self.ROM_Path.GetValue()) == False:
+                wx.MessageBox( _('ROM Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
+                event.Veto()
+
+        if event.Page == self.Page2:
+            if os.path.isdir (self.Save_Path.GetValue()) == False:
+                wx.MessageBox( _('Save Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
+                event.Veto()
+
+        if event.Page == self.Page3:
+            if os.path.isdir (self.Image_Path.GetValue()) == False:
+                wx.MessageBox( _('Image Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
+                event.Veto()
+            if os.path.isdir (self.NFO_Path.GetValue()) == False:
+                wx.MessageBox( _('NFO Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
+                event.Veto()
+
 def makePageTitle( wizPg, title ):
         sizer = wx.BoxSizer( wx.VERTICAL )
         wizPg.SetSizer( sizer )
@@ -161,3 +191,4 @@ class TitledPage( wiz.WizardPageSimple ):
         wiz.WizardPageSimple.__init__( self, parent )
         self.sizer = makePageTitle( self, title )
         self.Layout()
+
