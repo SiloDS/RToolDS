@@ -25,7 +25,7 @@ class ROM:
         self.Save_Type      = _( "Unknown" )
         self.ROM_Size       = 0
         self.Publisher      = _( "Unknown" )
-        self.Location       = 254
+        self.Location       = 26 # was 254
         self.Language       = 0
         self.Source_ROM     = _( "Unknown" )
         self.Comment        = 0

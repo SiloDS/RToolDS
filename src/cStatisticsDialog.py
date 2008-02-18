@@ -149,7 +149,7 @@ class cStatisticsDialog(wx.Dialog):
         SummaryText += _("Official Game ROMs") + " : %d\n" % (Current_Count - UnknownCount - MyXXXX)
         SummaryText += _("Official Demo ROMs") + " : %d\n" % (MyXXXX)
         SummaryText += _("Unknown ROMs") + " : %d\n\n" % (UnknownCount)
-        SummaryText += _("Official Missing ROMs  : %d of which %d are Demo (XXXX) ROMs") % (MyROMS.Master_List_Count - Current_Count, len (XXXX)) + "\n\n"
+        SummaryText += _("Official Missing ROMs : %d of which %d are Demo (XXXX) ROMs") % (MyROMS.Master_List_Count - Current_Count, len (XXXX)) + "\n\n"
 
         SummaryText += _("ROM Library Size") + " : %s" % (Utils.Format_Normal_Size (Size))
 
@@ -186,9 +186,12 @@ class cStatisticsDialog(wx.Dialog):
         for ROM in MyROMS:
             if ROM.Found:
                 try:
-                    for t in Temp.keys():
-                        if t & ROM.Language: 
-                            Temp [t] = Temp [t] + 1
+                    if ROM.Language == 0:
+                        Temp [-1] += 1
+                    else:
+                        for t in Temp.keys():
+                            if t & ROM.Language and t != -1: 
+                                Temp [t] = Temp [t] + 1
                 except:
                     pass
         MyROMS.Process_All = False
@@ -202,6 +205,7 @@ class cStatisticsDialog(wx.Dialog):
         Temp = {}
         for Key in MyROMS.Genres:
             Temp [Key] = 0
+        Temp ["Unknown"] = 0
 
         MyROMS.Process_All = True
         for ROM in MyROMS:
@@ -211,10 +215,14 @@ class cStatisticsDialog(wx.Dialog):
                 except:
                     pass
         MyROMS.Process_All = False
-            
-        for Key in Temp.keys():
+        
+        unknown = Temp["Unknown"]
+        del Temp["Unknown"]
+        for Key in sorted (Temp.keys()):
             if Temp[Key] != 0:
                 self.Statistics_Text.AppendText("\n%s : %d" % (Key, Temp[Key]))
+        if unknown > 0:
+            self.Statistics_Text.AppendText("\n%s : %d" % ("Unknown", unknown))
 
     def On_Window_Size ( self, event ):
         Config.Config ["Statistics_Size"] = self.GetSize()
