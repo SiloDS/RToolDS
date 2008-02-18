@@ -86,6 +86,8 @@ class cROMListCtrl( wx.ListCtrl ):
             elif Config.Config ["ROMColumns"][col] == "Original Size":
                 return Utils.Format_ROM_Size (self.Get_ROM ( item ).ROM_Size)
             elif Config.Config ["ROMColumns"][col] == "Trimmed":
+                if Config.Config ["Use_Trimmed"] == False:
+                    return _("No")
                 if self.Get_ROM ( item ).Trimmed:
                     return _("Yes")
                 else:
