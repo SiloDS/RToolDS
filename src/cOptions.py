@@ -514,20 +514,21 @@ class cOptions( wx.Dialog ):
 #_("Select Device Directory") + " : ")
 #_("Select Save Game Directory") + " : ")
 
-        Msg = ""
+        Msg = []
         if os.path.isdir(self.ROM_Path.GetValue()) == False:
-            Msg = _("Invalid ROM Directory")
+            Msg.append (_("Invalid ROM Directory"))
         if os.path.isdir(self.Image_Path.GetValue()) == False:
-            Msg = _("Invalid Images Directory")
+            Msg.append (_("Invalid Images Directory"))
         if os.path.isdir(self.NFO_Path.GetValue()) == False:
-            Msg = _("Invalid NFO Directory")
+            Msg.append (_("Invalid NFO Directory"))
         if os.path.isdir(self.Save_Path.GetValue()) == False:
-            Msg = _("Invalid Save Database Directory")
+            Msg.append (_("Invalid Save Database Directory"))
         if os.path.isdir(self.Device_Path.GetValue()) == False:
-            Msg = _("Invalid Device Directory")
+            Msg.append (_("Invalid Device Directory"))
             
-        if Msg != "":
-            wx.MessageBox( Msg, _('Invalid Directory'), wx.OK| wx.ICON_EXCLAMATION )
+        for m in Msg:
+            wx.MessageBox( m, _('Invalid Directory'), wx.OK| wx.ICON_EXCLAMATION )
+        if Msg != []:
             return
 
         self.ProcessOption ( "ROM_Path", self.ROM_Path.GetValue() )
