@@ -129,10 +129,16 @@ class cROMListCtrl( wx.ListCtrl ):
                     return _("Unknown")
                 return Serial
             elif Config.Config ["ROMColumns"][col] == "Version":
-                return self.Get_ROM ( item ).Version
+                a = self.Get_ROM ( item ).Version
+                if a == _("Unknown"):
+                    return _("N/A")
+                return a
             elif Config.Config ["ROMColumns"][col] == "Tags":
                 Str = ", "
-                return Str.join (self.Get_ROM ( item ).Tags)
+                a = Str.join (self.Get_ROM ( item ).Tags)
+                if a == "":
+                    return _("None")
+                return a
             elif Config.Config ["ROMColumns"][col] == "Wi-Fi":
                 return self.Get_ROM ( item ).Wifi
             elif Config.Config ["ROMColumns"][col] == "Filename":

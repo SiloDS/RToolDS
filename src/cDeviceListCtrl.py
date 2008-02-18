@@ -693,10 +693,16 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     return a
                 return _("Unknown")
             elif Config.Config ["CartColumns"][col] == "Version":
-                return self.Get_ROM ( item ).Version
+                a = self.Get_ROM ( item ).Version
+                if a == _("Unknown"):
+                    return _("N/A")
+                return a
             elif Config.Config ["CartColumns"][col] == "Tags":
                 Str = ", "
-                return Str.join ( self.Get_ROM ( item ).Tags )
+                a = Str.join ( self.Get_ROM ( item ).Tags )
+                if a == "":
+                    return _("None")
+                return a
             elif Config.Config ["CartColumns"][col] == "Wi-Fi":
                 return self.Get_ROM ( item ).Wifi
             elif Config.Config ["CartColumns"][col] == "Filename":
