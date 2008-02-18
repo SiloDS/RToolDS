@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 29
+Config_Version = 30
 Version_String = "2.0.1218 Beta"
 
 Config = {}
@@ -161,7 +161,7 @@ def Load_Defaults( Version ):
                               "Original Size", "Release Group", "CRC", "Save Type", 
                               "Publisher", "Internal Name", "Serial", "Version", "Wi-Fi", "Tags" ]
         Config ["ROMColumn_Titles"] = { "Icon":_( "Icon" ), "Release Number":_( "No" ), 
-                                        "Name":_( "Name" ), "Size":_( "Size" ), "Trimmed":_( "Trimmed" ), 
+                                        "Name":_( "Title" ), "Size":_( "Size" ), "Trimmed":_( "Trimmed" ), 
                                         "Saves":_( "Saves" ), "Archive":_( "Archive" ), 
                                         "ROM File":_( "ROM File" ), "Location":_( "Region" ), 
                                         "Genre":_( "Genre" ), "Original Size":_( "Original Size" ), 
@@ -176,9 +176,9 @@ def Load_Defaults( Version ):
                                        "Save Type":99, "Publisher":88, "Internal Name":105, "Serial":99, 
                                        "Version":27, "Wi-Fi":37, "Tags":12 }
         Config ["CartColumn_Titles"] = { "Icon":_( "Icon" ), "Release Number":_( "No" ), 
-                                        "Name":_( "Name" ), "Size":_( "Size" ), "Trimmed":_( "Trimmed" ), 
+                                        "Name":_( "Title" ), "Size":_( "Size" ), "Trimmed":_( "Trimmed" ), 
                                         "Saves":_( "Saves" ), "Archive":_( "Archive" ), 
-                                        "ROM File":_( "Filename" ), "Location":_( "Region" ), 
+                                        "ROM File":_( "ROM File" ), "Location":_( "Region" ), 
                                         "Genre":_( "Genre" ), "Original Size":_( "Original Size" ), 
                                         "Release Group":_( "Group" ), "CRC":_( "CRC" ), 
                                         "Save Type":_( "Save Type" ), "Publisher":_( "Publisher" ), 
@@ -428,6 +428,17 @@ def Load_Defaults( Version ):
     if Version < 29:
         Config ["Sizes"] = [0, 8*1024*1024, 16*1024*1024,
                             32*1024*1024, 64*1024*1024, 128*1024*1024, 256*1024*1024 ]
+    if Version < 30:
+        Config ["Columns"].append ("Filename")
+        Config ["ROMColumn_Titles"]["Filename"] = "Filename"
+        Config ["ROMColumn_Sizes"]["Filename"] = 99
+        Config ["CartColumn_Titles"]["Filename"] = "Filename"
+        Config ["CartColumn_Sizes"]["Filename"] = 99
+        Config ["Columns"].append ("Dumped")
+        Config ["ROMColumn_Titles"]["Dumped"] = "Dumped"
+        Config ["ROMColumn_Sizes"]["Dumped"] = 99
+        Config ["CartColumn_Titles"]["Dumped"] = "Dumped"
+        Config ["CartColumn_Sizes"]["Dumped"] = 99
 #        
 #        
 #        Config ["Screen_Maximized"] = False

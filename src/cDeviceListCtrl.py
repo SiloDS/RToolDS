@@ -688,7 +688,10 @@ class cDeviceListCtrl( wx.ListCtrl ):
             elif Config.Config ["CartColumns"][col] == "Internal Name":
                 return self.Get_ROM ( item ).Internal_Name
             elif Config.Config ["CartColumns"][col] == "Serial":
-                return self.Get_ROM ( item ).Serial
+                a = self.Get_ROM ( item ).Serial
+                if a != "":
+                    return a
+                return _("Unknown")
             elif Config.Config ["CartColumns"][col] == "Version":
                 return self.Get_ROM ( item ).Version
             elif Config.Config ["CartColumns"][col] == "Tags":
@@ -696,6 +699,10 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 return Str.join ( self.Get_ROM ( item ).Tags )
             elif Config.Config ["CartColumns"][col] == "Wi-Fi":
                 return self.Get_ROM ( item ).Wifi
+            elif Config.Config ["CartColumns"][col] == "Filename":
+                return self.Get_ROM ( item ).Orig_Filename
+            elif Config.Config ["CartColumns"][col] == "Dumped":
+                return self.Get_ROM ( item ).Dump_Date
             else:
                 return ""
         except:

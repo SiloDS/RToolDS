@@ -374,13 +374,13 @@ class cOptions( wx.Dialog ):
             self.Device_Columns.CheckItem ( index )
 
         for Column in Config.Config ["CartColumns"]:
-            if Column == "Icon":
+            if Column == "Icon" or Column == "ROM File (No Ext)":
                 continue
             index = self.Device_Columns.InsertStringItem ( sys.maxint, Column )
             self.Device_Columns.SetStringItem ( index, 1, Config.Config ["CartColumn_Titles"][Column] )
             self.Device_Columns.CheckItem ( index )
         for Column in Config.Config ["Columns"]:
-            if Column == "Icon":
+            if Column == "Icon" or Column == "ROM File (No Ext)":
                 continue
             if Column not in Config.Config ["CartColumns"]:
                 if Column != "Archive":

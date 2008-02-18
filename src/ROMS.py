@@ -51,7 +51,7 @@ class ROM:
         self.Found          = False
         self.Dump_Date      = _( "Unknown" )
         self.Duplicate_ID   = "0"
-        self.Orig_Filename  = ""
+        self.Orig_Filename  = _( "Unknown" )
         
     def Trim ( self ):
         global TrimmedShelve

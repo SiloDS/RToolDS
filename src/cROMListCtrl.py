@@ -135,6 +135,10 @@ class cROMListCtrl( wx.ListCtrl ):
                 return Str.join (self.Get_ROM ( item ).Tags)
             elif Config.Config ["ROMColumns"][col] == "Wi-Fi":
                 return self.Get_ROM ( item ).Wifi
+            elif Config.Config ["ROMColumns"][col] == "Filename":
+                return self.Get_ROM ( item ).Orig_Filename
+            elif Config.Config ["ROMColumns"][col] == "Dumped":
+                return self.Get_ROM ( item ).Dump_Date
             else:
                 return ""
         except:
