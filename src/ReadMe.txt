@@ -70,6 +70,13 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1227 - Bumped to 1227
+v0.2.1226 - More Column Changes
+v0.2.1225 - Various Column Changes
+v0.2.1224 - Fixed #107: Statistics Errors
+v0.2.1223 - Added New Trim File
+v0.2.1222 - Fixed #115: Menu Directories > Invalid Directory Fixes
+v0.2.1221 - Fixed #111: Disable ROM Trimming Bugs
 v0.2.1218 - Bumped to 1218
 v0.2.1217 - Fixed 114 - Wizard/Update Linker Device Refresh Bug
 v0.2.1216 - Fixed 115 - Menu Directories > Invalid Directory Fixes in Wizard
