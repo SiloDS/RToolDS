@@ -41,5 +41,5 @@ setup(
         }
     ], 
         data_files=[( ".", 
-                   ["ReadMe.txt", "License.txt", "unrar.dll", "RToolDS_Trimmed.dat.new"] )]
+                   ["ReadMe.txt", "License.txt", "unrar.dll", "RToolDS_Trimmed.dat.new", "ADVANsCEne_RToolDS.xml"] )]
  )

@@ -175,12 +175,14 @@ vista:
   CreateDirectory "$APPDATA\RToolDS"
   SetOutPath "$APPDATA\RToolDS"
   File "RToolDS_Trimmed.dat.new"
+  File "ADVANsCEne_RToolDS.xml"
   Goto go_end
 
 not_vista:
   CreateDirectory "$APPDATA\RToolDS"
   SetOutPath "$APPDATA\RToolDS"
   File "RToolDS_Trimmed.dat.new"
+  File "ADVANsCEne_RToolDS.xml"
 
 go_end:
 

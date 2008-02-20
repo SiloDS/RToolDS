@@ -123,6 +123,8 @@ class cLogDialog( wx.Dialog ):
             else:
                 self.Log.AppendText(_("Failed") + "\n")
                 self.Todo.append ("Failed")
+        elif Version == -1:
+            self.Log.AppendText(_("Internet Connection Error") + "\n\n")
         else:
             self.Log.AppendText(_("No Updates Available") + "\n\n")
         
