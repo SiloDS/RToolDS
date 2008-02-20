@@ -1351,7 +1351,7 @@ class cMainFrame( wx.Frame ):
         self.SaveType.SetLabel( _( "Save Type : %s" ) % ROM.Save_Type )
         
         Str = ", "
-        Str = Str.join ( ROM.Tags )
+        Str = Str.join ( sorted (ROM.Tags) )
         if Str == "":
             Str = _( "Tags" ) + " : " + _( "None" )
         else:

@@ -174,7 +174,7 @@ def Load_Defaults( Version ):
                                        "Trimmed":37, "Archive":380, "ROM File":321, "Location":60, 
                                        "Genre":76, "Original Size":54, "Release Group":70, "CRC":68, 
                                        "Save Type":99, "Publisher":88, "Internal Name":105, "Serial":99, 
-                                       "Version":27, "Wi-Fi":37, "Tags":12 }
+                                       "Version":27, "Wi-Fi":37, "Tags":105 }
         Config ["CartColumn_Titles"] = { "Icon":_( "Icon" ), "Release Number":_( "No" ), 
                                         "Name":_( "Title" ), "Size":_( "Size" ), "Trimmed":_( "Trimmed" ), 
                                         "Saves":_( "Saves" ), "Archive":_( "Archive" ), 
@@ -189,7 +189,7 @@ def Load_Defaults( Version ):
                                         "Saves":50, "Trimmed":37, "Archive":380, "ROM File":321, 
                                         "Location":60, "Genre":76, "Original Size":54, 
                                         "Release Group":70, "CRC":68, "Save Type":99, "Publisher":88, 
-                                        "Internal Name":105, "Serial":99, "Version":27, "Wi-Fi":37, "Tags":12 }
+                                        "Internal Name":105, "Serial":99, "Version":27, "Wi-Fi":37, "Tags":105 }
         Config ["Languages"] = {
                 0:_("All Languages"), 
                 1:_("French"), 

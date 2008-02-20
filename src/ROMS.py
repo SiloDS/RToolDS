@@ -49,7 +49,7 @@ class ROM:
         self.Tags           = []
         self.Trimmed_CRC    = ""
         self.Found          = False
-        self.Dump_Date      = _( "N/A" )
+        self.Dump_Date      = _( "Unknown" )
         self.Duplicate_ID   = "0"
         self.Orig_Filename  = _( "Unknown" )
         
@@ -732,7 +732,7 @@ class ROMS:
         global Tag_Shelve
         
         try:
-            return Tag_Shelve ["Tags"]
+            return sorted (Tag_Shelve ["Tags"])
         except:
             return []
 
