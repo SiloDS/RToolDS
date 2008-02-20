@@ -1361,8 +1361,10 @@ class cMainFrame( wx.Frame ):
         
         self.ReleaseNumber.SetLabel( _("Rel No : %s") % ROM.Comment)
         
-        self.ROM_Icon.SetBitmap(self.Current_Ctrl.Get_Item_Icon(Item))
-        
+        try:
+            self.ROM_Icon.SetBitmap(self.Current_Ctrl.Get_Item_Icon(Item))
+        except:
+            self.ROM_Icon.SetBitmap(GFX.catalog ["GFX_No_Icon"].getBitmap())
     
     def On_List_Focus ( self, event ):
         if event.EventObject.FocusedItem != -1 and self.In_Init == False:
