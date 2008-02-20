@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 30
+Config_Version = 31
 Version_String = "2.0.1227 Beta"
 
 Config = {}
@@ -99,18 +99,18 @@ def Load_Defaults( Version ):
         Config ["Hide_Case_Pictures"] = False
         Config ["Hide_Language"] = False
         Config ["Hide_Location"] = False
-        Config ["Hide_Genre"] = False
+        Config ["Hide_Genre"] = True
         Config ["Hide_Size"] = False
         Config ["Hide_Backup_Save_Games"] = False
         Config ["Hide_CRC"] = True
-        Config ["Hide_Publisher"] = True
+        Config ["Hide_Publisher"] = False
         Config ["Hide_Release_Group"] = True
-        Config ["Hide_Save_Game_Type"] = True
+        Config ["Hide_Save_Game_Type"] = False
         Config ["Hide_Internal_Name"] = True
         Config ["Hide_Serial"] = True
         Config ["Hide_Version"] = True
-        Config ["Hide_Wifi"] = True
-        Config ["Hide_Tags"] = False
+        Config ["Hide_Wifi"] = False
+        Config ["Hide_Tags"] = True
         
         Config ["Show_Toolbar"] = True
         Config ["Toolbar_Size"] = "24"
@@ -439,6 +439,10 @@ def Load_Defaults( Version ):
         Config ["ROMColumn_Sizes"]["Dumped"] = 99
         Config ["CartColumn_Titles"]["Dumped"] = "Dumped"
         Config ["CartColumn_Sizes"]["Dumped"] = 99
+    if Version < 31:
+        Config ["Hide_Icon"] = True
+        Config ["Hide_ReleaseNumber"] = True
+        Config ["Hide_Title"] = True
 #        
 #        
 #        Config ["Screen_Maximized"] = False

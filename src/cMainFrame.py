@@ -45,7 +45,7 @@ STATUS_DEVICE = 2
 STATUS_FILTER = 4
 STATUS_ALL    = 7
 
-HIDDEN_ITEMS = 16
+HIDDEN_ITEMS = 19
 
 # Various Toolbar Id's
 ID_TOGGLE_INFO   = wx.NewId()
@@ -112,19 +112,22 @@ class cMainFrame( wx.Frame ):
         global ID_MENU_HIDE_ALL; ID_MENU_HIDE_ALL = wx.NewId()
         global ID_MENU_HIDE_SCREENSHOTS; ID_MENU_HIDE_SCREENSHOTS = wx.NewId()
         global ID_MENU_HIDE_CASE_PICTURES; ID_MENU_HIDE_CASE_PICTURES = wx.NewId()
-        global ID_MENU_HIDE_LANGUAGE; ID_MENU_HIDE_LANGUAGE = wx.NewId()
+        global ID_MENU_HIDE_ICON; ID_MENU_HIDE_ICON = wx.NewId()
+        global ID_MENU_HIDE_RELEASENUMBER; ID_MENU_HIDE_RELEASENUMBER = wx.NewId()
+        global ID_MENU_HIDE_TITLE; ID_MENU_HIDE_TITLE = wx.NewId()
         global ID_MENU_HIDE_LOCATION; ID_MENU_HIDE_LOCATION = wx.NewId()
-        global ID_MENU_HIDE_GENRE; ID_MENU_HIDE_GENRE = wx.NewId()
-        global ID_MENU_HIDE_SIZE; ID_MENU_HIDE_SIZE = wx.NewId()
-        global ID_MENU_HIDE_BACKUP_SAVE_GAMES; ID_MENU_HIDE_BACKUP_SAVE_GAMES = wx.NewId()
-        global ID_MENU_HIDE_CRC; ID_MENU_HIDE_CRC = wx.NewId()
         global ID_MENU_HIDE_PUBLISHER; ID_MENU_HIDE_PUBLISHER = wx.NewId()
         global ID_MENU_HIDE_RELEASE_GROUP; ID_MENU_HIDE_RELEASE_GROUP = wx.NewId()
-        global ID_MENU_HIDE_SAVE_GAME_TYPE; ID_MENU_HIDE_SAVE_GAME_TYPE = wx.NewId()
+        global ID_MENU_HIDE_GENRE; ID_MENU_HIDE_GENRE = wx.NewId()
         global ID_MENU_HIDE_INTERNAL_NAME; ID_MENU_HIDE_INTERNAL_NAME = wx.NewId()
-        global ID_MENU_HIDE_VERSION; ID_MENU_HIDE_VERSION = wx.NewId()
         global ID_MENU_HIDE_SERIAL; ID_MENU_HIDE_SERIAL = wx.NewId()
+        global ID_MENU_HIDE_VERSION; ID_MENU_HIDE_VERSION = wx.NewId()
+        global ID_MENU_HIDE_CRC; ID_MENU_HIDE_CRC = wx.NewId()
+        global ID_MENU_HIDE_SIZE; ID_MENU_HIDE_SIZE = wx.NewId()
         global ID_MENU_HIDE_WIFI; ID_MENU_HIDE_WIFI = wx.NewId()
+        global ID_MENU_HIDE_SAVE_GAME_TYPE; ID_MENU_HIDE_SAVE_GAME_TYPE = wx.NewId()
+        global ID_MENU_HIDE_BACKUP_SAVE_GAMES; ID_MENU_HIDE_BACKUP_SAVE_GAMES = wx.NewId()
+        global ID_MENU_HIDE_LANGUAGE; ID_MENU_HIDE_LANGUAGE = wx.NewId()
         global ID_MENU_HIDE_TAGS; ID_MENU_HIDE_TAGS = wx.NewId()
         global ID_MENU_HELP; ID_MENU_HELP = wx.NewId()
         global ID_MENU_ABOUT; ID_MENU_ABOUT = wx.NewId()
@@ -219,32 +222,38 @@ class cMainFrame( wx.Frame ):
         wxglade_tmp_menu.AppendItem(self.Hide_Screenshots)
         self.Hide_Case_Pictures = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_CASE_PICTURES, _("Hide Case Image"), _("Hide Case Image"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Hide_Case_Pictures)
-        self.Hide_Language = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_LANGUAGE, _("Hide Languages"), _("Hide Languages"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Language)
+        self.Hide_Icon = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_ICON, _("Hide Icon"), _("Hide Icon"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_Icon)
+        self.Hide_ReleaseNumber = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_RELEASENUMBER, _("Hide Release Number"), _("Hide Release Number"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_ReleaseNumber)
+        self.Hide_Title = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_TITLE, _("Hide Title"), _("Hide Title"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_Title)
         self.Hide_Location = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_LOCATION, _("Hide Region"), _("Hide Region"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Hide_Location)
-        self.Hide_Genre = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_GENRE, _("Hide Genre"), _("Hide Genre"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Genre)
-        self.Hide_Size = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_SIZE, _("Hide Size/Trimmed"), _("Hide Size/Trimmed"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Size)
-        self.Hide_Backup_Save_Games = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_BACKUP_SAVE_GAMES, _("Hide Save Games"), _("Hide Save Games"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Backup_Save_Games)
-        self.Hide_CRC = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_CRC, _("Hide CRC"), _("Hide CRC"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_CRC)
         self.Hide_Publisher = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_PUBLISHER, _("Hide Publisher"), _("Hide Publisher"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Hide_Publisher)
         self.Hide_Release_Group = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_RELEASE_GROUP, _("Hide Release Group"), _("Hide Release Group"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Hide_Release_Group)
-        self.Hide_Save_Game_Type = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_SAVE_GAME_TYPE, _("Hide Save Type"), _("Hide Save Type"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Save_Game_Type)
+        self.Hide_Genre = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_GENRE, _("Hide Genre"), _("Hide Genre"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_Genre)
         self.Hide_Internal_Name = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_INTERNAL_NAME, _("Hide Internal Name"), _("Hide Internal Name"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Hide_Internal_Name)
-        self.Hide_Version = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_VERSION, _("Hide Version/Dumped"), _("Hide Version/Dumped"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Version)
         self.Hide_Serial = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_SERIAL, _("Hide Serial"), _("Hide Serial"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Hide_Serial)
+        self.Hide_Version = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_VERSION, _("Hide Version/Dumped"), _("Hide Version/Dumped"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_Version)
+        self.Hide_CRC = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_CRC, _("Hide CRC"), _("Hide CRC"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_CRC)
+        self.Hide_Size = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_SIZE, _("Hide Size/Trimmed"), _("Hide Size/Trimmed"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_Size)
         self.Hide_Wifi = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_WIFI, _("Hide Wi-Fi"), _("Hide Wi-Fi"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Hide_Wifi)
+        self.Hide_Save_Game_Type = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_SAVE_GAME_TYPE, _("Hide Save Type"), _("Hide Save Type"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_Save_Game_Type)
+        self.Hide_Backup_Save_Games = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_BACKUP_SAVE_GAMES, _("Hide Save Games"), _("Hide Save Games"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_Backup_Save_Games)
+        self.Hide_Language = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_LANGUAGE, _("Hide Languages"), _("Hide Languages"), wx.ITEM_CHECK)
+        wxglade_tmp_menu.AppendItem(self.Hide_Language)
         self.Hide_Tags = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_TAGS, _("Hide Tags"), _("Hide Tags"), wx.ITEM_CHECK)
         wxglade_tmp_menu.AppendItem(self.Hide_Tags)
         self.MenuBar.Append(wxglade_tmp_menu, _("&Fields"))
@@ -269,7 +278,10 @@ class cMainFrame( wx.Frame ):
         self.ROMList = cROMListCtrl(self.Split_Panel1, -1, style=wx.LC_REPORT|wx.LC_VIRTUAL|wx.SUNKEN_BORDER|wx.WANTS_CHARS)
         self.Case_Bitmap = wx.StaticBitmap(self.Split_Panel2, -1, (GFX.catalog ["GFX_No_Case"].getBitmap()))
         self.ScreenShot_Bitmap = wx.StaticBitmap(self.Split_Panel2, -1, (GFX.catalog ["GFX_No_ScreenShot"].getBitmap()))
-        self.Languages = wx.StaticText(self.Split_Panel2, -1, _("Languages : "))
+        self.ROM_Icon_Label = wx.StaticText(self.Split_Panel2, -1, _("Icon : "))
+        self.ROM_Icon = wx.StaticBitmap(self.Split_Panel2, -1, (GFX.catalog ["GFX_No_Icon"].getBitmap()))
+        self.ReleaseNumber = wx.StaticText(self.Split_Panel2, -1, _("Rel Num : "))
+        self.ROM_Title = wx.StaticText(self.Split_Panel2, -1, _("Title : "))
         self.Location = wx.StaticText(self.Split_Panel2, -1, _("Region : "))
         self.Publisher = wx.StaticText(self.Split_Panel2, -1, _("Publisher : "))
         self.ReleaseGroup = wx.StaticText(self.Split_Panel2, -1, _("Release Group : "))
@@ -282,6 +294,7 @@ class cMainFrame( wx.Frame ):
         self.Wifi = wx.StaticText(self.Split_Panel2, -1, _("Wi-Fi : "))
         self.SaveType = wx.StaticText(self.Split_Panel2, -1, _("Save Type : "))
         self.SavedGames = wx.StaticText(self.Split_Panel2, -1, _("Save Games : "))
+        self.Languages = wx.StaticText(self.Split_Panel2, -1, _("Languages : "))
         self.Tags = wx.StaticText(self.Split_Panel2, -1, _("Tags : "))
         self.Device_Dir_Picker = filebrowse.DirBrowseButton(self.Split_Panel2, -1, changeCallback = self.Device_Dir_Picker_Callback, dialogTitle = _("Select Device Directory") + " : ", startDirectory = Config.Config ["Device_Path"], labelText = _("Device") + " : ")
         self.Device_Refresh_Button = wx.Button(self.Split_Panel2, -1, _("Refresh"), style=wx.BU_EXACTFIT)
@@ -330,19 +343,22 @@ class cMainFrame( wx.Frame ):
         self.Bind(wx.EVT_MENU, self.On_Hide_All_Items, id=ID_MENU_HIDE_ALL)
         self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Screenshots)
         self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Case_Pictures)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Language)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Icon)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_ReleaseNumber)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Title)
         self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Location)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Genre)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Size)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Backup_Save_Games)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_CRC)
         self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Publisher)
         self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Release_Group)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Save_Game_Type)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Genre)
         self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Internal_Name)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Version)
         self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Serial)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Version)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_CRC)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Size)
         self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Wifi)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Save_Game_Type)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Backup_Save_Games)
+        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Language)
         self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Tags)
         self.Bind(wx.EVT_MENU, self.On_Help, id=ID_MENU_HELP)
         self.Bind(wx.EVT_MENU, self.On_About, id=ID_MENU_ABOUT)
@@ -458,13 +474,17 @@ class cMainFrame( wx.Frame ):
         Device_Sizer3 = wx.FlexGridSizer(1, 3, 0, 0)
         ROM_Information_Sizer = wx.StaticBoxSizer(self.ROM_Information_Sizer_staticbox, wx.HORIZONTAL)
         ROM_Information_Sizer2 = wx.FlexGridSizer(2, 1, 0, 0)
-        Other_Information_Sizer = wx.BoxSizer(wx.VERTICAL)
-        VersionWifiSizer = wx.GridSizer(1, 2, 0, 0)
-        InternalNameSerialSizer = wx.GridSizer(1, 2, 0, 0)
-        CRCPublisherSizer = wx.GridSizer(1, 2, 0, 0)
-        TitleCRCSizer = wx.GridSizer(1, 2, 0, 0)
-        SizeSavesSizer = wx.GridSizer(1, 2, 0, 0)
-        LocationGenreSizer = wx.GridSizer(1, 2, 0, 0)
+        sizer_8 = wx.FlexGridSizer(10, 1, 0, 0)
+        grid_sizer_5 = wx.GridSizer(1, 1, 0, 0)
+        grid_sizer_8 = wx.GridSizer(1, 2, 0, 0)
+        grid_sizer_9 = wx.GridSizer(1, 2, 0, 0)
+        grid_sizer_12 = wx.GridSizer(1, 2, 0, 0)
+        grid_sizer_13 = wx.GridSizer(1, 2, 0, 0)
+        grid_sizer_14 = wx.GridSizer(1, 2, 0, 0)
+        grid_sizer_15 = wx.GridSizer(1, 2, 0, 0)
+        grid_sizer_16 = wx.GridSizer(1, 1, 0, 0)
+        grid_sizer_21 = wx.GridSizer(1, 2, 0, 0)
+        ROM_Icon_Sizer = wx.FlexGridSizer(1, 2, 0, 0)
         Picture_Sizer = wx.BoxSizer(wx.HORIZONTAL)
         ROMList_Sizer = wx.StaticBoxSizer(self.ROMList_Sizer_staticbox, wx.HORIZONTAL)
         ROMList_Sizer2 = wx.FlexGridSizer(2, 1, 0, 0)
@@ -490,27 +510,38 @@ class cMainFrame( wx.Frame ):
         Picture_Sizer.Add(self.Case_Bitmap, 0, wx.RIGHT, 6)
         Picture_Sizer.Add(self.ScreenShot_Bitmap, 0, 0, 0)
         ROM_Information_Sizer2.Add(Picture_Sizer, 1, wx.EXPAND, 0)
-        Other_Information_Sizer.Add(self.Languages, 0, wx.ALL|wx.EXPAND, 3)
-        LocationGenreSizer.Add(self.Location, 0, wx.ALL|wx.EXPAND, 3)
-        LocationGenreSizer.Add(self.Publisher, 0, wx.ALL|wx.EXPAND, 3)
-        Other_Information_Sizer.Add(LocationGenreSizer, 1, wx.EXPAND, 0)
-        SizeSavesSizer.Add(self.ReleaseGroup, 0, wx.ALL|wx.EXPAND, 3)
-        SizeSavesSizer.Add(self.Genre, 0, wx.ALL|wx.EXPAND, 3)
-        Other_Information_Sizer.Add(SizeSavesSizer, 1, wx.EXPAND, 0)
-        TitleCRCSizer.Add(self.Internal_Name, 0, wx.ALL|wx.EXPAND, 3)
-        TitleCRCSizer.Add(self.Serial, 0, wx.ALL|wx.EXPAND, 3)
-        Other_Information_Sizer.Add(TitleCRCSizer, 1, wx.EXPAND, 0)
-        CRCPublisherSizer.Add(self.Version, 0, wx.ALL|wx.EXPAND, 3)
-        CRCPublisherSizer.Add(self.ROMCRC, 0, wx.ALL|wx.EXPAND, 3)
-        Other_Information_Sizer.Add(CRCPublisherSizer, 1, wx.EXPAND, 0)
-        InternalNameSerialSizer.Add(self.ROMSize, 0, wx.ALL|wx.EXPAND, 3)
-        InternalNameSerialSizer.Add(self.Wifi, 0, wx.ALL|wx.EXPAND, 3)
-        Other_Information_Sizer.Add(InternalNameSerialSizer, 1, wx.EXPAND, 0)
-        VersionWifiSizer.Add(self.SaveType, 0, wx.ALL|wx.EXPAND, 3)
-        VersionWifiSizer.Add(self.SavedGames, 0, wx.ALL|wx.EXPAND, 3)
-        Other_Information_Sizer.Add(VersionWifiSizer, 1, wx.EXPAND, 0)
-        Other_Information_Sizer.Add(self.Tags, 0, wx.ALL|wx.EXPAND, 3)
-        ROM_Information_Sizer2.Add(Other_Information_Sizer, 0, wx.EXPAND, 0)
+        ROM_Icon_Sizer.Add(self.ROM_Icon_Label, 0, wx.ALL, 3)
+        ROM_Icon_Sizer.Add(self.ROM_Icon, 0, wx.RIGHT, 6)
+        ROM_Icon_Sizer.AddGrowableRow(0)
+        ROM_Icon_Sizer.AddGrowableCol(1)
+        grid_sizer_21.Add(ROM_Icon_Sizer, 1, wx.EXPAND, 0)
+        grid_sizer_21.Add(self.ReleaseNumber, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.Add(grid_sizer_21, 1, wx.EXPAND, 0)
+        grid_sizer_16.Add(self.ROM_Title, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.Add(grid_sizer_16, 1, wx.EXPAND, 0)
+        grid_sizer_15.Add(self.Location, 0, wx.ALL|wx.EXPAND, 3)
+        grid_sizer_15.Add(self.Publisher, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.Add(grid_sizer_15, 1, wx.EXPAND, 0)
+        grid_sizer_14.Add(self.ReleaseGroup, 0, wx.ALL|wx.EXPAND, 3)
+        grid_sizer_14.Add(self.Genre, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.Add(grid_sizer_14, 1, wx.EXPAND, 0)
+        grid_sizer_13.Add(self.Internal_Name, 0, wx.ALL|wx.EXPAND, 3)
+        grid_sizer_13.Add(self.Serial, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.Add(grid_sizer_13, 1, wx.EXPAND, 0)
+        grid_sizer_12.Add(self.Version, 0, wx.ALL|wx.EXPAND, 3)
+        grid_sizer_12.Add(self.ROMCRC, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.Add(grid_sizer_12, 1, wx.EXPAND, 0)
+        grid_sizer_9.Add(self.ROMSize, 0, wx.ALL|wx.EXPAND, 3)
+        grid_sizer_9.Add(self.Wifi, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.Add(grid_sizer_9, 1, wx.EXPAND, 0)
+        grid_sizer_8.Add(self.SaveType, 0, wx.ALL|wx.EXPAND, 3)
+        grid_sizer_8.Add(self.SavedGames, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.Add(grid_sizer_8, 1, wx.EXPAND, 0)
+        grid_sizer_5.Add(self.Languages, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.Add(grid_sizer_5, 1, wx.EXPAND, 0)
+        sizer_8.Add(self.Tags, 0, wx.ALL|wx.EXPAND, 3)
+        sizer_8.AddGrowableCol(0)
+        ROM_Information_Sizer2.Add(sizer_8, 1, wx.EXPAND, 0)
         ROM_Information_Sizer2.AddGrowableRow(0)
         ROM_Information_Sizer2.AddGrowableCol(0)
         ROM_Information_Sizer.Add(ROM_Information_Sizer2, 1, wx.EXPAND, 0)
@@ -542,6 +573,7 @@ class cMainFrame( wx.Frame ):
         self.ROMList_Sizer2 = ROMList_Sizer2
         self.Picture_Sizer = Picture_Sizer
         self.Device_Sizer = Device_Sizer
+        self.ROM_Icon_Sizer = ROM_Icon_Sizer
         
         self.__Local_Init ( ["STARTUP"] )
         
@@ -1325,6 +1357,12 @@ class cMainFrame( wx.Frame ):
         
         self.Tags.SetLabel ( Str )
         
+        self.ROM_Title.SetLabel ( _("Title : %s") % ROM.Title )
+        
+        self.ReleaseNumber.SetLabel( _("Rel Num : %s") % ROM.Comment)
+        
+        self.ROM_Icon.SetBitmap(self.Current_Ctrl.Get_Item_Icon(Item))
+        
     
     def On_List_Focus ( self, event ):
         if event.EventObject.FocusedItem != -1 and self.In_Init == False:
@@ -1552,6 +1590,9 @@ class cMainFrame( wx.Frame ):
         self.Show_Hide_Item ( self.Hide_Serial, self.Serial, "Hide_Serial" )
         self.Show_Hide_Item ( self.Hide_Wifi, self.Wifi, "Hide_Wifi" )
         self.Show_Hide_Item ( self.Hide_Tags, self.Tags, "Hide_Tags" )
+        self.Show_Hide_Item ( self.Hide_Icon, self.ROM_Icon, "Hide_Icon" )
+        self.Show_Hide_Item ( self.Hide_ReleaseNumber, self.ReleaseNumber, "Hide_ReleaseNumber" )
+        self.Show_Hide_Item ( self.Hide_Title, self.ROM_Title, "Hide_Title" )
         
         self.Show_Device_List.Check( Config.Config ["Show_Device_List"] )
         self.Show_Search.Check( Config.Config ["Show_Search"] )
@@ -1566,6 +1607,11 @@ class cMainFrame( wx.Frame ):
         
         self.Use_Smaller_Pictures.Check ( Config.Config ["Use_Smaller_Pictures"] )
         
+        if self.ROM_Icon.IsShown() == False:
+            self.ROM_Icon_Label.Show(False)
+        else:
+            self.ROM_Icon_Label.Show(True)
+
         self.SplitPanel2_Sizer.Layout()
         
     def On_Hide_Item( self, event ): # wxGlade: cMainFrame.<event_handler>
@@ -1626,9 +1672,23 @@ class cMainFrame( wx.Frame ):
         if Id == ID_MENU_HIDE_TAGS or All:
             Config.Config ["Hide_Tags"] = Checked
             self.Show_Hide_Item ( self.Hide_Tags, self.Tags, "Hide_Tags" )
+        if Id == ID_MENU_HIDE_ICON or All:
+            Config.Config ["Hide_Icon"] = Checked
+            self.Show_Hide_Item ( self.Hide_Icon, self.ROM_Icon, "Hide_Icon" )
+        if Id == ID_MENU_HIDE_RELEASENUMBER or All:
+            Config.Config ["Hide_ReleaseNumber"] = Checked
+            self.Show_Hide_Item ( self.Hide_ReleaseNumber, self.ReleaseNumber, "Hide_ReleaseNumber" )
+        if Id == ID_MENU_HIDE_TITLE or All:
+            Config.Config ["Hide_Title"] = Checked
+            self.Show_Hide_Item ( self.Hide_Title, self.ROM_Title, "Hide_Title" )
 
         if Id == ID_MENU_HIDE_SCREENSHOTS or Id == ID_MENU_HIDE_CASE_PICTURES or All:
             self.On_Use_Smaller_Pictures (event, Change=False)
+            
+        if self.ROM_Icon.IsShown() == False:
+            self.ROM_Icon_Label.Show(False)
+        else:
+            self.ROM_Icon_Label.Show(True)
         
         self.SplitPanel2_Sizer.Layout()
 
@@ -1671,6 +1731,9 @@ class cMainFrame( wx.Frame ):
                 Config.Config ["Hide_Version"] = self.ToggleBackup[13]
                 Config.Config ["Hide_Wifi"] = self.ToggleBackup[14]
                 Config.Config ["Hide_Tags"] = self.ToggleBackup[15]
+                Config.Config ["Hide_Icon"] = self.ToggleBackup[16]
+                Config.Config ["Hide_ReleaseNumber"] = self.ToggleBackup[17]
+                Config.Config ["Hide_Title"] = self.ToggleBackup[18]
                 self.Update_Main_Menu()
         else:
             self.ToggleBackup = [
@@ -1689,7 +1752,10 @@ class cMainFrame( wx.Frame ):
                 Config.Config ["Hide_Serial"], 
                 Config.Config ["Hide_Version"] , 
                 Config.Config ["Hide_Wifi"], 
-                Config.Config ["Hide_Tags"]
+                Config.Config ["Hide_Tags"],
+                Config.Config ["Hide_Icon"],
+                Config.Config ["Hide_ReleaseNumber"],
+                Config.Config ["Hide_Title"]
             ]
             self.On_Hide_Item( True )
 #        self.__Local_Init( ["DEVICE"] )
