@@ -632,7 +632,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 try:
                     t = r.Saves_List [0]
                 except:
-                    t = "Arg"  
+                    t = ""  
                 return t 
             elif Config.Config ["CartColumns"][col] == "Location":
                 try:
