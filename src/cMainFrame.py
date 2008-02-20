@@ -984,7 +984,7 @@ class cMainFrame( wx.Frame ):
         _addBook( os.path.join ( os.path.split(sys.argv[0])[0], "Help.htb" ))
 
     def LoadIcons ( self ):
-        To_Process = MyROMS.Current_Count
+        To_Process = MyROMS.Master_List_Count
 
         dlg = cProgressFrame ( self )
         dlg.DisableGuage2()
