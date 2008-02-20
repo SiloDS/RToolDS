@@ -789,7 +789,7 @@ class cMainFrame( wx.Frame ):
         if Config.Config ["Sash_Position"] == -1:
             tmpSize = self.GetSize() [ 0 ] - self.ROM_Information_Sizer.GetMinSize() [ 0 ] - 20 #TODO: Fudge Factor in Sash?
             self.MainFrame_Splitter.SetSashPosition( tmpSize, True )
-            print tmpSize
+#            print tmpSize
         else:
             self.MainFrame_Splitter.SetSashPosition( Config.Config ["Sash_Position"], True )
             
