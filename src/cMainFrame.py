@@ -1125,6 +1125,8 @@ class cMainFrame( wx.Frame ):
             Text  = " " + _( "Device Size" )
             Text += " %s, " % Utils.Format_Normal_Size( Size )
             Text += _( "Free Space" ) +  " %s" % Utils.Format_Normal_Size( Free )
+            if Config.Config ["Show_Device_List"] == False:
+                Text = ""
             self.StatusBar.SetStatusText ( Text, 1 )
             
         if Position & STATUS_FILTER:
@@ -1873,6 +1875,8 @@ class cMainFrame( wx.Frame ):
             
         self.Device_Sizer.Layout()
         self.SplitPanel2_Sizer.Layout()
+        self.Enable_Tasks()
+        self.Update_StatusBar(STATUS_ALL)
 
     def On_Show_Search( self, event ): # wxGlade: cMainFrame.<event_handler>
         Config.Config ["Show_Search"] = not Config.Config ["Show_Search"]
