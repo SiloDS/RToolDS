@@ -70,6 +70,26 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1252 - Bumped to 1252
+v0.2.1250 - Added Default Database if no internet connection is available
+v0.2.1249 - Added #120: Linker Device Column Save Date/Time Option
+v0.2.1248 - Partial Fix #75: Linker Device Wrong Path/Drive Directory Errors
+v0.2.1246 - Fixed #75 Error 1
+v0.2.1245 - Fixed #93: Disappearing Sash Bug
+v0.2.1244 - Fixed #117: Update Log Issues
+v0.2.1243 - Fixed #96: Removed Cancel Button from Loading Progress Window
+v0.2.1242 - Made Tag Sorting Case Insensitive
+v0.2.1241 - Fixed #100: More ROM Info Changes
+v0.2.1240 - Fixed #103: Device List Show/Hide Bug
+v0.2.1239 - Implemented #109: Save Game Manager Auto Backup Confusion
+v0.2.1238 - Hopefully Fixed #119: Transfer/Apply Error
+v0.2.1237 - Fixed #101: Progress Bar Start-Up Oddity
+v0.2.1236 - Implemented #113: Search Methods
+v0.2.1235 - Fixed #94: Text & Column Changes
+v0.2.1234 - Fixed #98: One Letter Search Bug
+v0.2.1233 - Fixed #74: ROM Info Layout Changes - Final
+v0.2.1230 - Fixed #95: ROM List Button Selection Bug on Changing Tags
+v0.2.1229 - Fixed #85: Disappearing Tags
 v0.2.1227 - Bumped to 1227
 v0.2.1226 - More Column Changes
 v0.2.1225 - Various Column Changes
