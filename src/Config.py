@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 31
+Config_Version = 32
 Version_String = "2.0.1227 Beta"
 
 Config = {}
@@ -443,6 +443,8 @@ def Load_Defaults( Version ):
         Config ["Hide_Icon"] = True
         Config ["Hide_ReleaseNumber"] = True
         Config ["Hide_Title"] = True
+    if Version < 32:
+        Config ["Search_Method"] = 0
 #        
 #        
 #        Config ["Screen_Maximized"] = False

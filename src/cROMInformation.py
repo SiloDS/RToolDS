@@ -39,7 +39,7 @@ class cROMInformation( wx.Dialog ):
         self.SS_Bitmap = wx.StaticBitmap(self, -1, wx.NullBitmap)
         self.Label_Icon = wx.StaticText(self, -1, _("Icon : "))
         self.Icon_Bitmap = wx.StaticBitmap(self, -1, wx.NullBitmap)
-        self.Label_Release_Number = wx.StaticText(self, -1, _("Rel No : "))
+        self.Label_Release_Number = wx.StaticText(self, -1, _("Rel Num : "))
         self.Comment_Text = wx.StaticText(self, -1, _("<RelNum>"))
         self.Label_Title = wx.StaticText(self, -1, _("Title : "))
         self.Title_Text = wx.StaticText(self, -1, _("<Title>"))

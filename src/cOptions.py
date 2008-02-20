@@ -54,6 +54,8 @@ class cOptions( wx.Dialog ):
         self.Find_Unknown = wx.CheckBox(self.NotebookPanel2, -1, _("Enable Unknown/Homebrew ROM File Detection"))
         self.Confirm_Delete = wx.CheckBox(self.NotebookPanel2, -1, _("Confirm Deletes on Device"))
         self.AutoCloseUpdate = wx.CheckBox(self.NotebookPanel2, -1, _("Automatically Close Update Window"))
+        self.label_6_copy = wx.StaticText(self.NotebookPanel2, -1, _("Utilise Selected for the ROM List Search Method : "))
+        self.Search_Method = wx.Choice(self.NotebookPanel2, -1, choices=[_("ROM Title"), _("Filename"), _("Archive Filename")])
         self.label_6 = wx.StaticText(self.NotebookPanel2, -1, _("Utilise Selected for Unknown/Homebrew ROM Titles : "))
         self.Unknown_Name = wx.Choice(self.NotebookPanel2, -1, choices=[_("Archive File Name"), _("ROM File Name")])
         self.label_8 = wx.StaticText(self.NotebookPanel2, -1, _("Colour to use for Alternating Lines in ROM List : "))
@@ -119,6 +121,7 @@ class cOptions( wx.Dialog ):
         # begin wxGlade: cOptions.__set_properties
         self.SetTitle(_("Options"))
         self.SetSize((545, 484))
+        self.Search_Method.SetSelection(0)
         self.Unknown_Name.SetSelection(0)
         self.Alternate_Colour.SetMinSize((60, 20))
         self.Pending_Colour.SetMinSize((60, 20))
@@ -142,11 +145,12 @@ class cOptions( wx.Dialog ):
         grid_sizer_4_copy = wx.FlexGridSizer(10, 1, 0, 0)
         grid_sizer_20 = wx.FlexGridSizer(1, 2, 0, 0)
         sizer_10_copy_1 = wx.BoxSizer(wx.HORIZONTAL)
-        grid_sizer_4 = wx.FlexGridSizer(19, 1, 0, 0)
+        grid_sizer_4 = wx.FlexGridSizer(20, 1, 0, 0)
         grid_sizer_19 = wx.FlexGridSizer(1, 2, 0, 0)
         grid_sizer_18_copy = wx.FlexGridSizer(1, 2, 0, 0)
         grid_sizer_18 = wx.FlexGridSizer(1, 2, 0, 0)
         grid_sizer_10 = wx.FlexGridSizer(1, 2, 0, 0)
+        grid_sizer_10_copy = wx.FlexGridSizer(1, 2, 0, 0)
         sizer_10_copy = wx.BoxSizer(wx.HORIZONTAL)
         sizer_1_copy = wx.BoxSizer(wx.HORIZONTAL)
         sizer_2 = wx.FlexGridSizer(2, 1, 0, 0)
@@ -190,6 +194,9 @@ class cOptions( wx.Dialog ):
         grid_sizer_4.Add(self.Find_Unknown, 0, wx.ALL, 3)
         grid_sizer_4.Add(self.Confirm_Delete, 0, wx.ALL, 3)
         grid_sizer_4.Add(self.AutoCloseUpdate, 0, wx.ALL, 3)
+        grid_sizer_10_copy.Add(self.label_6_copy, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 3)
+        grid_sizer_10_copy.Add(self.Search_Method, 0, wx.ALL, 3)
+        grid_sizer_4.Add(grid_sizer_10_copy, 1, wx.LEFT|wx.EXPAND, 2)
         grid_sizer_10.Add(self.label_6, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 3)
         grid_sizer_10.Add(self.Unknown_Name, 0, wx.ALL, 3)
         grid_sizer_4.Add(grid_sizer_10, 1, wx.LEFT|wx.EXPAND, 2)
@@ -339,6 +346,13 @@ class cOptions( wx.Dialog ):
             self.Unknown_Name.SetStringSelection( _( "Archive File Name" ) )
         elif Config.Config ["Unknown_Name"] == "FILENAME":
             self.Unknown_Name.SetStringSelection( _( "ROM File Name" ) )
+            
+        if Config.Config ["Search_Method"] == 1:
+            self.Search_Method.SetStringSelection( _("Filename") )
+        elif Config.Config ["Search_Method"] == 0:
+            self.Search_Method.SetStringSelection( _("ROM Title") )
+        else:
+            self.Search_Method.SetStringSelection( _("Archive Filename"))
         
         self.ROM_Columns.InsertColumn ( 0, _( "Column Name" ) )
         self.ROM_Columns.InsertColumn ( 1, _( "Display Name" ) )
@@ -583,6 +597,14 @@ class cOptions( wx.Dialog ):
             Config.Config ["Unknown_Name"] = "ARCHIVE"
         elif tmp == _( "ROM File Name" ):
             Config.Config ["Unknown_Name"] = "FILENAME"
+            
+        tmp = self.Search_Method.GetStringSelection()
+        if tmp == _( "Filename" ):
+            Config.Config ["Search_Method"] = 1
+        elif tmp == _( "ROM Title"):
+            Config.Config ["Search_Method"] = 0
+        else:
+            Config.Config ["Search_Method"] = 2
             
 #        if oldUnknownName != Config.Config ["UnknownName"]:
 #            MyROMS.CloseUnknownShelve()
