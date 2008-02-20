@@ -369,7 +369,7 @@ class cOptions( wx.Dialog ):
             self.ROM_Columns.SetStringItem ( index, 1, Config.Config ["ROMColumn_Titles"][Column] )
             self.ROM_Columns.CheckItem ( index )
         for Column in Config.Config ["Columns"]:
-            if Column == "Icon":
+            if Column == "Icon" or Column == "Save Date":
                 continue
             if Column not in Config.Config ["ROMColumns"]:
                 index = self.ROM_Columns.InsertStringItem ( sys.maxint, Column )

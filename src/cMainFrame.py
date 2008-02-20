@@ -1324,8 +1324,15 @@ class cMainFrame( wx.Frame ):
 
         self.ROMSize.SetLabel( ROMSize_String )
         
-        self.SavedGames.SetLabel( _( "Save Games : %d" ) % ROM.Saves )
-        
+        if self.Current_Ctrl == self.ROMList:
+            self.SavedGames.SetLabel( _( "Save Games : %d" ) % ROM.Saves )
+        else:
+            Save = self.Device_List.Get_Save_Name ( Item )
+            if Save [0] == "No":
+                self.SavedGames.SetLabel( _( "Save Game on Device : None" ) )
+            else:
+                self.SavedGames.SetLabel( _( "Save Game Date : %s" ) % Save [2])
+                
         self.ReleaseGroup.SetLabel( _( "Release Group : %s" ) % ROM.Source_ROM )
         
         if ROM.ROM_CRC == "":

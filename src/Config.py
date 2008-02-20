@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 32
+Config_Version = 33
 Version_String = "2.0.1227 Beta"
 
 Config = {}
@@ -445,6 +445,12 @@ def Load_Defaults( Version ):
         Config ["Hide_Title"] = True
     if Version < 32:
         Config ["Search_Method"] = 0
+    if Version < 33:
+        Config ["Columns"].append ("Save Date")
+        Config ["ROMColumn_Titles"]["Save Date"] = "Save Date"
+        Config ["ROMColumn_Sizes"]["Save Date"] = 99
+        Config ["CartColumn_Titles"]["Save Date"] = "Save Date"
+        Config ["CartColumn_Sizes"]["Save Date"] = 99
 #        
 #        
 #        Config ["Screen_Maximized"] = False

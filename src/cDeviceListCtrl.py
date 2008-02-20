@@ -5,6 +5,7 @@ import os
 import sys
 if sys.platform == "win32":
     import win32api
+import time
 
 import Config
 from ROMS import MyROMS
@@ -66,18 +67,20 @@ class cDeviceListCtrl( wx.ListCtrl ):
             self.SetImageList( None, wx.IMAGE_LIST_SMALL )
             
     def Has_Save (self, Dir, Filename):
-        Save = ["No", ""]
+        Save = ["No", "", "N/A"]
         for extension in Config.Config ["Save_Extensions"]:
             Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext( Filename )[0] + extension)
             if os.path.isfile(Save_Filename):
-                Save = ["Yes", Save_Filename]
+                FileDate = "%s %s" % ( win32api.GetDateFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Save_Filename ) ) ).lower(), win32api.GetTimeFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Save_Filename ) ) ) )
+                Save = ["Yes", Save_Filename, FileDate]
                 break
             elif sys.platform == "win32":
                 try:
                     Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], Filename ))
                     Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
                     if os.path.isfile (Short_Save_Filename):
-                        Save = ["Yes", Short_Save_Filename]
+                        FileDate = "%s %s" % ( win32api.GetDateFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Short_Save_Filename ) ) ).lower(), win32api.GetTimeFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Short_Save_Filename ) ) ) )
+                        Save = ["Yes", Short_Save_Filename, FileDate]
                         break
                 except:
                     pass
@@ -645,6 +648,13 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     t = r.Saves_List [0]
                 except:
                     t = ""  
+                return t 
+            elif Config.Config ["CartColumns"][col] == "Save Date":
+                r = self.Get_ROM (item)
+                try:
+                    t = r.Saves_List [2]
+                except:
+                    t = ""
                 return t 
             elif Config.Config ["CartColumns"][col] == "Location":
                 try:
