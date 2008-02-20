@@ -330,7 +330,7 @@ class cROMInformation( wx.Dialog ):
 #            self.Duplicates_Text.SetLabel( self.ROM.Duplicate_ID )
 
         Str = ", "
-        Str = Str.join ( sorted (self.ROM.Tags) )
+        Str = Str.join ( Utils.cSort (self.ROM.Tags) )
         if Str == "":
             Str = _( "None" )
 

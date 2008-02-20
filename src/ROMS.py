@@ -732,7 +732,7 @@ class ROMS:
         global Tag_Shelve
         
         try:
-            return sorted (Tag_Shelve ["Tags"])
+            return Utils.cSort (Tag_Shelve ["Tags"])
         except:
             return []
 

@@ -708,7 +708,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 return a
             elif Config.Config ["CartColumns"][col] == "Tags":
                 Str = ", "
-                a = Str.join ( sorted (self.Get_ROM ( item ).Tags ))
+                a = Str.join ( Utils.cSort (self.Get_ROM ( item ).Tags ))
                 if a == "":
                     return _("None")
                 return a
