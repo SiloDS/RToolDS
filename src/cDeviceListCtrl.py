@@ -378,7 +378,16 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     FileOutName = Utils.Get_Name_on_Device (ROM)
                 else:
                     FileOutName = Renamimg [Processed]
-                FileOut = open (FileOutName,"wb")
+                try:
+                    FileOut = open (FileOutName,"wb")
+                except:
+                    wx.MessageBox("Error Writing to Device" ,
+                                  "IO Error", wx.OK|wx.ICON_EXCLAMATION)
+                    self.SetCursor( wx.StockCursor( wx.CURSOR_ARROW ) )
+                    dlg.MakeModal( False )
+                    dlg.Destroy()
+                    return
+
                 while Temp > 0:
                     FileOut.write ( Data[Pos:Pos+self.BLK_SIZE] )
                     Temp = Temp - ( self.BLK_SIZE )
