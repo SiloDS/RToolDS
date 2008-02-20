@@ -2184,6 +2184,7 @@ class cMainFrame( wx.Frame ):
                 self.__Local_Init ( ["ROMS", "DEVICE", "SEARCH"] )
             self.In_Init = False
 #            self.In_Device_Dir_Callback = False
+        self.On_Recover_Tags (None)
         self.ROMList.UpdateIcons()
         self.Device_List.UpdateIcons()
         self.ROMList.UpdateColour()
