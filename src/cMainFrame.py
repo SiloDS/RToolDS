@@ -731,9 +731,10 @@ class cMainFrame( wx.Frame ):
         if "STARTUP" in Options:
             self.Update_Main_Menu ()
             self.Show_Hide_Panels ()
-            
-        self.Device_Sizer.Layout()
-        self.SplitPanel2_Sizer.Layout()
+        
+        if "STARTUP" in Options: # This wasn't here before sash moving back bug    
+            self.Device_Sizer.Layout()
+            self.SplitPanel2_Sizer.Layout()
             
         if "STARTUP" in Options or "SEARCH" in Options:
             self.Current_Ctrl = self.ROMList
@@ -759,13 +760,9 @@ class cMainFrame( wx.Frame ):
         self.Update_Fields( Force = True )
         self.Update_StatusBar( STATUS_ALL )
         
-#        if "FIRST" in Options:
-#            self.Picture_Sizer.Fit()
-#            self.Case_Bitmap.Refresh()
-#            self.ScreenShot_Bitmap.Refresh()
-
-        self.MainFrame_Splitter.SendSizeEvent()
-        self.MainFrame_Splitter.SetSashGravity( 1 )
+        if "STARTUP" in Options: # This also wasnt here before sash moving back bug
+            self.MainFrame_Splitter.SendSizeEvent()
+            self.MainFrame_Splitter.SetSashGravity( 1 )
         
         if "STARTUP" in Options:
             if Config.Config ["Auto_Backup_Saved_Games"]:
