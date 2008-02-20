@@ -60,6 +60,10 @@ class cProgressFrame(wx.Frame):
         self.Guage2.Hide()
         self.Fit()
         
+    def DisableCancelButton (self):
+        self.Cancel_Button.Hide()
+        self.Fit()
+        
 # end of class cProgressFrame
 
 

@@ -988,6 +988,7 @@ class cMainFrame( wx.Frame ):
 
         dlg = cProgressFrame ( self )
         dlg.DisableGuage2()
+        dlg.DisableCancelButton ()
         dlg.Proccessing_Text.SetLabel ( _( "Loading Icons..." ) )
         dlg.Guage1.SetRange ( To_Process )
         dlg.MakeModal()
