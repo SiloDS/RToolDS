@@ -1980,6 +1980,7 @@ class cMainFrame( wx.Frame ):
 
             self.__Local_Init( ["DEVICE"] )
             self.In_Device_Dir_Callback = False
+            self.Device_Dir_Picker.startDirectory = Config.Config ["Device_Path"]
 
     def On_Device_Refresh( self, event ): # wxGlade: cMainFrame.<event_handler>
         try:
