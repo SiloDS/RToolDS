@@ -455,7 +455,7 @@ def Get_Hash_Data ( Data ):
     md5hash.update( Data )
     return md5hash.hexdigest()
 
-def Add_Save (ROM, Save, SaveCommentsShelve, Save_ROMS):
+def Add_Save (ROM, Save, SaveCommentsShelve, Save_ROMS, Auto = False):
     Save_Created = False
 #    SaveName = os.path.join ( Config.Config ["Save_Path"], ROM.ROM_CRC + Get_Save_Extension() )
     SaveName = os.path.join ( Config.Config ["Save_Path"], ROM.ROM_CRC + ".sav" )
@@ -471,12 +471,19 @@ def Add_Save (ROM, Save, SaveCommentsShelve, Save_ROMS):
                         SaveCommentsShelve [str ( ROM.ROM_CRC + "%03d" %( Count+1 ) )] = SaveCommentsShelve [str ( ROM.ROM_CRC +"%03d" % ( Count ) )]
                         SaveCommentsShelve.sync ()
             shutil.copy2 ( Save, SaveName + ".001" )
-            SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = ""
+            if Auto == False:
+                SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = ""
+            else:
+                SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = _("Auto Backup")
+                
             SaveCommentsShelve.sync ()
             Save_Created = True
     else:
         shutil.copy2 ( Save, SaveName + ".001" )
-        SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = ""
+        if Auto == False:
+            SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = ""
+        else:
+            SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = _("Auto Backup")
         SaveCommentsShelve.sync ()
         Save_Created = True
 

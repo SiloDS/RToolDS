@@ -2311,7 +2311,10 @@ class cMainFrame( wx.Frame ):
                 Save = self.Device_List.Get_Save_Name ( Row )
                 if Save[1] != "":
                     try:
-                        Utils.Add_Save ( ROM, Save[1], self.Save_Comments_Shelve, Save_ROMS )
+                        if self.In_Init == False and In_Init == False:
+                            Utils.Add_Save ( ROM, Save[1], self.Save_Comments_Shelve, Save_ROMS )
+                        else:
+                            Utils.Add_Save ( ROM, Save[1], self.Save_Comments_Shelve, Save_ROMS, Auto=True )
                     except:
                         pass
             Processed += 1
@@ -2345,6 +2348,7 @@ class cMainFrame( wx.Frame ):
                 wx.MessageBox( _( 'Nothing to Backup.' ), _( 'Save Backup' ), wx.OK| wx.ICON_INFORMATION )
     
             self.__Local_Init( ["DEVICE", "SAVES"] ) # had SORT
+            
 
     def On_Import_Save_Game( self, event ): # wxGlade: cMainFrame.<event_handler>
         try:
