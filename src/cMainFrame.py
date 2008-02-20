@@ -1139,7 +1139,7 @@ class cMainFrame( wx.Frame ):
     def Search ( self ):
         Current_Search = self.Search_TextCtrl.GetValue()
 
-        if len ( Current_Search ) != 1 and not self.In_Search_Clear:
+        if len ( Current_Search ) > 0 and not self.In_Search_Clear:
             Config.Config ["Current_Search"] = Current_Search
             self.__Local_Init( "SEARCH" )
     
