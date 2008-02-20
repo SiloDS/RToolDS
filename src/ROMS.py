@@ -44,12 +44,12 @@ class ROM:
         self.Genre          = _( "Unknown" )
         self.Internal_Name  = _( "Unknown" )
         self.Serial         = _( "Unknown" )
-        self.Version        = _( "Unknown" )
-        self.Wifi           = "N/A"
+        self.Version        = _( "N/A" )
+        self.Wifi           = _( "N/A" )
         self.Tags           = []
         self.Trimmed_CRC    = ""
         self.Found          = False
-        self.Dump_Date      = _( "Unknown" )
+        self.Dump_Date      = _( "N/A" )
         self.Duplicate_ID   = "0"
         self.Orig_Filename  = _( "Unknown" )
         

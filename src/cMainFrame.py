@@ -1359,7 +1359,7 @@ class cMainFrame( wx.Frame ):
         
         self.ROM_Title.SetLabel ( _("Title : %s") % ROM.Title )
         
-        self.ReleaseNumber.SetLabel( _("Rel Num : %s") % ROM.Comment)
+        self.ReleaseNumber.SetLabel( _("Rel No : %s") % ROM.Comment)
         
         self.ROM_Icon.SetBitmap(self.Current_Ctrl.Get_Item_Icon(Item))
         
