@@ -124,10 +124,10 @@ class cLogDialog( wx.Dialog ):
                 self.Log.AppendText(_("Failed") + "\n")
                 self.Todo.append ("Failed")
         else:
-            self.Log.AppendText(_("No Updates Available") + "\n")
+            self.Log.AppendText(_("No Updates Available") + "\n\n")
         
     def Update_ROM_List (self):
-        self.Log.AppendText(_("Finalising Updated Database") + " ... ")
+        self.Log.AppendText(_("Finalising Database") + " ... ")
 
         MyROMS.Start_ROM_Find ()
         
@@ -135,6 +135,7 @@ class cLogDialog( wx.Dialog ):
             
         self.Log.AppendText(_("Finding New ROMs") + " ...\n\n")
 
+        ROMS_Found = False
         if Config.Config ["Parse_Subdirs"] == False:
             SearchStr = os.path.join ( Config.Config ["ROM_Path"], "*" )
             DirList = glob.glob ( SearchStr )
@@ -142,6 +143,7 @@ class cLogDialog( wx.Dialog ):
                 Title = MyROMS.Process_ROM( Filename )
                 if Title != "":
                     self.Log.AppendText (Title + "\n")
+                    ROMS_Found=True
                 wx.Yield()
                 if self.Aborted:
                     break
@@ -151,6 +153,7 @@ class cLogDialog( wx.Dialog ):
                     Title = MyROMS.Process_ROM( os.path.join( root, name ) )
                     if Title != "":
                         self.Log.AppendText (Title + "\n")
+                        ROMS_Found=True
                     wx.Yield()
                     if self.Aborted:
                         break
@@ -158,7 +161,10 @@ class cLogDialog( wx.Dialog ):
         MyROMS.Close_ROM_Find ()
                 
         if self.Aborted:
-            self.Log.AppendText( "\n" + _("Aborted Update") + ".\n\n" )
+            if ROMS_Found:
+                self.Log.AppendText( "\n" + _("Aborted Update") + ".\n\n" )
+            else:
+                self.Log.AppendText( _("Aborted Update") + ".\n\n" )
             self.Todo.append ("Failed")
             MyROMS.Load_Master_List (AltName=True)
             MyROMS.Save_Master_List ()
@@ -166,7 +172,10 @@ class cLogDialog( wx.Dialog ):
             MyROMS.Sort_Current_List ()
             MyROMS.Populate_Current_List ()
             MyROMS.Save_Master_List ()
-            self.Log.AppendText( "\n" + _("Completed") + ".\n\n" )
+            if ROMS_Found:
+                self.Log.AppendText( "\n" + _("Completed") + ".\n\n" )
+            else:
+                self.Log.AppendText( _("Completed") + ".\n\n" )
         try:
             os.unlink ("RToolDS_Master_List.dat.bak")
         except:

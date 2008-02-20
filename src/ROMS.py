@@ -607,7 +607,7 @@ class ROMS:
                 if CRC in self.Originally_Found:
                     Result = ""
                 else:
-                    Result = TheROM.Title
+                    Result = TheROM.Comment + " - " + TheROM.Title
                 if TheROM.Comment [0] == "U": # Force Unknowns to be Re-Numbered
                     raise RuntimeError
                 TheROM.Found = True

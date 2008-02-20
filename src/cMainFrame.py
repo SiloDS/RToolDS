@@ -925,14 +925,14 @@ class cMainFrame( wx.Frame ):
                 if UseDummy:
                     dlg = cLogDialog( self.DummyFrame, Todo = ["Master_List", "ROM_List"], Auto_Close=True )
                 else:
-                    dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close=True )
+                    dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List"], Auto_Close=Config.Config ["AutoCloseUpdate"] )
                 dlg.ShowModal()
                 dlg.Destroy()
             else:
                 if UseDummy:
-                    dlg = cLogDialog( self.DummyFrame, Todo = ["Master_List", "GFX"], Auto_Close=True )
+                    dlg = cLogDialog( self.DummyFrame, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close=True )
                 else:
-                    dlg = cLogDialog( self, Todo = ["Master_List", "GFX"], Auto_Close=True )
+                    dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close=Config.Config ["AutoCloseUpdate"] )
                 dlg.ShowModal()
                 dlg.Destroy()
                 
