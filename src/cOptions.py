@@ -535,10 +535,10 @@ class cOptions( wx.Dialog ):
             Msg.append (_("Invalid Images Directory"))
         if os.path.isdir(self.NFO_Path.GetValue()) == False:
             Msg.append (_("Invalid NFO Directory"))
-        if os.path.isdir(self.Save_Path.GetValue()) == False:
-            Msg.append (_("Invalid Save Database Directory"))
-        if os.path.isdir(self.Device_Path.GetValue()) == False:
-            Msg.append (_("Invalid Device Directory"))
+#        if os.path.isdir(self.Save_Path.GetValue()) == False:
+#            Msg.append (_("Invalid Save Database Directory"))
+#        if os.path.isdir(self.Device_Path.GetValue()) == False:
+#            Msg.append (_("Invalid Device Directory"))
             
         for m in Msg:
             wx.MessageBox( m, _('Invalid Directory'), wx.OK| wx.ICON_EXCLAMATION )

@@ -334,7 +334,10 @@ class cDeviceListCtrl( wx.ListCtrl ):
     def Clear_Pending (self):
         self.Pending = []
         self.Pending_Positions = []
-        self.Calc_FreeSpace()
+        try:
+            self.Calc_FreeSpace()
+        except:
+            pass
 
     def Apply_Pending (self):
         Processed_ROMS = []
