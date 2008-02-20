@@ -666,7 +666,12 @@ class cMainFrame( wx.Frame ):
 
             self.ROMList.SetItemCount ( MyROMS.Current_Count )
             self.ROMList.Resize_Columns()
+            self.ROMList.SetItemState(0, wx.LIST_STATE_SELECTED, wx.LIST_STATE_SELECTED)
+            self.ROMList.Focus(0)
             self.ROMList.Refresh()
+            
+        if "SORT" in Options:
+            self.ROMList.SetFocus()
             
         if "STARTUP" in Options or "ROMS" in Options or "DEVICE" in Options or "SAVES" in Options or "SORTCART" in Options:
             if not self.In_Device_Dir_Callback:
