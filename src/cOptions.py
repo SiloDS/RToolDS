@@ -10,6 +10,7 @@ import os
 from ColumnListCtrlMixin import ColumnListCtrlMixin
 import Config
 from ROMS import MyROMS
+import Utils
 
 # begin wxGlade: dependencies
 # end wxGlade
@@ -535,12 +536,26 @@ class cOptions( wx.Dialog ):
             Msg.append (_("Invalid Images Directory"))
         if os.path.isdir(self.NFO_Path.GetValue()) == False:
             Msg.append (_("Invalid NFO Directory"))
-#        if os.path.isdir(self.Save_Path.GetValue()) == False:
-#            Msg.append (_("Invalid Save Database Directory"))
+        if os.path.isdir(self.Save_Path.GetValue()) == False:
+            Msg.append (_("Invalid Save Database Directory"))
 #        if os.path.isdir(self.Device_Path.GetValue()) == False:
 #            Msg.append (_("Invalid Device Directory"))
+
+        if sys.platform == "win32":
+            if len (self.ROM_Path.GetValue()) < 3 or self.ROM_Path.GetValue()[2] != "\\":
+                Msg.append (_("Invalid ROM Directory"))
+            if len (self.Image_Path.GetValue()) < 3 or self.Image_Path.GetValue()[2] != "\\":
+                Msg.append (_("Invalid Images Directory"))
+            if len (self.NFO_Path.GetValue()) < 3 or self.NFO_Path.GetValue()[2] != "\\":
+                Msg.append (_("Invalid NFO Directory"))
+            if len (self.Save_Path.GetValue()) < 3 or self.Save_Path.GetValue()[2] != "\\":
+                Msg.append (_("Invalid Save Database Directory"))
+            if len (self.Device_Path.GetValue()) < 3 or self.Device_Path.GetValue()[2] != "\\":
+                Msg.append (_("Invalid Device Directory"))
+            if len (self.Save_Dir_On_Cart.GetValue()) < 3 or self.Save_Dir_On_Cart.GetValue()[2] != "\\":
+                Msg.append (_("Invalid Save Directory on Device"))
             
-        for m in Msg:
+        for m in Utils.unique (Msg):
             wx.MessageBox( m, _('Invalid Directory'), wx.OK| wx.ICON_EXCLAMATION )
         if Msg != []:
             return

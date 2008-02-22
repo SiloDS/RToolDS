@@ -828,3 +828,21 @@ def cSort(inlist, minisort=True):
         except KeyError:
             newlist.append(entry)
     return newlist
+
+def unique(seq, keepstr=True):
+    t = type(seq)
+    if t in (unicode, str):
+        t = (list, t('').join)[bool(keepstr)]
+    try:
+        remaining = set(seq)
+        seen = set()
+        return t(c for c in seq if (c in remaining and
+                                    not remaining.remove(c)))
+    except TypeError: # hashing didn't work, see if seq is sortable
+        try:
+            from itertools import groupby
+            s = sorted(enumerate(seq),key=lambda (i,v):(v,i))
+            return t(g.next() for k,g in groupby(s, lambda (i,v): v))
+        except:  # not sortable, use brute force
+            seen = []
+            return t(c for c in seq if not (c in seen or seen.append(c)))
