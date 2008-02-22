@@ -70,6 +70,9 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1256 - Bumped to 1256
+v0.2.1255 - Same for Wizard
+v0.2.1254 - You can no longer input F:ROMS on Windows.  It has to be F:\ROMS
 v0.2.1252 - Bumped to 1252
 v0.2.1250 - Added Default Database if no internet connection is available
 v0.2.1249 - Added #120: Linker Device Column Save Date/Time Option
