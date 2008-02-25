@@ -1327,7 +1327,10 @@ class cMainFrame( wx.Frame ):
         if self.Current_Ctrl == self.ROMList:
             self.SavedGames.SetLabel( _( "Save Games : %d" ) % ROM.Saves )
         else:
-            Save = self.Device_List.Get_Save_Name ( Item )
+            try:
+                Save = self.Device_List.Get_Save_Name ( Item )
+            except:
+                Save = ["No"]
             if Save [0] == "No":
                 self.SavedGames.SetLabel( _( "Save Game on Device : None" ) )
             else:
@@ -1987,10 +1990,11 @@ class cMainFrame( wx.Frame ):
 #                s = os.path.splitdrive(Config.Config["Save_Dir_On_Cart"])[0]
 #                if c != s:
 #                    Config.Config["Save_Dir_On_Cart"] = c[0] + Config.Config["Save_Dir_On_Cart"][1:]
-
+            self.Freeze()
             self.__Local_Init( ["DEVICE"] )
             self.In_Device_Dir_Callback = False
             self.Device_Dir_Picker.startDirectory = Config.Config ["Device_Path"]
+            self.Thaw()
 
     def On_Device_Refresh( self, event ): # wxGlade: cMainFrame.<event_handler>
         try:
