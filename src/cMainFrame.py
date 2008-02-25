@@ -1330,7 +1330,7 @@ class cMainFrame( wx.Frame ):
             try:
                 Save = self.Device_List.Get_Save_Name ( Item )
             except:
-                Save = ["No"]
+                Save = ["No","N/A","N/A","N/A"]
             if Save [0] == "No":
                 self.SavedGames.SetLabel( _( "Save on Device : None" ) )
             else:
