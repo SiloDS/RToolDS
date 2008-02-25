@@ -393,6 +393,8 @@ class cSaveGameManager( wx.Dialog ):
             if SaveName == "":
                 SaveName = os.path.splitext (ROM.Name_On_Device)[0] + Utils.Get_Save_Extension()
 
+            SaveName = os.path.join(Config.Config["Save_Dir_On_Cart"], os.path.split (SaveName)[1])
+            print SaveName
             Utils.Write_Save(ROM, Data, SaveName)
 
             self.SetCursor( wx.StockCursor( wx.CURSOR_ARROW ) )
