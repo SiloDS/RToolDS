@@ -1332,9 +1332,9 @@ class cMainFrame( wx.Frame ):
             except:
                 Save = ["No"]
             if Save [0] == "No":
-                self.SavedGames.SetLabel( _( "Save Game on Device : None" ) )
+                self.SavedGames.SetLabel( _( "Save on Device : None" ) )
             else:
-                self.SavedGames.SetLabel( _( "Save Game Date : %s" ) % Save [2])
+                self.SavedGames.SetLabel( _( "Save Date : %s" ) % Save [2])
                 
         self.ReleaseGroup.SetLabel( _( "Release Group : %s" ) % ROM.Source_ROM )
         
