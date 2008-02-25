@@ -70,6 +70,16 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1267 - Bumped to 1267
+v0.2.1266 - Fixed Save Date Stuff
+v0.2.1265 - Fixed #120: Linker Device Column Save Date/Time Option
+v0.2.1264 - Fixed #98: One Letter Searching
+v0.2.1263 - Fixed #93: Disappearing Sash Bug
+v0.2.1262 - Save Game Manager Fixed to Use Save Directory on Device
+v0.2.1261 - Fixed the IndexError: list index out of range Bug
+v0.2.1260 - Icon Now Lines Up Correctly in Info Panel
+v0.2.1259 - Added Unknown Title
+v0.2.1258 - Changed Rel Num to Rel No on ROM Info Popup
 v0.2.1256 - Bumped to 1256
 v0.2.1255 - Same for Wizard
 v0.2.1254 - You can no longer input F:ROMS on Windows.  It has to be F:\ROMS
