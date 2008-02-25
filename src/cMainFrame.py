@@ -1364,7 +1364,10 @@ class cMainFrame( wx.Frame ):
         
         self.Tags.SetLabel ( Str )
         
-        self.ROM_Title.SetLabel ( _("Title : %s") % ROM.Title )
+        if ROM.Title == "":
+            self.ROM_Title.SetLabel ( _("Title : Unknown"))
+        else:
+            self.ROM_Title.SetLabel ( _("Title : %s") % ROM.Title )
         
         self.ReleaseNumber.SetLabel( _("Rel No : %s") % ROM.Comment)
         
