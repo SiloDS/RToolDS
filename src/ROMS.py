@@ -538,17 +538,18 @@ class ROMS:
         for Count in range ( 0, len ( self.Master_List ) ):
             ROM = self.Master_List[Count]
             if ROM.Found:
-                if (Config.Config ["Search_Method"] == 0 and ROM.Title.lower().find ( Config.Config ["Current_Search"].lower() ) != -1) or (Config.Config ["Search_Method"] == 1 and ROM.ROM_File.lower().find ( Config.Config ["Current_Search"].lower() ) != -1) or (Config.Config ["Search_Method"] == 2 and ROM.Archive_File.lower().find ( Config.Config ["Current_Search"].lower() ) != -1) or str (ROM.Comment).find (Config.Config ["Current_Search"]) != -1 or Config.Config ["Current_Search"] == "":
-                    if Config.Config ["Filter_Location"] == 255 or ROM.Location == Config.Config ["Filter_Location"] or (Config.Config ["Filter_Location"] == 26 and ROM.Location == 254):
-                        if Config.Config ["Filter_Language"] == 0 or (Config.Config ["Filter_Language"] != -1 and ROM.Language & Config.Config ["Filter_Language"]) or (Config.Config ["Filter_Language"] == -1 and ROM.Language == 0):
-                            if ( Config.Config ["Filter_Exact_Size"] == False and ( Config.Config ["Filter_Size"] == 0 or ROM.Effective_Size <= Config.Config ["Filter_Size"] ) ) or ( Config.Config ["Filter_Exact_Size"] == True and ( Config.Config ["Filter_Size"] == 0 or ROM.ROM_Size == Config.Config ["Filter_Size"] ) ):
-                                if Config.Config ["Filter_Genre"] == self._AllGenres or ROM.Genre == Config.Config ["Filter_Genre"]:
-                                    if ( ROM.Comment.lower() != "xxxx" or Config.Config["Show_XXXX_Files"] ):
-                                        if ( ROM.Comment.lower()[0] != "u" or Config.Config ["Show_Unknown_Files"] ):
-                                            if Config.Config ["Current_Tag"] == self._AllTags or Config.Config ["Current_Tag"] in ROM.Tags:
-                                                if self._Hidden_ROMs not in ROM.Tags or Config.Config ["Current_Tag"] == self._Hidden_ROMs or (self._Hidden_ROMs in ROM.Tags and Config.Config["Current_Tag"] != self._AllTags):
-                                                    self.Current_List.append ( Count )
-                                                    self.Current_Count += 1
+                if (Config.Config ["Search_Method"] == 0 and ROM.Title.lower().find ( Config.Config ["Current_Search"].lower() ) != -1) or (Config.Config ["Search_Method"] == 1 and ROM.ROM_File.lower().find ( Config.Config ["Current_Search"].lower() ) != -1) or (Config.Config ["Search_Method"] == 2 and ROM.Archive_File.lower().find ( Config.Config ["Current_Search"].lower() ) != -1) or str (ROM.Comment).find (Config.Config ["Current_Search"]) != -1 or Config.Config ["Current_Search"] == "" or len (Config.Config ["Current_Search"]) == 1:
+                    if len (Config.Config ["Current_Search"]) != 1 or (len (Config.Config ["Current_Search"]) == 1 and (Config.Config ["Search_Method"] == 0 and ROM.Title.lower().find ( Config.Config ["Current_Search"].lower() ) == 0) or (Config.Config ["Search_Method"] == 1 and ROM.ROM_File.lower().find ( Config.Config ["Current_Search"].lower() ) == 0) or (Config.Config ["Search_Method"] == 2 and ROM.Archive_File.lower().find ( Config.Config ["Current_Search"].lower() ) == 0) or str (ROM.Comment).find (Config.Config ["Current_Search"]) == 0): 
+                        if Config.Config ["Filter_Location"] == 255 or ROM.Location == Config.Config ["Filter_Location"] or (Config.Config ["Filter_Location"] == 26 and ROM.Location == 254):
+                            if Config.Config ["Filter_Language"] == 0 or (Config.Config ["Filter_Language"] != -1 and ROM.Language & Config.Config ["Filter_Language"]) or (Config.Config ["Filter_Language"] == -1 and ROM.Language == 0):
+                                if ( Config.Config ["Filter_Exact_Size"] == False and ( Config.Config ["Filter_Size"] == 0 or ROM.Effective_Size <= Config.Config ["Filter_Size"] ) ) or ( Config.Config ["Filter_Exact_Size"] == True and ( Config.Config ["Filter_Size"] == 0 or ROM.ROM_Size == Config.Config ["Filter_Size"] ) ):
+                                    if Config.Config ["Filter_Genre"] == self._AllGenres or ROM.Genre == Config.Config ["Filter_Genre"]:
+                                        if ( ROM.Comment.lower() != "xxxx" or Config.Config["Show_XXXX_Files"] ):
+                                            if ( ROM.Comment.lower()[0] != "u" or Config.Config ["Show_Unknown_Files"] ):
+                                                if Config.Config ["Current_Tag"] == self._AllTags or Config.Config ["Current_Tag"] in ROM.Tags:
+                                                    if self._Hidden_ROMs not in ROM.Tags or Config.Config ["Current_Tag"] == self._Hidden_ROMs or (self._Hidden_ROMs in ROM.Tags and Config.Config["Current_Tag"] != self._AllTags):
+                                                        self.Current_List.append ( Count )
+                                                        self.Current_Count += 1
     
     def Start_ROM_Find ( self ):
         self.Save_Master_List(AltName=True)
