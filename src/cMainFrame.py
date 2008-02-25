@@ -510,7 +510,7 @@ class cMainFrame( wx.Frame ):
         Picture_Sizer.Add(self.Case_Bitmap, 0, wx.RIGHT, 6)
         Picture_Sizer.Add(self.ScreenShot_Bitmap, 0, 0, 0)
         ROM_Information_Sizer2.Add(Picture_Sizer, 1, wx.EXPAND, 0)
-        ROM_Icon_Sizer.Add(self.ROM_Icon_Label, 0, wx.ALL, 3)
+        ROM_Icon_Sizer.Add(self.ROM_Icon_Label, 0, wx.LEFT|wx.TOP|wx.BOTTOM, 3)
         ROM_Icon_Sizer.Add(self.ROM_Icon, 0, wx.RIGHT, 6)
         ROM_Icon_Sizer.AddGrowableRow(0)
         ROM_Icon_Sizer.AddGrowableCol(1)
