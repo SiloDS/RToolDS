@@ -511,7 +511,7 @@ class cMainFrame( wx.Frame ):
         Picture_Sizer.Add(self.ScreenShot_Bitmap, 0, 0, 0)
         ROM_Information_Sizer2.Add(Picture_Sizer, 1, wx.EXPAND, 0)
         ROM_Icon_Sizer.Add(self.ROM_Icon_Label, 0, wx.LEFT|wx.TOP|wx.BOTTOM, 3)
-        ROM_Icon_Sizer.Add(self.ROM_Icon, 0, wx.RIGHT, 6)
+        ROM_Icon_Sizer.Add(self.ROM_Icon, 0, wx.TOP, 3)
         ROM_Icon_Sizer.AddGrowableRow(0)
         ROM_Icon_Sizer.AddGrowableCol(1)
         grid_sizer_21.Add(ROM_Icon_Sizer, 1, wx.EXPAND, 0)
@@ -2488,7 +2488,7 @@ class cMainFrame( wx.Frame ):
             self.Layout()
             
             self.__Local_Init("GFX")
-            self.MainFrame_Splitter.SendSizeEvent()
+#            self.MainFrame_Splitter.SendSizeEvent()
 
     def On_Run_Startup_Wizard(self, event): # wxGlade: cMainFrame.<event_handler>
         Res = wx.MessageBox( _( "Are you sure you want to Run the Setup Wizard?\n\nThis will Delete All of RToolDS's Settings\nDownloaded Content will be Preserved" ), _( 'Setup Wizard' ), wx.YES_NO| wx.ICON_QUESTION )
