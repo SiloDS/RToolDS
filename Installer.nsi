@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "RToolDS"
-!define PRODUCT_VERSION "v0.2.1267"
+!define PRODUCT_VERSION "v0.2.1272"
 !define PRODUCT_PUBLISHER "Silo - Ex Blackbag"
 !define PRODUCT_WEB_SITE "http://silods.moddz.com"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\RToolDS.exe"
