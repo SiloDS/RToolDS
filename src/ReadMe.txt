@@ -70,6 +70,10 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1272 - Bumped to 1272
+v0.2.1271 - Pending ROMs Now Show No Save if Auto Copy Saves isn't Set
+v0.2.1270 - SGM Now Checks for a Valid Save Directory
+v0.2.1269 - Fixed Incorrect Icon when Changing Device Directories
 v0.2.1267 - Bumped to 1267
 v0.2.1266 - Fixed Save Date Stuff
 v0.2.1265 - Fixed #120: Linker Device Column Save Date/Time Option
