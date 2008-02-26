@@ -194,7 +194,11 @@ class cDeviceListCtrl( wx.ListCtrl ):
 #            self.Size_List.append ( ROM.Effective_Size )
 #            self.Saves_List.append ( [bool (ROM.Saves), None] )
 #            print ROM.Title + ":" + str (ROM.Saves)
-            ROM.Saves_List = [ Utils.cbool (ROM.Saves), None, "N/A"]
+            if Config.Config ["AutoCopySaves"]:
+                ROM.Saves_List = [ Utils.cbool (ROM.Saves), None, "N/A"]
+            else:
+                ROM.Saves_List = [ "No", None, "N/A"]
+        
             self.Pending_Positions.append (self.ROM_Count)
             self.ROM_Count += 1
                         
@@ -330,7 +334,10 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 self.Calc_FreeSpace()
                 return False
             self.Pending.append(ROM)
-            ROM.Saves_List = [ Utils.cbool (ROM.Saves), None, "N/A"]
+            if Config.Config ["AutoCopySaves"]:
+                ROM.Saves_List = [ Utils.cbool (ROM.Saves), None, "N/A"]
+            else:
+                ROM.Saves_List = ["No", None, "N/A"]
         self.Calc_FreeSpace()
         return True
     
