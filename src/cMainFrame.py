@@ -1283,7 +1283,7 @@ class cMainFrame( wx.Frame ):
             ROM=BlankROM()
         else:
             ROM = self.Current_Ctrl.Get_ROM ( Item )
-        
+            
         self.Update_Pictures ( ROM )
 
         Language_String = _( "Languages" ) + " : "
@@ -1324,17 +1324,20 @@ class cMainFrame( wx.Frame ):
 
         self.ROMSize.SetLabel( ROMSize_String )
         
-        if self.Current_Ctrl == self.ROMList:
-            self.SavedGames.SetLabel( _( "Save Games : %d" ) % ROM.Saves )
+        if Item == -1:
+            self.SavedGames.SetLabel( _( "Save Games : N/A" ))    
         else:
-            try:
-                Save = self.Device_List.Get_Save_Name ( Item )
-            except:
-                Save = ["No","N/A","N/A","N/A"]
-            if Save [0] == "No":
-                self.SavedGames.SetLabel( _( "Save on Device : None" ) )
+            if self.Current_Ctrl == self.ROMList:
+                self.SavedGames.SetLabel( _( "Save Games : %d" ) % ROM.Saves )
             else:
-                self.SavedGames.SetLabel( _( "Save Date : %s" ) % Save [2])
+                try:
+                    Save = self.Device_List.Get_Save_Name ( Item )
+                except:
+                    Save = ["No","N/A","N/A","N/A"]
+                if Save [0] == "No":
+                    self.SavedGames.SetLabel( _( "Save on Device : None" ) )
+                else:
+                    self.SavedGames.SetLabel( _( "Save Date : %s" ) % Save [2])
                 
         self.ReleaseGroup.SetLabel( _( "Release Group : %s" ) % ROM.Source_ROM )
         
@@ -1375,7 +1378,10 @@ class cMainFrame( wx.Frame ):
         self.ReleaseNumber.SetLabel( _("Rel No : %s") % ROM.Comment)
         
         try:
-            self.ROM_Icon.SetBitmap(self.Current_Ctrl.Get_Item_Icon(Item))
+            if Item == -1:
+                self.ROM_Icon.SetBitmap(GFX.catalog ["GFX_No_Icon"].getBitmap())
+            else:
+                self.ROM_Icon.SetBitmap(self.Current_Ctrl.Get_Item_Icon(Item))
         except:
             self.ROM_Icon.SetBitmap(GFX.catalog ["GFX_No_Icon"].getBitmap())
     
