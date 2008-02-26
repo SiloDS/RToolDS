@@ -188,7 +188,7 @@ class cSaveGameManager( wx.Dialog ):
                 self.popupSaveTree5 = wx.NewId()
                 self.Bind( wx.EVT_MENU, self.On_Duplicate, id=self.popupSaveTree5 )
             menu = wx.Menu()
-            if self.Parent.Device_List.IsEnabled():
+            if self.Parent.Device_List.IsEnabled() and os.path.isdir (Config.Config["Save_Dir_On_Cart"]):
                 item = wx.MenuItem( menu, self.popupSaveTree1, _("Copy to Device") )
                 menu.AppendItem( item )
             item = wx.MenuItem( menu, self.popupSaveTree2, _("Edit Save Comment") )
@@ -236,7 +236,7 @@ class cSaveGameManager( wx.Dialog ):
         self.m_SelItem = item
         self.m_SelItemText = self.SGMTreeCtrl.GetItemText( item )
         if item and self.SGMTreeCtrl.GetItemText( item )[:5] == "Save ":
-            if self.Parent.Device_List.IsEnabled():
+            if self.Parent.Device_List.IsEnabled() and os.path.isdir (Config.Config["Save_Dir_On_Cart"]):
                 self.Copy_Button.Enable( True )
             else:
                 self.Copy_Button.Enable( False )
