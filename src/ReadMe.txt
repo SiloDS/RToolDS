@@ -70,6 +70,8 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1275 - Bumped to 1275
+v0.2.1274 - Fixed #113 : Text Changes to ROM Search
 v0.2.1272 - Bumped to 1272
 v0.2.1271 - Pending ROMs Now Show No Save if Auto Copy Saves isn't Set
 v0.2.1270 - SGM Now Checks for a Valid Save Directory
