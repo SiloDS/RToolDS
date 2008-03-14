@@ -70,6 +70,9 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1279 - Bumped to 1279
+v0.2.1278 - More Multiple ROM Fixes
+v0.2.1277 - Multiple ROMs on Device Fixes
 v0.2.1275 - Bumped to 1275
 v0.2.1274 - Fixed #113 : Text Changes to ROM Search
 v0.2.1272 - Bumped to 1272
