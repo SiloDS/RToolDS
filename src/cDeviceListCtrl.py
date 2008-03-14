@@ -3,6 +3,7 @@
 import wx
 import os
 import sys
+from copy import deepcopy
 if sys.platform == "win32":
     import win32api
 import time
@@ -24,6 +25,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
 
         self.ROM_Count = 0
         self.CRC_List = []
+        self.ROM_List = []
 #        self.Saves_List = []
 #        self.Size_List = []
         self.Pending = []
@@ -94,6 +96,9 @@ class cDeviceListCtrl( wx.ListCtrl ):
     def Populate ( self ):
 #        Result = ""
         self.CRC_List = []
+        for ROM in self.ROM_List:
+            del (ROM)
+        self.ROM_List = []
 #        self.Saves_List = []
 #        self.Size_List = []
         self.Pending_Positions = []
@@ -141,7 +146,8 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 Ext = os.path.splitext( File )[1]
                 if Ext.lower () in Config.Config ["ROM_Extensions"]:
                     try:
-                        ROM = MyROMS.Lookup_ROM_Filename ( File )
+                        oROM = MyROMS.Lookup_ROM_Filename ( File )
+                        ROM = deepcopy (oROM)
                         ROM.Name_On_Device = ""
                         Size = os.path.getsize( os.path.join ( Dir, File ) )
                         if Size == ROM.ROM_Size:
@@ -151,11 +157,12 @@ class cDeviceListCtrl( wx.ListCtrl ):
                         if ROM.Found == False:  #TODO: Fix Me!!!!!
                             continue
                         ROM.Name_On_Device = os.path.join (Dir, File)
-                        self.CRC_List.append( ROM.ROM_CRC )
                         ROM.Size_On_Device = os.path.getsize( os.path.join ( Dir, File ))
 #                        self.Size_List.append ( os.path.getsize( os.path.join ( Dir, File ) ) )
                         ROM.Saves_List = self.Has_Save(Dir, File)
 #                        self.Saves_List.append ( self.Has_Save ( Dir, File ) )
+                        self.CRC_List.append( ROM.ROM_CRC )
+                        self.ROM_List.append( ROM)
                         self.ROM_Count += 1
                     except:
                         try:
@@ -163,11 +170,13 @@ class cDeviceListCtrl( wx.ListCtrl ):
                             Data = File_In.read (0x12)
                             File_In.close ()
                             Serial = Utils.Get_Serial(Data)
-                            ROM = MyROMS.Lookup_ROM_Serial ( Serial )
+                            oROM = MyROMS.Lookup_ROM_Serial ( Serial )
+                            ROM = deepcopy (oROM)
                             if ROM.Found == False:
                                 continue
                             ROM.Name_On_Device = os.path.join (Dir, File)
                             self.CRC_List.append( ROM.ROM_CRC )
+                            self.ROM_List.append( ROM)
                             ROM.Size_On_Device = os.path.getsize( os.path.join ( Dir, File ))
 #                            self.Size_List.append ( os.path.getsize( os.path.join ( Dir, File ) ) )
 #                            self.Saves_List.append ( self.Has_Save ( Dir, File ) )
@@ -188,8 +197,10 @@ class cDeviceListCtrl( wx.ListCtrl ):
 #            if self.Pending[count].Found == False:
 #                del self.Pending[count]
 
-        for ROM in self.Pending:
+        for oROM in self.Pending:
+            ROM = deepcopy (oROM)
             self.CRC_List.append( ROM.ROM_CRC )
+            self.ROM_List.append( ROM )
             ROM.Size_On_Device = ROM.Effective_Size
 #            self.Size_List.append ( ROM.Effective_Size )
 #            self.Saves_List.append ( [bool (ROM.Saves), None] )
@@ -218,12 +229,10 @@ class cDeviceListCtrl( wx.ListCtrl ):
         return True
     
     def Sort (self):
-        tmpList = []
-        
-        for Count in range (0,self.ROM_Count):
-            tmpList.append (MyROMS.Lookup_ROM_CRC ( self.CRC_List[Count] ))
+        tmpList = deepcopy (self.ROM_List)
         
         self.CRC_List = []
+        self.ROM_List = []
 #        self.Saves_List = []
 #        self.Size_List = []
         self.Pending_Positions = []
@@ -286,11 +295,13 @@ class cDeviceListCtrl( wx.ListCtrl ):
             
         for ROM in tmpList:
             self.CRC_List.append( ROM.ROM_CRC )
+            self.ROM_List.append (ROM)
 #            self.Size_List.append ( os.path.getsize( ROM.Name_On_Device ) )
 #            self.Saves_List.append ( self.Has_Save ( os.path.split (ROM.Name_On_Device )[0], os.path.split (ROM.Name_On_Device)[1]) )
+        del (tmpList)
 
     def Get_ROM ( self, item ):
-        return MyROMS.Lookup_ROM_CRC ( self.CRC_List[item] )
+        return self.ROM_List [ item  ]
     
     def Get_Save_Name ( self, item ):
 #        return self.Saves_List[item][1]
@@ -324,8 +335,16 @@ class cDeviceListCtrl( wx.ListCtrl ):
             return True
         return False
 
-    def Add_Pending (self, ROM):
-        if ROM.ROM_CRC not in self.CRC_List and ROM not in self.Pending:
+    def Add_Pending (self, oROM):
+        Force = False
+        ROM = deepcopy (oROM)
+        ROM.Name_On_Device = Utils.Get_Name_on_Device (ROM)
+        if ROM.ROM_CRC in self.CRC_List or ROM in self.Pending:
+            Res = wx.MessageBox( _( '%s Already on Device\n\nDo you Want to Re-Copy it?' ) % ROM.ROM_File, _( 'ROM On Device' ), wx.YES_NO| wx.ICON_QUESTION )
+            if Res == wx.YES:
+                Force = True
+
+        if (ROM.ROM_CRC not in self.CRC_List and ROM not in self.Pending) or Force:
             if ROM.Trimmed:
                 ROM.Trimmed_On_Device = True
             else:
@@ -334,6 +353,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 self.Calc_FreeSpace()
                 return False
             self.Pending.append(ROM)
+#            self.ROM_List.append ()
             if Config.Config ["AutoCopySaves"]:
                 ROM.Saves_List = [ Utils.cbool (ROM.Saves), None, "N/A"]
             else:

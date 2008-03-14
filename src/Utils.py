@@ -442,10 +442,14 @@ def GetFromWeb ( Url, Filename ):
     return 0
 
 def Get_Hash ( Filename ):
-    File_In = open( Filename, "rb" )
-    Data = File_In.read()
-    File_In.close ()
-    return Get_Hash_Data (Data)
+    try:
+        File_In = open( Filename, "rb" )
+        Data = File_In.read()
+        File_In.close ()
+        RetVal = Get_Hash_Data (Data)
+    except:
+        RetVal = 0  
+    return RetVal
 
 def Get_Hash_Data ( Data ):
     if ( sys.version_info[0] * 10 ) + sys.version_info[1] >= 25: #TODO: Fixme...
@@ -462,7 +466,11 @@ def Add_Save (ROM, Save, SaveCommentsShelve, Save_ROMS, Auto = False):
     CartHash = Get_Hash( Save )
 
     if os.path.isfile ( SaveName + ".001" ):
-        if Get_Hash( SaveName + ".001" ) != CartHash:
+        Found = False
+        for a in range (1,Config.Config ["Save_Games_to_Keep"]+1):
+            if Get_Hash( SaveName + ".%03d" % a ) == CartHash:
+                Found = True
+        if not Found:
             Save_Created = True
             for Count in range ( Config.Config ["Save_Games_to_Keep"]-1, 0, -1 ):
                 if os.path.isfile ( SaveName + ".%03d" % Count ):
@@ -474,7 +482,7 @@ def Add_Save (ROM, Save, SaveCommentsShelve, Save_ROMS, Auto = False):
             if Auto == False:
                 SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = ""
             else:
-                SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = _("Auto Backup")
+                SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = _("Auto") + " %s" % ROM.Name_On_Device
                 
             SaveCommentsShelve.sync ()
             Save_Created = True
@@ -483,7 +491,7 @@ def Add_Save (ROM, Save, SaveCommentsShelve, Save_ROMS, Auto = False):
         if Auto == False:
             SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = ""
         else:
-            SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = _("Auto Backup")
+            SaveCommentsShelve[str (ROM.ROM_CRC+"001")] = _("Auto") + " %s" % ROM.Name_On_Device
         SaveCommentsShelve.sync ()
         Save_Created = True
 

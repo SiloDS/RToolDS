@@ -54,6 +54,7 @@ class cSaveGameComments(wx.Dialog):
         self.Thaw()
         
     def __Local_Init (self):
+        self.SGCList.ColumnsToSkip = [0,1]
         self.SetSize( Config.Config ["SC_Size"] )
         
         if Config.Config ["SC_Position"] [ 0 ] == -1:
@@ -62,11 +63,12 @@ class cSaveGameComments(wx.Dialog):
             self.SetPosition( Config.Config ["SC_Position"] )
             
         self.SGCList.InsertColumn ( 0, _("ROM Name") )
-        self.SGCList.InsertColumn ( 1, _("Comment") )
+        self.SGCList.InsertColumn ( 1, _("Filename") )
+        self.SGCList.InsertColumn ( 2, _("Comment") )
         
         self.Bind( wx.EVT_SIZE, self.On_Window_Size )
         self.Bind( wx.EVT_MOVE, self.On_Window_Move )
-#        self.Bind( wx.EVT_LIST_COL_END_DRAG, self.OnColResized, self.SGCList )
+        self.Bind( wx.EVT_LIST_COL_END_DRAG, self.OnColResized, self.SGCList )
 
     def On_Window_Size ( self, event ):
         Config.Config ["SC_Size"] = self.GetSize()
@@ -83,16 +85,19 @@ class cSaveGameComments(wx.Dialog):
 
     def Populate (self, ROMS, SaveGameShelve):
         self.ROMS = ROMS
+        self.ROMS.reverse()
         self.SaveGameShelve = SaveGameShelve
         Count = 0
         for ROM in self.ROMS:
             index = self.SGCList.InsertStringItem ( sys.maxint, ROM.ROM_File )
-            self.SGCList.SetStringItem ( index, 1, "" )
+            self.SGCList.SetStringItem ( index, 1, ROM.Name_On_Device )
+            self.SGCList.SetStringItem ( index, 2, "" )
             self.SGCList.SetItemData( index, Count )
             Count += 1
 
         self.SGCList.SetColumnWidth( 0, wx.LIST_AUTOSIZE )
-        self.SGCList.SetColumnWidth( 1, 10 )
+        self.SGCList.SetColumnWidth( 1, wx.LIST_AUTOSIZE )
+        self.SGCList.SetColumnWidth( 2, 10 )
         self.SGCList.SetColumnWidth (0, self.SGCList.GetColumnWidth(0)+5)
         
         self.SGCList.SetFocus()
@@ -109,16 +114,24 @@ class cSaveGameComments(wx.Dialog):
                 loc = loc + self.SGCList.GetColumnWidth(n)
                 self.SGCList.col_locs.append(loc)
 
-            self.SGCList.OpenEditor( 1, self.SGCList.GetFirstSelected())
+            self.SGCList.OpenEditor( 2, self.SGCList.GetFirstSelected())
         else:
             event.Skip ()
 
     def On_OK(self, event): # wxGlade: cSaveGameComments.<event_handler>
         Count = 0
-        
+        Dups = []
         while Count < self.SGCList.GetItemCount():
-            MyKey   = str (self.ROMS[self.SGCList.GetItemData(Count)].ROM_CRC + "001")
-            Comment = self.SGCList.GetItem(Count, 1).Text
+            KeyCount = 1
+            MyKey = str (self.ROMS[self.SGCList.GetItemData(Count)].ROM_CRC)
+            MyKey = MyKey + "%03d" % KeyCount
+            while MyKey in Dups:
+                KeyCount += 1
+                MyKey = str (self.ROMS[self.SGCList.GetItemData(Count)].ROM_CRC)
+                MyKey = MyKey + "%03d" % KeyCount
+            Dups.append(MyKey)
+                
+            Comment = self.SGCList.GetItem(Count, 2).Text
             
             if Comment != "":
                 self.SaveGameShelve [ MyKey ] = Comment
