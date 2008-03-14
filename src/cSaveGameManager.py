@@ -359,13 +359,31 @@ class cSaveGameManager( wx.Dialog ):
         CRC = self.SGMTreeCtrl.GetItemPyData( self.m_SelItem )
         ROM = MyROMS.Lookup_ROM_CRC ( CRC )
         
+        if self.Parent.Device_List.Get_CRC_List().count (CRC) > 1:
+            Files = []
+            ROMS = []
+            for a in self.Parent.Device_List.ROM_List:
+                if a.ROM_CRC == CRC:
+                    Files.append (a.Name_On_Device)
+                    ROMS.append (a)
+            dlg = wx.SingleChoiceDialog(
+                    self, 'Select a File to Copy Save to:', 'Multiple ROMS Exist',
+                    Files, 
+                    wx.CHOICEDLG_STYLE
+                    )
+    
+            if dlg.ShowModal() == wx.ID_OK:
+                ROM = ROMS [dlg.GetSelection()]
+            else:
+                return
+            
         SaveName = ""
         if CRC not in self.Parent.Device_List.Get_CRC_List():
             Res = wx.MessageBox( _('ROM is not on the Device\n\nDo You Wish to Copy it Anyway?'), _('ROM Not Found'), wx.YES_NO| wx.ICON_QUESTION )
             if Res != wx.YES:
                 return
             SaveName = os.path.splitext (Utils.Get_Name_on_Device (ROM))[0] + Utils.Get_Save_Extension()
-
+        
         Text = self.SGMTreeCtrl.GetItemText( self.m_SelItem )
         SaveNum = Text[5:Text.find( " - " )]
         OriginalSaveName    = os.path.join ( Config.Config ["Save_Path"], "%s.sav.%s" % ( CRC, SaveNum ) )
@@ -394,7 +412,6 @@ class cSaveGameManager( wx.Dialog ):
                 SaveName = os.path.splitext (ROM.Name_On_Device)[0] + Utils.Get_Save_Extension()
 
             SaveName = os.path.join(Config.Config["Save_Dir_On_Cart"], os.path.split (SaveName)[1])
-            print SaveName
             Utils.Write_Save(ROM, Data, SaveName)
 
             self.SetCursor( wx.StockCursor( wx.CURSOR_ARROW ) )
