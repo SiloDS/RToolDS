@@ -2,7 +2,7 @@
 <dat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datas.xsd">
 	<configuration>
 		<datName>ADVANsCEne Nintendo DS Collection</datName>
-		<datVersion>0296</datVersion>
+		<datVersion>0320</datVersion>
 		<system>Nintendo DS</system>
 		<screenshotsWidth>256</screenshotsWidth>
 		<screenshotsHeight>384</screenshotsHeight>
@@ -14659,7 +14659,7 @@
 			<files>
 				<romCRC extension=".nds">3BF38451</romCRC>
 			</files>
-			<im1CRC>C9F97CC3</im1CRC>
+			<im1CRC>18D40146</im1CRC>
 			<im2CRC>2393BCD8</im2CRC>
 			<icoCRC>4BD4DD9A</icoCRC>
 			<nfoCRC>23B2ECB6</nfoCRC>
@@ -16309,7 +16309,7 @@
 			<filename>wrg-kwyo.zip</filename>
 			<dumpdate>2006-08-29</dumpdate>
 			<dirname>Kokoro_wo_Yasumeru_Otona_no_Nurie_DS_JPN_NDS-WRG</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>494</duplicateid>
 			<comment>0542</comment>
 		</game>
 		<game>
@@ -18633,7 +18633,7 @@
 			<filename>wrg-kira.zip</filename>
 			<dumpdate>2006-10-24</dumpdate>
 			<dirname>Pinky_Street_Kira_Kira_Music_Hour_JPN_NDS-WRG</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>505</duplicateid>
 			<comment>0623</comment>
 		</game>
 		<game>
@@ -22756,7 +22756,7 @@
 			<filename>wrg-fdfs.zip</filename>
 			<dumpdate>2006-12-14</dumpdate>
 			<dirname>Fushigi_no_Dungeon_Fuurai_no_Shiren_DS_JPN_NDS-WRG</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>508</duplicateid>
 			<comment>0767</comment>
 		</game>
 		<game>
@@ -27140,7 +27140,7 @@
 			<files>
 				<romCRC extension=".nds">A14D2E44</romCRC>
 			</files>
-			<im1CRC>8F08BA8C</im1CRC>
+			<im1CRC>AD8CEDE7</im1CRC>
 			<im2CRC>E20273D4</im2CRC>
 			<icoCRC>B9EBFEF8</icoCRC>
 			<nfoCRC>EEAA84E4</nfoCRC>
@@ -28456,7 +28456,7 @@
 			<files>
 				<romCRC extension=".nds">252A0433</romCRC>
 			</files>
-			<im1CRC>2990C048</im1CRC>
+			<im1CRC>ACC792C5</im1CRC>
 			<im2CRC>A8887F27</im2CRC>
 			<icoCRC>4AA039D6</icoCRC>
 			<nfoCRC>7BD88F23</nfoCRC>
@@ -29224,7 +29224,7 @@
 			<filename>ez-gs4p.zip</filename>
 			<dumpdate>2007-04-14</dumpdate>
 			<dirname>Gyakuten_Saiban_4_PROPER_NDS_JPN-eZ</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>495</duplicateid>
 			<comment>0993</comment>
 			<ips>
 				<ipsRecord>
@@ -31263,7 +31263,7 @@
 			<files>
 				<romCRC extension=".nds">8C17C3AB</romCRC>
 			</files>
-			<im1CRC>66DD34B5</im1CRC>
+			<im1CRC>3B6DD2BA</im1CRC>
 			<im2CRC>CF7ADDE7</im2CRC>
 			<icoCRC>36EF7FD6</icoCRC>
 			<nfoCRC>AD43D5AA</nfoCRC>
@@ -31443,7 +31443,7 @@
 			<filename>svg-axtp.zip</filename>
 			<dumpdate>2007-05-11</dumpdate>
 			<dirname>Tennis_Masters_EUR_NDS-SirVG</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>517</duplicateid>
 			<comment>1070</comment>
 		</game>
 		<game>
@@ -34362,7 +34362,7 @@
 			<filename>ipt-tuds.zip</filename>
 			<dumpdate>2007-06-26</dumpdate>
 			<dirname>Touch_de_Uno_DS_JPN_NDS-iMPAcT</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>502</duplicateid>
 			<comment>1173</comment>
 		</game>
 		<game>
@@ -38037,7 +38037,7 @@
 			<filename>ind-inrd.zip</filename>
 			<dumpdate>2007-08-10</dumpdate>
 			<dirname>Itsuwari_no_Rinbukyoku_JPN_NDS-iND</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>500</duplicateid>
 			<comment>1304</comment>
 		</game>
 		<game>
@@ -38305,7 +38305,7 @@
 			<files>
 				<romCRC extension=".nds">3FF7E5D0</romCRC>
 			</files>
-			<im1CRC>66CD30EE</im1CRC>
+			<im1CRC>8A4F90F7</im1CRC>
 			<im2CRC>DB739B2A</im2CRC>
 			<icoCRC>BDBB8D46</icoCRC>
 			<nfoCRC>ADDE2A2B</nfoCRC>
@@ -38417,7 +38417,7 @@
 			<files>
 				<romCRC extension=".nds">74AE04DC</romCRC>
 			</files>
-			<im1CRC>2EF452C2</im1CRC>
+			<im1CRC>9B7B7215</im1CRC>
 			<im2CRC>E7207CC9</im2CRC>
 			<icoCRC>BDBB8D46</icoCRC>
 			<nfoCRC>59A77DC5</nfoCRC>
@@ -38585,7 +38585,7 @@
 			<files>
 				<romCRC extension=".nds">73DB25A1</romCRC>
 			</files>
-			<im1CRC>7EB94525</im1CRC>
+			<im1CRC>70C1E499</im1CRC>
 			<im2CRC>7580ED95</im2CRC>
 			<icoCRC>EDA206C3</icoCRC>
 			<nfoCRC>45BF86D8</nfoCRC>
@@ -38940,7 +38940,7 @@
 			<filename>ind-ffcc.zip</filename>
 			<dumpdate>2007-08-17</dumpdate>
 			<dirname>Final_Fantasy_Crystal_Chronicles_Ring_of_Fates_JPN_NDS-iND</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>516</duplicateid>
 			<comment>1336</comment>
 		</game>
 		<game>
@@ -39131,7 +39131,7 @@
 			<files>
 				<romCRC extension=".nds">B142B8D0</romCRC>
 			</files>
-			<im1CRC>DA3C2E2B</im1CRC>
+			<im1CRC>1310AAB4</im1CRC>
 			<im2CRC>D40DEB24</im2CRC>
 			<icoCRC>B7580B43</icoCRC>
 			<nfoCRC>183BF31F</nfoCRC>
@@ -39187,7 +39187,7 @@
 			<files>
 				<romCRC extension=".nds">93BBD73C</romCRC>
 			</files>
-			<im1CRC>19886F7E</im1CRC>
+			<im1CRC>A5326EDF</im1CRC>
 			<im2CRC>318E0D8F</im2CRC>
 			<icoCRC>8C8A93DD</icoCRC>
 			<nfoCRC>ACEE1AA6</nfoCRC>
@@ -39215,7 +39215,7 @@
 			<files>
 				<romCRC extension=".nds">89A9B8CD</romCRC>
 			</files>
-			<im1CRC>2F47AAE3</im1CRC>
+			<im1CRC>8E907E49</im1CRC>
 			<im2CRC>5D4246E2</im2CRC>
 			<icoCRC>A3FBF384</icoCRC>
 			<nfoCRC>4446C9FF</nfoCRC>
@@ -39311,7 +39311,7 @@
 			<filename>cvn-ecls.zip</filename>
 			<dumpdate>2007-08-23</dumpdate>
 			<dirname>Ecoris_JPN_NDS-Caravan</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>507</duplicateid>
 			<comment>1348</comment>
 		</game>
 		<game>
@@ -41259,7 +41259,7 @@
 			<files>
 				<romCRC extension=".nds">A0B95C31</romCRC>
 			</files>
-			<im1CRC>941F1DF7</im1CRC>
+			<im1CRC>F248BE14</im1CRC>
 			<im2CRC>6A8E51A0</im2CRC>
 			<icoCRC>37FD916D</icoCRC>
 			<nfoCRC>EC511502</nfoCRC>
@@ -42015,7 +42015,7 @@
 			<files>
 				<romCRC extension=".nds">039BF7E3</romCRC>
 			</files>
-			<im1CRC>66FF5E25</im1CRC>
+			<im1CRC>5E74D0CF</im1CRC>
 			<im2CRC>E58FE08B</im2CRC>
 			<icoCRC>6C4321BC</icoCRC>
 			<nfoCRC>0429E073</nfoCRC>
@@ -42211,7 +42211,7 @@
 			<files>
 				<romCRC extension=".nds">C77A4E86</romCRC>
 			</files>
-			<im1CRC>0A919895</im1CRC>
+			<im1CRC>25DE0F73</im1CRC>
 			<im2CRC>F3912B97</im2CRC>
 			<icoCRC>BDE368F1</icoCRC>
 			<nfoCRC>197D9EB4</nfoCRC>
@@ -42481,7 +42481,7 @@
 		<game>
 			<imageNumber>1507</imageNumber>
 			<releaseNumber>1507</releaseNumber>
-			<title>Brain Buster - Puzzle Pack</title>
+			<title>Brain Buster - Puzzle Pak</title>
 			<saveType>Eeprom - 64 kbit</saveType>
 			<romSize>16777216</romSize>
 			<publisher>505 Games</publisher>
@@ -42671,7 +42671,7 @@
 			<filename>ud-bote.zip</filename>
 			<dumpdate>2007-10-03</dumpdate>
 			<dirname>Best_Of_Tests_DS_EUR_NDS-UD</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>513</duplicateid>
 			<comment>1465</comment>
 		</game>
 		<game>
@@ -43378,7 +43378,7 @@
 			<filename>frx-r08e.zip</filename>
 			<dumpdate>2007-10-10</dumpdate>
 			<dirname>Real_Football_2008_EUR_NDS-FireX</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>499</duplicateid>
 			<comment>1490</comment>
 		</game>
 		<game>
@@ -44354,7 +44354,7 @@
 			<internal_name>DFRIENDS</internal_name>
 			<serial>NTR-AXVP-EUR</serial>
 			<version>1.0</version>
-			<wifi>No</wifi>
+			<wifi>Yes</wifi>
 			<filename>xpa-dfre.zip</filename>
 			<dumpdate>2007-10-17</dumpdate>
 			<dirname>Disney_Friends_EUR_NDS-XPA</dirname>
@@ -44626,7 +44626,7 @@
 			<files>
 				<romCRC extension=".nds">FFB861EF</romCRC>
 			</files>
-			<im1CRC>B997A4B0</im1CRC>
+			<im1CRC>5C480043</im1CRC>
 			<im2CRC>468CF3AC</im2CRC>
 			<icoCRC>8F2ACD27</icoCRC>
 			<nfoCRC>E741A3CB</nfoCRC>
@@ -44934,7 +44934,7 @@
 			<files>
 				<romCRC extension=".nds">B9139FBF</romCRC>
 			</files>
-			<im1CRC>0919B196</im1CRC>
+			<im1CRC>240F552B</im1CRC>
 			<im2CRC>A8314A27</im2CRC>
 			<icoCRC>740F3A66</icoCRC>
 			<nfoCRC>977C4C89</nfoCRC>
@@ -45438,7 +45438,7 @@
 			<files>
 				<romCRC extension=".nds">F3F84486</romCRC>
 			</files>
-			<im1CRC>017F1730</im1CRC>
+			<im1CRC>7CABD083</im1CRC>
 			<im2CRC>33C1DF5E</im2CRC>
 			<icoCRC>89B439C6</icoCRC>
 			<nfoCRC>57EBFBA1</nfoCRC>
@@ -45494,7 +45494,7 @@
 			<files>
 				<romCRC extension=".nds">E92836D9</romCRC>
 			</files>
-			<im1CRC>04127398</im1CRC>
+			<im1CRC>FF6CDB44</im1CRC>
 			<im2CRC>97D42952</im2CRC>
 			<icoCRC>511FA8A9</icoCRC>
 			<nfoCRC>EA1FCBEB</nfoCRC>
@@ -47942,7 +47942,7 @@
 			<filename>svg-ydre.zip</filename>
 			<dumpdate>2007-11-12</dumpdate>
 			<dirname>Dora_The_Explorer_Saves_The_Mermaids_USA_NDS-SirVG</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>510</duplicateid>
 			<comment>1652</comment>
 		</game>
 		<game>
@@ -48182,7 +48182,7 @@
 			<files>
 				<romCRC extension=".nds">ADC812AB</romCRC>
 			</files>
-			<im1CRC>B43063DF</im1CRC>
+			<im1CRC>2A17EC75</im1CRC>
 			<im2CRC>C64D684C</im2CRC>
 			<icoCRC>484FEE8F</icoCRC>
 			<nfoCRC>EDE4D3D0</nfoCRC>
@@ -48284,7 +48284,7 @@
 		<game>
 			<imageNumber>1714</imageNumber>
 			<releaseNumber>1714</releaseNumber>
-			<title>Need for Speed ProStreet</title>
+			<title>Need for Speed - ProStreet</title>
 			<saveType>Eeprom - 64 kbit</saveType>
 			<romSize>67108864</romSize>
 			<publisher>Electronic Arts</publisher>
@@ -48434,7 +48434,7 @@
 			<files>
 				<romCRC extension=".nds">4BD7BF53</romCRC>
 			</files>
-			<im1CRC>052F963F</im1CRC>
+			<im1CRC>1ADC177A</im1CRC>
 			<im2CRC>616887D0</im2CRC>
 			<icoCRC>A49094F2</icoCRC>
 			<nfoCRC>0D733E17</nfoCRC>
@@ -49544,7 +49544,7 @@
 		<game>
 			<imageNumber>1759</imageNumber>
 			<releaseNumber>1759</releaseNumber>
-			<title>Need for Speed ProStreet</title>
+			<title>Need for Speed - ProStreet</title>
 			<saveType>Eeprom - 64 kbit</saveType>
 			<romSize>67108864</romSize>
 			<publisher>Electronic Arts</publisher>
@@ -50070,7 +50070,7 @@
 			<filename>ind-zooh.zip</filename>
 			<dumpdate>2007-11-24</dumpdate>
 			<dirname>Zoo_Hospital_USA_NDS-iND</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>512</duplicateid>
 			<comment>1726</comment>
 		</game>
 		<game>
@@ -50966,7 +50966,7 @@
 			<filename>xpa-guds.rar</filename>
 			<dumpdate>2007-11-30</dumpdate>
 			<dirname>Godzilla_Unleashed_Double_Smashed_USA_NDS-XPA</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>493</duplicateid>
 			<comment>1758</comment>
 		</game>
 		<game>
@@ -50994,7 +50994,7 @@
 			<filename>svg-a3he.zip</filename>
 			<dumpdate>2007-11-30</dumpdate>
 			<dirname>The_Suite_Life_of_Zack_and_Cody_Circle_of_Spies_USA_NDS-SirVG</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>501</duplicateid>
 			<comment>1759</comment>
 		</game>
 		<game>
@@ -51162,7 +51162,7 @@
 			<filename>svg-yeqe.zip</filename>
 			<dumpdate>2007-12-01</dumpdate>
 			<dirname>Go_Diego_Go_Safari_Rescue_USA_NDS-SirVG</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>511</duplicateid>
 			<comment>1765</comment>
 		</game>
 		<game>
@@ -52905,7 +52905,7 @@
 			<imageNumber>1879</imageNumber>
 			<releaseNumber>1879</releaseNumber>
 			<title>KuruKuru Princess - Yume no White Quartet</title>
-			<saveType>Eeprom - 64 kbit</saveType>
+			<saveType>Eeprom - 512 kbit</saveType>
 			<romSize>33554432</romSize>
 			<publisher>Spike</publisher>
 			<location>7</location>
@@ -52914,7 +52914,7 @@
 			<files>
 				<romCRC extension=".nds">B0AA347B</romCRC>
 			</files>
-			<im1CRC>53ED9A55</im1CRC>
+			<im1CRC>B8170587</im1CRC>
 			<im2CRC>63809823</im2CRC>
 			<icoCRC>3FB77A7F</icoCRC>
 			<nfoCRC>FDCAF890</nfoCRC>
@@ -52926,7 +52926,7 @@
 			<filename>6rz-kpyq.zip</filename>
 			<dumpdate>2007-12-16</dumpdate>
 			<dirname>KuruKuru_Princess_Yume_no_White_Quartet_JPN_NDS-6rz</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>521</duplicateid>
 			<comment>1828</comment>
 		</game>
 		<game>
@@ -53122,7 +53122,7 @@
 			<filename>xpa-mauu.rar</filename>
 			<dumpdate>2007-12-18</dumpdate>
 			<dirname>MX_vs_ATV_Untamed_USA_NDS-XPA</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>504</duplicateid>
 			<comment>1835</comment>
 		</game>
 		<game>
@@ -54650,7 +54650,7 @@
 			<files>
 				<romCRC extension=".nds">FFAD1D20</romCRC>
 			</files>
-			<im1CRC>DE262FAC</im1CRC>
+			<im1CRC>482C1834</im1CRC>
 			<im2CRC>7C841452</im2CRC>
 			<icoCRC>E359AD3E</icoCRC>
 			<nfoCRC>17868DC4</nfoCRC>
@@ -54668,7 +54668,7 @@
 		<game>
 			<imageNumber>1942</imageNumber>
 			<releaseNumber>1942</releaseNumber>
-			<title>MTV Fan Attack </title>
+			<title>MTV Fan Attack</title>
 			<saveType>Eeprom - 4 kbit</saveType>
 			<romSize>67108864</romSize>
 			<publisher>Mindscape</publisher>
@@ -55250,7 +55250,7 @@
 			<filename>xms-fmpg.rar</filename>
 			<dumpdate>2008-01-03</dumpdate>
 			<dirname>Best_Friends_Mein_Pferd_GER_NDS-EXiMiUS</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>514</duplicateid>
 			<comment>1908</comment>
 		</game>
 		<game>
@@ -55630,7 +55630,7 @@
 			<files>
 				<romCRC extension=".nds">F9F797CF</romCRC>
 			</files>
-			<im1CRC>DE04A1D2</im1CRC>
+			<im1CRC>5E136A74</im1CRC>
 			<im2CRC>5982E38B</im2CRC>
 			<icoCRC>8A4B29D9</icoCRC>
 			<nfoCRC>9F9C6C49</nfoCRC>
@@ -56050,7 +56050,7 @@
 			<files>
 				<romCRC extension=".nds">2063CE30</romCRC>
 			</files>
-			<im1CRC>2263B31E</im1CRC>
+			<im1CRC>48834CF9</im1CRC>
 			<im2CRC>16D60E23</im2CRC>
 			<icoCRC>53646D84</icoCRC>
 			<nfoCRC>1E64DD26</nfoCRC>
@@ -56174,7 +56174,7 @@
 			<filename>sq-brch.zip</filename>
 			<dumpdate>2008-01-11</dumpdate>
 			<dirname>Brain_Challenge_USA_NDS-SQUiRE</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>497</duplicateid>
 			<comment>1940</comment>
 		</game>
 		<game>
@@ -56198,7 +56198,7 @@
 			<internal_name>DFRIENDS</internal_name>
 			<serial>NTR-AXVI-ITA</serial>
 			<version>1.0</version>
-			<wifi>No</wifi>
+			<wifi>Yes</wifi>
 			<filename>ck-dfit.zip</filename>
 			<dumpdate>2008-01-12</dumpdate>
 			<dirname>Disney_Friends_ITA_NDS-Chikan</dirname>
@@ -56358,7 +56358,7 @@
 			<files>
 				<romCRC extension=".nds">9170DB12</romCRC>
 			</files>
-			<im1CRC>6581D51B</im1CRC>
+			<im1CRC>D0E17B81</im1CRC>
 			<im2CRC>C9A19085</im2CRC>
 			<icoCRC>ADB8E72F</icoCRC>
 			<nfoCRC>D7B0FC52</nfoCRC>
@@ -56706,7 +56706,7 @@
 			<filename>svg-ybre.zip</filename>
 			<dumpdate>2008-01-19</dumpdate>
 			<dirname>Baby_Pals_REPACK_USA_NDS-SirVG</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>509</duplicateid>
 			<comment>1959</comment>
 		</game>
 		<game>
@@ -56758,7 +56758,7 @@
 			<internal_name>DFRIENDS</internal_name>
 			<serial>NTR-AXVS-ESP</serial>
 			<version>1.0</version>
-			<wifi>No</wifi>
+			<wifi>Yes</wifi>
 			<filename>xms-tads.rar</filename>
 			<dumpdate>2008-01-19</dumpdate>
 			<dirname>Tus_Amigos_de_Disney_SPA_NDS-EXiMiUS</dirname>
@@ -57338,7 +57338,7 @@
 			<files>
 				<romCRC extension=".nds">26DEB69B</romCRC>
 			</files>
-			<im1CRC>72900870</im1CRC>
+			<im1CRC>C0F4B808</im1CRC>
 			<im2CRC>614230CE</im2CRC>
 			<icoCRC>8DA0A166</icoCRC>
 			<nfoCRC>1977545F</nfoCRC>
@@ -57630,7 +57630,7 @@
 			<filename>ass-mcrnts.rar</filename>
 			<dumpdate>2008-02-06</dumpdate>
 			<dirname>Assassins_Creed_Altairs_Chronicles_USA_NDS-Micronauts</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>496</duplicateid>
 			<comment>1992</comment>
 		</game>
 		<game>
@@ -57658,7 +57658,7 @@
 			<filename>xpa-swcu.rar</filename>
 			<dumpdate>2008-02-06</dumpdate>
 			<dirname>Spiderwick_Chronicles_USA_NDS-XPA</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>515</duplicateid>
 			<comment>1993</comment>
 		</game>
 		<game>
@@ -57686,7 +57686,7 @@
 			<filename>xpa-zt2u.rar</filename>
 			<dumpdate>2008-02-06</dumpdate>
 			<dirname>Zoo_Tycoon_2_USA_NDS-XPA</dirname>
-			<duplicateid>0</duplicateid>
+			<duplicateid>506</duplicateid>
 			<comment>1994</comment>
 		</game>
 		<game>
@@ -57738,7 +57738,7 @@
 			<internal_name>DFRIENDS</internal_name>
 			<serial>NTR-AXVF-FRA</serial>
 			<version>1.0</version>
-			<wifi>No</wifi>
+			<wifi>Yes</wifi>
 			<filename>xms-madf.rar</filename>
 			<dumpdate>2008-02-07</dumpdate>
 			<dirname>Mes_Amis_Disney_FRA_NDS-EXiMiUS</dirname>
@@ -58225,7 +58225,7 @@
 			<imageNumber>2069</imageNumber>
 			<releaseNumber>2069</releaseNumber>
 			<title>Chubaw Desuyo! Kyoushou Recipe Shuu</title>
-			<saveType>TBC</saveType>
+			<saveType>Eeprom - 512 kbit</saveType>
 			<romSize>67108864</romSize>
 			<publisher>Alpha Unit</publisher>
 			<location>7</location>
@@ -58616,8 +58616,8 @@
 		<game>
 			<imageNumber>2083</imageNumber>
 			<releaseNumber>2083</releaseNumber>
-			<title>Mushishi - Amefuru Sato</title>
-			<saveType>TBC</saveType>
+			<title>Mushishi - Ame Furu Sato</title>
+			<saveType>Flash - 2 Mbit</saveType>
 			<romSize>67108864</romSize>
 			<publisher>Marvelous</publisher>
 			<location>7</location>
@@ -58645,7 +58645,7 @@
 			<imageNumber>2084</imageNumber>
 			<releaseNumber>2084</releaseNumber>
 			<title>Naruto Shippuden - Dairansen! Kage Bunsen Emaki</title>
-			<saveType>TBC</saveType>
+			<saveType>Eeprom - 512 kbit</saveType>
 			<romSize>67108864</romSize>
 			<publisher>Takara Tomy</publisher>
 			<location>7</location>
@@ -58743,8 +58743,8 @@
 			<icoCRC>AF6912D1</icoCRC>
 			<nfoCRC>B55E4D7F</nfoCRC>
 			<genre>Adventure</genre>
-			<internal_name>TOKIM2SCE</internal_name>
-			<serial>NTR-ADVJ-JPN</serial>
+			<internal_name>TOKIMEKIGS2N</internal_name>
+			<serial>NTR-YF2J-JPN</serial>
 			<version>1.0</version>
 			<wifi>No</wifi>
 			<filename>6rz-tm2s.zip</filename>
@@ -58752,6 +58752,3310 @@
 			<dirname>Tokimeki_Memorial_Girls_Side_2nd_Season_JPN_NDS-6rz</dirname>
 			<duplicateid>0</duplicateid>
 			<comment>2032</comment>
+		</game>
+		<game>
+			<imageNumber>2088</imageNumber>
+			<releaseNumber>2088</releaseNumber>
+			<title>FIFA Street 3</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Electronic Arts</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">89BF210C</romCRC>
+			</files>
+			<im1CRC>FA186AA1</im1CRC>
+			<im2CRC>64CB8527</im2CRC>
+			<icoCRC>1B2C00D3</icoCRC>
+			<nfoCRC>ADBF01CC</nfoCRC>
+			<genre>Sports</genre>
+			<internal_name>FIFA STREET3</internal_name>
+			<serial>NTR-YF3P-EUR</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>xpa-fs3e.rar</filename>
+			<dumpdate>2008-02-19</dumpdate>
+			<dirname>Fifa_Street_3_EUR_NDS-XPA</dirname>
+			<duplicateid>498</duplicateid>
+			<comment>2033</comment>
+		</game>
+		<game>
+			<imageNumber>2089</imageNumber>
+			<releaseNumber>2089</releaseNumber>
+			<title>Godzilla Unleashed</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Atari</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">A572FEE7</romCRC>
+			</files>
+			<im1CRC>4C276A8E</im1CRC>
+			<im2CRC>AD577F60</im2CRC>
+			<icoCRC>D9AF256A</icoCRC>
+			<nfoCRC>0B89A724</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>GODZ-UNL-NDS</internal_name>
+			<serial>NTR-YGZP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-gueu.rar</filename>
+			<dumpdate>2008-02-19</dumpdate>
+			<dirname>Godzilla_Unleashed_EUR_NDS-XPA</dirname>
+			<duplicateid>493</duplicateid>
+			<comment>2034</comment>
+		</game>
+		<game>
+			<imageNumber>2090</imageNumber>
+			<releaseNumber>2090</releaseNumber>
+			<title>Paint by DS</title>
+			<saveType>Flash - 2 Mbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Ertain</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">E4B4F327</romCRC>
+			</files>
+			<im1CRC>A6583FF8</im1CRC>
+			<im2CRC>6F75AAA4</im2CRC>
+			<icoCRC>894CC765</icoCRC>
+			<nfoCRC>14ED5958</nfoCRC>
+			<genre>Edutainment</genre>
+			<internal_name>P_PLEASURE</internal_name>
+			<serial>NTR-AONP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-pbde.rar</filename>
+			<dumpdate>2008-02-19</dumpdate>
+			<dirname>Paint_By_DS_EUR_NDS-XPA</dirname>
+			<duplicateid>494</duplicateid>
+			<comment>2035</comment>
+		</game>
+		<game>
+			<imageNumber>2091</imageNumber>
+			<releaseNumber>2091</releaseNumber>
+			<title>Apollo Justice  - Ace Attorney</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Capcom</publisher>
+			<location>1</location>
+			<sourceRom>Independent</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">AD99478D</romCRC>
+			</files>
+			<im1CRC>CAEE7416</im1CRC>
+			<im2CRC>3227BABC</im2CRC>
+			<icoCRC>CCBAF01D</icoCRC>
+			<nfoCRC>693DD696</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>APOLLO J US</internal_name>
+			<serial>NTR-AGCE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>cock-aj.rar</filename>
+			<dumpdate>2008-02-20</dumpdate>
+			<dirname>Apollo_Justice_Ace_Attorney_USA_NDS-HugeCock</dirname>
+			<duplicateid>495</duplicateid>
+			<comment>2036</comment>
+		</game>
+		<game>
+			<imageNumber>2092</imageNumber>
+			<releaseNumber>2092</releaseNumber>
+			<title>Sekaiju no Meikyuu 2 - Shoou no Seihai</title>
+			<saveType>Flash - 2 Mbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Atlus</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">21BC5FBF</romCRC>
+			</files>
+			<im1CRC>6F0581E5</im1CRC>
+			<im2CRC>074A24AE</im2CRC>
+			<icoCRC>1D6678B9</icoCRC>
+			<nfoCRC>81F7C64A</nfoCRC>
+			<genre>RPG</genre>
+			<internal_name>SEKAIJYU2</internal_name>
+			<serial>NTR-YIKJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-sm2j.zip</filename>
+			<dumpdate>2008-02-20</dumpdate>
+			<dirname>Sekaiju_no_Meikyuu_2_-_Shoou_no_Seihai_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2037</comment>
+		</game>
+		<game>
+			<imageNumber>2093</imageNumber>
+			<releaseNumber>2093</releaseNumber>
+			<title>Barnyard Blast - Swine of the Night</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Big Ben Interactive</publisher>
+			<location>0</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>6339</language>
+			<files>
+				<romCRC extension=".nds">35BB6F02</romCRC>
+			</files>
+			<im1CRC>660E92DF</im1CRC>
+			<im2CRC>48394B42</im2CRC>
+			<icoCRC>36BF5FC5</icoCRC>
+			<nfoCRC>1FCB69C4</nfoCRC>
+			<genre>Platformer</genre>
+			<internal_name>BB-SOTN</internal_name>
+			<serial>NTR-YQBP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-bybe.rar</filename>
+			<dumpdate>2008-02-20</dumpdate>
+			<dirname>Barnyard_Blast_Swine_of_the_Night_EUR_MULTi6_NDS-EXiMiUS</dirname>
+			<duplicateid>518</duplicateid>
+			<comment>2038</comment>
+		</game>
+		<game>
+			<imageNumber>2094</imageNumber>
+			<releaseNumber>2094</releaseNumber>
+			<title>Assassin's Creed - Altair's Chronicles</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>0</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">1F7E982C</romCRC>
+			</files>
+			<im1CRC>E13FE6A6</im1CRC>
+			<im2CRC>491E3A20</im2CRC>
+			<icoCRC>DCAD83EF</icoCRC>
+			<nfoCRC>A8ADE6AA</nfoCRC>
+			<genre>Action Adventure</genre>
+			<internal_name>ASSASSINS'</internal_name>
+			<serial>NTR-YAHP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-acae.rar</filename>
+			<dumpdate>2008-02-20</dumpdate>
+			<dirname>Assassins_Creed_Altairs_Chronicles_EUR_MULTi5_NDS-EXiMiUS</dirname>
+			<duplicateid>496</duplicateid>
+			<comment>2039</comment>
+		</game>
+		<game>
+			<imageNumber>2095</imageNumber>
+			<releaseNumber>2095</releaseNumber>
+			<title>Pachi-Slot Kouryaku Series DS Vol. 1 - Shinseiki Evangelion - Magokoro wo, Kimi ni</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>D3 Publisher</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">7D55CA13</romCRC>
+			</files>
+			<im1CRC>10B8684C</im1CRC>
+			<im2CRC>208C457F</im2CRC>
+			<icoCRC>4CC7C58C</icoCRC>
+			<nfoCRC>85C4E814</nfoCRC>
+			<genre>Gambling</genre>
+			<internal_name>EVASLOTMAGO</internal_name>
+			<serial>NTR-YVGJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-ngen.zip</filename>
+			<dumpdate>2008-02-21</dumpdate>
+			<dirname>Neon_Genesis_Evangelion_Magokoro_wo_Kimi_ni_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2040</comment>
+		</game>
+		<game>
+			<imageNumber>2096</imageNumber>
+			<releaseNumber>2096</releaseNumber>
+			<title>Kokoro wo Yasumeru Otona no Nurie DS 2</title>
+			<saveType>Flash - 2 Mbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Ertain</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">02F29AB6</romCRC>
+			</files>
+			<im1CRC>71EBE9ED</im1CRC>
+			<im2CRC>2209EBAA</im2CRC>
+			<icoCRC>8E110D67</icoCRC>
+			<nfoCRC>487768C3</nfoCRC>
+			<genre>Edutainment</genre>
+			<internal_name>NURIE2-DS</internal_name>
+			<serial>NTR-YU2J-JPN</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>6rz-kon2.zip</filename>
+			<dumpdate>2008-02-21</dumpdate>
+			<dirname>Kokoro_wo_Yasumeru_Otona_no_Nurie_DS_2_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2041</comment>
+		</game>
+		<game>
+			<imageNumber>2097</imageNumber>
+			<releaseNumber>2097</releaseNumber>
+			<title>Space Invaders Extreme</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Taito</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">E03441AB</romCRC>
+			</files>
+			<im1CRC>1C183338</im1CRC>
+			<im2CRC>A85A1C08</im2CRC>
+			<icoCRC>4E3D8322</icoCRC>
+			<nfoCRC>86A8993B</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>SIEXTREME</internal_name>
+			<serial>NTR-YXXJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>6rz-siej.zip</filename>
+			<dumpdate>2008-02-21</dumpdate>
+			<dirname>Space_Invaders_Extreme_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2042</comment>
+		</game>
+		<game>
+			<imageNumber>2098</imageNumber>
+			<releaseNumber>2098</releaseNumber>
+			<title>Brain Challenge</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4307</language>
+			<files>
+				<romCRC extension=".nds">9053C1EF</romCRC>
+			</files>
+			<im1CRC>33F2A97E</im1CRC>
+			<im2CRC>1D17E596</im2CRC>
+			<icoCRC>6C19031A</icoCRC>
+			<nfoCRC>79F03B3B</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>BRAIN CHALLE</internal_name>
+			<serial>NTR-YBCP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-brch.rar</filename>
+			<dumpdate>2008-02-21</dumpdate>
+			<dirname>Brain_Challenge_EUR_NDS-XPA</dirname>
+			<duplicateid>497</duplicateid>
+			<comment>2043</comment>
+		</game>
+		<game>
+			<imageNumber>2099</imageNumber>
+			<releaseNumber>2099</releaseNumber>
+			<title>FIFA Street 3</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Electronic Arts</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4099</language>
+			<files>
+				<romCRC extension=".nds">3FC9804B</romCRC>
+			</files>
+			<im1CRC>ED6C2C34</im1CRC>
+			<im2CRC>DF65C288</im2CRC>
+			<icoCRC>1B2C00D3</icoCRC>
+			<nfoCRC>3B5DD5A1</nfoCRC>
+			<genre>Sports</genre>
+			<internal_name>FIFA STREET3</internal_name>
+			<serial>NTR-YF3E-USA</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>sq-fs3.zip</filename>
+			<dumpdate>2008-02-21</dumpdate>
+			<dirname>FIFA_Street_3_USA_NDS-SQUiRE</dirname>
+			<duplicateid>498</duplicateid>
+			<comment>2044</comment>
+		</game>
+		<game>
+			<imageNumber>2100</imageNumber>
+			<releaseNumber>2100</releaseNumber>
+			<title>Real Soccer 2008</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>1</location>
+			<sourceRom>Sir VG</sourceRom>
+			<language>4099</language>
+			<files>
+				<romCRC extension=".nds">08EF0431</romCRC>
+			</files>
+			<im1CRC>D64BE612</im1CRC>
+			<im2CRC>FF53CC5D</im2CRC>
+			<icoCRC>47151C5D</icoCRC>
+			<nfoCRC>6DA2E1C0</nfoCRC>
+			<genre>Sports</genre>
+			<internal_name>RS2008</internal_name>
+			<serial>NTR-YRFE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>svg-yrfe.zip</filename>
+			<dumpdate>2008-02-22</dumpdate>
+			<dirname>Real_Soccer_2008_USA_NDS-SirVG</dirname>
+			<duplicateid>499</duplicateid>
+			<comment>2045</comment>
+		</game>
+		<game>
+			<imageNumber>2101</imageNumber>
+			<releaseNumber>2101</releaseNumber>
+			<title>Snoopy to Issho ni DS Eigo Lesson</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Interchannel</publisher>
+			<location>7</location>
+			<sourceRom>Independent</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">598F4076</romCRC>
+			</files>
+			<im1CRC>877DA866</im1CRC>
+			<im2CRC>FFA3B497</im2CRC>
+			<icoCRC>A8EAC237</icoCRC>
+			<nfoCRC>3948E32B</nfoCRC>
+			<genre>Edutainment</genre>
+			<internal_name>SNOOPY DS</internal_name>
+			<serial>NTR-YPEJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>ind-siel.zip</filename>
+			<dumpdate>2008-02-23</dumpdate>
+			<dirname>Snoopy_to_Issho_ni_DS_Eigo_Lesson_JPN_NDS-iND</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2046</comment>
+		</game>
+		<game>
+			<imageNumber>2102</imageNumber>
+			<releaseNumber>2102</releaseNumber>
+			<title>Digimon Championship</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Bandai Namco Games</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">EE377DD5</romCRC>
+			</files>
+			<im1CRC>4AE3B06D</im1CRC>
+			<im2CRC>33CC7FD1</im2CRC>
+			<icoCRC>192F6F9E</icoCRC>
+			<nfoCRC>ABF48D4B</nfoCRC>
+			<genre>RPG</genre>
+			<internal_name>DIGIMONCHAMP</internal_name>
+			<serial>NTR-YDIJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>6rz-dcj.zip</filename>
+			<dumpdate>2008-02-23</dumpdate>
+			<dirname>Digimon_Championship_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2047</comment>
+		</game>
+		<game>
+			<imageNumber>2103</imageNumber>
+			<releaseNumber>2103</releaseNumber>
+			<title>Bokujou Monogatari - Kira Kira Taiyou to Nakama Tachi</title>
+			<saveType>Flash - 2 Mbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Marvelous</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">99EC5726</romCRC>
+			</files>
+			<im1CRC>ABFAF9BA</im1CRC>
+			<im2CRC>2D4F3824</im2CRC>
+			<icoCRC>95329C32</icoCRC>
+			<nfoCRC>9634D62F</nfoCRC>
+			<genre>Strategy</genre>
+			<internal_name>BOKUJOMONODS</internal_name>
+			<serial>NTR-YB3J-JPN</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>6rz-bmkt.zip</filename>
+			<dumpdate>2008-02-23</dumpdate>
+			<dirname>Bokujou_Monogatari_-_Kira_Kira_Taiyou_to_Nakama_Tachi_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2048</comment>
+		</game>
+		<game>
+			<imageNumber>2104</imageNumber>
+			<releaseNumber>2104</releaseNumber>
+			<title>Dekiru Otoko no Mote Life - Yoru no Mote Jissen Hen</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Takara Tomy</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">F1C016E4</romCRC>
+			</files>
+			<im1CRC>F2BF67A5</im1CRC>
+			<im2CRC>885D3921</im2CRC>
+			<icoCRC>5CD4CFF4</icoCRC>
+			<nfoCRC>AFF063A4</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>MOTELIFEYORU</internal_name>
+			<serial>NTR-YRYJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-dlyj.zip</filename>
+			<dumpdate>2008-02-23</dumpdate>
+			<dirname>Dekiru_Otoko_no_Motel_Life_-_Yoru_no_Mote_Jissen_Hen_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2049</comment>
+		</game>
+		<game>
+			<imageNumber>2105</imageNumber>
+			<releaseNumber>2105</releaseNumber>
+			<title>Populous DS</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Electronic Arts</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">90069978</romCRC>
+			</files>
+			<im1CRC>341BD01C</im1CRC>
+			<im2CRC>62302260</im2CRC>
+			<icoCRC>AFBF9F0B</icoCRC>
+			<nfoCRC>6CFC2283</nfoCRC>
+			<genre>Strategy</genre>
+			<internal_name>POPULOUS DS</internal_name>
+			<serial>NTR-YPOJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-pdj.zip</filename>
+			<dumpdate>2008-02-25</dumpdate>
+			<dirname>Populous_DS_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2050</comment>
+		</game>
+		<game>
+			<imageNumber>2106</imageNumber>
+			<releaseNumber>2106</releaseNumber>
+			<title>1500 DS Spirits Vol. 9 - 2 Nin-uchi Mahjong</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Tasuke</publisher>
+			<location>7</location>
+			<sourceRom>JTC</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">BA088659</romCRC>
+			</files>
+			<im1CRC>EE1D6505</im1CRC>
+			<im2CRC>E5A549E5</im2CRC>
+			<icoCRC>478EFCBF</icoCRC>
+			<nfoCRC>0F5AB43E</nfoCRC>
+			<genre>Board Games</genre>
+			<internal_name>1500DS-VOL92</internal_name>
+			<serial>NTR-YV9J-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>jtc-fuum.rar</filename>
+			<dumpdate>2008-02-26</dumpdate>
+			<dirname>1500_DS_Spirits_Vol_9_Futari_Uchi_Mahjong_JPN_NDS-JTC</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2051</comment>
+		</game>
+		<game>
+			<imageNumber>2107</imageNumber>
+			<releaseNumber>2107</releaseNumber>
+			<title>Tennis no Ouji-Sama - Driving Smash! Side King</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Konami</publisher>
+			<location>7</location>
+			<sourceRom>JTC</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">43C8C96A</romCRC>
+			</files>
+			<im1CRC>30C0B6A1</im1CRC>
+			<im2CRC>A300F0E5</im2CRC>
+			<icoCRC>B861D82F</icoCRC>
+			<nfoCRC>7A39795B</nfoCRC>
+			<genre>Sports</genre>
+			<internal_name>TENIPRIDS SK</internal_name>
+			<serial>NTR-YK9J-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>jtc-tptsk.rar</filename>
+			<dumpdate>2008-02-26</dumpdate>
+			<dirname>The_Prince_of_Tennis_Driving_Smash_side_King_JPN_NDS-JTC</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2052</comment>
+		</game>
+		<game>
+			<imageNumber>2108</imageNumber>
+			<releaseNumber>2108</releaseNumber>
+			<title>Need for Speed - ProStreet</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Electronic Arts</publisher>
+			<location>22</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>65536</language>
+			<files>
+				<romCRC extension=".nds">243C8E6D</romCRC>
+			</files>
+			<im1CRC>84117553</im1CRC>
+			<im2CRC>DE2AB5A2</im2CRC>
+			<icoCRC>F3F68990</icoCRC>
+			<nfoCRC>574767EF</nfoCRC>
+			<genre>Racing</genre>
+			<internal_name>NFS PRO ST</internal_name>
+			<serial>NTR-YNPK-KOR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-npsk.rar</filename>
+			<dumpdate>2008-02-26</dumpdate>
+			<dirname>Need_For_Speed_ProStreet_KOR_NDS-EXiMiUS</dirname>
+			<duplicateid>418</duplicateid>
+			<comment>2053</comment>
+		</game>
+		<game>
+			<imageNumber>2109</imageNumber>
+			<releaseNumber>2109</releaseNumber>
+			<title>Geojisui Yunmugok Rondo</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Studio9</publisher>
+			<location>22</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>65536</language>
+			<files>
+				<romCRC extension=".nds">B6EF928E</romCRC>
+			</files>
+			<im1CRC>7AF12978</im1CRC>
+			<im2CRC>D752698D</im2CRC>
+			<icoCRC>913C92BC</icoCRC>
+			<nfoCRC>0B0DF20F</nfoCRC>
+			<genre>Strategy</genre>
+			<internal_name>RONDOSWORDKR</internal_name>
+			<serial>NTR-AFAK-KOR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-gyrk.rar</filename>
+			<dumpdate>2008-02-26</dumpdate>
+			<dirname>Geojisui_Yunmugok_Rondo_KOR_NDS-EXiMiUS</dirname>
+			<duplicateid>500</duplicateid>
+			<comment>2054</comment>
+		</game>
+		<game>
+			<imageNumber>2110</imageNumber>
+			<releaseNumber>2110</releaseNumber>
+			<title>SpongeBob's Atlantis SquarePantis</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>THQ</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>3</language>
+			<files>
+				<romCRC extension=".nds">46E65DD4</romCRC>
+			</files>
+			<im1CRC>7C773BD3</im1CRC>
+			<im2CRC>97C41C39</im2CRC>
+			<icoCRC>36A47F4A</icoCRC>
+			<nfoCRC>65AEB62D</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>SPONGEBOB AP</internal_name>
+			<serial>NTR-AL3P-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-sase.rar</filename>
+			<dumpdate>2008-02-26</dumpdate>
+			<dirname>Spongebobs_Atlantis_Squarepantis_EUR_NDS-XPA</dirname>
+			<duplicateid>471</duplicateid>
+			<comment>2055</comment>
+		</game>
+		<game>
+			<imageNumber>2111</imageNumber>
+			<releaseNumber>2111</releaseNumber>
+			<title>Tigerz</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4307</language>
+			<files>
+				<romCRC extension=".nds">129E06D9</romCRC>
+			</files>
+			<im1CRC>AF1C4A19</im1CRC>
+			<im2CRC>93627A23</im2CRC>
+			<icoCRC>9DAA80F6</icoCRC>
+			<nfoCRC>AF906D11</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>TIGERZ</internal_name>
+			<serial>NTR-YCIP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-tgrz.rar</filename>
+			<dumpdate>2008-02-26</dumpdate>
+			<dirname>Tigerz_EUR_NDS-XPA</dirname>
+			<duplicateid>503</duplicateid>
+			<comment>2056</comment>
+		</game>
+		<game>
+			<imageNumber>2112</imageNumber>
+			<releaseNumber>2112</releaseNumber>
+			<title>Suite Life of Zack &amp; Cody - Circle of Spies, The</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Disney Interactive</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4307</language>
+			<files>
+				<romCRC extension=".nds">879325FE</romCRC>
+			</files>
+			<im1CRC>4B89BD13</im1CRC>
+			<im2CRC>14A84AA5</im2CRC>
+			<icoCRC>5DE3EE94</icoCRC>
+			<nfoCRC>0E252C94</nfoCRC>
+			<genre>Action Adventure</genre>
+			<internal_name>SUITELIFE2</internal_name>
+			<serial>NTR-A3HP-EUR</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>sq-cose.zip</filename>
+			<dumpdate>2008-02-26</dumpdate>
+			<dirname>The_Suite_Life_of_Zack_and_Cody-Circle_of_Spies_EUR_MULTI6_NDS-SQUiRE</dirname>
+			<duplicateid>501</duplicateid>
+			<comment>2057</comment>
+		</game>
+		<game>
+			<imageNumber>2113</imageNumber>
+			<releaseNumber>2113</releaseNumber>
+			<title>Soma Bringer</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Nintendo</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">E5907146</romCRC>
+			</files>
+			<im1CRC>CCB40DD0</im1CRC>
+			<im2CRC>0BD65ECF</im2CRC>
+			<icoCRC>18A201A9</icoCRC>
+			<nfoCRC>BD26DE5F</nfoCRC>
+			<genre>RPG</genre>
+			<internal_name>SOMO BRINGER</internal_name>
+			<serial>NTR-YBSJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-sbj.zip</filename>
+			<dumpdate>2008-02-27</dumpdate>
+			<dirname>Soma_Bringer_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2058</comment>
+		</game>
+		<game>
+			<imageNumber>2114</imageNumber>
+			<releaseNumber>2114</releaseNumber>
+			<title>Bleach - The Blade of Fate</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>SEGA</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">2A0A9C96</romCRC>
+			</files>
+			<im1CRC>B84FA6FA</im1CRC>
+			<im2CRC>0B4DC154</im2CRC>
+			<icoCRC>A1788DFD</icoCRC>
+			<nfoCRC>7DFA45AD</nfoCRC>
+			<genre>Fighting</genre>
+			<internal_name>BLEACH</internal_name>
+			<serial>NTR-ABLP-EUR</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>xpa-tbof.rar</filename>
+			<dumpdate>2008-02-27</dumpdate>
+			<dirname>Bleach_The_Blade_of_Fate_EUR_NDS-XPA</dirname>
+			<duplicateid>364</duplicateid>
+			<comment>2059</comment>
+		</game>
+		<game>
+			<imageNumber>2115</imageNumber>
+			<releaseNumber>2115</releaseNumber>
+			<title>Namco Museum DS</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Namco</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">F7343AFA</romCRC>
+			</files>
+			<im1CRC>32C71B8D</im1CRC>
+			<im2CRC>F193428A</im2CRC>
+			<icoCRC>241D3E85</icoCRC>
+			<nfoCRC>260F1DE6</nfoCRC>
+			<genre>Compilation</genre>
+			<internal_name>NAMCO MUSEUM</internal_name>
+			<serial>NTR-YNMP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-nmde.rar</filename>
+			<dumpdate>2008-02-27</dumpdate>
+			<dirname>Namco_Museum_DS_EUR_NDS-XPA</dirname>
+			<duplicateid>371</duplicateid>
+			<comment>2060</comment>
+		</game>
+		<game>
+			<imageNumber>2116</imageNumber>
+			<releaseNumber>2116</releaseNumber>
+			<title>Akagawa Jirou Mystery - Yasoukyoku</title>
+			<saveType>TBC</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Marvelous</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">36A30C71</romCRC>
+			</files>
+			<im1CRC>9C1B2BC9</im1CRC>
+			<im2CRC>01DCEB0D</im2CRC>
+			<icoCRC>C44ECC49</icoCRC>
+			<nfoCRC>92FBDC57</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>YASOUKYOKUDS</internal_name>
+			<serial>NTR-YOQJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-ajmy.zip</filename>
+			<dumpdate>2008-02-28</dumpdate>
+			<dirname>Akagawa_Jirou_Mystery_Yasoukyoku_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2061</comment>
+		</game>
+		<game>
+			<imageNumber>2117</imageNumber>
+			<releaseNumber>2117</releaseNumber>
+			<title>Puzzle Quest - Challenge of the Warlords</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>D3 Publisher</publisher>
+			<location>0</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">D482C8EE</romCRC>
+			</files>
+			<im1CRC>B24DB515</im1CRC>
+			<im2CRC>A4C68CBA</im2CRC>
+			<icoCRC>36EF7FD6</icoCRC>
+			<nfoCRC>0F747CA8</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>PUZZLE QUEST</internal_name>
+			<serial>NTR-AQWX-EUU</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-pzqe.rar</filename>
+			<dumpdate>2008-02-28</dumpdate>
+			<dirname>Puzzle_Quest_Challenge_of_the_Warlords_EUR_MULTi5_NDS-EXiMiUS</dirname>
+			<duplicateid>273</duplicateid>
+			<comment>2062</comment>
+		</game>
+		<game>
+			<imageNumber>2118</imageNumber>
+			<releaseNumber>2118</releaseNumber>
+			<title>MegaMan ZX Advent</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Capcom</publisher>
+			<location>0</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>4547</language>
+			<files>
+				<romCRC extension=".nds">56DA9FCF</romCRC>
+			</files>
+			<im1CRC>1081CB6C</im1CRC>
+			<im2CRC>B8252A09</im2CRC>
+			<icoCRC>185046AD</icoCRC>
+			<nfoCRC>38E38979</nfoCRC>
+			<genre>Platformer</genre>
+			<internal_name>MEGAMANZXA</internal_name>
+			<serial>NTR-YZXP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-mzxe.rar</filename>
+			<dumpdate>2008-02-28</dumpdate>
+			<dirname>MegaMan_ZX_Advent_EUR_MULTi6_NDS-EXiMiUS</dirname>
+			<duplicateid>380</duplicateid>
+			<comment>2063</comment>
+		</game>
+		<game>
+			<imageNumber>2119</imageNumber>
+			<releaseNumber>2119</releaseNumber>
+			<title>Keiji J.B. Harold no Jikenbo - Satsujin Club</title>
+			<saveType>TBC</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Fonfun</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">110AE018</romCRC>
+			</files>
+			<im1CRC>8AB2DA01</im1CRC>
+			<im2CRC>FB476779</im2CRC>
+			<icoCRC>439B2025</icoCRC>
+			<nfoCRC>D350D617</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>MDRCLB_DS</internal_name>
+			<serial>NTR-YVHJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-kbsc.zip</filename>
+			<dumpdate>2008-02-28</dumpdate>
+			<dirname>Keiji_J_B_Harold_no_Jikenbo_-_Satsujin_Club_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2064</comment>
+		</game>
+		<game>
+			<imageNumber>2120</imageNumber>
+			<releaseNumber>2120</releaseNumber>
+			<title>Bratz - Super Babyz</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>THQ</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">DDDFC562</romCRC>
+			</files>
+			<im1CRC>B477335B</im1CRC>
+			<im2CRC>EAA86B55</im2CRC>
+			<icoCRC>7A656091</icoCRC>
+			<nfoCRC>33E52666</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>BRATZSUPRBBY</internal_name>
+			<serial>NTR-YBYE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-bsbz.zip</filename>
+			<dumpdate>2008-02-29</dumpdate>
+			<dirname>Bratz_Super_Babyz_USA_NDS-SQUiRE</dirname>
+			<duplicateid>491</duplicateid>
+			<comment>2065</comment>
+		</game>
+		<game>
+			<imageNumber>2121</imageNumber>
+			<releaseNumber>2121</releaseNumber>
+			<title>Brain Assist</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>SEGA</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">65A9DF3A</romCRC>
+			</files>
+			<im1CRC>4AAA365D</im1CRC>
+			<im2CRC>A1099C6A</im2CRC>
+			<icoCRC>A7EF73DD</icoCRC>
+			<nfoCRC>77D35AF6</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>BRAIN ASSIST</internal_name>
+			<serial>NTR-AU7E-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-ba.zip</filename>
+			<dumpdate>2008-03-01</dumpdate>
+			<dirname>Brain_Assist_USA_NDS-SQUiRE</dirname>
+			<duplicateid>502</duplicateid>
+			<comment>2066</comment>
+		</game>
+		<game>
+			<imageNumber>2122</imageNumber>
+			<releaseNumber>2122</releaseNumber>
+			<title>Petz Wild Animals - Tigerz</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4099</language>
+			<files>
+				<romCRC extension=".nds">79809C1C</romCRC>
+			</files>
+			<im1CRC>B6204763</im1CRC>
+			<im2CRC>980DE3ED</im2CRC>
+			<icoCRC>9DAA80F6</icoCRC>
+			<nfoCRC>843E448C</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>TIGERZ</internal_name>
+			<serial>NTR-YCIE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-pwat.zip</filename>
+			<dumpdate>2008-03-01</dumpdate>
+			<dirname>Petz_Wild_Animals_Tigerz_USA_NDS-SQUiRE</dirname>
+			<duplicateid>503</duplicateid>
+			<comment>2067</comment>
+		</game>
+		<game>
+			<imageNumber>2123</imageNumber>
+			<releaseNumber>2123</releaseNumber>
+			<title>Bubble Bobble Double Shot</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Ignition Entertainment</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4099</language>
+			<files>
+				<romCRC extension=".nds">9DFDA3CA</romCRC>
+			</files>
+			<im1CRC>405E9F61</im1CRC>
+			<im2CRC>D09FE50E</im2CRC>
+			<icoCRC>1AD2F633</icoCRC>
+			<nfoCRC>964A92BB</nfoCRC>
+			<genre>Platformer</genre>
+			<internal_name>BBDOUBLESHOT</internal_name>
+			<serial>NTR-AWHE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-bbds.zip</filename>
+			<dumpdate>2008-03-01</dumpdate>
+			<dirname>Bubble_Bobble_Double_Shot_USA_NDS-SQUiRE</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2068</comment>
+		</game>
+		<game>
+			<imageNumber>2124</imageNumber>
+			<releaseNumber>2124</releaseNumber>
+			<title>Yoshi Island DS (Demo)</title>
+			<saveType>None</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Nintendo</publisher>
+			<location>1</location>
+			<sourceRom>JD</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">036C2993</romCRC>
+			</files>
+			<im1CRC>C082EF38</im1CRC>
+			<im2CRC>D5209677</im2CRC>
+			<icoCRC>E69F6EFF</icoCRC>
+			<nfoCRC>E20B28E8</nfoCRC>
+			<genre>Demo</genre>
+			<internal_name>YOSHI ISLAND</internal_name>
+			<serial>NTR-Y28E-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>jd-y28e.zip</filename>
+			<dumpdate>2008-03-01</dumpdate>
+			<dirname>Yoshi_s_Island_DS_Demo_Version_USA_NDS-jd</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>xxxx</comment>
+		</game>
+		<game>
+			<imageNumber>2125</imageNumber>
+			<releaseNumber>2125</releaseNumber>
+			<title>Patto Tokueru - Indo Suugaku Drill DS</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>MegaHouse</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">CEDB8649</romCRC>
+			</files>
+			<im1CRC>63B4F6AE</im1CRC>
+			<im2CRC>F1F8C98D</im2CRC>
+			<icoCRC>2A6CBEB1</icoCRC>
+			<nfoCRC>3DCC9552</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>INNDOSUUGAKU</internal_name>
+			<serial>NTR-YOYJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-ptis.zip</filename>
+			<dumpdate>2008-03-02</dumpdate>
+			<dirname>Patto_Tokueru_Indo_Suugaku_Drill_DS_JPN_NDS_6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2069</comment>
+		</game>
+		<game>
+			<imageNumber>2126</imageNumber>
+			<releaseNumber>2126</releaseNumber>
+			<title>DS Dengeki Bunkou ADV - Baccano!</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Media Works</publisher>
+			<location>7</location>
+			<sourceRom>Independent</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">E718375A</romCRC>
+			</files>
+			<im1CRC>566A337C</im1CRC>
+			<im2CRC>D04C58B8</im2CRC>
+			<icoCRC>F850ECA8</icoCRC>
+			<nfoCRC>6A710D09</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>TYANTOKAEYO</internal_name>
+			<serial>NTR-YVBJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>ind-dbab.rar</filename>
+			<dumpdate>2008-03-03</dumpdate>
+			<dirname>DS_Dengeki_Bunkou_ADV_-_Baccano_JPN_NDS-iND</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2070</comment>
+		</game>
+		<game>
+			<imageNumber>2127</imageNumber>
+			<releaseNumber>2127</releaseNumber>
+			<title>Beetle Junior DS</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Intenium</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>67</language>
+			<files>
+				<romCRC extension=".nds">DA8280BC</romCRC>
+			</files>
+			<im1CRC>37AFEE2D</im1CRC>
+			<im2CRC>1AD4C72A</im2CRC>
+			<icoCRC>C396A7AD</icoCRC>
+			<nfoCRC>85F7C16D</nfoCRC>
+			<genre>Platformer</genre>
+			<internal_name>BEETLE JU DS</internal_name>
+			<serial>NTR-YBJP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-bjde.zip</filename>
+			<dumpdate>2008-03-04</dumpdate>
+			<dirname>Beetle_Junior_MULTI3_EUR_NDS-SQUiRE</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2071</comment>
+		</game>
+		<game>
+			<imageNumber>2128</imageNumber>
+			<releaseNumber>2128</releaseNumber>
+			<title>Tabaluga - Grunland in Gefahr</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Atari</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>65</language>
+			<files>
+				<romCRC extension=".nds">4377DE73</romCRC>
+			</files>
+			<im1CRC>E0FCE91E</im1CRC>
+			<im2CRC>E495FB0B</im2CRC>
+			<icoCRC>E481D4EC</icoCRC>
+			<nfoCRC>16E91BA6</nfoCRC>
+			<genre>Platformer</genre>
+			<internal_name>TABALUGA</internal_name>
+			<serial>NTR-YTQX-EUU</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-tgig.zip</filename>
+			<dumpdate>2008-03-04</dumpdate>
+			<dirname>Tabaluga-Gruenland_in_Gefahr_MULTI2_EUR_NDS-SQUiRE</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2072</comment>
+		</game>
+		<game>
+			<imageNumber>2129</imageNumber>
+			<releaseNumber>2129</releaseNumber>
+			<title>Naruto - Ninja Destiny</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Tomy</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>3</language>
+			<files>
+				<romCRC extension=".nds">5BB0875E</romCRC>
+			</files>
+			<im1CRC>FB6DD91A</im1CRC>
+			<im2CRC>8A7C2F62</im2CRC>
+			<icoCRC>55E8BF18</icoCRC>
+			<nfoCRC>FC2AD181</nfoCRC>
+			<genre>Fighting</genre>
+			<internal_name>NARUTO NDUS</internal_name>
+			<serial>NTR-AREE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-nnd.zip</filename>
+			<dumpdate>2008-03-04</dumpdate>
+			<dirname>Naruto_Ninja_Destiny_USA_NDS-SQUiRE</dirname>
+			<duplicateid>490</duplicateid>
+			<comment>2073</comment>
+		</game>
+		<game>
+			<imageNumber>2130</imageNumber>
+			<releaseNumber>2130</releaseNumber>
+			<title>MX vs. ATV Untamed</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>THQ</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">7A88A740</romCRC>
+			</files>
+			<im1CRC>F8C83701</im1CRC>
+			<im2CRC>2AFA908D</im2CRC>
+			<icoCRC>42DB1EE3</icoCRC>
+			<nfoCRC>CF875878</nfoCRC>
+			<genre>Racing</genre>
+			<internal_name>MXVSATV</internal_name>
+			<serial>NTR-YATP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-maue.rar</filename>
+			<dumpdate>2008-03-05</dumpdate>
+			<dirname>MX_VS_ATV_Untamed_EUR_NDS-XPA</dirname>
+			<duplicateid>504</duplicateid>
+			<comment>2074</comment>
+		</game>
+		<game>
+			<imageNumber>2131</imageNumber>
+			<releaseNumber>2131</releaseNumber>
+			<title>Kira Kira - Pop Princess</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>505 Games</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>131</language>
+			<files>
+				<romCRC extension=".nds">89200C0E</romCRC>
+			</files>
+			<im1CRC>199EFBBB</im1CRC>
+			<im2CRC>ADFFC28A</im2CRC>
+			<icoCRC>83067658</icoCRC>
+			<nfoCRC>2D6BBBF4</nfoCRC>
+			<genre>Music</genre>
+			<internal_name>KIRAKIRA</internal_name>
+			<serial>NTR-AR7P-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-kkpp.rar</filename>
+			<dumpdate>2008-03-05</dumpdate>
+			<dirname>Kira_Kira_Pop_Princess_EUR_NDS-XPA</dirname>
+			<duplicateid>505</duplicateid>
+			<comment>2075</comment>
+		</game>
+		<game>
+			<imageNumber>2132</imageNumber>
+			<releaseNumber>2132</releaseNumber>
+			<title>Zoo Tycoon 2 DS</title>
+			<saveType>Flash - 2 Mbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>THQ</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">E3BE42ED</romCRC>
+			</files>
+			<im1CRC>475E9B25</im1CRC>
+			<im2CRC>FC0A8122</im2CRC>
+			<icoCRC>5816C8A8</icoCRC>
+			<nfoCRC>324CD62F</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>ZOO TYCOON 2</internal_name>
+			<serial>NTR-YZTP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-zt2e.rar</filename>
+			<dumpdate>2008-03-05</dumpdate>
+			<dirname>Zoo_Tycoon_2_EUR_DIRFIX_NDS-XPA</dirname>
+			<duplicateid>506</duplicateid>
+			<comment>2076</comment>
+		</game>
+		<game>
+			<imageNumber>2133</imageNumber>
+			<releaseNumber>2133</releaseNumber>
+			<title>MagicQ DS</title>
+			<saveType>Flash - 4 Mbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Studio9</publisher>
+			<location>22</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>65536</language>
+			<files>
+				<romCRC extension=".nds">1D51F0C2</romCRC>
+			</files>
+			<im1CRC>BEBD4E97</im1CRC>
+			<im2CRC>37A7A2FF</im2CRC>
+			<icoCRC>6EA54377</icoCRC>
+			<nfoCRC>D5981133</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>MAGICQ</internal_name>
+			<serial>NTR-YQJK-KOR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-mgqk.rar</filename>
+			<dumpdate>2008-03-05</dumpdate>
+			<dirname>MagicQ_DS_KOR_NDS-EXiMiUS</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2077</comment>
+		</game>
+		<game>
+			<imageNumber>2134</imageNumber>
+			<releaseNumber>2134</releaseNumber>
+			<title>Disney Friends</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Disney Interactive</publisher>
+			<location>2</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>64</language>
+			<files>
+				<romCRC extension=".nds">76DE1867</romCRC>
+			</files>
+			<im1CRC>97B76189</im1CRC>
+			<im2CRC>060555C7</im2CRC>
+			<icoCRC>8B04E8D8</icoCRC>
+			<nfoCRC>8C18A664</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>DFRIENDS</internal_name>
+			<serial>NTR-AXVD-NOE</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>xms-dfrg.rar</filename>
+			<dumpdate>2008-03-05</dumpdate>
+			<dirname>Disney_Friends_GER_NDS-EXiMiUS</dirname>
+			<duplicateid>469</duplicateid>
+			<comment>2078</comment>
+		</game>
+		<game>
+			<imageNumber>2135</imageNumber>
+			<releaseNumber>2135</releaseNumber>
+			<title>SpongeBob's Atlantis SquarePantis</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>THQ</publisher>
+			<location>0</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>262208</language>
+			<files>
+				<romCRC extension=".nds">20DEAFA2</romCRC>
+			</files>
+			<im1CRC>6EA3D430</im1CRC>
+			<im2CRC>1E3E5C1B</im2CRC>
+			<icoCRC>36A47F4A</icoCRC>
+			<nfoCRC>A6B7347A</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>SPONGEBOB AP</internal_name>
+			<serial>NTR-AL3X-EUU</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-sase.rar</filename>
+			<dumpdate>2008-03-05</dumpdate>
+			<dirname>SpongeBobs_Atlantis_Squarepantis_EUR_MULTi2_NDS-EXiMiUS</dirname>
+			<duplicateid>471</duplicateid>
+			<comment>2079</comment>
+		</game>
+		<game>
+			<imageNumber>2136</imageNumber>
+			<releaseNumber>2136</releaseNumber>
+			<title>Disney Friends</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Disney Interactive</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">782E5578</romCRC>
+			</files>
+			<im1CRC>5F03C4F3</im1CRC>
+			<im2CRC>61B5038B</im2CRC>
+			<icoCRC>8B04E8D8</icoCRC>
+			<nfoCRC>4069836D</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>DFRIENDS</internal_name>
+			<serial>NTR-AXVE-USA</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>sq-dfu.zip</filename>
+			<dumpdate>2008-03-06</dumpdate>
+			<dirname>Disney_Friends_USA_NDS-SQUiRE</dirname>
+			<duplicateid>469</duplicateid>
+			<comment>2080</comment>
+		</game>
+		<game>
+			<imageNumber>2137</imageNumber>
+			<releaseNumber>2137</releaseNumber>
+			<title>Eco Creatures - Save the Forest</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Majesco Entertainment</publisher>
+			<location>1</location>
+			<sourceRom>JunkRat</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">0FEB8275</romCRC>
+			</files>
+			<im1CRC>660FF319</im1CRC>
+			<im2CRC>8AD38590</im2CRC>
+			<icoCRC>FA4F8CC2</icoCRC>
+			<nfoCRC>50F24E72</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>ECOCREATURES</internal_name>
+			<serial>NTR-AERE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>jr-ecstf.zip</filename>
+			<dumpdate>2008-03-06</dumpdate>
+			<dirname>Eco_Creatures_Save_the_Forest_USA_NDS-JunkRat</dirname>
+			<duplicateid>507</duplicateid>
+			<comment>2081</comment>
+		</game>
+		<game>
+			<imageNumber>2138</imageNumber>
+			<releaseNumber>2138</releaseNumber>
+			<title>Mysterious Dungeon - Shiren the Wanderer</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>SEGA</publisher>
+			<location>1</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">1A88EDD5</romCRC>
+			</files>
+			<im1CRC>36CD495E</im1CRC>
+			<im2CRC>145BBA34</im2CRC>
+			<icoCRC>9A2E62A8</icoCRC>
+			<nfoCRC>88E833FE</nfoCRC>
+			<genre>RPG</genre>
+			<internal_name>SHIREN DS</internal_name>
+			<serial>NTR-AFUE-USA</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>xpa-mdsw.rar</filename>
+			<dumpdate>2008-03-06</dumpdate>
+			<dirname>Mystery_Dungeon_Shiren_The_Wanderer_USA_NDS-XPA</dirname>
+			<duplicateid>508</duplicateid>
+			<comment>2082</comment>
+		</game>
+		<game>
+			<imageNumber>2139</imageNumber>
+			<releaseNumber>2139</releaseNumber>
+			<title>Horsez</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>8</location>
+			<sourceRom>Sir VG</sourceRom>
+			<language>4179</language>
+			<files>
+				<romCRC extension=".nds">CC3CB56E</romCRC>
+			</files>
+			<im1CRC>28A1EC9A</im1CRC>
+			<im2CRC>DDB930EB</im2CRC>
+			<icoCRC>A320CC7F</icoCRC>
+			<nfoCRC>C3FF13F4</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>HORSEZ</internal_name>
+			<serial>NTR-AHZH-HOL</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>svg-ahzh.zip</filename>
+			<dumpdate>2008-03-06</dumpdate>
+			<dirname>Horsez_Multi5_EUR_NDS-SirVG</dirname>
+			<duplicateid>190</duplicateid>
+			<comment>2083</comment>
+		</game>
+		<game>
+			<imageNumber>2140</imageNumber>
+			<releaseNumber>2140</releaseNumber>
+			<title>Bee Movie Game</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Activision</publisher>
+			<location>4</location>
+			<sourceRom>Sir VG</sourceRom>
+			<language>4096</language>
+			<files>
+				<romCRC extension=".nds">361D2CF2</romCRC>
+			</files>
+			<im1CRC>FF2D5DE6</im1CRC>
+			<im2CRC>1151F59B</im2CRC>
+			<icoCRC>04B9B18B</icoCRC>
+			<nfoCRC>B4DE1557</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>BEEMOVIE</internal_name>
+			<serial>NTR-YB4S-ESP</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>svg-yb4s.zip</filename>
+			<dumpdate>2008-03-06</dumpdate>
+			<dirname>Bee_Movie_Game_SPA_NDS-SirVG</dirname>
+			<duplicateid>423</duplicateid>
+			<comment>2084</comment>
+		</game>
+		<game>
+			<imageNumber>2141</imageNumber>
+			<releaseNumber>2141</releaseNumber>
+			<title>Dekiru Otoko no Mote Life - Hiru no Mote Kouza Hen</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Takara Tomy</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">BC35E6DA</romCRC>
+			</files>
+			<im1CRC>D65FC4D6</im1CRC>
+			<im2CRC>3BEFE03B</im2CRC>
+			<icoCRC>AB83698F</icoCRC>
+			<nfoCRC>EBEFBFCD</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>MOTELIFEHIRU</internal_name>
+			<serial>NTR-YRHJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-hmkh.zip</filename>
+			<dumpdate>2008-03-06</dumpdate>
+			<dirname>Dekiru_Otoko_no_Motel_Life_-_Hiru_no_Mote_Kouza_Hen_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2085</comment>
+		</game>
+		<game>
+			<imageNumber>2142</imageNumber>
+			<releaseNumber>2142</releaseNumber>
+			<title>Koinu de Kururin</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>MTO</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">B6EC212D</romCRC>
+			</files>
+			<im1CRC>C9BB0B1A</im1CRC>
+			<im2CRC>578F04CD</im2CRC>
+			<icoCRC>002A3F63</icoCRC>
+			<nfoCRC>95F3B5AE</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>KOINUKURURIN</internal_name>
+			<serial>NTR-YQHJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-kdj.zip</filename>
+			<dumpdate>2008-03-06</dumpdate>
+			<dirname>Koinu_Dekururin_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2086</comment>
+		</game>
+		<game>
+			<imageNumber>2143</imageNumber>
+			<releaseNumber>2143</releaseNumber>
+			<title>Zennou Series Vol. 02 - Indo Shiki Keisan Drill DS</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>ASK</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">1C76CB3E</romCRC>
+			</files>
+			<im1CRC>CC1BF1FF</im1CRC>
+			<im2CRC>8321F816</im2CRC>
+			<icoCRC>F2317A80</icoCRC>
+			<nfoCRC>00B3CE3C</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>ASKINDIA</internal_name>
+			<serial>NTR-YDZJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-zsv2.zip</filename>
+			<dumpdate>2008-03-06</dumpdate>
+			<dirname>Zennou_Series_Vol_2_India_Shiki_Keisan_Zennou_Drill_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2087</comment>
+		</game>
+		<game>
+			<imageNumber>2144</imageNumber>
+			<releaseNumber>2144</releaseNumber>
+			<title>Juushinden - Ultimate Beast Battlers</title>
+			<saveType>TBC</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Konami</publisher>
+			<location>7</location>
+			<sourceRom>Soi13</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">6F056AD1</romCRC>
+			</files>
+			<im1CRC>4EF45B8D</im1CRC>
+			<im2CRC>907B416A</im2CRC>
+			<icoCRC>54F54067</icoCRC>
+			<nfoCRC>E2E30319</nfoCRC>
+			<genre>RPG</genre>
+			<internal_name>JYUSHINDEN</internal_name>
+			<serial>NTR-AVRJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>s13-jsdj.zip</filename>
+			<dumpdate>2008-03-07</dumpdate>
+			<dirname>Jyuushinden_Ultimate_Beast_Battlers_JPN_NDS-Soi13</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2088</comment>
+		</game>
+		<game>
+			<imageNumber>2145</imageNumber>
+			<releaseNumber>2145</releaseNumber>
+			<title>Jigsaw Puzzle DS - DS de Meguru Sekai Isan no Tabi</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Hudson</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">553E8B40</romCRC>
+			</files>
+			<im1CRC>35F27A29</im1CRC>
+			<im2CRC>D04E4082</im2CRC>
+			<icoCRC>582919F8</icoCRC>
+			<nfoCRC>8D1D2379</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>JIGSAWWORLD</internal_name>
+			<serial>NTR-YE3J-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-dmsi.zip</filename>
+			<dumpdate>2008-03-07</dumpdate>
+			<dirname>Jigsaw_Puzzle_DS_-_DS_de_Meguru_Sekai_Isan_no_Tabi_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2089</comment>
+		</game>
+		<game>
+			<imageNumber>2146</imageNumber>
+			<releaseNumber>2146</releaseNumber>
+			<title>Level5 Premium Gold</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Level5</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">791549E0</romCRC>
+			</files>
+			<im1CRC>68F051A3</im1CRC>
+			<im2CRC>3ED959FD</im2CRC>
+			<icoCRC>74E7F19A</icoCRC>
+			<nfoCRC>25086CEE</nfoCRC>
+			<genre>Demo</genre>
+			<internal_name>PREMIUMGOLD</internal_name>
+			<serial>NTR-YEWJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-lpgj.zip</filename>
+			<dumpdate>2008-03-07</dumpdate>
+			<dirname>Level5_Premium_-_Gold_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>xxxx</comment>
+		</game>
+		<game>
+			<imageNumber>2147</imageNumber>
+			<releaseNumber>2147</releaseNumber>
+			<title>Winx Club - Mission Enchantix</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Konami</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">47634FCF</romCRC>
+			</files>
+			<im1CRC>1843CF46</im1CRC>
+			<im2CRC>0E4BB282</im2CRC>
+			<icoCRC>968D1E5E</icoCRC>
+			<nfoCRC>1E5770E7</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>WINX CLUB 3</internal_name>
+			<serial>NTR-YWCP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-wcme.zip</filename>
+			<dumpdate>2008-03-07</dumpdate>
+			<dirname>Winx_Club_3-Mission_Enchantix_EUR_MULTI5_NDS-SQUiRE</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2090</comment>
+		</game>
+		<game>
+			<imageNumber>2148</imageNumber>
+			<releaseNumber>2148</releaseNumber>
+			<title>Baby Pals</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>THQ</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">0CCDFF6A</romCRC>
+			</files>
+			<im1CRC>BE9F0E52</im1CRC>
+			<im2CRC>680841CC</im2CRC>
+			<icoCRC>30996196</icoCRC>
+			<nfoCRC>BBFB886B</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>BABYPALS</internal_name>
+			<serial>NTR-YBRP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-bapa.zip</filename>
+			<dumpdate>2008-03-07</dumpdate>
+			<dirname>Baby_Pals_EUR_MULTI5_NDS-SQUiRE</dirname>
+			<duplicateid>509</duplicateid>
+			<comment>2091</comment>
+		</game>
+		<game>
+			<imageNumber>2149</imageNumber>
+			<releaseNumber>2149</releaseNumber>
+			<title>Obunsha Deru-jun - Koumin DS</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>IE Institute</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">2CA14FE6</romCRC>
+			</files>
+			<im1CRC>C1C09B70</im1CRC>
+			<im2CRC>0179C9A1</im2CRC>
+			<icoCRC>7560A54B</icoCRC>
+			<nfoCRC>AED00EDA</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>KUMACIVIC</internal_name>
+			<serial>NTR-YYSJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-odkd.zip</filename>
+			<dumpdate>2008-03-07</dumpdate>
+			<dirname>Obunsha_Deru_jun_-_Koumin_DS_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2092</comment>
+		</game>
+		<game>
+			<imageNumber>2150</imageNumber>
+			<releaseNumber>2150</releaseNumber>
+			<title>Obunsha Deru-jun - Sansuu DS</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>IE Institute</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">16D80D68</romCRC>
+			</files>
+			<im1CRC>56E6637C</im1CRC>
+			<im2CRC>8F330C3C</im2CRC>
+			<icoCRC>118ED17A</icoCRC>
+			<nfoCRC>8B001F67</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>KUMAMATH</internal_name>
+			<serial>NTR-YY3J-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-odsd.zip</filename>
+			<dumpdate>2008-03-07</dumpdate>
+			<dirname>Obunsha_Deru_jun_-_Sansuu_DS_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2093</comment>
+		</game>
+		<game>
+			<imageNumber>2151</imageNumber>
+			<releaseNumber>2151</releaseNumber>
+			<title>MX vs. ATV Extreme Limite</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>THQ</publisher>
+			<location>5</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>1</language>
+			<files>
+				<romCRC extension=".nds">4982ABA6</romCRC>
+			</files>
+			<im1CRC>50DC644A</im1CRC>
+			<im2CRC>DD2E1571</im2CRC>
+			<icoCRC>42DB1EE3</icoCRC>
+			<nfoCRC>4274BE84</nfoCRC>
+			<genre>Racing</genre>
+			<internal_name>MXVSATV</internal_name>
+			<serial>NTR-YATF-FRA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-mvaf.rar</filename>
+			<dumpdate>2008-03-08</dumpdate>
+			<dirname>MX_vs_ATV_Extreme_Limite_FRA_NDS-EXiMiUS</dirname>
+			<duplicateid>504</duplicateid>
+			<comment>2094</comment>
+		</game>
+		<game>
+			<imageNumber>2152</imageNumber>
+			<releaseNumber>2152</releaseNumber>
+			<title>Hoshigami</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>505 Games</publisher>
+			<location>5</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>1</language>
+			<files>
+				<romCRC extension=".nds">1AEBE469</romCRC>
+			</files>
+			<im1CRC>BEDD1AB1</im1CRC>
+			<im2CRC>D6E89622</im2CRC>
+			<icoCRC>74BF8BA7</icoCRC>
+			<nfoCRC>8D495735</nfoCRC>
+			<genre>Strategy</genre>
+			<internal_name>HOSHIGAMI</internal_name>
+			<serial>NTR-AHKF-FRA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-hsgf.rar</filename>
+			<dumpdate>2008-03-08</dumpdate>
+			<dirname>Hoshigami_FRA_NDS-EXiMiUS</dirname>
+			<duplicateid>298</duplicateid>
+			<comment>2095</comment>
+		</game>
+		<game>
+			<imageNumber>2153</imageNumber>
+			<releaseNumber>2153</releaseNumber>
+			<title>Dora the Explorer - Dora Saves the Mermaids</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>2K Play</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">BEE36CA8</romCRC>
+			</files>
+			<im1CRC>0A9DDE80</im1CRC>
+			<im2CRC>A8612664</im2CRC>
+			<icoCRC>6AB01F49</icoCRC>
+			<nfoCRC>EAD47690</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>DORAMERMAID</internal_name>
+			<serial>NTR-YDRP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-dsme.rar</filename>
+			<dumpdate>2008-03-08</dumpdate>
+			<dirname>Dora_The_Explorer_Dora_Saves_The_Mermaids_EUR_NDS-XPA</dirname>
+			<duplicateid>510</duplicateid>
+			<comment>2096</comment>
+		</game>
+		<game>
+			<imageNumber>2154</imageNumber>
+			<releaseNumber>2154</releaseNumber>
+			<title>Go, Diego, Go! - Safari Rescue</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>2K Play</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">087EBF40</romCRC>
+			</files>
+			<im1CRC>109FE2FB</im1CRC>
+			<im2CRC>E3E581A6</im2CRC>
+			<icoCRC>61633A4A</icoCRC>
+			<nfoCRC>D203720F</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>DIEGOSAFARI</internal_name>
+			<serial>NTR-YEQP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-gdge.rar</filename>
+			<dumpdate>2008-03-08</dumpdate>
+			<dirname>Go_Diego_Go_Safari_Rescue_EUR_NDS-XPA</dirname>
+			<duplicateid>511</duplicateid>
+			<comment>2097</comment>
+		</game>
+		<game>
+			<imageNumber>2155</imageNumber>
+			<releaseNumber>2155</releaseNumber>
+			<title>Zoo Hospital</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Majesco Entertainment</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">06CAF4AF</romCRC>
+			</files>
+			<im1CRC>16499098</im1CRC>
+			<im2CRC>44B614DC</im2CRC>
+			<icoCRC>6CC3E1AD</icoCRC>
+			<nfoCRC>489D35F1</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>ZOOHOSPITAL</internal_name>
+			<serial>NTR-YZHP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-zheu.rar</filename>
+			<dumpdate>2008-03-08</dumpdate>
+			<dirname>Zoo_Hospital_EUR_NDS-XPA</dirname>
+			<duplicateid>512</duplicateid>
+			<comment>2098</comment>
+		</game>
+		<game>
+			<imageNumber>2156</imageNumber>
+			<releaseNumber>2156</releaseNumber>
+			<title>Mondai na Nihongo</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Hudson</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">34C8B1E9</romCRC>
+			</files>
+			<im1CRC>62A0BB48</im1CRC>
+			<im2CRC>B586DA62</im2CRC>
+			<icoCRC>79B29DD3</icoCRC>
+			<nfoCRC>91AAD220</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>MONNICHI</internal_name>
+			<serial>NTR-AW5J-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-lcls.zip</filename>
+			<dumpdate>2008-03-08</dumpdate>
+			<dirname>Loopop_Cube_-_Loop_Salad_DS_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2099</comment>
+		</game>
+		<game>
+			<imageNumber>2157</imageNumber>
+			<releaseNumber>2157</releaseNumber>
+			<title>Loopop Cube - Loop Salad DS</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Dimple Entertainment</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">4C112A39</romCRC>
+			</files>
+			<im1CRC>10C03126</im1CRC>
+			<im2CRC>DF72D286</im2CRC>
+			<icoCRC>151A3E85</icoCRC>
+			<nfoCRC>3456056D</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>LUP*SALAD DS</internal_name>
+			<serial>NTR-YLSJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-mnn.zip</filename>
+			<dumpdate>2008-03-08</dumpdate>
+			<dirname>Mondai_na_Nihongo_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2100</comment>
+		</game>
+		<game>
+			<imageNumber>2158</imageNumber>
+			<releaseNumber>2158</releaseNumber>
+			<title>Brain Assist</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>SEGA</publisher>
+			<location>0</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">3CCF8FC6</romCRC>
+			</files>
+			<im1CRC>8C589A5D</im1CRC>
+			<im2CRC>FCA00EE1</im2CRC>
+			<icoCRC>A7EF73DD</icoCRC>
+			<nfoCRC>224C1C95</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>BRAIN ASSIST</internal_name>
+			<serial>NTR-AU7P-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-brae.rar</filename>
+			<dumpdate>2008-03-09</dumpdate>
+			<dirname>Brain_Assist_EUR_MULTi5_NDS-EXiMiUS</dirname>
+			<duplicateid>502</duplicateid>
+			<comment>2101</comment>
+		</game>
+		<game>
+			<imageNumber>2159</imageNumber>
+			<releaseNumber>2159</releaseNumber>
+			<title>Best of Tests DS</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Conspiracy</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>3</language>
+			<files>
+				<romCRC extension=".nds">C423097D</romCRC>
+			</files>
+			<im1CRC>06A7B9A5</im1CRC>
+			<im2CRC>1562DA20</im2CRC>
+			<icoCRC>F94854D4</icoCRC>
+			<nfoCRC>8AF75EAF</nfoCRC>
+			<genre>Edutainment</genre>
+			<internal_name>BESTOFTESTS</internal_name>
+			<serial>NTR-YT2E-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-bot.zip</filename>
+			<dumpdate>2008-03-09</dumpdate>
+			<dirname>Best_of_Tests_USA_NDS-SQUiRE</dirname>
+			<duplicateid>513</duplicateid>
+			<comment>2102</comment>
+		</game>
+		<game>
+			<imageNumber>2160</imageNumber>
+			<releaseNumber>2160</releaseNumber>
+			<title>Let's Ride - Friends Forever</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>THQ</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">22A56F80</romCRC>
+			</files>
+			<im1CRC>3937ACFA</im1CRC>
+			<im2CRC>3B1FA7DB</im2CRC>
+			<icoCRC>6F85F106</icoCRC>
+			<nfoCRC>48461806</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>LETS RIDE FF</internal_name>
+			<serial>NTR-YB5E-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-lrff.zip</filename>
+			<dumpdate>2008-03-09</dumpdate>
+			<dirname>Lets_Ride_Friends_Forever_USA_NDS-SQUiRE</dirname>
+			<duplicateid>514</duplicateid>
+			<comment>2103</comment>
+		</game>
+		<game>
+			<imageNumber>2161</imageNumber>
+			<releaseNumber>2161</releaseNumber>
+			<title>Chou-Gekijou-Ban Keroro Gunsou 3 - Tenkuu Daibouken de Arimasu!</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Bandai Namco Games</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">6EE84F35</romCRC>
+			</files>
+			<im1CRC>9C4DD890</im1CRC>
+			<im2CRC>B4325900</im2CRC>
+			<icoCRC>D4B89DC1</icoCRC>
+			<nfoCRC>66BE9E7D</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>KERORO3</internal_name>
+			<serial>NTR-YL6J-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-kg3j.zip</filename>
+			<dumpdate>2008-03-09</dumpdate>
+			<dirname>Chou_Gekijou_Ban_Keroro_Gunsou_3_-_Action_Tenkuu_Daibouken_de_Arimasu_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2104</comment>
+		</game>
+		<game>
+			<imageNumber>2162</imageNumber>
+			<releaseNumber>2162</releaseNumber>
+			<title>Spiderwick Chronicles, The</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Sierra Entertainment</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">1FD0AB92</romCRC>
+			</files>
+			<im1CRC>BC206C55</im1CRC>
+			<im2CRC>5E9CC888</im2CRC>
+			<icoCRC>91E7D7E1</icoCRC>
+			<nfoCRC>F4FDADAD</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>SPIDERWICK</internal_name>
+			<serial>NTR-YS8P-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-scds.zip</filename>
+			<dumpdate>2008-03-10</dumpdate>
+			<dirname>The_Spiderwick_Chronicles_EUR_MULTI5_NDS-SQUiRE</dirname>
+			<duplicateid>515</duplicateid>
+			<comment>2105</comment>
+		</game>
+		<game>
+			<imageNumber>2163</imageNumber>
+			<releaseNumber>2163</releaseNumber>
+			<title>Command and Destroy</title>
+			<saveType>TBC</saveType>
+			<romSize>8388608</romSize>
+			<publisher>DSI Games</publisher>
+			<location>1</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">7885A10E</romCRC>
+			</files>
+			<im1CRC>1B95D0D8</im1CRC>
+			<im2CRC>510D4689</im2CRC>
+			<icoCRC>6B7C178E</icoCRC>
+			<nfoCRC>CB0747A3</nfoCRC>
+			<genre>Strategy</genre>
+			<internal_name>CMDADESTROY</internal_name>
+			<serial>NTR-YC5E-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-cadu.rar</filename>
+			<dumpdate>2008-03-10</dumpdate>
+			<dirname>Command_and_Destroy_USA_NDS-XPA</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2106</comment>
+		</game>
+		<game>
+			<imageNumber>2164</imageNumber>
+			<releaseNumber>2164</releaseNumber>
+			<title>Final Fantasy Crystal Chronicles - Ring of Fates</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Square Enix</publisher>
+			<location>1</location>
+			<sourceRom>Independent</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">E16B9300</romCRC>
+			</files>
+			<im1CRC>31808D5E</im1CRC>
+			<im2CRC>29877383</im2CRC>
+			<icoCRC>C73DFCD1</icoCRC>
+			<nfoCRC>058CEB14</nfoCRC>
+			<genre>RPG</genre>
+			<internal_name>FFCC ROF</internal_name>
+			<serial>NTR-AFXE-USA</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>cock-ffrof.rar</filename>
+			<dumpdate>2008-03-10</dumpdate>
+			<dirname>Final_Fantasy_Crystal_Chronicles_Rings_Of_Fate_USA_NDS-HugeCock</dirname>
+			<duplicateid>516</duplicateid>
+			<comment>2107</comment>
+		</game>
+		<game>
+			<imageNumber>2165</imageNumber>
+			<releaseNumber>2165</releaseNumber>
+			<title>Ninja Reflex</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Electronic Arts</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">E5A670A1</romCRC>
+			</files>
+			<im1CRC>B43876DE</im1CRC>
+			<im2CRC>81CC28D2</im2CRC>
+			<icoCRC>D771C0C3</icoCRC>
+			<nfoCRC>559D3EE3</nfoCRC>
+			<genre>Fighting</genre>
+			<internal_name>NINJA REFLEX</internal_name>
+			<serial>NTR-YNIE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-nr.zip</filename>
+			<dumpdate>2008-03-10</dumpdate>
+			<dirname>Ninja_Reflex_USA_NDS-SQUiRE</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2108</comment>
+		</game>
+		<game>
+			<imageNumber>2166</imageNumber>
+			<releaseNumber>2166</releaseNumber>
+			<title>DS Download Station - Volume 8 (Kiosk WiFi Demo Cart)</title>
+			<saveType>None</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Nintendo</publisher>
+			<location>1</location>
+			<sourceRom>Independent</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">98F01989</romCRC>
+			</files>
+			<im1CRC>F53360F9</im1CRC>
+			<im2CRC>3EB3C9E4</im2CRC>
+			<icoCRC>D0B0ABE4</icoCRC>
+			<nfoCRC>18130CD7</nfoCRC>
+			<genre>Demo</genre>
+			<internal_name>DDS_VOL8_US</internal_name>
+			<serial>NTR-A7IE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>ind-dsd8.zip</filename>
+			<dumpdate>2008-03-10</dumpdate>
+			<dirname>DS_Download_Station_Volume_8_USA_NDS-iND</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>xxxx</comment>
+		</game>
+		<game>
+			<imageNumber>2167</imageNumber>
+			<releaseNumber>2167</releaseNumber>
+			<title>Dragon Quest Monsters - Joker</title>
+			<saveType>Flash - 2 Mbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Square Enix</publisher>
+			<location>0</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">BB656CAF</romCRC>
+			</files>
+			<im1CRC>89526CD4</im1CRC>
+			<im2CRC>2DA6232C</im2CRC>
+			<icoCRC>14B5BFF2</icoCRC>
+			<nfoCRC>F58EC88D</nfoCRC>
+			<genre>RPG</genre>
+			<internal_name>DQM:JOKER</internal_name>
+			<serial>NTR-AJRP-EUR</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>xms-dqje.rar</filename>
+			<dumpdate>2008-03-11</dumpdate>
+			<dirname>Dragon_Quest_Monsters_Joker_EUR_MULTi5_NDS-EXiMiUS</dirname>
+			<duplicateid>397</duplicateid>
+			<comment>2109</comment>
+		</game>
+		<game>
+			<imageNumber>2168</imageNumber>
+			<releaseNumber>2168</releaseNumber>
+			<title>Powerplay Tennis</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Codemasters</publisher>
+			<location>1</location>
+			<sourceRom>Sir VG</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">D027618F</romCRC>
+			</files>
+			<im1CRC>E85DB5BC</im1CRC>
+			<im2CRC>EC0918D7</im2CRC>
+			<icoCRC>58BC9224</icoCRC>
+			<nfoCRC>363C2110</nfoCRC>
+			<genre>Sports</genre>
+			<internal_name>PPLAY TENNIS</internal_name>
+			<serial>NTR-AXTE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>svg-axte.zip</filename>
+			<dumpdate>2008-03-11</dumpdate>
+			<dirname>Powerplay_Tennis_USA_NDS-SirVG</dirname>
+			<duplicateid>517</duplicateid>
+			<comment>2110</comment>
+		</game>
+		<game>
+			<imageNumber>2169</imageNumber>
+			<releaseNumber>2169</releaseNumber>
+			<title>Barnyard Blast - Swine of the Night</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>DSI Games</publisher>
+			<location>1</location>
+			<sourceRom>Sir VG</sourceRom>
+			<language>6147</language>
+			<files>
+				<romCRC extension=".nds">29BBE320</romCRC>
+			</files>
+			<im1CRC>BFF9C0D1</im1CRC>
+			<im2CRC>95856317</im2CRC>
+			<icoCRC>36BF5FC5</icoCRC>
+			<nfoCRC>D2298041</nfoCRC>
+			<genre>Platformer</genre>
+			<internal_name>BARNYARD</internal_name>
+			<serial>NTR-YQBE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>svg-yqbe.zip</filename>
+			<dumpdate>2008-03-11</dumpdate>
+			<dirname>Barnyard_Blast_USA_NDS-SirVG</dirname>
+			<duplicateid>518</duplicateid>
+			<comment>2111</comment>
+		</game>
+		<game>
+			<imageNumber>2170</imageNumber>
+			<releaseNumber>2170</releaseNumber>
+			<title>Build-A-Bear Workshop</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Game Factory</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>10</language>
+			<files>
+				<romCRC extension=".nds">40D064C2</romCRC>
+			</files>
+			<im1CRC>E44E9157</im1CRC>
+			<im2CRC>5CA21F65</im2CRC>
+			<icoCRC>9265CEBC</icoCRC>
+			<nfoCRC>793B8B15</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>BUILDABEAR_E</internal_name>
+			<serial>NTR-YBHP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-babw.rar</filename>
+			<dumpdate>2008-03-11</dumpdate>
+			<dirname>Build_A_Bear_Workshop_EUR_NDS-XPA</dirname>
+			<duplicateid>519</duplicateid>
+			<comment>2112</comment>
+		</game>
+		<game>
+			<imageNumber>2171</imageNumber>
+			<releaseNumber>2171</releaseNumber>
+			<title>Making Magic Fun</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Nintendo</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">D0327B34</romCRC>
+			</files>
+			<im1CRC>2F8A4822</im1CRC>
+			<im2CRC>DEE57109</im2CRC>
+			<icoCRC>7C0AA6D2</icoCRC>
+			<nfoCRC>151C68AB</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>ILLUSION</internal_name>
+			<serial>NTR-AJQP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-mmfe.rar</filename>
+			<dumpdate>2008-03-11</dumpdate>
+			<dirname>Making_Magic_Fun_EUR_NDS-XPA</dirname>
+			<duplicateid>429</duplicateid>
+			<comment>2113</comment>
+		</game>
+		<game>
+			<imageNumber>2172</imageNumber>
+			<releaseNumber>2172</releaseNumber>
+			<title>Bunnyz</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4307</language>
+			<files>
+				<romCRC extension=".nds">07737FC3</romCRC>
+			</files>
+			<im1CRC>B4536596</im1CRC>
+			<im2CRC>20FE38AF</im2CRC>
+			<icoCRC>CF17821D</icoCRC>
+			<nfoCRC>2FE5C10A</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>BUNNYZ</internal_name>
+			<serial>NTR-YBWP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-bunny.zip</filename>
+			<dumpdate>2008-03-12</dumpdate>
+			<dirname>Bunnyz_EUR_MULTI6_NDS-SQUiRE</dirname>
+			<duplicateid>520</duplicateid>
+			<comment>2114</comment>
+		</game>
+		<game>
+			<imageNumber>2173</imageNumber>
+			<releaseNumber>2173</releaseNumber>
+			<title>InSecticide</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Gamecock Media</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">62A8AD60</romCRC>
+			</files>
+			<im1CRC>15CDFDB4</im1CRC>
+			<im2CRC>B929DF19</im2CRC>
+			<icoCRC>EFB0BF86</icoCRC>
+			<nfoCRC>C535EF2A</nfoCRC>
+			<genre>Action Adventure</genre>
+			<internal_name>INSECTICIDE</internal_name>
+			<serial>NTR-YICE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-insec.zip</filename>
+			<dumpdate>2008-03-12</dumpdate>
+			<dirname>Insecticide_USA_NDS-SQUiRE</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2115</comment>
+		</game>
+		<game>
+			<imageNumber>2174</imageNumber>
+			<releaseNumber>2174</releaseNumber>
+			<title>My Puppy Shop</title>
+			<saveType>Flash - 2 Mbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>12507</language>
+			<files>
+				<romCRC extension=".nds">72D407F8</romCRC>
+			</files>
+			<im1CRC>A5B77892</im1CRC>
+			<im2CRC>021D612D</im2CRC>
+			<icoCRC>335912FB</icoCRC>
+			<nfoCRC>02273472</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>MYPUPPYSHOP</internal_name>
+			<serial>NTR-YPTP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-puppy.zip</filename>
+			<dumpdate>2008-03-12</dumpdate>
+			<dirname>My_Puppy_Shop_EUR_MULTI8-SQUiRE</dirname>
+			<duplicateid>482</duplicateid>
+			<comment>2116</comment>
+		</game>
+		<game>
+			<imageNumber>2175</imageNumber>
+			<releaseNumber>2175</releaseNumber>
+			<title>Imagine - Figure Skater</title>
+			<saveType>Eeprom - 512 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">F4666DB9</romCRC>
+			</files>
+			<im1CRC>6F651D64</im1CRC>
+			<im2CRC>BE1A4483</im2CRC>
+			<icoCRC>8D753EE6</icoCRC>
+			<nfoCRC>4006C731</nfoCRC>
+			<genre>Sports</genre>
+			<internal_name>FIGURESKATER</internal_name>
+			<serial>NTR-AFQE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-ifs.zip</filename>
+			<dumpdate>2008-03-13</dumpdate>
+			<dirname>Imagine_Figure_Skater_USA_NDS-SQUiRE</dirname>
+			<duplicateid>521</duplicateid>
+			<comment>2117</comment>
+		</game>
+		<game>
+			<imageNumber>2176</imageNumber>
+			<releaseNumber>2176</releaseNumber>
+			<title>Petz - Bunnyz</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>UbiSoft</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4307</language>
+			<files>
+				<romCRC extension=".nds">54A72E36</romCRC>
+			</files>
+			<im1CRC>99CFC23E</im1CRC>
+			<im2CRC>4C33723C</im2CRC>
+			<icoCRC>CF17821D</icoCRC>
+			<nfoCRC>716B55EF</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>BUNNYZ</internal_name>
+			<serial>NTR-YBWE-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-pbz.zip</filename>
+			<dumpdate>2008-03-13</dumpdate>
+			<dirname>Petz_Bunnyz_USA_NDS-SQUiRE</dirname>
+			<duplicateid>520</duplicateid>
+			<comment>2118</comment>
+		</game>
+		<game>
+			<imageNumber>2177</imageNumber>
+			<releaseNumber>2177</releaseNumber>
+			<title>Nanostray 2</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Majesco Entertainment</publisher>
+			<location>1</location>
+			<sourceRom>Micronauts</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".nds">6A3C2E8F</romCRC>
+			</files>
+			<im1CRC>908DD11F</im1CRC>
+			<im2CRC>FFB91B94</im2CRC>
+			<icoCRC>4A579EED</icoCRC>
+			<nfoCRC>0673F49D</nfoCRC>
+			<genre>Shooter</genre>
+			<internal_name>NANOSTRAY2</internal_name>
+			<serial>NTR-ANXE-USA</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>nan2-mcrnts.rar</filename>
+			<dumpdate>2008-03-13</dumpdate>
+			<dirname>Nanostray_2_USA_NDS-Micronauts</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2119</comment>
+		</game>
+		<game>
+			<imageNumber>2178</imageNumber>
+			<releaseNumber>2178</releaseNumber>
+			<title>Fish Tycoon</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Majesco Entertainment</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">6BB97217</romCRC>
+			</files>
+			<im1CRC>F8B933E3</im1CRC>
+			<im2CRC>B200A367</im2CRC>
+			<icoCRC>BB33D157</icoCRC>
+			<nfoCRC>025E11A4</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>FISHTYCOON</internal_name>
+			<serial>NTR-YF7P-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xpa-ftyc.rar</filename>
+			<dumpdate>2008-03-14</dumpdate>
+			<dirname>Fish_Tycoon_EUR_NDS-XPA</dirname>
+			<duplicateid>522</duplicateid>
+			<comment>2120</comment>
+		</game>
+		<game>
+			<imageNumber>2179</imageNumber>
+			<releaseNumber>2179</releaseNumber>
+			<title>Bomberman Land Touch! 2</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Rising Star Games</publisher>
+			<location>0</location>
+			<sourceRom>XenoPhobia</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">5CF64A5C</romCRC>
+			</files>
+			<im1CRC>81B1E605</im1CRC>
+			<im2CRC>A9BA5B49</im2CRC>
+			<icoCRC>3299C5CB</icoCRC>
+			<nfoCRC>39F1A363</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>TCHBMBMNLND2</internal_name>
+			<serial>NTR-YB2P-EUR</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>xpa-bltt.rar</filename>
+			<dumpdate>2008-03-14</dumpdate>
+			<dirname>Bomberman_Land_Touch_2_EUR_NDS-XPA</dirname>
+			<duplicateid>479</duplicateid>
+			<comment>2121</comment>
+		</game>
+		<game>
+			<imageNumber>2180</imageNumber>
+			<releaseNumber>2180</releaseNumber>
+			<title>My Little Baby</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>DTP Entertainment</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>66</language>
+			<files>
+				<romCRC extension=".nds">212D72FC</romCRC>
+			</files>
+			<im1CRC>3494854E</im1CRC>
+			<im2CRC>60A79B24</im2CRC>
+			<icoCRC>7497178F</icoCRC>
+			<nfoCRC>3149A72F</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>MYLITTLEBABY</internal_name>
+			<serial>NTR-YJLP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-mlbab.zip</filename>
+			<dumpdate>2008-03-14</dumpdate>
+			<dirname>My_little_Baby_EUR_MULTI2_NDS-SQUiRE</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2122</comment>
+		</game>
+		<game>
+			<imageNumber>2181</imageNumber>
+			<releaseNumber>2181</releaseNumber>
+			<title>Ninja Reflex</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Electronic Arts</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">6F17CFE2</romCRC>
+			</files>
+			<im1CRC>295AD283</im1CRC>
+			<im2CRC>08EAFC77</im2CRC>
+			<icoCRC>D771C0C3</icoCRC>
+			<nfoCRC>3E5E0347</nfoCRC>
+			<genre>Fighting</genre>
+			<internal_name>NINJA REFLEX</internal_name>
+			<serial>NTR-YNIP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-niree.zip</filename>
+			<dumpdate>2008-03-14</dumpdate>
+			<dirname>Ninja_Reflex_EUR_MULTI5_NDS-SQUiRE</dirname>
+			<duplicateid>523</duplicateid>
+			<comment>2123</comment>
+		</game>
+		<game>
+			<imageNumber>2182</imageNumber>
+			<releaseNumber>2182</releaseNumber>
+			<title>Dr Reiner Knizia's Brain Benders</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Eidos Interactive</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">11131D0D</romCRC>
+			</files>
+			<im1CRC>8676A7AF</im1CRC>
+			<im2CRC>1C5759BB</im2CRC>
+			<icoCRC>1907F6D4</icoCRC>
+			<nfoCRC>EC47EB64</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>DRREINER</internal_name>
+			<serial>NTR-YSQP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-drkbb.zip</filename>
+			<dumpdate>2008-03-14</dumpdate>
+			<dirname>Dr_Reiner_Knizias_Brainbenders_EUR_MULTI5_NDS-SQUiRE</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2124</comment>
+		</game>
+		<game>
+			<imageNumber>2183</imageNumber>
+			<releaseNumber>2183</releaseNumber>
+			<title>Mr Bean</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Blast! Entertainment</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>15099</language>
+			<files>
+				<romCRC extension=".nds">E8F7A5CF</romCRC>
+			</files>
+			<im1CRC>02FF9BAB</im1CRC>
+			<im2CRC>C35B9BB3</im2CRC>
+			<icoCRC>6ABFF9A8</icoCRC>
+			<nfoCRC>0C31CC7C</nfoCRC>
+			<genre>Platformer</genre>
+			<internal_name>MR BEAN</internal_name>
+			<serial>NTR-YMRP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-mrbea.zip</filename>
+			<dumpdate>2008-03-14</dumpdate>
+			<dirname>Mr_Bean_EUR_MULTI11_NDS-SQUiRE</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2125</comment>
+		</game>
+		<game>
+			<imageNumber>2184</imageNumber>
+			<releaseNumber>2184</releaseNumber>
+			<title>Betty Boop's Double Shift</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Zoo Digital</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">6F7B5477</romCRC>
+			</files>
+			<im1CRC>EE43744E</im1CRC>
+			<im2CRC>6D13C0A1</im2CRC>
+			<icoCRC>708A4264</icoCRC>
+			<nfoCRC>5B091235</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>BOOPDBLSHIFT</internal_name>
+			<serial>NTR-YBXP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-bbdse.zip</filename>
+			<dumpdate>2008-03-14</dumpdate>
+			<dirname>Betty_Boops_Double_Shift_EUR_MULTI5_NDS-SQUiRE</dirname>
+			<duplicateid>524</duplicateid>
+			<comment>2126</comment>
+		</game>
+		<game>
+			<imageNumber>2185</imageNumber>
+			<releaseNumber>2185</releaseNumber>
+			<title>Puppy Luv - Animal Tycoon</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Activision</publisher>
+			<location>0</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>4225</language>
+			<files>
+				<romCRC extension=".nds">A4BA2534</romCRC>
+			</files>
+			<im1CRC>8C584C0D</im1CRC>
+			<im2CRC>7C723B8E</im2CRC>
+			<icoCRC>D175712C</icoCRC>
+			<nfoCRC>C2D5A392</nfoCRC>
+			<genre>Simulation</genre>
+			<internal_name>PUPPYLUV</internal_name>
+			<serial>NTR-YPLX-EUU</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-pple.rar</filename>
+			<dumpdate>2008-03-14</dumpdate>
+			<dirname>Puppy_Luv_Animal_Tycoon_EUR_MULTi3_NDS-EXiMiUS</dirname>
+			<duplicateid>465</duplicateid>
+			<comment>2127</comment>
+		</game>
+		<game>
+			<imageNumber>2186</imageNumber>
+			<releaseNumber>2186</releaseNumber>
+			<title>Nancy Drew - The Deadly Secret of Olde World Park</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Majesco Entertainment</publisher>
+			<location>0</location>
+			<sourceRom>EXiMiUS</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">111C79AF</romCRC>
+			</files>
+			<im1CRC>9FC25E39</im1CRC>
+			<im2CRC>CF23BEAB</im2CRC>
+			<icoCRC>08E43591</icoCRC>
+			<nfoCRC>42F0BE08</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>NANCYDREWMST</internal_name>
+			<serial>NTR-YNWP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>xms-nade.rar</filename>
+			<dumpdate>2008-03-14</dumpdate>
+			<dirname>Nancy_Drew_The_Deadly_Secret_Of_Olde_World_Park_EUR_MULTi5_NDS-EXiMiUS</dirname>
+			<duplicateid>525</duplicateid>
+			<comment>2128</comment>
+		</game>
+		<game>
+			<imageNumber>2187</imageNumber>
+			<releaseNumber>2187</releaseNumber>
+			<title>Pro Evolution Soccer 2008</title>
+			<saveType>Flash - 2 Mbit</saveType>
+			<romSize>134217728</romSize>
+			<publisher>Konami</publisher>
+			<location>1</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4099</language>
+			<files>
+				<romCRC extension=".nds">C69E7DF8</romCRC>
+			</files>
+			<im1CRC>495B22EB</im1CRC>
+			<im2CRC>0C3A172E</im2CRC>
+			<icoCRC>4CFFBDA8</icoCRC>
+			<nfoCRC>16509471</nfoCRC>
+			<genre>Sports</genre>
+			<internal_name>PES 2008</internal_name>
+			<serial>NTR-YW8E-USA</serial>
+			<version>1.0</version>
+			<wifi>Yes</wifi>
+			<filename>sq-pes8.zip</filename>
+			<dumpdate>2008-03-15</dumpdate>
+			<dirname>Pro_Evolution_Soccer_2008_USA_NDS-SQUiRE</dirname>
+			<duplicateid>479</duplicateid>
+			<comment>2129</comment>
+		</game>
+		<game>
+			<imageNumber>2188</imageNumber>
+			<releaseNumber>2188</releaseNumber>
+			<title>Kage Densetsu - The Legend of Kage 2</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Taito</publisher>
+			<location>7</location>
+			<sourceRom>Caravan</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">C124B4D3</romCRC>
+			</files>
+			<im1CRC>A2662E03</im1CRC>
+			<im2CRC>5DC70050</im2CRC>
+			<icoCRC>41939ABF</icoCRC>
+			<nfoCRC>90736953</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>KAGEDEN2</internal_name>
+			<serial>NTR-YLKJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>cvn-kagd2.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Kage_no_Densetsu_PROPER_JPN_NDS-Caravan</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2130</comment>
+		</game>
+		<game>
+			<imageNumber>2189</imageNumber>
+			<releaseNumber>2189</releaseNumber>
+			<title>Holly Hobbie &amp; Friends</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Majesco Entertainment</publisher>
+			<location>0</location>
+			<sourceRom>SQUiRE</sourceRom>
+			<language>4291</language>
+			<files>
+				<romCRC extension=".nds">ED6FF50F</romCRC>
+			</files>
+			<im1CRC>85D733B5</im1CRC>
+			<im2CRC>D1DD5A9D</im2CRC>
+			<icoCRC>EFCFCFF5</icoCRC>
+			<nfoCRC>E20098E8</nfoCRC>
+			<genre>Party Games</genre>
+			<internal_name>HOLLYHOBBIE</internal_name>
+			<serial>NTR-YHFP-EUR</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>sq-hhafe.zip</filename>
+			<dumpdate>2008-03-15</dumpdate>
+			<dirname>Holly_Hobbie_and_Friends_EUR_MULTI5_NDS-SQUiRE</dirname>
+			<duplicateid>526</duplicateid>
+			<comment>2131</comment>
+		</game>
+		<game>
+			<imageNumber>2190</imageNumber>
+			<releaseNumber>2190</releaseNumber>
+			<title>Chicken Hunter</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>MumboJumbo</publisher>
+			<location>1</location>
+			<sourceRom>Junkrat</sourceRom>
+			<language>4307</language>
+			<files>
+				<romCRC extension=".nds">138BD477</romCRC>
+			</files>
+			<im1CRC>4F26D406</im1CRC>
+			<im2CRC>BCF7C5FD</im2CRC>
+			<icoCRC>D83D1282</icoCRC>
+			<nfoCRC>68F1B9C5</nfoCRC>
+			<genre>Shooter</genre>
+			<internal_name>CHICKEN HUNT</internal_name>
+			<serial>NTR-YMME-USA</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>jr-chu.zip</filename>
+			<dumpdate>2008-03-15</dumpdate>
+			<dirname>Chicken_Hunter_USA_NDS-JunkRat</dirname>
+			<duplicateid>528</duplicateid>
+			<comment>2132</comment>
+		</game>
+		<game>
+			<imageNumber>2191</imageNumber>
+			<releaseNumber>2191</releaseNumber>
+			<title>Call of Duty 4 - Modern Warfare</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Activision</publisher>
+			<location>7</location>
+			<sourceRom>Caravan</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">C6E8DF60</romCRC>
+			</files>
+			<im1CRC>83CA41AF</im1CRC>
+			<im2CRC>F21BFA28</im2CRC>
+			<icoCRC>C26E95F5</icoCRC>
+			<nfoCRC>D28756C8</nfoCRC>
+			<genre>First Person Shooter</genre>
+			<internal_name>CALLOFDUTY4</internal_name>
+			<serial>NTR-YCOJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>cvn-cod4ds.zip</filename>
+			<dumpdate>2008-03-15</dumpdate>
+			<dirname>Call_of_Duty_4_Modern_Warfare_JPN_NDS-Caravan</dirname>
+			<duplicateid>400</duplicateid>
+			<comment>2133</comment>
+		</game>
+		<game>
+			<imageNumber>2192</imageNumber>
+			<releaseNumber>2192</releaseNumber>
+			<title>Contra - Dual Spirits</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Konami</publisher>
+			<location>7</location>
+			<sourceRom>Caravan</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">5AF85B83</romCRC>
+			</files>
+			<im1CRC>D7912DA7</im1CRC>
+			<im2CRC>0291359E</im2CRC>
+			<icoCRC>14F9D08E</icoCRC>
+			<nfoCRC>06F584A5</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>CONTRA 4</internal_name>
+			<serial>NTR-YCTJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>cvn-cotds.zip</filename>
+			<dumpdate>2008-03-15</dumpdate>
+			<dirname>Contra_Dual_Spirits_JPN_NDS-Caravan</dirname>
+			<duplicateid>527</duplicateid>
+			<comment>2134</comment>
+		</game>
+		<game>
+			<imageNumber>2193</imageNumber>
+			<releaseNumber>2193</releaseNumber>
+			<title>Doraemon - Nobita to Midori no Kyojinhei</title>
+			<saveType>TBC</saveType>
+			<romSize>67108864</romSize>
+			<publisher>SEGA</publisher>
+			<location>7</location>
+			<sourceRom>Caravan</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">909C2C7B</romCRC>
+			</files>
+			<im1CRC>27A2F271</im1CRC>
+			<im2CRC>7E869DD6</im2CRC>
+			<icoCRC>D0CC8039</icoCRC>
+			<nfoCRC>CB1AEFA3</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>DORAEMON</internal_name>
+			<serial>NTR-YD8J-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>cvn-dramk.zip</filename>
+			<dumpdate>2008-03-15</dumpdate>
+			<dirname>Doraemon_Nobita_to_Midori_no_Kyojinhei_JPN_NDS-Caravan</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2135</comment>
+		</game>
+		<game>
+			<imageNumber>2194</imageNumber>
+			<releaseNumber>2194</releaseNumber>
+			<title>Mahou ni Kakerarete</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>Disney Interactive</publisher>
+			<location>7</location>
+			<sourceRom>Caravan</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">AD87CB07</romCRC>
+			</files>
+			<im1CRC>DA4BBCE4</im1CRC>
+			<im2CRC>E5749542</im2CRC>
+			<icoCRC>EC826DA7</icoCRC>
+			<nfoCRC>C81E299D</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>ENCHANTED</internal_name>
+			<serial>NTR-YECJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>cvn-mahk.zip</filename>
+			<dumpdate>2008-03-15</dumpdate>
+			<dirname>Mahou_ni_Kakerarete_JPN_NDS-Caravan</dirname>
+			<duplicateid>440</duplicateid>
+			<comment>2136</comment>
+		</game>
+		<game>
+			<imageNumber>2195</imageNumber>
+			<releaseNumber>2195</releaseNumber>
+			<title>Hana to Taiyou to Ame to - Owaranai Rakuen</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Marvelous</publisher>
+			<location>7</location>
+			<sourceRom>Caravan</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">77B60ECA</romCRC>
+			</files>
+			<im1CRC>C02AF77C</im1CRC>
+			<im2CRC>CEE37EC9</im2CRC>
+			<icoCRC>DF6514A1</icoCRC>
+			<nfoCRC>CF5CC891</nfoCRC>
+			<genre>Adventure</genre>
+			<internal_name>HANATOTAIYOU</internal_name>
+			<serial>NTR-YHNJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>cvn-htaor.zip</filename>
+			<dumpdate>2008-03-15</dumpdate>
+			<dirname>Hana_to_Ame_to_Taiyou_to_Owaranai_Rakuen_JPN_NDS-Caravan</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2137</comment>
+		</game>
+		<game>
+			<imageNumber>2196</imageNumber>
+			<releaseNumber>2196</releaseNumber>
+			<title>Eigo o Taberu Fushigi na Ikimono Marsh</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Dimple Entertainment</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">FD1E634F</romCRC>
+			</files>
+			<im1CRC>6D654CDF</im1CRC>
+			<im2CRC>16C6D1D2</im2CRC>
+			<icoCRC>B4511FFF</icoCRC>
+			<nfoCRC>FB980944</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>MARSH</internal_name>
+			<serial>NTR-AEVJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-etfm.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Eigo_o_Taberu_Fushigi_na_Ikimono_Marsh_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2138</comment>
+		</game>
+		<game>
+			<imageNumber>2197</imageNumber>
+			<releaseNumber>2197</releaseNumber>
+			<title>Eiken-Ou - 2-Kyuuhen</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Gakken</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">875EF10B</romCRC>
+			</files>
+			<im1CRC>4E4C210C</im1CRC>
+			<im2CRC>174A5A6E</im2CRC>
+			<icoCRC>B878111B</icoCRC>
+			<nfoCRC>8EDF8531</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>EIKENOH 2KYU</internal_name>
+			<serial>NTR-YEZJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-eo2j.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Eiken_Ou_-_2_Kyuu_Hen_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2139</comment>
+		</game>
+		<game>
+			<imageNumber>2198</imageNumber>
+			<releaseNumber>2198</releaseNumber>
+			<title>Hiromichi Oniisan no Oyako Taisou Navi</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Dorasu</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">D3185AF1</romCRC>
+			</files>
+			<im1CRC>9454EF8B</im1CRC>
+			<im2CRC>EE9F084D</im2CRC>
+			<icoCRC>D2FDD985</icoCRC>
+			<nfoCRC>9FB03A20</nfoCRC>
+			<genre>Other</genre>
+			<internal_name>TAISOUNAVI</internal_name>
+			<serial>NTR-YHIJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-hotn.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Hiromiti_Onisan_no_Oyako_Taiso_Navy_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2140</comment>
+		</game>
+		<game>
+			<imageNumber>2199</imageNumber>
+			<releaseNumber>2199</releaseNumber>
+			<title>Miyamoto Sansuu Kyoushitsu no Kyouzai - Kashikoku naru Puzzle DS Ban</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Gakken</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">27FFF2D5</romCRC>
+			</files>
+			<im1CRC>50E6286D</im1CRC>
+			<im2CRC>924D8279</im2CRC>
+			<icoCRC>C9822B5C</icoCRC>
+			<nfoCRC>2EE9A280</nfoCRC>
+			<genre>Puzzle</genre>
+			<internal_name>MIYAMOTO_SAN</internal_name>
+			<serial>NTR-YKXJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-kpdh.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Miyamoto_Sansuu_Kyoushitsu_no_Kyouzai_-_Kenkunaru_Puzzle_DS_Han_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2141</comment>
+		</game>
+		<game>
+			<imageNumber>2200</imageNumber>
+			<releaseNumber>2200</releaseNumber>
+			<title>Nakamura Tooru Kanshuu - Indo Shiki Keisan Drill DS</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>GungHo</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">5771884C</romCRC>
+			</files>
+			<im1CRC>19F97BFD</im1CRC>
+			<im2CRC>BB5BDAE6</im2CRC>
+			<icoCRC>7AF64924</icoCRC>
+			<nfoCRC>6E9BC125</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>INDODORIRUDS</internal_name>
+			<serial>NTR-YDKJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-iskd.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Nakamura_Akira_Kanshuu_-_Indo_Shiki_Keisan_Drill_DS_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2142</comment>
+		</game>
+		<game>
+			<imageNumber>2201</imageNumber>
+			<releaseNumber>2201</releaseNumber>
+			<title>Ojaru-Maru DS - Ojaru to Okeiko Aiueo</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>33554432</romSize>
+			<publisher>D3 Publisher</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">68DDE8B6</romCRC>
+			</files>
+			<im1CRC>8D4C5A30</im1CRC>
+			<im2CRC>C8898CD9</im2CRC>
+			<icoCRC>F7C47731</icoCRC>
+			<nfoCRC>44A70BA4</nfoCRC>
+			<genre>Action</genre>
+			<internal_name>OJARU AIUEO</internal_name>
+			<serial>NTR-YO6J-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-odoa.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Ojaru_Maru_DS_-_Ojaru_to_Okeiko_Aiueo_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2143</comment>
+		</game>
+		<game>
+			<imageNumber>2202</imageNumber>
+			<releaseNumber>2202</releaseNumber>
+			<title>Rekishi Gunsou Presents - Monoshiri Sengoku Ou</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Global A</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">71EBE935</romCRC>
+			</files>
+			<im1CRC>18CA3AA9</im1CRC>
+			<im2CRC>D1BE4749</im2CRC>
+			<icoCRC>0A83504D</icoCRC>
+			<nfoCRC>7118181D</nfoCRC>
+			<genre>Strategy</genre>
+			<internal_name>SENGOKU</internal_name>
+			<serial>NTR-YGUJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-rpmo.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Rekishi_Gunsou_Presents_-_Monoshiri_Sengoku_Ou_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2144</comment>
+		</game>
+		<game>
+			<imageNumber>2203</imageNumber>
+			<releaseNumber>2203</releaseNumber>
+			<title>Tokyo Odaiba Casino (SuperLite 2500)</title>
+			<saveType>Eeprom - 4 kbit</saveType>
+			<romSize>8388608</romSize>
+			<publisher>Success</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">70D2B71A</romCRC>
+			</files>
+			<im1CRC>19B28B19</im1CRC>
+			<im2CRC>9639A8C2</im2CRC>
+			<icoCRC>8F7845D1</icoCRC>
+			<nfoCRC>7C314B49</nfoCRC>
+			<genre>Gambling</genre>
+			<internal_name>ODAIBACASINO</internal_name>
+			<serial>NTR-YINJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-tocj.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Super_Lite_2500_-_Tokyo_Odaiba_Casino_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2145</comment>
+		</game>
+		<game>
+			<imageNumber>2204</imageNumber>
+			<releaseNumber>2204</releaseNumber>
+			<title>DS Bimoji Training</title>
+			<saveType>TBC</saveType>
+			<romSize>67108864</romSize>
+			<publisher>Nintendo</publisher>
+			<location>7</location>
+			<sourceRom>Caravan</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">A465AC34</romCRC>
+			</files>
+			<im1CRC>16421A44</im1CRC>
+			<im2CRC>529B0F93</im2CRC>
+			<icoCRC>69E05D9A</icoCRC>
+			<nfoCRC>E2352318</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>BIMOJI TRAIN</internal_name>
+			<serial>NTR-AVMJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>cvn-vmt.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>DS_Bimoji_Training_JPN_NDS-Caravan</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2146</comment>
+		</game>
+		<game>
+			<imageNumber>2205</imageNumber>
+			<releaseNumber>2205</releaseNumber>
+			<title>Takahashi Shoten Kanshuu - Saihinshutsu! SPI Perfect Mondaishuu</title>
+			<saveType>Eeprom - 64 kbit</saveType>
+			<romSize>16777216</romSize>
+			<publisher>Genki</publisher>
+			<location>7</location>
+			<sourceRom>6rz</sourceRom>
+			<language>256</language>
+			<files>
+				<romCRC extension=".nds">511DD953</romCRC>
+			</files>
+			<im1CRC>46EB2C40</im1CRC>
+			<im2CRC>F6E02822</im2CRC>
+			<icoCRC>4CFC8B20</icoCRC>
+			<nfoCRC>17F43B26</nfoCRC>
+			<genre>Edutainment </genre>
+			<internal_name>SPI DS</internal_name>
+			<serial>NTR-YPSJ-JPN</serial>
+			<version>1.0</version>
+			<wifi>No</wifi>
+			<filename>6rz-spij.zip</filename>
+			<dumpdate>2008-03-16</dumpdate>
+			<dirname>Takahashi_Shoten_Kanshuu_-_Saihinshutsu_SPI_Perfect_Mondaishuu_JPN_NDS-6rz</dirname>
+			<duplicateid>0</duplicateid>
+			<comment>2147</comment>
 		</game>
 	</games>
 </dat>
