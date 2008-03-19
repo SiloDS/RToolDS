@@ -70,6 +70,11 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1284 - Bumped to 1284
+v0.2.1283 - Fixed #123: Region Modifier Update via Serial Code
+v0.2.1282 - Updated Trim and Advanscene Lists
+v0.2.1281 - Implemented Basic Save Game Search
+v0.2.1280 - Updated Trim File
 v0.2.1279 - Bumped to 1279
 v0.2.1278 - More Multiple ROM Fixes
 v0.2.1277 - Multiple ROMs on Device Fixes
