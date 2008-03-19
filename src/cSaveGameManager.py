@@ -45,6 +45,7 @@ class cSaveGameManager( wx.Dialog ):
         self.Options_Button = wx.BitmapButton(self.SaveGameManager_Panel, -1, (GFX.catalog ["GFX_Icon_Options16"].getBitmap()))
         self.label_7 = wx.StaticText(self.SaveGameManager_Panel, -1, _("Default Device : "))
         self.Default_Device = wx.Choice(self.SaveGameManager_Panel, -1, choices=[])
+        self.FindButton = wx.Button(self.SaveGameManager_Panel, -1, _("Find"), style=wx.BU_EXACTFIT)
         self.SGMTreeCtrl = gizmos.TreeListCtrl(self, -1, style=wx.TR_DEFAULT_STYLE|wx.TR_FULL_ROW_HIGHLIGHT)
 
         self.__set_properties()
@@ -58,7 +59,13 @@ class cSaveGameManager( wx.Dialog ):
         self.Bind(wx.EVT_BUTTON, self.On_Delete_All, self.Delete_All_Button)
         self.Bind(wx.EVT_BUTTON, self.On_Options, self.Options_Button)
         self.Bind(wx.EVT_CHOICE, self.On_Default_Device, self.Default_Device)
+        self.Bind(wx.EVT_BUTTON, self.On_Find_Button, self.FindButton)
         # end wxGlade
+        self.Bind(wx.EVT_FIND, self.On_Find)
+        self.Bind(wx.EVT_FIND_NEXT, self.On_Find)
+        self.Bind(wx.EVT_FIND_REPLACE, self.On_Find)
+        self.Bind(wx.EVT_FIND_REPLACE_ALL, self.On_Find)
+        self.Bind(wx.EVT_FIND_CLOSE, self.On_FindClose)
 
     def __set_properties( self ):
         # begin wxGlade: cSaveGameManager.__set_properties
@@ -95,7 +102,7 @@ class cSaveGameManager( wx.Dialog ):
 #        self.Freeze()
         # begin wxGlade: cSaveGameManager.__do_layout
         SaveGameManager_Sizer = wx.FlexGridSizer(2, 1, 0, 0)
-        SaveGameManager_Panel_Sizer = wx.FlexGridSizer(1, 9, 0, 0)
+        SaveGameManager_Panel_Sizer = wx.FlexGridSizer(1, 10, 0, 0)
         SaveGameManager_Panel_Sizer.Add(self.Copy_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.Edit_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.Delete_Button, 0, wx.TOP|wx.BOTTOM, 3)
@@ -105,7 +112,9 @@ class cSaveGameManager( wx.Dialog ):
         SaveGameManager_Panel_Sizer.Add(self.Options_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.label_7, 0, wx.LEFT|wx.ALIGN_CENTER_VERTICAL, 3)
         SaveGameManager_Panel_Sizer.Add(self.Default_Device, 0, wx.ALIGN_CENTER_VERTICAL, 0)
+        SaveGameManager_Panel_Sizer.Add(self.FindButton, 0, wx.ALL|wx.ALIGN_RIGHT, 3)
         self.SaveGameManager_Panel.SetSizer(SaveGameManager_Panel_Sizer)
+        SaveGameManager_Panel_Sizer.AddGrowableCol(9)
         SaveGameManager_Sizer.Add(self.SaveGameManager_Panel, 1, wx.EXPAND, 0)
         SaveGameManager_Sizer.Add(self.SGMTreeCtrl, 1, wx.EXPAND, 0)
         self.SetSizer(SaveGameManager_Sizer)
@@ -586,4 +595,40 @@ class cSaveGameManager( wx.Dialog ):
             Config.Config ["UseShortSaveName"] = False
         Config.Config ["Default_Device"] = event.String
 
+    
+    def On_Find_Button(self, event): # wxGlade: cSaveGameManager.<event_handler>
+        self.FindButton.Disable()
+        self.Find_Position = -1
+        data = wx.FindReplaceData()
+        dlg = wx.FindReplaceDialog(self, data, "Find")
+        dlg.data = data  # save a reference to it...
+        dlg.Show(True)
+        
+    def On_Find(self, event): # wxGlade: cSaveGameManager.<event_handler>
+        Find_Text = event.GetFindString()
+
+        nc = self.SGMTreeCtrl.GetChildrenCount(self.root, False)
+        cookie = 1
+        Found = False
+        for dummy in range(nc):
+            if dummy == 0:
+                child, cookie = self.SGMTreeCtrl.GetFirstChild(self.root)
+            else:
+                child, cookie = self.SGMTreeCtrl.GetNextChild(self.root, cookie)
+            if dummy > self.Find_Position:
+                if self.SGMTreeCtrl.GetItemText(child).upper ().find (Find_Text.upper()) != -1:
+                    Found = True
+                    self.Find_Position = dummy
+#                    self.SGMTreeCtrl.Expand( Hilight )
+                    self.SGMTreeCtrl.SelectItem( child )
+#                    self.SGMTreeCtrl.ScrollTo( Hilight )
+                    self.SGMTreeCtrl.EnsureVisible( child )
+        if Found == False:
+            wx.MessageBox( _('Save Game Not Found'), _('Not Found'), wx.OK| wx.ICON_INFORMATION )
+            self.Find_Position = -1
+
+    def On_FindClose(self, evt):
+        evt.GetDialog().Destroy()
+        self.FindButton.Enable()
+        
 # end of class cSaveGameManager
