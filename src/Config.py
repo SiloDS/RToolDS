@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 35
+Config_Version = 36
 Version_String = "2.0.1279 Beta"
 
 Config = {}
@@ -455,6 +455,17 @@ def Load_Defaults( Version ):
         Config ["SC_Col_Sizes"] = [-1, -1, -1 ]
     if Version < 35:
         Config ["SC_Size"] = ( 800, 400 )
+    if Version < 36:
+        Config ["Country_Codes_Lookup"] = { "JPN":7,
+                                            "USA":1,
+                                            "EUR":0,
+                                            "NOE":0,
+                                            "ITA":6,
+                                            "SPA":4,
+                                            "HOL":8,
+                                            "KOR":22,
+                                            "EUU":0,
+                                            "RUS":27 }
 #        
 #        
 #        Config ["Screen_Maximized"] = False

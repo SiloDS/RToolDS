@@ -668,7 +668,13 @@ class ROMS:
                 tmpROM.Ico_CRC = Utils.Get_File_CRC ( Icon_Filename )
                 
             tmpROM.Serial = Utils.Get_Serial ( Data )
-            
+            if tmpROM.Serial != "":
+                Location = tmpROM.Serial[-3:]
+                try:
+                    tmpROM.Location =  Config.Config ["Country_Codes_Lookup"][Location]
+                except:
+                    pass
+                
             self.Master_List.append ( tmpROM )
             self.Master_List_CRC_Dict [CRC] = tmpROM.Release_Number
             self.Master_List_Filename_Dict [ROMFile] = tmpROM.Release_Number
