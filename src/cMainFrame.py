@@ -1106,7 +1106,10 @@ class cMainFrame( wx.Frame ):
 #        self.ROMList.Thaw()
 
     def Resize_StatusBar ( self ):
-        self.StatusBar.SetStatusWidths( [self.MainFrame_Splitter.GetSashPosition()+4, -1, 80] ) #TODO: Fudge
+        try:
+            self.StatusBar.SetStatusWidths( [self.MainFrame_Splitter.GetSashPosition()+4, -1, 80] ) #TODO: Fudge
+        except:
+            pass
 
     def Update_StatusBar ( self, Position ):
         if Position & STATUS_ROM:
