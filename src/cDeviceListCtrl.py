@@ -73,7 +73,10 @@ class cDeviceListCtrl( wx.ListCtrl ):
         for extension in Config.Config ["Save_Extensions"]:
             Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext( Filename )[0] + extension)
             if os.path.isfile(Save_Filename):
-                FileDate = "%s %s" % ( win32api.GetDateFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Save_Filename ) ) ).lower(), win32api.GetTimeFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Save_Filename ) ) ) )
+                try: # fix for OSX
+                    FileDate = "%s %s" % ( win32api.GetDateFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Save_Filename ) ) ).lower(), win32api.GetTimeFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Save_Filename ) ) ) )
+                except:
+                    FileDate = ""
                 Save = ["Yes", Save_Filename, FileDate]
                 break
             elif sys.platform == "win32":

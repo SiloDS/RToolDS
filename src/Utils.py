@@ -329,7 +329,7 @@ if sys.platform == "win32":
     def Drive_Free ( Path ):
         return win32api.GetDiskFreeSpaceEx( Path )[0]
 
-elif sys.platform == "linux2":
+else: # elif sys.platform == "linux2":
     def Drive_Size ( Path ):
         os.stat
         return os.statvfs( Path )[F_FRSIZE ] * os.statvfs ( Path )[F_BLOCKS] #IGNORE:E1101
