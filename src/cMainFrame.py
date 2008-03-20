@@ -2023,6 +2023,9 @@ class cMainFrame( wx.Frame ):
         self.On_Apply_Changes( event )
 
     def On_ROMList_Begin_Drag( self, event ): # wxGlade: cMainFrame.<event_handler>
+        if self.Device_List.IsEnabled() == False:
+            return
+        
         data = wx.CustomDataObject( "RToolDS_DD" )
         data.SetData( "NA" )
 
