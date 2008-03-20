@@ -331,11 +331,19 @@ if sys.platform == "win32":
 
 else: # elif sys.platform == "linux2":
     def Drive_Size ( Path ):
-        os.stat
-        return os.statvfs( Path )[F_FRSIZE ] * os.statvfs ( Path )[F_BLOCKS] #IGNORE:E1101
+#        os.stat
+        try:
+            ret = os.statvfs( Path )[F_FRSIZE ] * os.statvfs ( Path )[F_BLOCKS] #IGNORE:E1101
+        except:
+            ret = 0
+        return ret
     
     def Drive_Free ( Path ):
-        return os.statvfs( Path )[F_FRSIZE ] * os.statvfs ( Path )[F_BAVAIL] #IGNORE:E1101
+        try:
+            ret = os.statvfs( Path )[F_FRSIZE ] * os.statvfs ( Path )[F_BAVAIL] #IGNORE:E1101
+        except:
+            ret = 0
+        return ret
 
 def Get_Screenshot (ROM, W,H):
     try:
