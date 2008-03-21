@@ -112,7 +112,7 @@ class cSaveGameManager( wx.Dialog ):
         SaveGameManager_Panel_Sizer.Add(self.Options_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.label_7, 0, wx.LEFT|wx.ALIGN_CENTER_VERTICAL, 3)
         SaveGameManager_Panel_Sizer.Add(self.Default_Device, 0, wx.ALIGN_CENTER_VERTICAL, 0)
-        SaveGameManager_Panel_Sizer.Add(self.FindButton, 0, wx.ALL|wx.ALIGN_RIGHT, 3)
+        SaveGameManager_Panel_Sizer.Add(self.FindButton, 0, wx.ALL|wx.ALIGN_RIGHT|wx.ALIGN_CENTER_VERTICAL, 3)
         self.SaveGameManager_Panel.SetSizer(SaveGameManager_Panel_Sizer)
         SaveGameManager_Panel_Sizer.AddGrowableCol(9)
         SaveGameManager_Sizer.Add(self.SaveGameManager_Panel, 1, wx.EXPAND, 0)
