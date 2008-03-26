@@ -368,6 +368,15 @@ class cSaveGameManager( wx.Dialog ):
         CRC = self.SGMTreeCtrl.GetItemPyData( self.m_SelItem )
         ROM = MyROMS.Lookup_ROM_CRC ( CRC )
         
+        if self.Parent.Device_List.Get_CRC_List().count (CRC) == 1:
+            Files = []
+            ROMS = []
+            for a in self.Parent.Device_List.ROM_List:
+                if a.ROM_CRC == CRC:
+                    Files.append (a.Name_On_Device)
+                    ROMS.append (a)
+            ROM = ROMS [0]
+
         if self.Parent.Device_List.Get_CRC_List().count (CRC) > 1:
             Files = []
             ROMS = []
@@ -376,7 +385,7 @@ class cSaveGameManager( wx.Dialog ):
                     Files.append (a.Name_On_Device)
                     ROMS.append (a)
             dlg = wx.SingleChoiceDialog(
-                    self, 'Select a File to Copy Save to:', 'Multiple ROMS Exist',
+                    self, 'Select a File to Copy Save to:', 'Multiple ROMs Exist',
                     Files, 
                     wx.CHOICEDLG_STYLE
                     )

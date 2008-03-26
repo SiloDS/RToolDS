@@ -567,7 +567,8 @@ def Write_Save (ROM, Save, Alternate_Name = ""):
 #    SaveFile.write ( Save )
 #    SaveFile.close()
     for Device in Config.Config ["Devices"]:
-        if Device [0] == Config.Config ["Default_Device"]:
+#        print Device [0] + " : " + Config.Config ["Default_Device"][0]
+        if Device [0] == Config.Config ["Default_Device"][0]:
             Routine = Device[1]
             
     try:
@@ -776,7 +777,7 @@ def Sort_Dict(d):
     return [ backitems[i][1] for i in range(0,len(backitems))]
 
 def Get_Save_Extension ():
-    Device = Config.Config ["Default_Device"]
+    Device = Config.Config ["Default_Device"][0]
     if Device == "Action Replay (.duc/.dss)":
         exten = ".duc"
     else:
