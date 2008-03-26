@@ -70,6 +70,11 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1297 - Bumped to 1297
+v0.2.1296 - Changed Find Button to Icon
+v0.2.1294 - Fixed 125 : Install Directories Not Created
+v0.2.1293 - Fixed #128 - Save Game Manager Issues
+v0.2.1291 - OSX Fixes
 v0.2.1284 - Bumped to 1284
 v0.2.1283 - Fixed #123: Region Modifier Update via Serial Code
 v0.2.1282 - Updated Trim and Advanscene Lists
