@@ -19,6 +19,22 @@ if sys.platform == "win32":
             os.chdir(os.path.join (os.environ["APPDATA"], "RToolDS"))
         except:
             exit ()
+    try:
+        os.mkdir(os.path.join (os.environ["APPDATA"], "RToolDS", "cache"))
+    except:
+        pass
+    try:
+        os.mkdir(os.path.join (os.environ["APPDATA"], "RToolDS", "cache", "img"))
+    except:
+        pass
+    try:
+        os.mkdir(os.path.join (os.environ["APPDATA"], "RToolDS", "cache", "nfo"))
+    except:
+        pass
+    try:
+        os.mkdir(os.path.join (os.environ["APPDATA"], "RToolDS", "cache", "saves"))
+    except:
+        pass
             
 if os.path.isfile ("RToolDS_Trimmed.dat.new") and os.path.isfile ("RToolDS_Trimmed.dat") == False:
     os.rename( "RToolDS_Trimmed.dat.new", "RToolDS_Trimmed.dat" )
