@@ -41,11 +41,11 @@ class cSaveGameManager( wx.Dialog ):
         self.Delete_Button = wx.BitmapButton(self.SaveGameManager_Panel, -1, (GFX.catalog ["GFX_Icon_SGM_Delete16"].getBitmap()))
         self.Duplicate_Button = wx.BitmapButton(self.SaveGameManager_Panel, -1, (GFX.catalog ["GFX_Icon_SGM_Duplicate16"].getBitmap()))
         self.Convert_Saves_Button = wx.BitmapButton(self.SaveGameManager_Panel, -1, (GFX.catalog ["GFX_Icon_SGM_Convert16"].getBitmap()))
+        self.Find_Button = wx.BitmapButton(self.SaveGameManager_Panel, -1, (GFX.catalog ["GFX_Icon_SGM_Search16"].getBitmap()))
         self.Delete_All_Button = wx.BitmapButton(self.SaveGameManager_Panel, -1, (GFX.catalog ["GFX_Icon_SGM_DeleteAll16"].getBitmap()))
         self.Options_Button = wx.BitmapButton(self.SaveGameManager_Panel, -1, (GFX.catalog ["GFX_Icon_Options16"].getBitmap()))
         self.label_7 = wx.StaticText(self.SaveGameManager_Panel, -1, _("Default Device : "))
         self.Default_Device = wx.Choice(self.SaveGameManager_Panel, -1, choices=[])
-        self.FindButton = wx.Button(self.SaveGameManager_Panel, -1, _("Find"), style=wx.BU_EXACTFIT)
         self.SGMTreeCtrl = gizmos.TreeListCtrl(self, -1, style=wx.TR_DEFAULT_STYLE|wx.TR_FULL_ROW_HIGHLIGHT)
 
         self.__set_properties()
@@ -56,10 +56,10 @@ class cSaveGameManager( wx.Dialog ):
         self.Bind(wx.EVT_BUTTON, self.On_Delete, self.Delete_Button)
         self.Bind(wx.EVT_BUTTON, self.On_Duplicate, self.Duplicate_Button)
         self.Bind(wx.EVT_BUTTON, self.On_Convert_Saves, self.Convert_Saves_Button)
+        self.Bind(wx.EVT_BUTTON, self.On_Find_Button, self.Find_Button)
         self.Bind(wx.EVT_BUTTON, self.On_Delete_All, self.Delete_All_Button)
         self.Bind(wx.EVT_BUTTON, self.On_Options, self.Options_Button)
         self.Bind(wx.EVT_CHOICE, self.On_Default_Device, self.Default_Device)
-        self.Bind(wx.EVT_BUTTON, self.On_Find_Button, self.FindButton)
         # end wxGlade
         self.Bind(wx.EVT_FIND, self.On_Find)
         self.Bind(wx.EVT_FIND_NEXT, self.On_Find)
@@ -81,6 +81,8 @@ class cSaveGameManager( wx.Dialog ):
         self.Convert_Saves_Button.SetToolTipString(_("Convert Save Type"))
         self.Convert_Saves_Button.Hide()
         self.Convert_Saves_Button.SetSize(self.Convert_Saves_Button.GetBestSize())
+        self.Find_Button.SetToolTipString(_("Search"))
+        self.Find_Button.SetSize(self.Find_Button.GetBestSize())
         self.Delete_All_Button.SetToolTipString(_("Delete All Saves for Selected Game"))
         self.Delete_All_Button.SetSize(self.Delete_All_Button.GetBestSize())
         self.Options_Button.SetToolTipString(_("Options"))
@@ -97,24 +99,25 @@ class cSaveGameManager( wx.Dialog ):
         self.Convert_Saves_Button.SetBitmapLabel( eval ( "GFX.getGFX_Icon_SGM_Convert"+ToolSize+"Bitmap" )() )
         self.Duplicate_Button.SetBitmapLabel( eval ( "GFX.getGFX_Icon_SGM_Duplicate"+ToolSize+"Bitmap" )() )
         self.Options_Button.SetBitmapLabel(eval ( "GFX.getGFX_Icon_Options"+ToolSize+"Bitmap" )() )
+        self.Find_Button.SetBitmapLabel(eval ( "GFX.getGFX_Icon_SGM_Search"+ToolSize+"Bitmap" )() )
 
     def __do_layout( self ):
 #        self.Freeze()
         # begin wxGlade: cSaveGameManager.__do_layout
         SaveGameManager_Sizer = wx.FlexGridSizer(2, 1, 0, 0)
-        SaveGameManager_Panel_Sizer = wx.FlexGridSizer(1, 10, 0, 0)
+        SaveGameManager_Panel_Sizer = wx.FlexGridSizer(1, 11, 0, 0)
         SaveGameManager_Panel_Sizer.Add(self.Copy_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.Edit_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.Delete_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.Duplicate_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.Convert_Saves_Button, 0, wx.TOP|wx.BOTTOM, 3)
+        SaveGameManager_Panel_Sizer.Add(self.Find_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.Delete_All_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.Options_Button, 0, wx.TOP|wx.BOTTOM, 3)
         SaveGameManager_Panel_Sizer.Add(self.label_7, 0, wx.LEFT|wx.ALIGN_CENTER_VERTICAL, 3)
         SaveGameManager_Panel_Sizer.Add(self.Default_Device, 0, wx.ALIGN_CENTER_VERTICAL, 0)
-        SaveGameManager_Panel_Sizer.Add(self.FindButton, 0, wx.ALL|wx.ALIGN_RIGHT|wx.ALIGN_CENTER_VERTICAL, 3)
         self.SaveGameManager_Panel.SetSizer(SaveGameManager_Panel_Sizer)
-        SaveGameManager_Panel_Sizer.AddGrowableCol(9)
+        SaveGameManager_Panel_Sizer.AddGrowableCol(10)
         SaveGameManager_Sizer.Add(self.SaveGameManager_Panel, 1, wx.EXPAND, 0)
         SaveGameManager_Sizer.Add(self.SGMTreeCtrl, 1, wx.EXPAND, 0)
         self.SetSizer(SaveGameManager_Sizer)
@@ -606,7 +609,7 @@ class cSaveGameManager( wx.Dialog ):
 
     
     def On_Find_Button(self, event): # wxGlade: cSaveGameManager.<event_handler>
-        self.FindButton.Disable()
+        self.Find_Button.Disable()
         self.Find_Position = -1
         data = wx.FindReplaceData()
         dlg = wx.FindReplaceDialog(self, data, "Find")
@@ -638,6 +641,6 @@ class cSaveGameManager( wx.Dialog ):
 
     def On_FindClose(self, evt):
         evt.GetDialog().Destroy()
-        self.FindButton.Enable()
+        self.Find_Button.Enable()
         
 # end of class cSaveGameManager
