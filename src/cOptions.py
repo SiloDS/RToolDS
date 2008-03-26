@@ -599,7 +599,8 @@ class cOptions( wx.Dialog ):
         self.ProcessOption ( "Pending_Colour", self.Pending_Colour.GetBackgroundColour() )
         
         self.ProcessOption ( "Default_Device", self.Default_Device.GetStringSelection())
-        
+        self.ProcessOption ( "Find_Unknown", self.Find_Unknown.GetValue())
+
         Str = self.Device_Dirs_to_Search.GetValue()
         Config.Config ["Device_Dirs_to_Search"] = Str.split ( "," )
 #        Config.Config ["Device_Dirs_to_Search_Lower"] = []

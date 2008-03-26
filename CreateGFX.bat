@@ -44,6 +44,7 @@ REM Toolbar Icons 16x16
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Convert16 -c GFX\GFX_Icon_SGM_Convert_16x16-32.png src\GFX.py
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Duplicate16 -c GFX\GFX_Icon_SGM_Duplicate_16x16-32.png src\GFX.py
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_Browse16 -c GFX\GFX_Icon_Browse_16x16-32.png src\GFX.py
+@call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Search16 -c GFX\GFX_Icon_SGM_Search_16x16-32.png src\GFX.py
 
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Zoom_In16 -c GFX\GFX_ZoomIn_16x16-32.png src\GFX.py
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Zoom_Out16 -c GFX\GFX_ZoomOut_16x16-32.png src\GFX.py
@@ -81,6 +82,7 @@ REM Toolbar Icons 24x24
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Convert24 -c GFX\GFX_Icon_SGM_Convert_24x24-32.png src\GFX.py
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Duplicate24 -c GFX\GFX_Icon_SGM_Duplicate_24x24-32.png src\GFX.py
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_Browse24 -c GFX\GFX_Icon_Browse_24x24-32.png src\GFX.py
+@call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Search24 -c GFX\GFX_Icon_SGM_Search_24x24-32.png src\GFX.py
 
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Zoom_In24 -c GFX\GFX_ZoomIn_24x24-32.png src\GFX.py
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Zoom_Out24 -c GFX\GFX_ZoomOut_24x24-32.png src\GFX.py
@@ -118,6 +120,7 @@ REM Toolbar Icons 32x32
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Edit32 -c GFX\GFX_Icon_SGM_Edit_32x32-32.png src\GFX.py
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Convert32 -c GFX\GFX_Icon_SGM_Convert_32x32-32.png src\GFX.py
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Duplicate32 -c GFX\GFX_Icon_SGM_Duplicate_32x32-32.png src\GFX.py
+@call C:\Python25\Scripts\img2py.bat -a -n GFX_Icon_SGM_Search32 -c GFX\GFX_Icon_SGM_Search_32x32-32.png src\GFX.py
 
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Zoom_In32 -c GFX\GFX_ZoomIn_32x32-32.png src\GFX.py
 @call C:\Python25\Scripts\img2py.bat -a -n GFX_Zoom_Out32 -c GFX\GFX_ZoomOut_32x32-32.png src\GFX.py
