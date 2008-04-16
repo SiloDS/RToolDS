@@ -669,7 +669,7 @@ class cMainFrame( wx.Frame ):
         if "SORT" in Options or "ROMS" in Options:
             MyROMS.Sort_Current_List ()
             
-        if "SEARCH" in Options or "SORT" in Options or "ROMS" in Options:
+        if "SEARCH" in Options or "SORT" in Options or "ROMS" in Options or "TAGS" in Options:
             MyROMS.Populate_Current_List ()
             
         if "SAVES" in Options:
@@ -690,16 +690,17 @@ class cMainFrame( wx.Frame ):
         if "STARTUP" in Options or "ICONS" in Options:
             self.LoadIcons ()
 
-        if "STARTUP" in Options or "ROMS" in Options or "SEARCH" in Options or "SORT" in Options:
+        if "STARTUP" in Options or "ROMS" in Options or "SEARCH" in Options or "SORT" in Options  or "TAGS" in Options:
             Row = self.ROMList.GetFirstSelected()
             while Row != -1:# and not dlg.Abort:
                 self.ROMList.SetItemState(Row, 0, wx.LIST_STATE_SELECTED)
                 Row = self.ROMList.GetNextSelected( Row )
 
             self.ROMList.SetItemCount ( MyROMS.Current_Count )
-            self.ROMList.Resize_Columns()
-            self.ROMList.SetItemState(0, wx.LIST_STATE_SELECTED, wx.LIST_STATE_SELECTED)
-            self.ROMList.Focus(0)
+            if "TAGS" not in Options:
+                self.ROMList.Resize_Columns()
+                self.ROMList.SetItemState(0, wx.LIST_STATE_SELECTED, wx.LIST_STATE_SELECTED)
+                self.ROMList.Focus(0)
             self.ROMList.Refresh()
             
         if "SORT" in Options:
@@ -756,6 +757,9 @@ class cMainFrame( wx.Frame ):
         
         if "SAVES" in Options:
             self.ROMList.Refresh()
+            
+        if "TAGS" in Options:
+            self.Device_List.Refresh()
 
         self.Update_Fields( Force = True )
         self.Update_StatusBar( STATUS_ALL )
@@ -2180,7 +2184,7 @@ class cMainFrame( wx.Frame ):
     
         dlg.Destroy()
         
-        self.__Local_Init( ["TAGS" ] ) # had SORT
+        self.__Local_Init( ["TAGS"] ) # had SORT
         self.Enable_Tasks()
         
     def On_Tag_Last (self, event):
