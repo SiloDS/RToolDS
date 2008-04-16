@@ -70,6 +70,12 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.2.1305 - Bumped to 1305
+v0.2.1303 - More SGM Search Issues Fixed
+v0.2.1302 - SGM Search Not Found Box Now Stays on Top of Application
+v0.2.1301 - Fixed #133: Save Game Import
+v0.2.1300 - Fixed 134: Tag Refresh Issues
+v0.2.1299 - Fixed Save Game Issues
 v0.2.1297 - Bumped to 1297
 v0.2.1296 - Changed Find Button to Icon
 v0.2.1294 - Fixed 125 : Install Directories Not Created
