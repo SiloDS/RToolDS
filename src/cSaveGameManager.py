@@ -614,7 +614,7 @@ class cSaveGameManager( wx.Dialog ):
         self.Find_Button.Disable()
         self.Find_Position = -1
         data = wx.FindReplaceData()
-        dlg = wx.FindReplaceDialog(self, data, "Find Save")
+        dlg = wx.FindReplaceDialog(self, data, "Find Save", wx.FR_NOUPDOWN|wx.FR_NOMATCHCASE|wx.FR_NOWHOLEWORD)
         dlg.data = data  # save a reference to it...
         dlg.Show(True)
         
