@@ -90,7 +90,10 @@ class cSaveGameComments(wx.Dialog):
         Count = 0
         for ROM in self.ROMS:
             index = self.SGCList.InsertStringItem ( sys.maxint, ROM.ROM_File )
-            self.SGCList.SetStringItem ( index, 1, ROM.Name_On_Device )
+            try:
+                self.SGCList.SetStringItem ( index, 1, ROM.Name_On_Device )
+            except:
+                pass
             self.SGCList.SetStringItem ( index, 2, "" )
             self.SGCList.SetItemData( index, Count )
             Count += 1
