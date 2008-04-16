@@ -620,6 +620,8 @@ class cSaveGameManager( wx.Dialog ):
         
     def On_Find(self, event): # wxGlade: cSaveGameManager.<event_handler>
         Find_Text = event.GetFindString()
+        self.Enable(False)
+        event.Dialog.Enable (False)
 
         nc = self.SGMTreeCtrl.GetChildrenCount(self.root, False)
         cookie = 1
@@ -638,11 +640,13 @@ class cSaveGameManager( wx.Dialog ):
 #                    self.SGMTreeCtrl.ScrollTo( Hilight )
                     self.SGMTreeCtrl.EnsureVisible( child )
         if Found == False:
-            wx.MessageBox( _('Save Game Not Found'), _('Not Found'), wx.OK| wx.ICON_INFORMATION )
+            wx.MessageBox(_('Save Game Not Found'), _('Not Found'), wx.OK| wx.ICON_INFORMATION )
             self.Find_Position = -1
+        event.Dialog.Enable (True)
 
     def On_FindClose(self, evt):
         evt.GetDialog().Destroy()
         self.Find_Button.Enable()
+        self.Enable(True)
         
 # end of class cSaveGameManager
