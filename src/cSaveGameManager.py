@@ -614,7 +614,7 @@ class cSaveGameManager( wx.Dialog ):
         self.Find_Button.Disable()
         self.Find_Position = -1
         data = wx.FindReplaceData()
-        dlg = wx.FindReplaceDialog(self, data, "Find")
+        dlg = wx.FindReplaceDialog(self, data, "Find Save")
         dlg.data = data  # save a reference to it...
         dlg.Show(True)
         
@@ -639,6 +639,7 @@ class cSaveGameManager( wx.Dialog ):
                     self.SGMTreeCtrl.SelectItem( child )
 #                    self.SGMTreeCtrl.ScrollTo( Hilight )
                     self.SGMTreeCtrl.EnsureVisible( child )
+                    break
         if Found == False:
             wx.MessageBox(_('Save Game Not Found'), _('Not Found'), wx.OK| wx.ICON_INFORMATION )
             self.Find_Position = -1
