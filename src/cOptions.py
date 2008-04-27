@@ -550,9 +550,9 @@ class cOptions( wx.Dialog ):
                 Msg.append (_("Invalid NFO Directory"))
             if len (self.Save_Path.GetValue()) < 3 or self.Save_Path.GetValue()[2] != "\\":
                 Msg.append (_("Invalid Save Database Directory"))
-            if len (self.Device_Path.GetValue()) < 3 or self.Device_Path.GetValue()[2] != "\\":
+            if (len (self.Device_Path.GetValue()) < 3 or self.Device_Path.GetValue()[2] != "\\") and len (self.Device_Path.GetValue()) != 0:
                 Msg.append (_("Invalid Device Directory"))
-            if len (self.Save_Dir_On_Cart.GetValue()) < 3 or self.Save_Dir_On_Cart.GetValue()[2] != "\\":
+            if (len (self.Save_Dir_On_Cart.GetValue()) < 3 or self.Save_Dir_On_Cart.GetValue()[2] != "\\") and len (self.Device_Path.GetValue()) != 0:
                 Msg.append (_("Invalid Save Directory on Device"))
             
         for m in Utils.unique (Msg):
