@@ -4,7 +4,6 @@
 import wx
 import os
 
-import Utils
 import Config
 
 # begin wxGlade: dependencies

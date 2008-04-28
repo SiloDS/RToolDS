@@ -1,5 +1,5 @@
 from distutils.core import setup
-import py2exe #IGNORE:W0611
+import py2exe #@UnusedImport
 import os
 
 manifest = """

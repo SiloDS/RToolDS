@@ -6,7 +6,7 @@ import os
 import sys
 
 if sys.platform == "win32":
-    import UnRAR2 as UnRAR
+    import UnRAR2 as UnRAR #@UnusedImport
 
 OldDir = os.getcwd()
 

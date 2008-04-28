@@ -9,7 +9,7 @@ import os
 
 from ColumnListCtrlMixin import ColumnListCtrlMixin
 import Config
-from ROMS import MyROMS
+#from ROMS import MyROMS
 import Utils
 
 # begin wxGlade: dependencies

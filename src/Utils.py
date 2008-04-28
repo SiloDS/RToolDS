@@ -14,7 +14,7 @@ import array
 import glob
 import shutil
 import base64
-from PIL import Image
+from PIL import Image #@UnresolvedImport
 if sys.platform != "win32":
     from statvfs import F_BLOCKS, F_BAVAIL, F_FRSIZE
 if sys.platform == "win32":
@@ -333,14 +333,14 @@ else: # elif sys.platform == "linux2":
     def Drive_Size ( Path ):
 #        os.stat
         try:
-            ret = os.statvfs( Path )[F_FRSIZE ] * os.statvfs ( Path )[F_BLOCKS] #IGNORE:E1101
+            ret = os.statvfs( Path )[F_FRSIZE ] * os.statvfs ( Path )[F_BLOCKS] #@UndefinedVariable
         except:
             ret = 0
         return ret
     
     def Drive_Free ( Path ):
         try:
-            ret = os.statvfs( Path )[F_FRSIZE ] * os.statvfs ( Path )[F_BAVAIL] #IGNORE:E1101
+            ret = os.statvfs( Path )[F_FRSIZE ] * os.statvfs ( Path )[F_BAVAIL] #@UndefinedVariable
         except:
             ret = 0
         return ret
@@ -859,7 +859,7 @@ def unique(seq, keepstr=True):
         try:
             from itertools import groupby
             s = sorted(enumerate(seq),key=lambda (i,v):(v,i))
-            return t(g.next() for k,g in groupby(s, lambda (i,v): v))
+            return t(g.next() for dummy_k,g in groupby(s, lambda (i,v): v))
         except:  # not sortable, use brute force
             seen = []
             return t(c for c in seq if not (c in seen or seen.append(c)))

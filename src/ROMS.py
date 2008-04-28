@@ -181,7 +181,7 @@ class ROM:
         return ( Save )
     
     def Get_Country (self):
-        OK, TempFilename, Data = Utils.Read_Data ( self.Archive_File, self.ROM_File, 0x20 )
+        OK, dummy_TempFilename, Data = Utils.Read_Data ( self.Archive_File, self.ROM_File, 0x20 )
             
         if OK:
             return str (Data [0x0F]), Utils.Get_Serial(Data)

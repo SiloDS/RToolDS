@@ -5,7 +5,7 @@ import wx
 import wx.gizmos as gizmos
 import os
 import glob
-from stat import ST_MTIME, ST_SIZE
+#from stat import ST_MTIME, ST_SIZE
 import sys
 if sys.platform == "win32":
     import win32api
