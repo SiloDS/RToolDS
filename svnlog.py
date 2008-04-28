@@ -40,6 +40,8 @@ def Process (ReleasePre, ReleaseSuf, START_ENTRY, END_ENTRY):
                 continue
             if Line[0:6] == "Backup":
                 continue
+            if Line[0:5] == "Note:":
+                continue
             if Line == "Changelog":
                 continue
             if ReleasePre + str (RevNum) + ReleaseSuf in Ignore:
