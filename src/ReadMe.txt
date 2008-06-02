@@ -49,4 +49,4 @@
  -----------------
  |:. Changelog .:|
  -----------------
-v0.3.1312 - Release Public Beta
+v0.3.1317 - Release Public Beta
