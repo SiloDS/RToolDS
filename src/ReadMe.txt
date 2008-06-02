@@ -6,7 +6,7 @@
         888 T88b      888  888  888 888  888 888 888    888       "888 
         888  T88b     888  Y88..88P Y88..88P 888 888  .d88P Y88b  d88P 
         888   T88b    888   "Y88P"   "Y88P"  888 8888888P"   "Y8888P" 
-        (C)2007 Silo
+        (C)2008 Silo
 
  ---------------
  |:. RToolDS .:|
@@ -32,153 +32,21 @@
    Custom Tags for ROMs (Think of Lists)
    And more when I think of it.
 
- RToolDS is currently in a private alpha test phase, but things are
- progressing well.
-
- --------------------
- |:. Supported OS .:|
- --------------------
- Windows - Vista, XP, 2000 -  3.11/98/ME Yeah Right!
- Linux	 - Wine? Beer? Shandy?
- Mac 	 - Maybe!
-
  -----------------------
  |:. Version History .:|
  -----------------------
- v0.2   - Restricted Beta
- v0.1	- Private Alpha 
+ v0.3 - Public Beta
+ v0.2 - Restricted Beta
+ v0.1 - Private Alpha 
 `
- ------------------
- |:. Known Bugs .:|
- ------------------
- Hey its perfect!
-
- --------------------
- |:. Contact Info .:|
- --------------------
- Download:   http://silods.moddz.com
- WebSite:    http://silods.moddz.com
- Email:      silods@googlemail.com
- 
  --------------
  |:. Thanks .:|
  --------------
  Advanscene for access to their ROM Information. http://www.advanscene.com
- NSDcsc for an Amazing ROM Renaming Utility.	 http://www.advanscene.com
- FifthE1ement @ www.moddz.com for the site hosting, testing, and graphics
+ NSDcsc for an great ROM Renaming Utility.	 	 http://www.advanscene.com
+ FifthE1ement @ www.moddz.com for testing, and graphics
 
  -----------------
  |:. Changelog .:|
  -----------------
-v0.2.1305 - Bumped to 1305
-v0.2.1303 - More SGM Search Issues Fixed
-v0.2.1302 - SGM Search Not Found Box Now Stays on Top of Application
-v0.2.1301 - Fixed #133: Save Game Import
-v0.2.1300 - Fixed 134: Tag Refresh Issues
-v0.2.1299 - Fixed Save Game Issues
-v0.2.1297 - Bumped to 1297
-v0.2.1296 - Changed Find Button to Icon
-v0.2.1294 - Fixed 125 : Install Directories Not Created
-v0.2.1293 - Fixed #128 - Save Game Manager Issues
-v0.2.1291 - OSX Fixes
-v0.2.1284 - Bumped to 1284
-v0.2.1283 - Fixed #123: Region Modifier Update via Serial Code
-v0.2.1282 - Updated Trim and Advanscene Lists
-v0.2.1281 - Implemented Basic Save Game Search
-v0.2.1280 - Updated Trim File
-v0.2.1279 - Bumped to 1279
-v0.2.1278 - More Multiple ROM Fixes
-v0.2.1277 - Multiple ROMs on Device Fixes
-v0.2.1275 - Bumped to 1275
-v0.2.1274 - Fixed #113 : Text Changes to ROM Search
-v0.2.1272 - Bumped to 1272
-v0.2.1271 - Pending ROMs Now Show No Save if Auto Copy Saves isn't Set
-v0.2.1270 - SGM Now Checks for a Valid Save Directory
-v0.2.1269 - Fixed Incorrect Icon when Changing Device Directories
-v0.2.1267 - Bumped to 1267
-v0.2.1266 - Fixed Save Date Stuff
-v0.2.1265 - Fixed #120: Linker Device Column Save Date/Time Option
-v0.2.1264 - Fixed #98: One Letter Searching
-v0.2.1263 - Fixed #93: Disappearing Sash Bug
-v0.2.1262 - Save Game Manager Fixed to Use Save Directory on Device
-v0.2.1261 - Fixed the IndexError: list index out of range Bug
-v0.2.1260 - Icon Now Lines Up Correctly in Info Panel
-v0.2.1259 - Added Unknown Title
-v0.2.1258 - Changed Rel Num to Rel No on ROM Info Popup
-v0.2.1256 - Bumped to 1256
-v0.2.1255 - Same for Wizard
-v0.2.1254 - You can no longer input F:ROMS on Windows.  It has to be F:\ROMS
-v0.2.1252 - Bumped to 1252
-v0.2.1250 - Added Default Database if no internet connection is available
-v0.2.1249 - Added #120: Linker Device Column Save Date/Time Option
-v0.2.1248 - Partial Fix #75: Linker Device Wrong Path/Drive Directory Errors
-v0.2.1246 - Fixed #75 Error 1
-v0.2.1245 - Fixed #93: Disappearing Sash Bug
-v0.2.1244 - Fixed #117: Update Log Issues
-v0.2.1243 - Fixed #96: Removed Cancel Button from Loading Progress Window
-v0.2.1242 - Made Tag Sorting Case Insensitive
-v0.2.1241 - Fixed #100: More ROM Info Changes
-v0.2.1240 - Fixed #103: Device List Show/Hide Bug
-v0.2.1239 - Implemented #109: Save Game Manager Auto Backup Confusion
-v0.2.1238 - Hopefully Fixed #119: Transfer/Apply Error
-v0.2.1237 - Fixed #101: Progress Bar Start-Up Oddity
-v0.2.1236 - Implemented #113: Search Methods
-v0.2.1235 - Fixed #94: Text & Column Changes
-v0.2.1234 - Fixed #98: One Letter Search Bug
-v0.2.1233 - Fixed #74: ROM Info Layout Changes - Final
-v0.2.1230 - Fixed #95: ROM List Button Selection Bug on Changing Tags
-v0.2.1229 - Fixed #85: Disappearing Tags
-v0.2.1227 - Bumped to 1227
-v0.2.1226 - More Column Changes
-v0.2.1225 - Various Column Changes
-v0.2.1224 - Fixed #107: Statistics Errors
-v0.2.1223 - Added New Trim File
-v0.2.1222 - Fixed #115: Menu Directories > Invalid Directory Fixes
-v0.2.1221 - Fixed #111: Disable ROM Trimming Bugs
-v0.2.1218 - Bumped to 1218
-v0.2.1217 - Fixed 114 - Wizard/Update Linker Device Refresh Bug
-v0.2.1216 - Fixed 115 - Menu Directories > Invalid Directory Fixes in Wizard
-v0.2.1215 - Fixed #107 - Statistics Errors
-v0.2.1214 - Fixed 111 - Disable ROM Trimming Bugs
-v0.2.1213 - Fixed #112 - Options Menu Gap
-v0.2.1211 - Fixed Some of #110 - Re-Run Startup Wizard
-v0.2.1210 - Fixed #95 - ROM List Button Slection Bug
-v0.2.1209 - Fixed #85 - Delete Tag Not Updating List
-v0.2.1205 - Bumped to 1205
-v0.2.1204 - Fixed #104 - Release Number Search
-v0.2.1203 - Fixed #105 - Slow Performance Button/Task Delay Bug
-v0.2.1202 - Fixed 102 - Hidden ROMs tag Drop-down Tag Bug
-v0.2.1201 - Fixed #89 - Multiple ROM Search/Filter Selection Bug
-v0.2.1200 - Fixed #95 - ROM List Button Selection Bug in Import Save Game
-v0.2.1199 - Fixed #85 - Hopefully..  Tag Stuff
-v0.2.1198 - Fixed Wizard Bug
-v0.2.1196 - Bumoed to 1195
-v0.2.1192 - Fixed #95 - ROM List Button Slection Bug
-v0.2.1191 - Fixed #93 - Disappearing Sash Bug
-v0.2.1190 - SGM Wording Changes
-v0.2.1189 - Added Create New Directory to Select Directory Buttons
-v0.2.1188 - Remove Convert Save from SGM Popup
-v0.2.1186 - Bumped to 1186
-v0.2.1185 - Fixed #57 - Invalid Save Directory Errors
-v0.2.1184 - Removed Import Conversion Stuff
-v0.2.1183 - Fixed #91 - Select ROM Image Display Bug
-v0.2.1182 - Fixed #73 - Browse Directory Popup Dialogue Gap Bug
-v0.2.1181 - Fixed #42 - Wizard Text Change
-v0.2.1179 - Bumped to 1179
-v0.2.1178 - Fixed #73 - Browse Directory Popup Dialogue Gap Bug
-v0.2.1177 - Added New Trim File
-v0.2.1176 - Fixed #71 - Updating Text Changes
-v0.2.1175 - Fixed #82 - Unknown/Homebrew Naming Bug
-v0.2.1174 - Fixed Yoshi Save Bug
-v0.2.1172 - Bumped to 1171
-v0.2.1171 - Fixed #73 - Extra Space in Directory Dialog Boxes
-v0.2.1170 - Fixed #64 - Change RToolDS Copyright Images to 2008
-v0.2.1169 - Fixed #68 - Various Small Text/Button Changes
-v0.2.1168 - Fixed #77 - Use Smaller Images Toggle Bug
-v0.2.1167 - Fixed #79 - Hidden ROMs Tag Bug
-v0.2.1166 - Fixed #80 - Copy to Device Filename Mask Bug
-v0.2.1165 - Fixed #82 - Unknown/Homebrew Naming Bug
-v0.2.1164 - Fixed #78 - Selection Strangeness When Toggling XXXX/Unknown ROMs
-v0.2.1163 - Fixed #85 - Tags Going Missing
-v0.2.1162 - Fixed #84 - 24mbit doesn't exist
-v0.2.1161 - Fixed #70 - ROM Infomation Icon Not Active in Device List when there are No ROMs in the Main List
+v0.3.1312 - Release Public Beta
