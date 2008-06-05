@@ -59,4 +59,4 @@ def Process (ReleasePre, ReleaseSuf, START_ENTRY, END_ENTRY):
 #Process ("v0.3.", "", "HEAD", "478")
 #Process ("v0.2.", "", "477", "470")
 
-Process ("v0.3.", "", "HEAD", "1320")
+Process ("v0.3.", "", "HEAD", "1322")
