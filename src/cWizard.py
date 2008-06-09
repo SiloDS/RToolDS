@@ -34,6 +34,9 @@ class cWizard:
         Page1.sizer.Add( wx.StaticText ( Page1, -1, _( "Please Select Your ROM Directory :" ) ) )
         self.ROM_Path = filebrowse.DirBrowseButton ( Page1, -1, labelText = "", dialogTitle = _("Select ROMs Directory") + " : ", newDirectory = True )
         Page1.sizer.Add ( self.ROM_Path, 0, wx.EXPAND|wx.TOP, 10 )
+        self.SubDirs = wx.RadioBox ( Page1, -1, _( 'Search Sub-Directories?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
+        self.SubDirs.SetStringSelection( _( "Yes" ) )
+        Page1.sizer.Add ( self.SubDirs )
         Page1.sizer.Add ( wx.StaticText ( Page1, -1, "\n" + _( "RToolDS accepts Uncompressed, Zip, 7-Zip and RAR archived ROM files." ) ) )
 
         Page2.sizer.Add ( wx.StaticText ( Page2, -1, _( "Select a Default Save Game Database Directory :" ) ) )
@@ -134,6 +137,11 @@ class cWizard:
                 return self.NFO_Path.GetValue()
             elif Value == "Use_Trimmed":
                 if self.Use_Trimmed.GetStringSelection() == _( "Yes" ):
+                    return True
+                else:
+                    return False
+            elif Value == "SubDirs":
+                if self.SubDirs.GetStringSelection() == _( "Yes" ):
                     return True
                 else:
                     return False

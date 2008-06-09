@@ -891,7 +891,8 @@ class cMainFrame( wx.Frame ):
             Config.Config ["Save_Dir_On_Cart"] = My_Wizard.GetResult ( "Device_Path" )
             
             Config.Config ["Default_Device"] = My_Wizard.GetResult ( "Default_Device" )
-            
+            Config.Config ["Parse_Subdirs"] = My_Wizard.GetResult ("SubDirs")
+    
             if UseDummy:
                 if My_Wizard.GetResult ( "Use_Trimmed" ):
                     Config.Config ["Use_Trimmed"] = True
