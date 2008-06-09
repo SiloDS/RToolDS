@@ -49,4 +49,8 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.3.1328 - Release v0.3.1328
+v0.3.1326 - Added Search ROM Subdirectories to Initial Wizard.
+            Enables 001-100, 101-200 Directories etc..
+v0.3.1325 - Added UNC Support
 v0.3.1322 - Released 0.3.0322
