@@ -161,20 +161,20 @@ class cWizard:
 
     def OnWizPageChanging (self, event):
         if event.Page == self.Page1:
-            if os.path.isdir (self.ROM_Path.GetValue()) == False or len (self.ROM_Path.GetValue()) < 3 or (sys.platform == "win32" and self.ROM_Path.GetValue()[2] != "\\"):
+            if os.path.isdir (self.ROM_Path.GetValue()) == False or len (self.ROM_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.ROM_Path.GetValue()[2] != "\\") and (self.ROM_Path.GetValue()[0] != "\\" and self.ROM_Path.GetValue()[1] != "\\")):
                 wx.MessageBox( _('ROM Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
                 event.Veto()
 
         if event.Page == self.Page2:
-            if os.path.isdir (self.Save_Path.GetValue()) == False or len (self.Save_Path.GetValue()) < 3 or (sys.platform == "win32" and self.Save_Path.GetValue()[2] != "\\"):
+            if os.path.isdir (self.Save_Path.GetValue()) == False or len (self.Save_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.Save_Path.GetValue()[2] != "\\") and (self.Save_Path.GetValue()[0] != "\\" and self.Save_Path.GetValue()[1] != "\\")):
                 wx.MessageBox( _('Save Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
                 event.Veto()
 
         if event.Page == self.Page3:
-            if os.path.isdir (self.Image_Path.GetValue()) == False or len (self.Image_Path.GetValue()) < 3 or (sys.platform == "win32" and self.Image_Path.GetValue()[2] != "\\"):
+            if os.path.isdir (self.Image_Path.GetValue()) == False or len (self.Image_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.Image_Path.GetValue()[2] != "\\") and (self.Image_Path.GetValue()[0] != "\\" and self.Image_Path.GetValue()[1] != "\\")):
                 wx.MessageBox( _('Image Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
                 event.Veto()
-            if os.path.isdir (self.NFO_Path.GetValue()) == False or len (self.NFO_Path.GetValue()) < 3 or (sys.platform == "win32" and self.NFO_Path.GetValue()[2] != "\\"):
+            if os.path.isdir (self.NFO_Path.GetValue()) == False or len (self.NFO_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.NFO_Path.GetValue()[2] != "\\") and (self.NFO_Path.GetValue()[0] != "\\" and self.NFO_Path.GetValue()[1] != "\\")):
                 wx.MessageBox( _('NFO Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
                 event.Veto()
 

@@ -542,17 +542,18 @@ class cOptions( wx.Dialog ):
 #            Msg.append (_("Invalid Device Directory"))
 
         if sys.platform == "win32":
-            if len (self.ROM_Path.GetValue()) < 3 or self.ROM_Path.GetValue()[2] != "\\":
+            if len (self.ROM_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.ROM_Path.GetValue()[2] != "\\") and (self.ROM_Path.GetValue()[0] != "\\" and self.ROM_Path.GetValue()[1] != "\\")):
+#            if len (self.ROM_Path.GetValue()) < 3 or self.ROM_Path.GetValue()[2] != "\\":
                 Msg.append (_("Invalid ROM Directory"))
-            if len (self.Image_Path.GetValue()) < 3 or self.Image_Path.GetValue()[2] != "\\":
+            if len (self.Image_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.Image_Path.GetValue()[2] != "\\") and (self.Image_Path.GetValue()[0] != "\\" and self.Image_Path.GetValue()[1] != "\\")):
                 Msg.append (_("Invalid Images Directory"))
-            if len (self.NFO_Path.GetValue()) < 3 or self.NFO_Path.GetValue()[2] != "\\":
+            if len (self.NFO_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.NFO_Path.GetValue()[2] != "\\") and (self.NFO_Path.GetValue()[0] != "\\" and self.NFO_Path.GetValue()[1] != "\\")):
                 Msg.append (_("Invalid NFO Directory"))
-            if len (self.Save_Path.GetValue()) < 3 or self.Save_Path.GetValue()[2] != "\\":
+            if len (self.Save_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.Save_Path.GetValue()[2] != "\\") and (self.Save_Path.GetValue()[0] != "\\" and self.Save_Path.GetValue()[1] != "\\")):
                 Msg.append (_("Invalid Save Database Directory"))
-            if (len (self.Device_Path.GetValue()) < 3 or self.Device_Path.GetValue()[2] != "\\") and len (self.Device_Path.GetValue()) != 0:
+            if (len (self.Device_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.Device_Path.GetValue()[2] != "\\") and (self.Device_Path.GetValue()[0] != "\\" and self.Device_Path.GetValue()[1] != "\\"))) and len (self.Device_Path.GetValue()) != 0:
                 Msg.append (_("Invalid Device Directory"))
-            if (len (self.Save_Dir_On_Cart.GetValue()) < 3 or self.Save_Dir_On_Cart.GetValue()[2] != "\\") and len (self.Device_Path.GetValue()) != 0:
+            if (len (self.Save_Dir_On_Cart.GetValue()) < 3 or (sys.platform == "win32" and (self.Save_Dir_On_Cart.GetValue()[2] != "\\") and (self.Save_Dir_On_Cart.GetValue()[0] != "\\" and self.Save_Dir_On_Cart.GetValue()[1] != "\\"))) and len (self.Device_Path.GetValue()) != 0:
                 Msg.append (_("Invalid Save Directory on Device"))
             
         for m in Utils.unique (Msg):
