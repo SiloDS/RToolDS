@@ -49,7 +49,10 @@
  -----------------
  |:. Changelog .:|
  -----------------
-v0.3.1328 - Release v0.3.1328
+v0.3.1333 - Released v0.3.1333
+v0.3.1332 - Added a Wi-Fi Tag, to show only Wi-Fi Enabled ROMs
+v0.3.1331 - Added Support for Multiple ROMs Per Archive File
+v0.3.1330 - Added acekard2/rpg Suppord (Filename.nds.sav)
 v0.3.1326 - Added Search ROM Subdirectories to Initial Wizard.
             Enables 001-100, 101-200 Directories etc..
 v0.3.1325 - Added UNC Support
