@@ -206,7 +206,8 @@ class ROMS:
         self._AllGenres = _( "All Genres" )
         self._AllTags = _("All ROMs")
         self._Hidden_ROMs = _("Hidden ROMs")
-        
+        self._Wifi_ROMs = _("Wi-Fi ROMs")
+
         self.Open_Unknown_Shelve ()
         self.Open_Trimmed_Shelve ()
         self.Open_Tag_Shelve ()
@@ -546,10 +547,11 @@ class ROMS:
                                     if Config.Config ["Filter_Genre"] == self._AllGenres or ROM.Genre == Config.Config ["Filter_Genre"]:
                                         if ( ROM.Comment.lower() != "xxxx" or Config.Config["Show_XXXX_Files"] ):
                                             if ( ROM.Comment.lower()[0] != "u" or Config.Config ["Show_Unknown_Files"] ):
-                                                if Config.Config ["Current_Tag"] == self._AllTags or Config.Config ["Current_Tag"] in ROM.Tags:
-                                                    if self._Hidden_ROMs not in ROM.Tags or Config.Config ["Current_Tag"] == self._Hidden_ROMs or (self._Hidden_ROMs in ROM.Tags and Config.Config["Current_Tag"] != self._AllTags):
-                                                        self.Current_List.append ( Count )
-                                                        self.Current_Count += 1
+                                                if Config.Config ["Current_Tag"] == self._AllTags or Config.Config ["Current_Tag"] == self._Wifi_ROMs or Config.Config ["Current_Tag"] in ROM.Tags:
+                                                    if (Config.Config ["Current_Tag"] == self._Wifi_ROMs and ROM.Wifi == "Yes") or Config.Config ["Current_Tag"] != self._Wifi_ROMs:
+                                                        if self._Hidden_ROMs not in ROM.Tags or Config.Config ["Current_Tag"] == self._Hidden_ROMs or (self._Hidden_ROMs in ROM.Tags and Config.Config["Current_Tag"] != self._AllTags):
+                                                            self.Current_List.append ( Count )
+                                                            self.Current_Count += 1
     
     def Start_ROM_Find ( self ):
         self.Save_Master_List(AltName=True)

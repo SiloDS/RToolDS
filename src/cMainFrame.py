@@ -1237,6 +1237,7 @@ class cMainFrame( wx.Frame ):
         self.Tag_Choice.Clear()
         self.Tag_Choice.Append( _( "All ROMs" ) )
         self.Tag_Choice.Append( _( "Hidden ROMs" ) )
+        self.Tag_Choice.Append( _( "Wi-Fi ROMs" ) )
         for Tag in MyROMS.Get_All_Tags():
             self.Tag_Choice.Append ( Tag )
         self.Tag_Choice.SetSelection ( self.Tag_Choice.FindString ( Config.Config ["Current_Tag"] ) )
@@ -2171,7 +2172,7 @@ class cMainFrame( wx.Frame ):
 
         Tag = dlg.Tag_Combo.GetValue()
 
-        if Result == wx.ID_OK and Tag != _( "All ROMs" ):# and Tag != _( "Hidden ROMs" ):
+        if Result == wx.ID_OK and Tag != _( "All ROMs" ) and Tag != _("Wi-Fi ROMs"):# and Tag != _( "Hidden ROMs" ):
             Config.Config ["Last_Tag"] = Tag
                 
             Row = self.Current_Ctrl.GetFirstSelected()
