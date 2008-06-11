@@ -73,20 +73,20 @@ def Fetch_Master_List ():
     return True
 
 def Get_CRC_or_Date ( Filename ):
-    CRC  = ""
-    Date = ""
-    ROMFile = ""
+    CRC  = []
+    Date = []
+    ROMFile = []
     
     if os.path.splitext( Filename )[1].lower() == ".zip" and Use_Zip:
         try:
             FileIn = zipfile2.ZipFile ( Filename , "r" )
             for File in FileIn.infolist():
                 if os.path.splitext( File.filename )[1].lower() in Config.Config ["ROM_Extensions"]:
-                    ROMFile = File.filename
-                    CRC = CRC2Hex ( File.CRC )
-                    break;
+                    ROMFile.append( File.filename)
+                    CRC.append (CRC2Hex ( File.CRC ))
+                    Date.append ("")
         except:
-            return ( "", "", "" ) #IGNORE:W0702
+            return ( [], [], [] ) #IGNORE:W0702
     elif os.path.splitext( Filename )[1].lower() == ".7z" and Use_7Zip:
         try:
             FileIn = open ( Filename , "rb" )
@@ -94,27 +94,28 @@ def Get_CRC_or_Date ( Filename ):
             Filenames = archive.getnames()
             for File in Filenames:
                 if os.path.splitext( File )[1].lower() in Config.Config ["ROM_Extensions"]:
-                    ROMFile = File
+                    ROMFile.append ( File )
                     cf = archive.getmember( File )
-                    CRC = CRC2Hex ( cf.digest )
-                    break
+                    CRC.append (CRC2Hex ( cf.digest ))
+                    Date.append ("")
         except:
-            return ( "", "", "" ) #IGNORE:W0702
+            return ( [], [], [] ) #IGNORE:W0702
     elif os.path.splitext( Filename )[1].lower() == ".rar" and Use_RAR:
         try:
             for File in UnRAR.Archive( Filename ).iterfiles():
                 if os.path.splitext( File.filename )[1].lower() in Config.Config ["ROM_Extensions"]:
-                    ROMFile = File.filename
-                    CRC = CRC2Hex ( File.crc )
-                    break
+                    ROMFile.append ( File.filename)
+                    CRC.append (CRC2Hex ( File.crc ))
+                    Date.append ("")
         except:
-            return ( "", "", "" ) #IGNORE:W0702
+            return ( [], [], [] ) #IGNORE:W0702
     elif os.path.splitext( Filename )[1].lower() in Config.Config ["ROM_Extensions"]:
         try:
-            Date = time.strftime( "%d/%m/%Y %I:%M:%S %p", time.localtime( os.path.getmtime ( Filename ) ) ).lower()
-            ROMFile = os.path.basename ( Filename )
+            Date.append ( time.strftime( "%d/%m/%Y %I:%M:%S %p", time.localtime( os.path.getmtime ( Filename ) ) ).lower())
+            ROMFile.append (os.path.basename ( Filename ))
+            CRC.append ("")
         except:
-            return ( "", "", "" ) #IGNORE:W0702
+            return ( [], [], [] ) #IGNORE:W0702
 
     return ( CRC, Date, ROMFile )
 

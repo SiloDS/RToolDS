@@ -584,46 +584,53 @@ class ROMS:
         self.Save_Master_List()
     
     def Process_ROM ( self, Filename ):
-        CRC, Date, ROMFile = Utils.Get_CRC_or_Date ( Filename )
+        m_CRC, m_Date, m_ROMFile = Utils.Get_CRC_or_Date ( Filename )
+        Result = ""
+        Result_Array = []
         
-        if Date != "": # Not an Archive
-            try:
-                TheROM = self.Lookup_ROM_Filename ( os.path.basename( Filename ) )
-                TimeStr = time.strftime( "%d/%m/%Y %I:%M:%S %p", time.localtime( os.path.getmtime ( Filename ) ) ).lower()
-                if TimeStr != TheROM.Archive_Date:
-                    CRC = Utils.Get_File_CRC ( Filename )
-                else:
-                    CRC = TheROM.ROM_CRC
-            except:
-                CRC = Utils.Get_File_CRC ( Filename )
-            
-        if CRC != "": # Archive Found
-            if CRC in self.Duplicates:
-                return ""
-            self.Duplicates.append( CRC )
-            
-            try:
-                TheROM = self.Lookup_ROM_CRC( CRC )
-#                Position = self.Master_List_CRC_Dict [CRC]
-                if CRC in self.Originally_Found:
-                    Result = ""
-                else:
-                    Result = TheROM.Comment + " - " + TheROM.Title
-                if TheROM.Comment [0] == "U": # Force Unknowns to be Re-Numbered
-                    raise RuntimeError
-                TheROM.Found = True
-                TheROM.Archive_File = Filename
-                TheROM.Archive_Date = time.strftime( "%d/%m/%Y %I:%M:%S %p", time.localtime( os.path.getmtime ( Filename ) ) ).lower()
-                TheROM.ROM_File = ROMFile
-                self.Master_List_Filename_Dict [ROMFile] = self.Master_List_CRC_Dict [CRC]
-                self.Master_List_Serial_Dict [str ( TheROM.Serial )] = self.Master_List_CRC_Dict [CRC]
-            except:
-                Result = ""
-                if Config.Config ["Find_Unknown"] == True:
-                    Result = self.Process_Unknown ( Filename, ROMFile, CRC )
+        for c in range (0,len(m_CRC)):
+            CRC = m_CRC [c]
+            Date = m_Date [c]
+            ROMFile = m_ROMFile [c]
 
-            return Result
-        return ""
+            if Date != "": # Not an Archive
+                try:
+                    TheROM = self.Lookup_ROM_Filename ( os.path.basename( Filename ) )
+                    TimeStr = time.strftime( "%d/%m/%Y %I:%M:%S %p", time.localtime( os.path.getmtime ( Filename ) ) ).lower()
+                    if TimeStr != TheROM.Archive_Date:
+                        CRC = Utils.Get_File_CRC ( Filename )
+                    else:
+                        CRC = TheROM.ROM_CRC
+                except:
+                    CRC = Utils.Get_File_CRC ( Filename )
+                
+            if CRC != "": # Archive Found
+                if CRC in self.Duplicates:
+                    return ""
+                self.Duplicates.append( CRC )
+                
+                try:
+                    TheROM = self.Lookup_ROM_CRC( CRC )
+    #                Position = self.Master_List_CRC_Dict [CRC]
+                    if CRC in self.Originally_Found:
+                        Result = ""
+                    else:
+                        Result = TheROM.Comment + " - " + TheROM.Title
+                    if TheROM.Comment [0] == "U": # Force Unknowns to be Re-Numbered
+                        raise RuntimeError
+                    TheROM.Found = True
+                    TheROM.Archive_File = Filename
+                    TheROM.Archive_Date = time.strftime( "%d/%m/%Y %I:%M:%S %p", time.localtime( os.path.getmtime ( Filename ) ) ).lower()
+                    TheROM.ROM_File = ROMFile
+                    self.Master_List_Filename_Dict [ROMFile] = self.Master_List_CRC_Dict [CRC]
+                    self.Master_List_Serial_Dict [str ( TheROM.Serial )] = self.Master_List_CRC_Dict [CRC]
+                except:
+                    Result = ""
+                    if Config.Config ["Find_Unknown"] == True:
+                        Result = self.Process_Unknown ( Filename, ROMFile, CRC )
+    
+                Result_Array.append(Result)
+        return Result_Array 
     
     def Process_Unknown ( self, Filename, ROMFile, CRC ):
         global Unknown_Shelve

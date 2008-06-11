@@ -143,8 +143,9 @@ class cLogDialog( wx.Dialog ):
             DirList = glob.glob ( SearchStr )
             for Filename in DirList:
                 Title = MyROMS.Process_ROM( Filename )
-                if Title != "":
-                    self.Log.AppendText (Title + "\n")
+                if Title != []:
+                    for a in Title:
+                        self.Log.AppendText (a + "\n")
                     ROMS_Found=True
                 wx.Yield()
                 if self.Aborted:
@@ -153,8 +154,9 @@ class cLogDialog( wx.Dialog ):
             for root, dummy_dirs, files in os.walk( Config.Config ["ROM_Path"] ):
                 for name in files:
                     Title = MyROMS.Process_ROM( os.path.join( root, name ) )
-                    if Title != "":
-                        self.Log.AppendText (Title + "\n")
+                    if Title != []:
+                        for a in Title:
+                            self.Log.AppendText (a + "\n")
                         ROMS_Found=True
                     wx.Yield()
                     if self.Aborted:
