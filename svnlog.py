@@ -10,7 +10,8 @@ Ignore = [
 "v0.2.1065",
 "v0.2.1106",
 "v0.2.1159",
-"v0.2.1160"
+"v0.2.1160",
+"v0.3.1328"
 ]
 
 def Process (ReleasePre, ReleaseSuf, START_ENTRY, END_ENTRY):
