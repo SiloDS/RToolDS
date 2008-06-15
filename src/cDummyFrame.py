@@ -41,6 +41,7 @@ class cDummyFrame(wx.Frame):
         # end wxGlade
         self.SetPosition((9999,9999))
 
+
 # end of class cDummyFrame
 
 

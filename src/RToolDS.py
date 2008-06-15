@@ -57,8 +57,10 @@ wx.InitAllImageHandlers()
 
 DummyFrame = cDummyFrame ( None )
 RToolDS.SetTopWindow(DummyFrame)
-DummyFrame.Freeze()
-DummyFrame.Show()
+if sys.platform != "linux2":
+    #DummyFrame.Freeze()
+    DummyFrame.Show()
+    #DummyFrame.Hide()
 
 if Config.Config ["Show_Splash"]:
     wx.SplashScreen( bitmap=GFX.catalog ["GFX_Logo"].getBitmap(), milliseconds=3000, parent = DummyFrame, splashStyle = wx.SPLASH_CENTRE_ON_SCREEN|wx.SPLASH_TIMEOUT )
