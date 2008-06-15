@@ -145,7 +145,8 @@ class cLogDialog( wx.Dialog ):
                 Title = MyROMS.Process_ROM( Filename )
                 if Title != []:
                     for a in Title:
-                        self.Log.AppendText (a + "\n")
+                        if a != "":
+                            self.Log.AppendText (a + "\n")
                     ROMS_Found=True
                 wx.Yield()
                 if self.Aborted:
@@ -156,7 +157,8 @@ class cLogDialog( wx.Dialog ):
                     Title = MyROMS.Process_ROM( os.path.join( root, name ) )
                     if Title != []:
                         for a in Title:
-                            self.Log.AppendText (a + "\n")
+                            if a != "":
+                                self.Log.AppendText (a + "\n")
                         ROMS_Found=True
                     wx.Yield()
                     if self.Aborted:
