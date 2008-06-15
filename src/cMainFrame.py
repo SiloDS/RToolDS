@@ -1022,10 +1022,11 @@ class cMainFrame( wx.Frame ):
                     self.ROMList.IconList.Add ( No_Icon )
                 self.ROMList.IconDict [ROM.Image_Number] = Count
                 Count += 1
-            wx.YieldIfNeeded()
             Processed += 1
             dlg.Guage1.SetValue ( Processed )
-            dlg.Update()
+            if Processed % 100 == 0:
+                wx.YieldIfNeeded()
+                dlg.Update()
 
         dlg.MakeModal( False )
         dlg.Destroy()
