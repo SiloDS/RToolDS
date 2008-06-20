@@ -518,6 +518,31 @@ def Load_Defaults( Version ):
                                 ["SuperCard SD (.sav)", Utils.Device_Generic_256, "SuperCard SD"],
                                 ["SuperCard DS One (.sav)", Utils.Device_Generic_256, "SuperCard DS One"]
                              ]
+    if Version < 40:
+        Config ["Devices"] = [
+                                ["Generic 512k (.sav)", Utils.Device_Generic_512, "Generic 512k"],
+                                ["Generic 256k (.sav)", Utils.Device_Generic_256, "Generic 256k"],
+                                ["Acekard2/rpg (.nds.sav)", Utils.Device_Generic_512, "Acekard2/rpg"],
+                                ["Action Replay (.duc)", Utils.Device_Action_Replay, "Action Replay"],
+                                ["Action Replay (.dss)", Utils.Device_Action_Replay, ""],
+                                ["CycloDS Evolution (.sav)", Utils.Device_Generic_512, "CycloDS Evolution"],
+                                ["CycloDS SD (.sav)", Utils.Device_Generic_512, "CycloDS SD"],
+                                ["DSLinker (.sav)", Utils.Device_Generic_256, "DSLinker"],
+                                ["DS-Xtreme (.sav)", Utils.Device_Generic_256, "DS-Xtreme"],
+                                ["EZ-Flash IV (.sav)", Utils.Device_Generic_256, "EZ-Flash IV"],
+                                ["EZ-Flash V (.sav)", Utils.Device_Generic_256, "EZ-Flash V"],
+                                ["G6 DS Real (.0)", Utils.Device_Generic_512, "G6 DS Real"],
+                                ["G6 Lite (.0)", Utils.Device_Generic_256, "G6 Lite"],
+                                ["M3 DS Real (.sav)", Utils.Device_Generic_512, "M3 DS Real"],
+                                ["M3 DS Simply (.sav)", Utils.Device_Generic_512, "M3 DS Simply"],
+                                ["M3 SD (.dat)", Utils.Device_Generic_256, "M3 SD"],
+                                ["N-Card and Clones (.sav)", Utils.Device_Generic_256, "N-Card and Clones"],
+                                ["NinjaDS (.sav)", Utils.Device_Generic_512, "NinjaDS"],
+                                ["NinjaPass x9 (.sav)", Utils.Device_Generic_256, "NinjaPass x9"],
+                                ["R4 Revolution (.sav)", Utils.Device_R4_512, "R4 Revolution"],
+                                ["SuperCard SD (.sav)", Utils.Device_Generic_256, "SuperCard SD"],
+                                ["SuperCard DS One 512k (.sav)", Utils.Device_Generic_512, "SuperCard DS One 512k"]
+                             ]
 #        
 #        
 #        Config ["Screen_Maximized"] = False
