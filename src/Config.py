@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 39
+Config_Version = 41
 Version_String = "0.3.1333 Beta"
 
 Config = {}
@@ -543,6 +543,11 @@ def Load_Defaults( Version ):
                                 ["SuperCard SD (.sav)", Utils.Device_Generic_256, "SuperCard SD"],
                                 ["SuperCard DS One 512k (.sav)", Utils.Device_Generic_512, "SuperCard DS One 512k"]
                              ]
+        Config ["NFO_Weight"] = wx.FONTWEIGHT_NORMAL
+        Config ["NFO_Style"] = wx.FONTSTYLE_NORMAL
+        Config ["NFO_Family"] = wx.FONTFAMILY_SWISS
+    if Version < 41:
+        Config ["NFO_Face"] = "Lucida Console"
 #        
 #        
 #        Config ["Screen_Maximized"] = False
