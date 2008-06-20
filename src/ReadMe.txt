@@ -49,6 +49,13 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.3.1342 - Release v0.3.1342
+v0.3.1341 - Added the Ability to Change the NFO Viewer Font
+v0.3.1340 - Added Support for SuperCard DS One 512k Save Device
+v0.3.1339 - Fixed Invalid Shortcut
+v0.3.1338 - Icon Loading Speedup for Linux Port
+v0.3.1336 - Changed M3 DS Real Card's save type to .sav
+v0.3.1335 - Fixed Blank Lines in Log Window.
 v0.3.1333 - Released v0.3.1333
 v0.3.1332 - Added a Wi-Fi Tag, to show only Wi-Fi Enabled ROMs
 v0.3.1331 - Added Support for Multiple ROMs Per Archive File
