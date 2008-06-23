@@ -820,7 +820,7 @@ class cMainFrame( wx.Frame ):
     def Set_Sash_Position ( self ):
 #        self.MainFrame_Splitter.SendSizeEvent()
         if Config.Config ["Sash_Position"] == -1:
-            tmpSize = self.GetSize() [ 0 ] - self.ROM_Information_Sizer.GetMinSize() [ 0 ] - 20 #TODO: Fudge Factor in Sash?
+            tmpSize = self.GetSize() [ 0 ] - self.ROM_Information_Sizer.GetMinSize() [ 0 ] - 20
             self.MainFrame_Splitter.SetSashPosition( tmpSize, True )
 #            print tmpSize
         else:
@@ -831,7 +831,7 @@ class cMainFrame( wx.Frame ):
             self.MainFrame_Splitter.SetSashPosition( Config.Config ["Sash_Position_Maximized"], True )
 
     def Check_Controls_Size ( self ):
-        self.Layout() #TODO: Fudge
+        self.Layout()
             
         Filter_Size = self.ROMList_Sizer2.GetSize()[0] + 40 #TODO Fudge Factor
 
@@ -1113,7 +1113,7 @@ class cMainFrame( wx.Frame ):
 
     def Resize_StatusBar ( self ):
         try:
-            self.StatusBar.SetStatusWidths( [self.MainFrame_Splitter.GetSashPosition()+4, -1, 80] ) #TODO: Fudge
+            self.StatusBar.SetStatusWidths( [self.MainFrame_Splitter.GetSashPosition()+4, -1, 80] )
         except:
             pass
 

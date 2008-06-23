@@ -122,7 +122,7 @@ class cStatisticsDialog(wx.Dialog):
                 continue
             if ROM.Comment.upper() == "XXXX":
                 AllXXXX += 1
-            try: #TODO: WTF?
+            try:
                 tmpROM = MyROMS.Lookup_ROM_CRC (ROM.ROM_CRC)
                 Size += os.path.getsize(tmpROM.Archive_File)
             except:

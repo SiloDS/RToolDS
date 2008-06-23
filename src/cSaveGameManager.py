@@ -546,7 +546,7 @@ class cSaveGameManager( wx.Dialog ):
         OriginalSaveName = os.path.join ( Config.Config ["Save_Path"], "%s.sav.%03d" % ( CRC, SaveNum ) )
 
         dlg = cSaveGameConvert ( self, Save_File = OriginalSaveName, ROM=ROM, InSGM=True )
-        Result = dlg.ShowModal()
+        dummy_Result = dlg.ShowModal()
         dlg.Destroy()
 
         OldSelect = self.Select

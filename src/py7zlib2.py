@@ -25,10 +25,12 @@
 """Read from and write to 7zip format archives.
 """
 
-import pylzma
+#@PydevCodeAnalysisIgnore
+
+from cStringIO import StringIO
 from struct import pack, unpack
 from zlib import crc32
-from cStringIO import StringIO
+import pylzma
 
 MAGIC_7Z                         = '7z\xbc\xaf\x27\x1c'
 
@@ -391,7 +393,7 @@ class Header( Base ):
     def __init__( self, file ): #IGNORE:W0622
         id = file.read( 1 ) #IGNORE:W0622
         if id == PROPERTY_ARCHIVE_PROPERTIES:
-            self.properties = ArchiveProperties( file ) #IGNORE:E0602
+            self.properties = ArchiveProperties( file )
             id = file.read( 1 )
         
         if id == PROPERTY_ADDITIONAL_STREAMS_INFO:

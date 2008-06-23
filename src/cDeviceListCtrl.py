@@ -121,7 +121,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
         
         Dirs = [ Config.Config ["Device_Path"] ]
 #        for Item in Config.Config ["Device_Dirs_to_Search"]:
-#            Dirs.append( os.path.join ( Config.Config ["Device_Path"], Item ).lower() ) # TODO: Fix me. Shouldn't be lower for linux
+#            Dirs.append( os.path.join ( Config.Config ["Device_Path"], Item ).lower() )
             
 #        if Config.Config ["Search_Device_Subdirs"]:
 #            DirList = sorted ( os.listdir ( Config.Config ["Device_Path"] ) )

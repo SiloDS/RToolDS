@@ -5,6 +5,8 @@ Usage:
     python setup.py py2app
 """
 
+#@PydevCodeAnalysisIgnore
+
 from setuptools import setup
 
 APP = ['RToolDS.py']

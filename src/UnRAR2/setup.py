@@ -1,5 +1,7 @@
 # setup.py, config file for distutils
 
+#@PydevCodeAnalysisIgnore
+
 import UnRAR
 
 from distutils.core import setup

@@ -19,7 +19,7 @@ if sys.platform != "win32":
     from statvfs import F_BLOCKS, F_BAVAIL, F_FRSIZE
 if sys.platform == "win32":
     import win32api
-if ( sys.version_info[0] * 10 ) + sys.version_info[1] >= 25: #TODO: Fixme...
+if ( sys.version_info[0] * 10 ) + sys.version_info[1] >= 25: #TODO: Version Fixme...
     import hashlib
 else:
     import md5
@@ -461,7 +461,7 @@ def Get_Hash ( Filename ):
     return RetVal
 
 def Get_Hash_Data ( Data ):
-    if ( sys.version_info[0] * 10 ) + sys.version_info[1] >= 25: #TODO: Fixme...
+    if ( sys.version_info[0] * 10 ) + sys.version_info[1] >= 25: #TODO: Version Fixme...
         md5hash = hashlib.md5()
     else:
         md5hash = md5.new()

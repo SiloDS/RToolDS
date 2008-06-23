@@ -28,6 +28,8 @@ similar to the C interface provided by UnRAR. There is also a
 higher level interface which makes some common operations easier.
 """
 
+#@PydevCodeAnalysisIgnore
+
 from __future__ import generators
 
 __version__ = '1.0'
