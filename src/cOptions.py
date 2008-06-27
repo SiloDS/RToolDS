@@ -27,7 +27,7 @@ class cOptions( wx.Dialog ):
         except:
             self.GoToSaves = False
         # begin wxGlade: cOptions.__init__
-        kwds["style"] = wx.DEFAULT_DIALOG_STYLE
+        kwds["style"] = wx.DEFAULT_DIALOG_STYLE|wx.RESIZE_BORDER|wx.THICK_FRAME
         wx.Dialog.__init__(self, *args, **kwds)
         self.Notebook = wx.Notebook(self, -1, style=0)
         self.Notebook_pane_6 = wx.Panel(self.Notebook, -1)
@@ -75,7 +75,7 @@ class cOptions( wx.Dialog ):
         self.UseShortSaveName = wx.CheckBox(self.NotebookPanel3, -1, _("Enable Short Name Save Files (eg. SuperCard DS ONE)"))
         self.Convert_Imports = wx.CheckBox(self.NotebookPanel3, -1, _("On Save Game Import, Enable Conversion"))
         self.label_10 = wx.StaticText(self.NotebookPanel3, -1, _("Default Linker Device Type :"))
-        self.Default_Device = wx.Choice(self.NotebookPanel3, -1, choices=[])
+        self.Default_Device = wx.Choice(self.NotebookPanel3, -1, choices=[_("SuperCard DS One 512k (.sav)")])
         self.label_12 = wx.StaticText(self.NotebookPanel3, -1, _("Note: Save Games are Automatically Converted to the Selected Default Linker Device Type,"))
         self.label_13 = wx.StaticText(self.NotebookPanel3, -1, _("File Extension, and Size."))
         self.Use_Rename_Popup = wx.CheckBox(self.NotebookPanel4, -1, _("Enable ROM Renamer Popup on Apply"))
@@ -129,7 +129,7 @@ class cOptions( wx.Dialog ):
         self.Search_Device_Subdirs.Enable(False)
         self.Device_Dirs_to_Search.Enable(False)
         self.Convert_Imports.Hide()
-        self.Default_Device.SetMinSize((150, 21))
+        self.Default_Device.SetSelection(0)
         self.Notebook.SetMinSize((500, 400))
         # end wxGlade
 
@@ -224,7 +224,7 @@ class cOptions( wx.Dialog ):
         grid_sizer_4_copy.Add(self.UseShortSaveName, 0, wx.ALL, 3)
         grid_sizer_4_copy.Add(self.Convert_Imports, 0, wx.ALL, 3)
         grid_sizer_20.Add(self.label_10, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 3)
-        grid_sizer_20.Add(self.Default_Device, 0, wx.ALL, 3)
+        grid_sizer_20.Add(self.Default_Device, 0, wx.ALL|wx.EXPAND, 3)
         grid_sizer_4_copy.Add(grid_sizer_20, 1, wx.EXPAND, 0)
         grid_sizer_4_copy.Add(self.label_12, 0, wx.ALL, 3)
         grid_sizer_4_copy.Add(self.label_13, 0, wx.LEFT, 3)
