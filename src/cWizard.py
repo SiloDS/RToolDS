@@ -32,7 +32,12 @@ class cWizard:
         
         Page1.sizer.Add( wx.StaticText( Page1, -1, "Welcome to RToolDS Initial Configuration\n" ) )
         Page1.sizer.Add( wx.StaticText ( Page1, -1, _( "Please Select Your ROM Directory :" ) ) )
-        self.ROM_Path = filebrowse.DirBrowseButton ( Page1, -1, labelText = "", dialogTitle = _("Select ROMs Directory") + " : ", newDirectory = True )
+        if sys.platform == "linux2":
+            self.ROM_Path = filebrowse.DirBrowseButton ( Page1, -1, labelText = "", dialogTitle = _("Select ROMs Directory") + " : ", newDirectory = True, startDirectory = os.path.expanduser("~/") )
+            self.ROM_Path.SetValue( os.path.expanduser("~/"))
+        else:
+            self.ROM_Path = filebrowse.DirBrowseButton ( Page1, -1, labelText = "", dialogTitle = _("Select ROMs Directory") + " : ", newDirectory = True )
+                 
         Page1.sizer.Add ( self.ROM_Path, 0, wx.EXPAND|wx.TOP, 10 )
         self.SubDirs = wx.RadioBox ( Page1, -1, _( 'Search Sub-Directories?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
         self.SubDirs.SetStringSelection( _( "Yes" ) )
@@ -40,9 +45,9 @@ class cWizard:
         Page1.sizer.Add ( wx.StaticText ( Page1, -1, "\n" + _( "RToolDS accepts Uncompressed, Zip, 7-Zip and RAR archived ROM files." ) ) )
 
         Page2.sizer.Add ( wx.StaticText ( Page2, -1, _( "Select a Default Save Game Database Directory :" ) ) )
-        self.Save_Path = filebrowse.DirBrowseButton ( Page2, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Save Game Database Directory") + " : " )
-        if sys.platform != "linux2":
-            self.Save_Path.SetValue( os.path.join ( os.getcwd(), "cache", "saves" ) )
+        self.Save_Path = filebrowse.DirBrowseButton ( Page2, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Save Game Database Directory") + " : ", startDirectory = os.path.join ( os.getcwd(), "cache", "saves" ) )
+#        if sys.platform != "linux2":
+        self.Save_Path.SetValue( os.path.join ( os.getcwd(), "cache", "saves" ) )
         Page2.sizer.Add ( self.Save_Path, 0, wx.EXPAND|wx.TOP, 10 )
         Page2.sizer.Add ( wx.StaticText ( Page2, -1, "\n" + _("Note: Do not select a previous linker device save directory")))
         Page2.sizer.Add ( wx.StaticText ( Page2, -1, _("when choosing a location! Previous linker device saves will")))
@@ -51,14 +56,14 @@ class cWizard:
         
         Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "Select a Default Image Directory :" ) ) )
 #        Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "(It is Safe to Keep the Default)" ) ) )
-        self.Image_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Images Directory") + " : " )
-        if sys.platform != "linux2":
-            self.Image_Path.SetValue( os.path.join ( os.getcwd(), "cache", "img" ) )
+        self.Image_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Images Directory") + " : ", startDirectory = os.path.join ( os.getcwd(), "cache", "img" ) )
+#        if sys.platform != "linux2":
+        self.Image_Path.SetValue( os.path.join ( os.getcwd(), "cache", "img" ) )
         Page3.sizer.Add ( self.Image_Path, 0, wx.EXPAND|wx.TOP, 10 )
         Page3.sizer.Add ( wx.StaticText ( Page3, -1, "\n" + _("Select a Default NFO Directory :" ) ) )
-        self.NFO_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select NFO Directory") + " : " )
-        if sys.platform != "linux2":
-            self.NFO_Path.SetValue( os.path.join ( os.getcwd(), "cache", "nfo" ) )
+        self.NFO_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select NFO Directory") + " : ", startDirectory = os.path.join ( os.getcwd(), "cache", "nfo" ) )
+#        if sys.platform != "linux2":
+        self.NFO_Path.SetValue( os.path.join ( os.getcwd(), "cache", "nfo" ) )
         Page3.sizer.Add ( self.NFO_Path, 0, wx.EXPAND|wx.TOP, 10 )
         Page3.sizer.Add ( wx.StaticText ( Page3, -1, "\n" + _( "Note: Keeping the default directories is recommended.")))
         Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "Directories will contain ROM images and NFO files,")))

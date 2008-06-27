@@ -104,38 +104,49 @@ class cLogDialog( wx.Dialog ):
 
     def Update_Master_List (self):
         self.Log.AppendText(_("Checking for Database Updates") + " ... ")
+        wx.Yield()
         
         Version = Utils.Fetch_Master_List_Version()
         if Version > MyROMS.Master_List_XML_Version:
             self.Log.AppendText(_("Updates Available") + "\n\n")
+            wx.Yield()
        
             self.Log.AppendText (_("Updating Database") + " ... ") 
+            wx.Yield()
             
             if Utils.Fetch_Master_List() == False:
                 self.Log.AppendText(_("Failed") + "\n\n")
                 self.Todo.append ("Failed")
+                wx.Yield()
                 return
             
             self.Log.AppendText(_("Success") + "\n\n" + _("Merging Updated Database") + " ... ")
+            wx.Yield()
             if MyROMS.Load_Master_List ():
                 self.Log.AppendText(_("Success") + "\n\n")
                 self.Todo.append ("ROM_List")
+                wx.Yield()
             else:
                 self.Log.AppendText(_("Failed") + "\n")
                 self.Todo.append ("Failed")
+                wx.Yield()
         elif Version == -1:
             self.Log.AppendText(_("Internet Connection Error") + "\n\n")
         else:
             self.Log.AppendText(_("No Updates Available") + "\n\n")
+        wx.Yield()
         
     def Update_ROM_List (self):
         self.Log.AppendText(_("Finalising Database") + " ... ")
+        wx.Yield()
 
         MyROMS.Start_ROM_Find ()
         
         self.Log.AppendText (_("Completed") + "\n\n")
+        wx.Yield()
             
         self.Log.AppendText(_("Finding New ROMs") + " ...\n\n")
+        wx.Yield()
 
         ROMS_Found = False
         if Config.Config ["Parse_Subdirs"] == False:
@@ -147,6 +158,7 @@ class cLogDialog( wx.Dialog ):
                     for a in Title:
                         if a != "":
                             self.Log.AppendText (a + "\n")
+                            wx.Yield()
                     ROMS_Found=True
                 wx.Yield()
                 if self.Aborted:
@@ -159,6 +171,7 @@ class cLogDialog( wx.Dialog ):
                         for a in Title:
                             if a != "":
                                 self.Log.AppendText (a + "\n")
+                                wx.Yield()
                         ROMS_Found=True
                     wx.Yield()
                     if self.Aborted:
@@ -172,6 +185,7 @@ class cLogDialog( wx.Dialog ):
             else:
                 self.Log.AppendText( _("Aborted Update") + ".\n\n" )
             self.Todo.append ("Failed")
+            wx.Yield()
             MyROMS.Load_Master_List (AltName=True)
             MyROMS.Save_Master_List ()
         else:
@@ -182,6 +196,7 @@ class cLogDialog( wx.Dialog ):
                 self.Log.AppendText( "\n" + _("Completed") + ".\n\n" )
             else:
                 self.Log.AppendText( _("Completed") + ".\n\n" )
+            wx.Yield()
         try:
             os.unlink ("RToolDS_Master_List.dat.bak")
         except:
@@ -189,6 +204,7 @@ class cLogDialog( wx.Dialog ):
 
     def Update_GFX (self):
         self.Log.AppendText( _("Updating Image/NFO Database") + " ...\n\n" )
+        wx.Yield()
 
         MyROMS.Process_All = True
 
@@ -213,6 +229,7 @@ class cLogDialog( wx.Dialog ):
                     
                 if ToDL != []:
                     self.Log.AppendText( _("Downloading ... ") )
+                    wx.Yield()
                 
                     res = 0
                     if "ICO" in ToDL:
@@ -234,8 +251,10 @@ class cLogDialog( wx.Dialog ):
                         Display = _("Failed")
                             
                     self.Log.AppendText( Display + "\n" )
+                    wx.Yield()
                 else:
                     self.Log.AppendText( _("OK") + "\n" )
+                    wx.Yield()
 
             wx.Yield()
             if self.Aborted:
@@ -244,8 +263,10 @@ class cLogDialog( wx.Dialog ):
         if self.Aborted:
             self.Log.AppendText( "\n" + _("Aborted Update") + ".\n\n" )
             self.Todo.append ("Failed")
+            wx.Yield()
         else:
             self.Log.AppendText( "\n" + _("Completed") + ".\n\n" )
+            wx.Yield()
 
         MyROMS.Process_All = False
 

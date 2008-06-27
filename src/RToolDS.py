@@ -36,6 +36,32 @@ if sys.platform == "win32":
     except:
         pass
             
+if sys.platform == "linux2":
+    try:
+        os.chdir(os.path.expanduser("~/.RToolDS"))
+    except:
+        try:
+            os.mkdir(os.path.expanduser("~/.RToolDS"))
+            os.chdir(os.path.expanduser("~/.RToolDS"))
+        except:
+            exit ()
+    try:
+        os.mkdir(os.path.join (os.path.expanduser("~/.RToolDS"), "cache"))
+    except:
+        pass
+    try:
+        os.mkdir(os.path.join (os.path.expanduser("~/.RToolDS"), "cache", "img"))
+    except:
+        pass
+    try:
+        os.mkdir(os.path.join (os.path.expanduser("~/.RToolDS"), "cache", "nfo"))
+    except:
+        pass
+    try:
+        os.mkdir(os.path.join (os.path.expanduser("~/.RToolDS"), "cache", "saves"))
+    except:
+        pass
+
 if os.path.isfile ("RToolDS_Trimmed.dat.new") and os.path.isfile ("RToolDS_Trimmed.dat") == False:
     os.rename( "RToolDS_Trimmed.dat.new", "RToolDS_Trimmed.dat" )
     os.utime( "RToolDS_Trimmed.dat", None )
