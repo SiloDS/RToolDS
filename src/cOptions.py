@@ -287,7 +287,7 @@ class cOptions( wx.Dialog ):
         
     def __LocalInit ( self ):
         if sys.platform == "linux2":
-            self.Fit()
+            self.SetSize(self.NotebookPanel2.BestSize + (100,100)); #TODO: Fix Fudge
 
         self.ColumnsChanged = False
 
