@@ -582,7 +582,8 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init ( ["STARTUP"] )
         
         if sys.platform == "darwin":
-            self.Help_Menu1.Hide(True)
+            hm = self.MenuBar.FindMenu(_("&Help"))
+            self.MenuBar.Remove(hm)
 #        self.Help_Menu1 = wx.Menu()
 #        self.Help_Menu2 = wx.MenuItem(self.Help_Menu1, ID_MENU_HELP, _("&Help"), _("Help"), wx.ITEM_NORMAL)
 #        self.Help_Menu1.AppendItem(self.Help_Menu2)
