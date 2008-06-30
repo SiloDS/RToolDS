@@ -10,7 +10,8 @@ import wx.html #@Reimport
 import wx.lib.filebrowsebutton as filebrowse
 
 import anydbm #@UnusedImport
-import dbhash #@UnusedImport
+if sys.platform != "darwin":
+    import dbhash #@UnusedImport
 
 from ROMS import MyROMS
 from ROMS import ROM as BlankROM
@@ -1814,9 +1815,9 @@ class cMainFrame( wx.Frame ):
         
         self.Toolbar.SetToolBitmapSize( ( int( ToolSize ), int( ToolSize ) ) )
 
-        self.Toolbar.AddTool( ID_MENU_COPY, eval ( "GFX.getGFX_Icon_Add"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=self.Copy_to_Device.GetItemLabel(), longHelpString=self.Copy_to_Device.GetHelp() )
-        self.Toolbar.AddTool( ID_MENU_DELETE, eval ( "GFX.getGFX_Icon_DeleteFromCart"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=self.Delete_from_Device.GetItemLabel(), longHelpString=self.Delete_from_Device.GetHelp() )
-        self.Toolbar.AddTool( ID_MENU_APPLY, eval ( "GFX.getGFX_Icon_Apply"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=self.Apply_Changes.GetItemLabel(), longHelpString=self.Apply_Changes.GetHelp() )
+        self.Toolbar.AddTool( ID_MENU_COPY, eval ( "GFX.getGFX_Icon_Add"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_("Add ROMs to Device"), longHelpString=self.Copy_to_Device.GetHelp() )
+        self.Toolbar.AddTool( ID_MENU_DELETE, eval ( "GFX.getGFX_Icon_DeleteFromCart"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_("Delete ROMs from Device"), longHelpString=self.Delete_from_Device.GetHelp() )
+        self.Toolbar.AddTool( ID_MENU_APPLY, eval ( "GFX.getGFX_Icon_Apply"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_("Apply Changes to Device"), longHelpString=self.Apply_Changes.GetHelp() )
 
         self.Toolbar.AddSeparator()
     

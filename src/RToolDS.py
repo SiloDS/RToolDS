@@ -35,8 +35,8 @@ if sys.platform == "win32":
         os.mkdir(os.path.join (os.environ["APPDATA"], "RToolDS", "cache", "saves"))
     except:
         pass
-            
-if sys.platform == "linux2":
+        
+if sys.platform == "linux2" or sys.platform == "darwin":
     try:
         os.chdir(os.path.expanduser("~/.RToolDS"))
     except:

@@ -32,7 +32,7 @@ class cWizard:
         
         Page1.sizer.Add( wx.StaticText( Page1, -1, "Welcome to RToolDS Initial Configuration\n" ) )
         Page1.sizer.Add( wx.StaticText ( Page1, -1, _( "Please Select Your ROM Directory :" ) ) )
-        if sys.platform == "linux2":
+        if sys.platform == "linux2" or sys.platform == "darwin":
             self.ROM_Path = filebrowse.DirBrowseButton ( Page1, -1, labelText = "", dialogTitle = _("Select ROMs Directory") + " : ", newDirectory = True, startDirectory = os.path.expanduser("~/") )
             self.ROM_Path.SetValue( os.path.expanduser("~/"))
         else:
