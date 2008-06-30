@@ -288,7 +288,11 @@ class cOptions( wx.Dialog ):
     def __LocalInit ( self ):
         if sys.platform == "linux2":
             self.SetSize(self.NotebookPanel2.BestSize + (100,100)); #TODO: Fix Fudge
-
+            self.CenterOnParent()
+        if sys.platform == "darwin":
+            self.SetSize((771, 566))
+            self.CenterOnParent()
+            
         self.ColumnsChanged = False
 
         self.ROM_Path.SetLabel( _( "ROMs :" ) )
