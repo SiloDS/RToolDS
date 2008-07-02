@@ -76,6 +76,14 @@ from cMainFrame import cMainFrame
 import Config
 import GFX
 
+try:
+    import psyco
+    psyco.full(memory=100)
+    psyco.profile(0.05, memory=100)
+    psyco.profile(0.2)
+except ImportError:
+    pass
+
 Config.Load ()
 
 RToolDS = wx.PySimpleApp(0)
