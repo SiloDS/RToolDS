@@ -1,4 +1,4 @@
-from cx_Freeze import setup, Executable
+from cx_Freeze import setup, Executable #@PydevCodeAnalysisIgnore
 
 setup(
         name = "RToolDS",
