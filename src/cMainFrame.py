@@ -172,7 +172,7 @@ class cMainFrame( wx.Frame ):
         wxglade_tmp_menu.AppendSeparator()
         self.View_Statistics = wx.MenuItem(wxglade_tmp_menu, ID_MENU_VIEW_STATISTICS, _("View Statistics"), _("View Statistics"), wx.ITEM_NORMAL)
         wxglade_tmp_menu.AppendItem(self.View_Statistics)
-        self.MenuBar.Append(wxglade_tmp_menu, _("Actions"))
+        self.MenuBar.Append(wxglade_tmp_menu, _("&Actions"))
         wxglade_tmp_menu = wx.Menu()
         wxglade_tmp_menu.Append(ID_MENU_UPDATE_EVERYTHING, _("Update Everything"), _("Update Everything"), wx.ITEM_NORMAL)
         wxglade_tmp_menu.AppendSeparator()
@@ -256,11 +256,11 @@ class cMainFrame( wx.Frame ):
         wxglade_tmp_menu.AppendItem(self.Hide_Tags)
         self.MenuBar.Append(wxglade_tmp_menu, _("&Fields"))
         self.Help_Menu1 = wx.Menu()
-        self.Help_Menu2 = wx.MenuItem(self.Help_Menu1, wx.ID_HELP, "&Help", _("Help"), wx.ITEM_NORMAL)
+        self.Help_Menu2 = wx.MenuItem(self.Help_Menu1, wx.NewId(), _("Contents"), _("Help"), wx.ITEM_NORMAL)
         self.Help_Menu1.AppendItem(self.Help_Menu2)
-        self.About_Menu = wx.MenuItem(self.Help_Menu1, wx.ID_ABOUT, "&About", _("About"), wx.ITEM_NORMAL)
+        self.About_Menu = wx.MenuItem(self.Help_Menu1, wx.ID_ABOUT, _("&About"), _("About"), wx.ITEM_NORMAL)
         self.Help_Menu1.AppendItem(self.About_Menu)
-        self.MenuBar.Append(self.Help_Menu1, "&Help")
+        self.MenuBar.Append(self.Help_Menu1, _("&Help"))
         self.SetMenuBar(self.MenuBar)
         # Menu Bar end
         self.StatusBar = self.CreateStatusBar(3, wx.ST_SIZEGRIP)
@@ -430,7 +430,7 @@ class cMainFrame( wx.Frame ):
         _icon = wx.EmptyIcon()
         _icon.CopyFromBitmap(GFX.catalog ["GFX_Icon"].getBitmap())
         self.SetIcon(_icon)
-        self.SetSize((740, 528))
+        self.SetSize((740, 566))
         self.SetFocus()
         self.StatusBar.SetStatusWidths([-1, -1, -1])
         # statusbar fields
@@ -577,12 +577,17 @@ class cMainFrame( wx.Frame ):
         
         self.__Local_Init ( ["STARTUP"] )
         
-        if sys.platform == "darwin":
-            hm = self.MenuBar.FindMenu("&Help")
-            self.MenuBar.Remove(hm)
-            self.Bind(wx.EVT_MENU, self.On_About, id=wx.ID_ABOUT)
-            wx.App_CleanUp()
+#        if sys.platform == "darwin":
+#            hm = self.MenuBar.FindMenu("&Help")
+#            self.MenuBar.Remove(hm)
+#            self.Bind(wx.EVT_MENU, self.On_About, id=wx.ID_ABOUT)
+#            wx.App_CleanUp()
 
+        if wx.Platform == "__WXMAC__":
+            wx.App_SetMacAboutMenuItemId(wx.ID_ABOUT)
+            wx.App_SetMacPreferencesMenuItemId(wx.ID_PREFERENCES)
+            wx.App_SetMacExitMenuItemId(wx.ID_EXIT)
+            wx.App_SetMacHelpMenuTitleName(_("&Help"))
             
 #            wx.App_SetMacAboutMenuItemId(wx.ID_ABOUT)
 #            wx.App_SetMacPreferencesMenuItemId(ID_MENU_OPTIONS)
