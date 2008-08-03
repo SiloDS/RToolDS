@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "RToolDS"
-!define PRODUCT_VERSION "v0.3.1381"
+!define PRODUCT_VERSION "v0.3.1382"
 !define PRODUCT_PUBLISHER "Silo"
 !define PRODUCT_WEB_SITE "http://www.advanscene.com"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\RToolDS.exe"

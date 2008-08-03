@@ -7,7 +7,7 @@ import os
 import Utils
 
 Config_Version = 42
-Version_String = "0.3.1381 Beta"
+Version_String = "0.3.1382 Beta"
 
 Config = {}
 
