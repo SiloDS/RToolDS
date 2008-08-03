@@ -233,13 +233,13 @@ class cLogDialog( wx.Dialog ):
                 
                     res = 0
                     if "ICO" in ToDL:
-                        MyUrl = "http://www.advanscene.com/offline/imgs/NDSicon/%s/%04d.png" % ( Utils.Directory_Range ( ROM.Image_Number ), ROM.Image_Number )
+                        MyUrl = "%s%s/%04d.png" % ( Config.Config["icURL"], Utils.Directory_Range ( ROM.Image_Number ), ROM.Image_Number )
                         res += Utils.GetFromWeb ( MyUrl, icoFilename )
                     if "IM1" in ToDL:
-                        MyUrl = "http://www.advanscene.com/offline/imgs/ADVANsCEne_NDS/%s/%da.png" % ( Utils.Directory_Range ( ROM.Image_Number ), ROM.Image_Number )
+                        MyUrl = "%s%s/%da.png" % ( Config.Config["imURL"], Utils.Directory_Range ( ROM.Image_Number ), ROM.Image_Number )
                         res += Utils.GetFromWeb ( MyUrl, im1Filename )
                     if "IM2" in ToDL:
-                        MyUrl = "http://www.advanscene.com/offline/imgs/ADVANsCEne_NDS/%s/%db.png" % ( Utils.Directory_Range ( ROM.Image_Number ), ROM.Image_Number )
+                        MyUrl = "%s%s/%db.png" % ( Config.Config["imURL"], Utils.Directory_Range ( ROM.Image_Number ), ROM.Image_Number )
                         res += Utils.GetFromWeb ( MyUrl, im2Filename )
                     if "NFO" in ToDL:
                         MyUrl = "http://www.advanscene.com/offline/nfo/NDSnfo/%s/%04d.nfo" % ( Utils.Directory_Range ( ROM.Image_Number ), ROM.Image_Number )

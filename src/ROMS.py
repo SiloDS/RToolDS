@@ -311,6 +311,17 @@ class ROMS:
         
         self.Master_List_XML_Version = int ( dom.getElementsByTagName ( "datVersion" )[0].childNodes[0].data )
 
+#            <imURL>http://www.retrocovers.com/offline/imgs/ADVANsCEne_NDS/</imURL>
+#            <icURL>http://www.advanscene.com/offline/imgs/NDSicon/</icURL>
+#            <ipsURL>http://www.advanscene.com/offline/ips/NDSips/</ipsURL>
+        
+        Config.Config ["imURL"]  = self.getText(dom.getElementsByTagName ("imURL") )
+        Config.Config ["icURL"]  = self.getText(dom.getElementsByTagName ("icURL") )
+        Config.Config ["ipsURL"] = self.getText(dom.getElementsByTagName ("ipsURL") )
+        for key in ["imURL","icURL","ipsURL"]:
+            if Config.Config[key][-1] != "/":
+                Config.Config[key] += "/"
+        
         Games = dom.getElementsByTagName( "game" )
 
         for Game in Games:

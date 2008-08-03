@@ -6,7 +6,7 @@ import os
 
 import Utils
 
-Config_Version = 41
+Config_Version = 42
 Version_String = "0.3.1342 Beta"
 
 Config = {}
@@ -548,3 +548,10 @@ def Load_Defaults( Version ):
         Config ["NFO_Family"] = wx.FONTFAMILY_SWISS
     if Version < 41:
         Config ["NFO_Face"] = "Lucida Console"
+    if Version < 42:
+#            <imURL>http://www.retrocovers.com/offline/imgs/ADVANsCEne_NDS/</imURL>
+#            <icURL>http://www.advanscene.com/offline/imgs/NDSicon/</icURL>
+#            <ipsURL>http://www.advanscene.com/offline/ips/NDSips/</ipsURL>
+            Config ["imURL"]  = "http://www.retrocovers.com/offline/imgs/ADVANsCEne_NDS/"
+            Config ["icURL"]  = "http://www.advanscene.com/offline/imgs/NDSicon/"
+            Config ["ipsURL"] = "http://www.advanscene.com/offline/ips/NDSips/"
