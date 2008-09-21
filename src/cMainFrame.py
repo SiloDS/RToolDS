@@ -1534,14 +1534,25 @@ class cMainFrame( wx.Frame ):
             
     def Enable_Tasks ( self ): #TODO Finish Enable Tasks
         Device_Enabled = self.Device_List.IsEnabled()
-        if self.FindFocus() == self.ROMList:
-            ROMList_Focus = True
+#        print self.ROMList
+        if sys.platform != "darwin":
+            if self.FindFocus() == self.ROMList:
+                ROMList_Focus = True
+            else:
+                ROMList_Focus = False
+            if self.FindFocus() == self.Device_List:
+                Device_List_Focus = True
+            else:
+                Device_List_Focus = False
         else:
-            ROMList_Focus = False
-        if self.FindFocus() == self.Device_List:
-            Device_List_Focus = True
-        else:
-            Device_List_Focus = False
+            if self.Current_Ctrl == self.ROMList:
+                ROMList_Focus = True
+            else:
+                ROMList_Focus = False
+            if self.Current_Ctrl == self.Device_List:
+                Device_List_Focus = True
+            else:
+                Device_List_Focus = False
 
         if self.Current_Ctrl.GetSelectedItemCount() == 1:
             One_Selected = True
