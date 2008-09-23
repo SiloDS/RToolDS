@@ -18,7 +18,7 @@ class cWizard:
         self.parent = parent
         
     def RunWizard ( self ):
-        Wizard = wiz.Wizard( self.parent, -1, "RToolDS Setup Wizard", GFX.getGFX_WizardBitmap(), style=wx.DEFAULT_DIALOG_STYLE|wx.SYSTEM_MENU|wx.CLOSE_BOX )
+        Wizard = wiz.Wizard( self.parent, - 1, "RToolDS Setup Wizard", GFX.getGFX_WizardBitmap(), style = wx.DEFAULT_DIALOG_STYLE | wx.SYSTEM_MENU | wx.CLOSE_BOX )
 
         Page1 = TitledPage ( Wizard, _( "RToolDS Setup - Page" ) + " 1/7" )
         Page2 = TitledPage ( Wizard, _( "RToolDS Setup - Page" ) + " 2/7" )
@@ -30,78 +30,78 @@ class cWizard:
 
 # dialogTitle = _("Select Device Directory") + " : ", labelText = _("Device") + " : ")
         
-        Page1.sizer.Add( wx.StaticText( Page1, -1, "Welcome to RToolDS Initial Configuration\n" ) )
-        Page1.sizer.Add( wx.StaticText ( Page1, -1, _( "Please Select Your ROM Directory :" ) ) )
+        Page1.sizer.Add( wx.StaticText( Page1, - 1, "Welcome to RToolDS Initial Configuration\n" ) )
+        Page1.sizer.Add( wx.StaticText ( Page1, - 1, _( "Please Select Your ROM Directory :" ) ) )
         if sys.platform == "linux2" or sys.platform == "darwin":
-            self.ROM_Path = filebrowse.DirBrowseButton ( Page1, -1, labelText = "", dialogTitle = _("Select ROMs Directory") + " : ", newDirectory = True, startDirectory = os.path.expanduser("~/") )
-            self.ROM_Path.SetValue( os.path.expanduser("~/"))
+            self.ROM_Path = filebrowse.DirBrowseButton ( Page1, - 1, labelText = "", dialogTitle = _( "Select ROMs Directory" ) + " : ", newDirectory = True, startDirectory = os.path.expanduser( "~/" ) )
+            self.ROM_Path.SetValue( os.path.expanduser( "~/" ) )
         else:
-            self.ROM_Path = filebrowse.DirBrowseButton ( Page1, -1, labelText = "", dialogTitle = _("Select ROMs Directory") + " : ", newDirectory = True )
+            self.ROM_Path = filebrowse.DirBrowseButton ( Page1, - 1, labelText = "", dialogTitle = _( "Select ROMs Directory" ) + " : ", newDirectory = True )
                  
-        Page1.sizer.Add ( self.ROM_Path, 0, wx.EXPAND|wx.TOP, 10 )
-        self.SubDirs = wx.RadioBox ( Page1, -1, _( 'Search Sub-Directories?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
+        Page1.sizer.Add ( self.ROM_Path, 0, wx.EXPAND | wx.TOP, 10 )
+        self.SubDirs = wx.RadioBox ( Page1, - 1, _( 'Search Sub-Directories?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
         self.SubDirs.SetStringSelection( _( "Yes" ) )
         Page1.sizer.Add ( self.SubDirs )
-        Page1.sizer.Add ( wx.StaticText ( Page1, -1, "\n" + _( "RToolDS accepts Uncompressed, Zip, 7-Zip and RAR archived ROM files." ) ) )
+        Page1.sizer.Add ( wx.StaticText ( Page1, - 1, "\n" + _( "RToolDS accepts Uncompressed, Zip, 7-Zip and RAR archived ROM files." ) ) )
 
-        Page2.sizer.Add ( wx.StaticText ( Page2, -1, _( "Select a Default Save Game Database Directory :" ) ) )
-        self.Save_Path = filebrowse.DirBrowseButton ( Page2, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Save Game Database Directory") + " : ", startDirectory = os.path.join ( os.getcwd(), "cache", "saves" ) )
+        Page2.sizer.Add ( wx.StaticText ( Page2, - 1, _( "Select a Default Save Game Database Directory :" ) ) )
+        self.Save_Path = filebrowse.DirBrowseButton ( Page2, - 1, labelText = "", newDirectory = True, dialogTitle = _( "Select Save Game Database Directory" ) + " : ", startDirectory = os.path.join ( os.getcwd(), "cache", "saves" ) )
 #        if sys.platform != "linux2":
         self.Save_Path.SetValue( os.path.join ( os.getcwd(), "cache", "saves" ) )
-        Page2.sizer.Add ( self.Save_Path, 0, wx.EXPAND|wx.TOP, 10 )
-        Page2.sizer.Add ( wx.StaticText ( Page2, -1, "\n" + _("Note: Do not select a previous linker device save directory")))
-        Page2.sizer.Add ( wx.StaticText ( Page2, -1, _("when choosing a location! Previous linker device saves will")))
-        Page2.sizer.Add ( wx.StaticText ( Page2, -1, _("need to be imported within RToolDS before use, and any current")))
-        Page2.sizer.Add ( wx.StaticText ( Page2, -1, _("saves within the chosen directory will not be automatically detected." ) ) )
+        Page2.sizer.Add ( self.Save_Path, 0, wx.EXPAND | wx.TOP, 10 )
+        Page2.sizer.Add ( wx.StaticText ( Page2, - 1, "\n" + _( "Note: Do not select a previous linker device save directory" ) ) )
+        Page2.sizer.Add ( wx.StaticText ( Page2, - 1, _( "when choosing a location! Previous linker device saves will" ) ) )
+        Page2.sizer.Add ( wx.StaticText ( Page2, - 1, _( "need to be imported within RToolDS before use, and any current" ) ) )
+        Page2.sizer.Add ( wx.StaticText ( Page2, - 1, _( "saves within the chosen directory will not be automatically detected." ) ) )
         
-        Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "Select a Default Image Directory :" ) ) )
+        Page3.sizer.Add ( wx.StaticText ( Page3, - 1, _( "Select a Default Image Directory :" ) ) )
 #        Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "(It is Safe to Keep the Default)" ) ) )
-        self.Image_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select Images Directory") + " : ", startDirectory = os.path.join ( os.getcwd(), "cache", "img" ) )
+        self.Image_Path = filebrowse.DirBrowseButton ( Page3, - 1, labelText = "", newDirectory = True, dialogTitle = _( "Select Images Directory" ) + " : ", startDirectory = os.path.join ( os.getcwd(), "cache", "img" ) )
 #        if sys.platform != "linux2":
         self.Image_Path.SetValue( os.path.join ( os.getcwd(), "cache", "img" ) )
-        Page3.sizer.Add ( self.Image_Path, 0, wx.EXPAND|wx.TOP, 10 )
-        Page3.sizer.Add ( wx.StaticText ( Page3, -1, "\n" + _("Select a Default NFO Directory :" ) ) )
-        self.NFO_Path = filebrowse.DirBrowseButton ( Page3, -1, labelText = "", newDirectory=True, dialogTitle = _("Select NFO Directory") + " : ", startDirectory = os.path.join ( os.getcwd(), "cache", "nfo" ) )
+        Page3.sizer.Add ( self.Image_Path, 0, wx.EXPAND | wx.TOP, 10 )
+        Page3.sizer.Add ( wx.StaticText ( Page3, - 1, "\n" + _( "Select a Default NFO Directory :" ) ) )
+        self.NFO_Path = filebrowse.DirBrowseButton ( Page3, - 1, labelText = "", newDirectory = True, dialogTitle = _( "Select NFO Directory" ) + " : ", startDirectory = os.path.join ( os.getcwd(), "cache", "nfo" ) )
 #        if sys.platform != "linux2":
         self.NFO_Path.SetValue( os.path.join ( os.getcwd(), "cache", "nfo" ) )
-        Page3.sizer.Add ( self.NFO_Path, 0, wx.EXPAND|wx.TOP, 10 )
-        Page3.sizer.Add ( wx.StaticText ( Page3, -1, "\n" + _( "Note: Keeping the default directories is recommended.")))
-        Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "Directories will contain ROM images and NFO files,")))
-        Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "downloaded during the update process, which are associated")))
-        Page3.sizer.Add ( wx.StaticText ( Page3, -1, _( "with your ROM collection." ) ) )
+        Page3.sizer.Add ( self.NFO_Path, 0, wx.EXPAND | wx.TOP, 10 )
+        Page3.sizer.Add ( wx.StaticText ( Page3, - 1, "\n" + _( "Note: Keeping the default directories is recommended." ) ) )
+        Page3.sizer.Add ( wx.StaticText ( Page3, - 1, _( "Directories will contain ROM images and NFO files," ) ) )
+        Page3.sizer.Add ( wx.StaticText ( Page3, - 1, _( "downloaded during the update process, which are associated" ) ) )
+        Page3.sizer.Add ( wx.StaticText ( Page3, - 1, _( "with your ROM collection." ) ) )
 
-        self.Use_Trimmed = wx.RadioBox ( Page4, -1, _( 'Enable ROM Trimming by default?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
+        self.Use_Trimmed = wx.RadioBox ( Page4, - 1, _( 'Enable ROM Trimming by default?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
         self.Use_Trimmed.SetStringSelection( _( "Yes" ) )
         Page4.sizer.Add ( self.Use_Trimmed )
-        Page4.sizer.Add ( wx.StaticText( Page4, -1, "\n" + _( "Enabling this option saves memory, as all ROM files are" ) ) )
-        Page4.sizer.Add ( wx.StaticText( Page4, -1, _( "compressed before being copied to the device." ) ) )
+        Page4.sizer.Add ( wx.StaticText( Page4, - 1, "\n" + _( "Enabling this option saves memory, as all ROM files are" ) ) )
+        Page4.sizer.Add ( wx.StaticText( Page4, - 1, _( "compressed before being copied to the device." ) ) )
 
-        self.DLGFX = wx.RadioBox ( Page5, -1, _( 'Update Image and NFO Database upon initial start-up?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
+        self.DLGFX = wx.RadioBox ( Page5, - 1, _( 'Update Image and NFO Database upon initial start-up?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
         self.DLGFX.SetStringSelection( _( "No" ) )
         Page5.sizer.Add ( self.DLGFX )
-        Page5.sizer.Add ( wx.StaticText( Page5, -1, "\n" + _( "Warning: This process will take a long time and requires")))
-        Page5.sizer.Add ( wx.StaticText( Page5, -1, _("an Internet connection! This process includes updating Images and")))
-        Page5.sizer.Add ( wx.StaticText( Page5, -1, _("NFO files associated with your ROM collection." ) ) )
+        Page5.sizer.Add ( wx.StaticText( Page5, - 1, "\n" + _( "Warning: This process will take a long time and requires" ) ) )
+        Page5.sizer.Add ( wx.StaticText( Page5, - 1, _( "an Internet connection! This process includes updating Images and" ) ) )
+        Page5.sizer.Add ( wx.StaticText( Page5, - 1, _( "NFO files associated with your ROM collection." ) ) )
 
-        self.Find_Unknown = wx.RadioBox ( Page6, -1, _( 'Enable Unknown/Homebrew ROM File Detection?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
+        self.Find_Unknown = wx.RadioBox ( Page6, - 1, _( 'Enable Unknown/Homebrew ROM File Detection?' ), choices = [ _( 'No' ), _( 'Yes' ) ] )
         self.Find_Unknown.SetStringSelection( _( "Yes" ) )
         Page6.sizer.Add ( self.Find_Unknown )
-        Page6.sizer.Add ( wx.StaticText( Page6, -1, "\n" + _( "Enabling this option allows RToolDS to detect ROMs which are not")))
-        Page6.sizer.Add ( wx.StaticText( Page6, -1, _("categorised in our database. This option is recommended and is required")))
-        Page6.sizer.Add ( wx.StaticText( Page6, -1, _("to detect newly released ROMs and uncategorised homebrew files." ) ) )
+        Page6.sizer.Add ( wx.StaticText( Page6, - 1, "\n" + _( "Enabling this option allows RToolDS to detect ROMs which are not" ) ) )
+        Page6.sizer.Add ( wx.StaticText( Page6, - 1, _( "categorised in our database. This option is recommended and is required" ) ) )
+        Page6.sizer.Add ( wx.StaticText( Page6, - 1, _( "to detect newly released ROMs and uncategorised homebrew files." ) ) )
 
-        Page7.sizer.Add ( wx.StaticText ( Page7, -1, _( "Select Your Linker Device Drive :" ) ))
-        self.Device_Path = filebrowse.DirBrowseButton ( Page7, -1, labelText = "", dialogTitle = _("Select Device Directory") + " : ", newDirectory = True )
-        Page7.sizer.Add ( self.Device_Path, 0, wx.EXPAND|wx.TOP, 10 )
-        Page7.sizer.Add ( wx.StaticText (Page7, -1, "\n" + _("Select Your Linker Device Type :")))
-        self.Default_Device = wx.Choice ( Page7, -1, choices = [] )
+        Page7.sizer.Add ( wx.StaticText ( Page7, - 1, _( "Select Your Linker Device Drive :" ) ) )
+        self.Device_Path = filebrowse.DirBrowseButton ( Page7, - 1, labelText = "", dialogTitle = _( "Select Device Directory" ) + " : ", newDirectory = True )
+        Page7.sizer.Add ( self.Device_Path, 0, wx.EXPAND | wx.TOP, 10 )
+        Page7.sizer.Add ( wx.StaticText ( Page7, - 1, "\n" + _( "Select Your Linker Device Type :" ) ) )
+        self.Default_Device = wx.Choice ( Page7, - 1, choices = [] )
         for Device in Config.Config ["Devices"]:
             if Device[2] != "":
-                self.Default_Device.Append (Device[2])
-        Page7.sizer.Add ( self.Default_Device, 0, wx.EXPAND|wx.TOP|wx.LEFT, 10 )
-        Page7.sizer.Add ( wx.StaticText( Page7, -1, "\n" + _( "Note: You can leave these options blank and select them at a")))
-        Page7.sizer.Add ( wx.StaticText( Page7, -1, _("later time from the options menu. Completing these selections enables")))
-        Page7.sizer.Add ( wx.StaticText( Page7, -1, _("enhanced RToolDS integration with your linker device." ) ) )
+                self.Default_Device.Append ( Device[2] )
+        Page7.sizer.Add ( self.Default_Device, 0, wx.EXPAND | wx.TOP | wx.LEFT, 10 )
+        Page7.sizer.Add ( wx.StaticText( Page7, - 1, "\n" + _( "Note: You can leave these options blank and select them at a" ) ) )
+        Page7.sizer.Add ( wx.StaticText( Page7, - 1, _( "later time from the options menu. Completing these selections enables" ) ) )
+        Page7.sizer.Add ( wx.StaticText( Page7, - 1, _( "enhanced RToolDS integration with your linker device." ) ) )
 
         Wizard.FitToPage( Page1 )
         
@@ -126,7 +126,7 @@ class cWizard:
         self.Page6 = Page6
         self.Page7 = Page7
 
-        Wizard.Bind(wiz.EVT_WIZARD_PAGE_CHANGING, self.OnWizPageChanging)
+        Wizard.Bind( wiz.EVT_WIZARD_PAGE_CHANGING, self.OnWizPageChanging )
 
         Result = Wizard.RunWizard( Page1 )
 
@@ -175,32 +175,32 @@ class cWizard:
                             return Device[0]
                 return Config.Config ["Devices"][0]
 
-    def OnWizPageChanging (self, event):
+    def OnWizPageChanging ( self, event ):
         if event.Page == self.Page1:
-            if os.path.isdir (self.ROM_Path.GetValue()) == False or len (self.ROM_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.ROM_Path.GetValue()[2] != "\\") and (self.ROM_Path.GetValue()[0] != "\\" and self.ROM_Path.GetValue()[1] != "\\")):
-                wx.MessageBox( _('ROM Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
+            if os.path.isdir ( self.ROM_Path.GetValue() ) == False or len ( self.ROM_Path.GetValue() ) < 3 or ( sys.platform == "win32" and ( self.ROM_Path.GetValue()[2] != "\\" ) and ( self.ROM_Path.GetValue()[0] != "\\" and self.ROM_Path.GetValue()[1] != "\\" ) ):
+                wx.MessageBox( _( 'ROM Path is Invalid.\n\nPlease Select a Valid Directory.' ), _( 'Error' ), wx.OK | wx.ICON_ERROR )
                 event.Veto()
 
         if event.Page == self.Page2:
-            if os.path.isdir (self.Save_Path.GetValue()) == False or len (self.Save_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.Save_Path.GetValue()[2] != "\\") and (self.Save_Path.GetValue()[0] != "\\" and self.Save_Path.GetValue()[1] != "\\")):
-                wx.MessageBox( _('Save Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
+            if os.path.isdir ( self.Save_Path.GetValue() ) == False or len ( self.Save_Path.GetValue() ) < 3 or ( sys.platform == "win32" and ( self.Save_Path.GetValue()[2] != "\\" ) and ( self.Save_Path.GetValue()[0] != "\\" and self.Save_Path.GetValue()[1] != "\\" ) ):
+                wx.MessageBox( _( 'Save Path is Invalid.\n\nPlease Select a Valid Directory.' ), _( 'Error' ), wx.OK | wx.ICON_ERROR )
                 event.Veto()
 
         if event.Page == self.Page3:
-            if os.path.isdir (self.Image_Path.GetValue()) == False or len (self.Image_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.Image_Path.GetValue()[2] != "\\") and (self.Image_Path.GetValue()[0] != "\\" and self.Image_Path.GetValue()[1] != "\\")):
-                wx.MessageBox( _('Image Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
+            if os.path.isdir ( self.Image_Path.GetValue() ) == False or len ( self.Image_Path.GetValue() ) < 3 or ( sys.platform == "win32" and ( self.Image_Path.GetValue()[2] != "\\" ) and ( self.Image_Path.GetValue()[0] != "\\" and self.Image_Path.GetValue()[1] != "\\" ) ):
+                wx.MessageBox( _( 'Image Path is Invalid.\n\nPlease Select a Valid Directory.' ), _( 'Error' ), wx.OK | wx.ICON_ERROR )
                 event.Veto()
-            if os.path.isdir (self.NFO_Path.GetValue()) == False or len (self.NFO_Path.GetValue()) < 3 or (sys.platform == "win32" and (self.NFO_Path.GetValue()[2] != "\\") and (self.NFO_Path.GetValue()[0] != "\\" and self.NFO_Path.GetValue()[1] != "\\")):
-                wx.MessageBox( _('NFO Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
+            if os.path.isdir ( self.NFO_Path.GetValue() ) == False or len ( self.NFO_Path.GetValue() ) < 3 or ( sys.platform == "win32" and ( self.NFO_Path.GetValue()[2] != "\\" ) and ( self.NFO_Path.GetValue()[0] != "\\" and self.NFO_Path.GetValue()[1] != "\\" ) ):
+                wx.MessageBox( _( 'NFO Path is Invalid.\n\nPlease Select a Valid Directory.' ), _( 'Error' ), wx.OK | wx.ICON_ERROR )
                 event.Veto()
 
 def makePageTitle( wizPg, title ):
         sizer = wx.BoxSizer( wx.VERTICAL )
         wizPg.SetSizer( sizer )
-        title = wx.StaticText( wizPg, -1, title )
+        title = wx.StaticText( wizPg, - 1, title )
         title.SetFont( wx.Font( 18, wx.SWISS, wx.NORMAL, wx.BOLD ) )
-        sizer.Add( title, 0, wx.ALIGN_CENTRE|wx.ALL, 5 )
-        sizer.Add( wx.StaticLine( wizPg, -1 ), 0, wx.EXPAND|wx.ALL, 5 )
+        sizer.Add( title, 0, wx.ALIGN_CENTRE | wx.ALL, 5 )
+        sizer.Add( wx.StaticLine( wizPg, - 1 ), 0, wx.EXPAND | wx.ALL, 5 )
         return sizer
     
 class TitledPage( wiz.WizardPageSimple ):

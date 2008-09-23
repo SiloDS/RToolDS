@@ -1,11 +1,11 @@
 from cx_Freeze import setup, Executable #@PydevCodeAnalysisIgnore
 
-setup(
+setup( 
         name = "RToolDS",
         version = "0.3",
         description = "RToolDS",
-        executables = [Executable("RToolDS.py")]
-)
+        executables = [Executable( "RToolDS.py" )]
+ )
 
 #
 #setup( 

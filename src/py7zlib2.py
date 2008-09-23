@@ -32,32 +32,32 @@ from struct import pack, unpack
 from zlib import crc32
 import pylzma
 
-MAGIC_7Z                         = '7z\xbc\xaf\x27\x1c'
+MAGIC_7Z = '7z\xbc\xaf\x27\x1c'
 
-PROPERTY_END                     = '\x00'
-PROPERTY_HEADER                  = '\x01'
-PROPERTY_ARCHIVE_PROPERTIES      = '\x02'
+PROPERTY_END = '\x00'
+PROPERTY_HEADER = '\x01'
+PROPERTY_ARCHIVE_PROPERTIES = '\x02'
 PROPERTY_ADDITIONAL_STREAMS_INFO = '\x03'
-PROPERTY_MAIN_STREAMS_INFO       = '\x04'
-PROPERTY_FILES_INFO              = '\x05'
-PROPERTY_PACK_INFO               = '\x06'
-PROPERTY_UNPACK_INFO             = '\x07'
-PROPERTY_SUBSTREAMS_INFO         = '\x08'
-PROPERTY_SIZE                    = '\x09'
-PROPERTY_CRC                     = '\x0a'
-PROPERTY_FOLDER                  = '\x0b'
-PROPERTY_CODERS_UNPACK_SIZE      = '\x0c'
-PROPERTY_NUM_UNPACK_STREAM       = '\x0d'
-PROPERTY_EMPTY_STREAM            = '\x0e'
-PROPERTY_EMPTY_FILE              = '\x0f'
-PROPERTY_ANTI                    = '\x10'
-PROPERTY_NAME                    = '\x11'
-PROPERTY_CREATION_TIME           = '\x12'
-PROPERTY_LAST_ACCESS_TIME        = '\x13'
-PROPERTY_LAST_WRITE_TIME         = '\x14'
-PROPERTY_ATTRIBUTES              = '\x15'
-PROPERTY_COMMENT                 = '\x16'
-PROPERTY_ENCODED_HEADER          = '\x17'
+PROPERTY_MAIN_STREAMS_INFO = '\x04'
+PROPERTY_FILES_INFO = '\x05'
+PROPERTY_PACK_INFO = '\x06'
+PROPERTY_UNPACK_INFO = '\x07'
+PROPERTY_SUBSTREAMS_INFO = '\x08'
+PROPERTY_SIZE = '\x09'
+PROPERTY_CRC = '\x0a'
+PROPERTY_FOLDER = '\x0b'
+PROPERTY_CODERS_UNPACK_SIZE = '\x0c'
+PROPERTY_NUM_UNPACK_STREAM = '\x0d'
+PROPERTY_EMPTY_STREAM = '\x0e'
+PROPERTY_EMPTY_FILE = '\x0f'
+PROPERTY_ANTI = '\x10'
+PROPERTY_NAME = '\x11'
+PROPERTY_CREATION_TIME = '\x12'
+PROPERTY_LAST_ACCESS_TIME = '\x13'
+PROPERTY_LAST_WRITE_TIME = '\x14'
+PROPERTY_ATTRIBUTES = '\x15'
+PROPERTY_COMMENT = '\x16'
+PROPERTY_ENCODED_HEADER = '\x17'
 
 class FormatError( Exception ):
     pass
@@ -83,7 +83,7 @@ class Base: #IGNORE:W0232
             
             mask >>= 1
 
-    def _readBoolean( self, file, count, checkall=0 ): #IGNORE:W0622
+    def _readBoolean( self, file, count, checkall = 0 ): #IGNORE:W0622
         if checkall:
             alldefined = file.read( 1 )
             if alldefined != '\x00':
@@ -184,20 +184,20 @@ class Folder( Base ):
             a, b = self.bindpairs[idx] #IGNORE:W0612
             if a == index:
                 return idx
-        return -1
+        return - 1
 
     def findOutBindPair( self, index ):
         for idx in xrange( len( self.bindpairs ) ):
             a, b = self.bindpairs[idx] #IGNORE:W0612
             if b == index:
                 return idx
-        return -1
+        return - 1
         
 class Digests( Base ):
     """ holds a list of checksums """
     
     def __init__( self, file, count ): #IGNORE:W0622
-        self.defined = self._readBoolean( file, count, checkall=1 )
+        self.defined = self._readBoolean( file, count, checkall = 1 )
         self.crcs = [unpack( '<l', file.read( 4 ) )[0] for x in xrange( count )] #IGNORE:W0612
     
 UnpackDigests = Digests
@@ -322,7 +322,7 @@ class FilesInfo( Base ):
     """ holds file properties """
     
     def _readTimes( self, file, files, name ): #IGNORE:W0622
-        defined = self._readBoolean( file, len( files ), checkall=1 )
+        defined = self._readBoolean( file, len( files ), checkall = 1 )
         
         for i in xrange( len( files ) ):
             if defined[i]:
@@ -377,7 +377,7 @@ class FilesInfo( Base ):
             elif typ == PROPERTY_LAST_WRITE_TIME:
                 self._readTimes( buffer, self.files, 'lastwritetime' )
             elif typ == PROPERTY_ATTRIBUTES:
-                defined = self._readBoolean( buffer, self.numfiles, checkall=1 )
+                defined = self._readBoolean( buffer, self.numfiles, checkall = 1 )
                 for i in xrange( self.numfiles ):
                     f = self.files[i]
                     if defined[i]:
@@ -414,7 +414,7 @@ class Header( Base ):
 class ArchiveFile:
     """ wrapper around a file in the archive """
     
-    def __init__( self, info, start, src_start, size, folder, archive, maxsize=None ):
+    def __init__( self, info, start, src_start, size, folder, archive, maxsize = None ):
         self.digest = None
         self._archive = archive
         self._file = archive._file #IGNORE:W0212
@@ -435,12 +435,12 @@ class ArchiveFile:
         data = ''
         idx = 0 #IGNORE:W0612
         cnt = 0 #IGNORE:W0612
-        dec = pylzma.decompressobj( maxlength=self._start+self.size )
+        dec = pylzma.decompressobj( maxlength = self._start + self.size )
         self._file.seek( self._src_start )
         dec.decompress( self._folder.coders[0]['properties'] )
         total = self.compressed #IGNORE:E1101
         if total is None:
-            remaining = self._start+self.size
+            remaining = self._start + self.size
             out = StringIO()
             while remaining > 0:
                 data = self._file.read( 1024 )
@@ -450,19 +450,19 @@ class ArchiveFile:
             
             data = out.getvalue()
         else:
-            data = dec.decompress( self._file.read( total ), self._start+self.size )
-        return data[self._start:self._start+self.size]
+            data = dec.decompress( self._file.read( total ), self._start + self.size )
+        return data[self._start:self._start + self.size]
 
     def read_size( self, toread ):
         data = ''
         idx = 0 #IGNORE:W0612
         cnt = 0 #IGNORE:W0612
-        dec = pylzma.decompressobj( maxlength=self._start+toread )
+        dec = pylzma.decompressobj( maxlength = self._start + toread )
         self._file.seek( self._src_start )
         dec.decompress( self._folder.coders[0]['properties'] )
         total = self.compressed #IGNORE:E1101
         if total is None:
-            remaining = self._start+toread
+            remaining = self._start + toread
             out = StringIO()
             while remaining > 0:
                 data = self._file.read( 1024 )
@@ -472,8 +472,8 @@ class ArchiveFile:
             
             data = out.getvalue()
         else:
-            data = dec.decompress( self._file.read( total ), self._start+toread )
-        return data[self._start:self._start+toread]
+            data = dec.decompress( self._file.read( total ), self._start + toread )
+        return data[self._start:self._start + toread]
         
     def checkcrc( self ):
         if self.digest is None:
@@ -530,7 +530,7 @@ class Archive7z( Base ):
                 props = folder.coders[0]['properties']
                 for idx in xrange( len( streams.packinfo.packsizes ) ):
                     tmp = file.read( streams.packinfo.packsizes[idx] )
-                    data += pylzma.decompress( props+tmp, maxlength=folder.unpacksizes[idx] )
+                    data += pylzma.decompress( props + tmp, maxlength = folder.unpacksizes[idx] )
                 
                 if folder.digestdefined:
                     if folder.crc != crc32( data ):
@@ -568,7 +568,7 @@ class Archive7z( Base ):
             if not info['emptystream']:
                 info['compressed'] = ( not self.solid and packsizes[obidx] ) or None
                 info['uncompressed'] = unpacksizes[obidx]
-                file = ArchiveFile( info, pos, src_pos, unpacksizes[obidx], folder, self, maxsize=maxsize )
+                file = ArchiveFile( info, pos, src_pos, unpacksizes[obidx], folder, self, maxsize = maxsize )
                 if subinfo.digestsdefined[obidx]:
                     file.digest = subinfo.digests[obidx]
                 self.files.append( file )
@@ -599,7 +599,7 @@ class Archive7z( Base ):
     def getnames( self ):
         return self.filenames
 
-    def list( self, verbose=True ):
+    def list( self, verbose = True ):
         print 'total %d files in %sarchive' % ( self.numfiles, ( self.solid and 'solid ' ) or '' )
         if not verbose:
             print '\n'.join( self.filenames )
@@ -607,7 +607,7 @@ class Archive7z( Base ):
             
         for f in self.files: #IGNORE:W0621
             extra = ( f.compressed and '%10d ' % ( f.compressed ) ) or ' '
-            print '%10d%s%s %s' % ( f.size, extra, hex( f.digest )[2:-1], f.filename )
+            print '%10d%s%s %s' % ( f.size, extra, hex( f.digest )[2: - 1], f.filename )
             
 if __name__ == '__main__':
     f = Archive7z( open( 'test.7z', 'rb' ) )

@@ -13,9 +13,9 @@ APP = ['RToolDS.py']
 DATA_FILES = ["ReadMe.txt", "License.txt", "RToolDS_Trimmed.dat.new", "ADVANsCEne_RToolDS.xml"]
 OPTIONS = {'argv_emulation': True}
 
-setup(
-    app=APP,
-    data_files=DATA_FILES,
-    options={'py2app': OPTIONS},
-    setup_requires=['py2app'],
-)
+setup( 
+    app = APP,
+    data_files = DATA_FILES,
+    options = {'py2app': OPTIONS},
+    setup_requires = ['py2app'],
+ )

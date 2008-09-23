@@ -23,7 +23,7 @@ def Load():
         return True
 
     File_Version = cPickle.load ( Config_File )
-    Config       = cPickle.load ( Config_File )
+    Config = cPickle.load ( Config_File )
     
     if File_Version != Config_Version:
         Load_Defaults ( File_Version )
@@ -60,10 +60,10 @@ def Save():
 def Load_Defaults( Version ):
     if Version < 1: # No Config File so set Version 1 Defaults
         Config ["Window_Size"] = ( 994, 726 )
-        Config ["Window_Position"] = ( -1, -1 )
+        Config ["Window_Position"] = ( - 1, - 1 )
         Config ["Window_Maximized"] = False
-        Config ["Sash_Position"] = -1
-        Config ["Sash_Position_Maximized"] = -1
+        Config ["Sash_Position"] = - 1
+        Config ["Sash_Position_Maximized"] = - 1
         Config ["Master_XML_URL"] = "http://www.advanscene.com/offline/datas/ADVANsCEne_RToolDS.zip"
         Config ["Master_XML_File"] = "ADVANsCEne_RToolDS.xml"
         Config ["Master_XML_Version_URL"] = "http://www.advanscene.com/offline/version/ADVANsCEne_RToolDS.txt"
@@ -74,20 +74,20 @@ def Load_Defaults( Version ):
         Config ["NFO_Path"] = ""
         Config ["Save_Path"] = ""
         Config ["Log_Size"] = ( 500, 400 )
-        Config ["Log_Position"] = ( -1, -1 )
+        Config ["Log_Position"] = ( - 1, - 1 )
         Config ["ROM_Extensions"] = [".nds"]
         Config ["Find_Unknown"] = True
         Config ["Unknown_Name"] = "ARCHIVE" # or "FILENAME" 
         Config ["Show_Alternate_Colours"] = True
         Config ["Alternate_Colour"] = wx.Color ( 245, 245, 245 )
-        Config ["Pending_Colour"] = wx.Color (173, 216, 230)
+        Config ["Pending_Colour"] = wx.Color ( 173, 216, 230 )
 
         Config ["Show_ROM_Size_In"] = "MegaBytes"
         Config ["RealTime_Search"] = True
         Config ["Current_Search"] = ""
         Config ["Filter_Location"] = 255
         Config ["Filter_Language"] = 0
-        Config ["Filter_Genre"] = _("All Genres")
+        Config ["Filter_Genre"] = _( "All Genres" )
         Config ["Filter_Size"] = 0
         Config ["Filter_Exact_Size"] = False
         Config ["Filter_Use_Exact_Sizes"] = False
@@ -120,129 +120,129 @@ def Load_Defaults( Version ):
         Config ["Sort_Reverse"] = False
         
         Config ["Show_XXXX_Files"] = True
-        Config ["Show_Unknown_Files"] =  True
+        Config ["Show_Unknown_Files"] = True
 
         Config ["Copy_Saves_with_ROM"] = True
         Config ["Device_Dirs_to_Search"] = ["NDS", "ROMS", "Games"]
         Config ["Search_Device_Subdirs"] = True
-        Config ["Exclude_Dirs_on_Device" ]      = ["Recycled", "System Volume Information"]
+        Config ["Exclude_Dirs_on_Device" ] = ["Recycled", "System Volume Information"]
         Config ["Exclude_Dirs_on_Device_Lower"] = ["recycled", "system volume information"]
 
         Config ["ROM_Extensions"] = [ ".nds" ]
         
         Config ["NFO_Size"] = ( 600, 500 )
-        Config ["NFO_Position"] = ( -1, -1 )
+        Config ["NFO_Position"] = ( - 1, - 1 )
         Config ["NFO_Zoom"] = 8
 
         Config ["Statistics_Size"] = ( 500, 400 )
-        Config ["Statistics_Position"] = ( -1, -1 )
+        Config ["Statistics_Position"] = ( - 1, - 1 )
         
         Config ["Safe_Trim"] = 188
         
-        Config ["Current_Tag"] = _("All ROMs")
+        Config ["Current_Tag"] = _( "All ROMs" )
         Config ["Last_Tag"] = ""
         
         Config ["Confirm_Delete"] = True
         
         Config ["First_Run"] = True
 
-        Config ["SGM_Position"] = ( -1, -1 )
+        Config ["SGM_Position"] = ( - 1, - 1 )
         Config ["SGM_Size"] = ( 600, 400 )
         Config ["SGM_Col_Sizes"] = [330, 25, 125, 100]
         Config ["Save_Games_to_Keep"] = 5
 
-        Config ["SC_Position"] = ( -1, -1 )
+        Config ["SC_Position"] = ( - 1, - 1 )
         Config ["SC_Size"] = ( 600, 400 )
-        Config ["SC_Col_Sizes"] = [-1, -1 ]
+        Config ["SC_Col_Sizes"] = [ - 1, - 1 ]
         Config ["Use_Save_Comments"] = True
 
-        Config ["Columns"] = ["Icon", "Release Number", "Name", "Size", "Trimmed", 
-                              "Saves", "Archive", "ROM File", "Location", "Genre", 
-                              "Original Size", "Release Group", "CRC", "Save Type", 
+        Config ["Columns"] = ["Icon", "Release Number", "Name", "Size", "Trimmed",
+                              "Saves", "Archive", "ROM File", "Location", "Genre",
+                              "Original Size", "Release Group", "CRC", "Save Type",
                               "Publisher", "Internal Name", "Serial", "Version", "Wi-Fi", "Tags" ]
-        Config ["ROMColumn_Titles"] = { "Icon":_( "Icon" ), "Release Number":_( "No" ), 
-                                        "Name":_( "Title" ), "Size":_( "Size" ), "Trimmed":_( "Trimmed" ), 
-                                        "Saves":_( "Saves" ), "Archive":_( "Archive" ), 
-                                        "ROM File":_( "ROM File" ), "Location":_( "Region" ), 
-                                        "Genre":_( "Genre" ), "Original Size":_( "Original Size" ), 
-                                        "Release Group":_( "Group" ), "CRC":_( "CRC" ), 
-                                        "Save Type":_( "Save Type" ), "Publisher":_( "Publisher" ), 
-                                        "Internal Name":_( "Internal Name" ), "Serial":_( "Serial" ), 
+        Config ["ROMColumn_Titles"] = { "Icon":_( "Icon" ), "Release Number":_( "No" ),
+                                        "Name":_( "Title" ), "Size":_( "Size" ), "Trimmed":_( "Trimmed" ),
+                                        "Saves":_( "Saves" ), "Archive":_( "Archive" ),
+                                        "ROM File":_( "ROM File" ), "Location":_( "Region" ),
+                                        "Genre":_( "Genre" ), "Original Size":_( "Original Size" ),
+                                        "Release Group":_( "Group" ), "CRC":_( "CRC" ),
+                                        "Save Type":_( "Save Type" ), "Publisher":_( "Publisher" ),
+                                        "Internal Name":_( "Internal Name" ), "Serial":_( "Serial" ),
                                         "Version":_( "Version" ), "Wi-Fi":_( "Wi-Fi" ), "Tags":_( "Tags" ) }
         Config ["ROMColumns"] = [ "Icon", "Release Number", "Name", "Size", "Trimmed", "Saves" ]
-        Config ["ROMColumn_Sizes"]  = {"Icon":36, "Release Number":37, "Name":265, "Size":53, "Saves":50, 
-                                       "Trimmed":37, "Archive":380, "ROM File":321, "Location":60, 
-                                       "Genre":76, "Original Size":54, "Release Group":70, "CRC":68, 
-                                       "Save Type":99, "Publisher":88, "Internal Name":105, "Serial":99, 
+        Config ["ROMColumn_Sizes"] = {"Icon":36, "Release Number":37, "Name":265, "Size":53, "Saves":50,
+                                       "Trimmed":37, "Archive":380, "ROM File":321, "Location":60,
+                                       "Genre":76, "Original Size":54, "Release Group":70, "CRC":68,
+                                       "Save Type":99, "Publisher":88, "Internal Name":105, "Serial":99,
                                        "Version":27, "Wi-Fi":37, "Tags":105 }
-        Config ["CartColumn_Titles"] = { "Icon":_( "Icon" ), "Release Number":_( "No" ), 
-                                        "Name":_( "Title" ), "Size":_( "Size" ), "Trimmed":_( "Trimmed" ), 
-                                        "Saves":_( "Saves" ), "Archive":_( "Archive" ), 
-                                        "ROM File":_( "ROM File" ), "Location":_( "Region" ), 
-                                        "Genre":_( "Genre" ), "Original Size":_( "Original Size" ), 
-                                        "Release Group":_( "Group" ), "CRC":_( "CRC" ), 
-                                        "Save Type":_( "Save Type" ), "Publisher":_( "Publisher" ), 
-                                        "Internal Name":_( "Internal Name" ), "Serial":_( "Serial" ), 
+        Config ["CartColumn_Titles"] = { "Icon":_( "Icon" ), "Release Number":_( "No" ),
+                                        "Name":_( "Title" ), "Size":_( "Size" ), "Trimmed":_( "Trimmed" ),
+                                        "Saves":_( "Saves" ), "Archive":_( "Archive" ),
+                                        "ROM File":_( "ROM File" ), "Location":_( "Region" ),
+                                        "Genre":_( "Genre" ), "Original Size":_( "Original Size" ),
+                                        "Release Group":_( "Group" ), "CRC":_( "CRC" ),
+                                        "Save Type":_( "Save Type" ), "Publisher":_( "Publisher" ),
+                                        "Internal Name":_( "Internal Name" ), "Serial":_( "Serial" ),
                                         "Version":_( "Version" ), "Wi-Fi":_( "Wi-Fi" ), "Tags":_( "Tags" ) }
         Config ["CartColumns"] = [ "Icon", "Release Number", "Name", "Size", "Saves" ]
-        Config ["CartColumn_Sizes"]  = {"Icon":36, "Release Number":37, "Name":265, "Size":53, 
-                                        "Saves":50, "Trimmed":37, "Archive":380, "ROM File":321, 
-                                        "Location":60, "Genre":76, "Original Size":54, 
-                                        "Release Group":70, "CRC":68, "Save Type":99, "Publisher":88, 
+        Config ["CartColumn_Sizes"] = {"Icon":36, "Release Number":37, "Name":265, "Size":53,
+                                        "Saves":50, "Trimmed":37, "Archive":380, "ROM File":321,
+                                        "Location":60, "Genre":76, "Original Size":54,
+                                        "Release Group":70, "CRC":68, "Save Type":99, "Publisher":88,
                                         "Internal Name":105, "Serial":99, "Version":27, "Wi-Fi":37, "Tags":105 }
         Config ["Languages"] = {
-                0:_("All Languages"), 
-                1:_("French"), 
-                2:_("English"), 
-                4:_("Chinese"), 
-                8:_("Danish"), 
-                16:_("Dutch"), 
-                32:_("Finnish"), 
-                64:_("German"), 
-                128:_("Italian"), 
-                256:_("Japanese"), 
-                512:_("Norwegian"), 
-                1024:_("Polish"), 
+                0:_( "All Languages" ),
+                1:_( "French" ),
+                2:_( "English" ),
+                4:_( "Chinese" ),
+                8:_( "Danish" ),
+                16:_( "Dutch" ),
+                32:_( "Finnish" ),
+                64:_( "German" ),
+                128:_( "Italian" ),
+                256:_( "Japanese" ),
+                512:_( "Norwegian" ),
+                1024:_( "Polish" ),
 #                2048:"Portuguese", 
-                4096:_("Spanish"), 
-                8192:_("Swedish"), 
+                4096:_( "Spanish" ),
+                8192:_( "Swedish" ),
 #                16384:"English (UK)", 
-                32768:_("Portuguese (BR)"), 
-                65536:_("Korean"),
-                131072:_("Russian"),
-                262144:_("Greek") }
+                32768:_( "Portuguese (BR)" ),
+                65536:_( "Korean" ),
+                131072:_( "Russian" ),
+                262144:_( "Greek" ) }
         Config ["Locations"] = {
-                255:_("All Regions"), 
-                0:_("Europe"), 
-                1:_("USA"), 
-                2:_("Germany"), 
-                3:_("China"), 
-                4:_("Spain"), 
-                5:_("France"), 
-                6:_("Italy"), 
-                7:_("Japan"), 
-                8:_("Netherlands"), 
-                9:_("England"), 
-                10:_("Denmark"), 
-                11:_("Finland"), 
-                12:_("Norway"), 
-                13:_("Poland"), 
-                14:_("Portugal"), 
-                15:_("Sweden"), 
-                16:_("Europe USA"), 
-                17:_("Europe USA Japan"), 
-                18:_("USA Japan"), 
-                19:_("Australia"), 
-                20:_("North Korea"), 
-                21:_("Brazil"), 
-                22:_("South Korea"), 
-                23:_("Europe Brazil"), 
-                24:_("Europe USA Brazil"), 
-                25:_("USA Brazil"),
-                26:_("Unknown"),
-                27:_("Russia") }
-        Config ["Sizes"] = [0, 8*1024*1024, 16*1024*1024, 24*1024*1024,
-                            32*1024*1024, 64*1024*1024, 128*1024*1024, 256*1024*1024 ]
+                255:_( "All Regions" ),
+                0:_( "Europe" ),
+                1:_( "USA" ),
+                2:_( "Germany" ),
+                3:_( "China" ),
+                4:_( "Spain" ),
+                5:_( "France" ),
+                6:_( "Italy" ),
+                7:_( "Japan" ),
+                8:_( "Netherlands" ),
+                9:_( "England" ),
+                10:_( "Denmark" ),
+                11:_( "Finland" ),
+                12:_( "Norway" ),
+                13:_( "Poland" ),
+                14:_( "Portugal" ),
+                15:_( "Sweden" ),
+                16:_( "Europe USA" ),
+                17:_( "Europe USA Japan" ),
+                18:_( "USA Japan" ),
+                19:_( "Australia" ),
+                20:_( "North Korea" ),
+                21:_( "Brazil" ),
+                22:_( "South Korea" ),
+                23:_( "Europe Brazil" ),
+                24:_( "Europe USA Brazil" ),
+                25:_( "USA Brazil" ),
+                26:_( "Unknown" ),
+                27:_( "Russia" ) }
+        Config ["Sizes"] = [0, 8 * 1024 * 1024, 16 * 1024 * 1024, 24 * 1024 * 1024,
+                            32 * 1024 * 1024, 64 * 1024 * 1024, 128 * 1024 * 1024, 256 * 1024 * 1024 ]
 
         Config ["Country_Codes"] = { "J":"JPN",
                                      'E':"USA",
@@ -315,7 +315,7 @@ def Load_Defaults( Version ):
         Config ["Parse_Subdirs"] = False
         Config ["Device_Dirs_to_Search"] = []
     if Version < 18:
-        Config ["Rename_Position"] = ( -1, -1 )
+        Config ["Rename_Position"] = ( - 1, - 1 )
         Config ["Rename_Size"] = ( 700, 400 )
     if Version < 19:
         Config ["Use_Rename_Popup"] = False
@@ -346,37 +346,37 @@ def Load_Defaults( Version ):
         Config ["Hide_Tags"] = True
     if Version < 23:
         Config ["Languages"] = {
-                0:_("All Languages"), 
-                4:_("Chinese"), 
-                8:_("Danish"), 
-                16:_("Dutch"), 
-                2:_("English"), 
-                32:_("Finnish"), 
-                1:_("French"), 
-                64:_("German"), 
-                262144:_("Greek"),
-                128:_("Italian"), 
-                256:_("Japanese"), 
-                65536:_("Korean"),
-                512:_("Norwegian"), 
-                1024:_("Polish"), 
-                32768:_("Portuguese"), 
+                0:_( "All Languages" ),
+                4:_( "Chinese" ),
+                8:_( "Danish" ),
+                16:_( "Dutch" ),
+                2:_( "English" ),
+                32:_( "Finnish" ),
+                1:_( "French" ),
+                64:_( "German" ),
+                262144:_( "Greek" ),
+                128:_( "Italian" ),
+                256:_( "Japanese" ),
+                65536:_( "Korean" ),
+                512:_( "Norwegian" ),
+                1024:_( "Polish" ),
+                32768:_( "Portuguese" ),
 #                2048:"Portuguese", 
-                131072:_("Russian"),
-                4096:_("Spanish"), 
-                8192:_("Swedish")} 
+                131072:_( "Russian" ),
+                4096:_( "Spanish" ),
+                8192:_( "Swedish" )} 
 #                16384:"English (UK)", 
         Config ["Locations"] = {
-                255:_("All Regions"), 
-                0:_("Europe"), 
-                1:_("USA"), 
-                2:_("Germany"), 
-                3:_("China"), 
-                4:_("Spain"), 
-                5:_("France"), 
-                6:_("Italy"), 
-                7:_("Japan"), 
-                8:_("Netherlands"), 
+                255:_( "All Regions" ),
+                0:_( "Europe" ),
+                1:_( "USA" ),
+                2:_( "Germany" ),
+                3:_( "China" ),
+                4:_( "Spain" ),
+                5:_( "France" ),
+                6:_( "Italy" ),
+                7:_( "Japan" ),
+                8:_( "Netherlands" ),
 #                9:_("England"), 
 #                10:_("Denmark"), 
 #                11:_("Finland"), 
@@ -387,15 +387,15 @@ def Load_Defaults( Version ):
 #                16:_("Europe USA"), 
 #                17:_("Europe USA Japan"), 
 #                18:_("USA Japan"), 
-                19:_("Australia"), 
+                19:_( "Australia" ),
 #                20:_("North Korea"), 
 #                21:_("Brazil"), 
-                22:_("South Korea"), 
+                22:_( "South Korea" ),
 #                23:_("Europe Brazil"), 
 #                24:_("Europe USA Brazil"), 
 #                25:_("USA Brazil"),
-                26:_("Unknown"),
-                27:_("Russia") }
+                26:_( "Unknown" ),
+                27:_( "Russia" ) }
         Config ["Country_Codes"] = { "E":"USA",
                                      "P":"EUR",
                                      "J":"JPN",
@@ -418,23 +418,23 @@ def Load_Defaults( Version ):
     if Version < 26:
         Config ["Save_Extensions"] = [ ".sav", ".duc", ".dss", ".0", ".dat" ]
     if Version < 27:
-        Config ["Columns"].append ("ROM File (No Ext)")
+        Config ["Columns"].append ( "ROM File (No Ext)" )
         Config ["ROMColumn_Titles"]["ROM File (No Ext)"] = "ROM File"
         Config ["ROMColumn_Sizes"]["ROM File (No Ext)"] = 321
         Config ["CartColumn_Titles"]["ROM File (No Ext)"] = "ROM File"
         Config ["CartColumn_Sizes"]["ROM File (No Ext)"] = 321
     if Version < 28:
-        Config ["Languages"][-1] = "Unknown"
+        Config ["Languages"][ - 1] = "Unknown"
     if Version < 29:
-        Config ["Sizes"] = [0, 8*1024*1024, 16*1024*1024,
-                            32*1024*1024, 64*1024*1024, 128*1024*1024, 256*1024*1024 ]
+        Config ["Sizes"] = [0, 8 * 1024 * 1024, 16 * 1024 * 1024,
+                            32 * 1024 * 1024, 64 * 1024 * 1024, 128 * 1024 * 1024, 256 * 1024 * 1024 ]
     if Version < 30:
-        Config ["Columns"].append ("Filename")
+        Config ["Columns"].append ( "Filename" )
         Config ["ROMColumn_Titles"]["Filename"] = "Filename"
         Config ["ROMColumn_Sizes"]["Filename"] = 99
         Config ["CartColumn_Titles"]["Filename"] = "Filename"
         Config ["CartColumn_Sizes"]["Filename"] = 99
-        Config ["Columns"].append ("Dumped")
+        Config ["Columns"].append ( "Dumped" )
         Config ["ROMColumn_Titles"]["Dumped"] = "Dumped"
         Config ["ROMColumn_Sizes"]["Dumped"] = 99
         Config ["CartColumn_Titles"]["Dumped"] = "Dumped"
@@ -446,13 +446,13 @@ def Load_Defaults( Version ):
     if Version < 32:
         Config ["Search_Method"] = 0
     if Version < 33:
-        Config ["Columns"].append ("Save Date")
+        Config ["Columns"].append ( "Save Date" )
         Config ["ROMColumn_Titles"]["Save Date"] = "Save Date"
         Config ["ROMColumn_Sizes"]["Save Date"] = 99
         Config ["CartColumn_Titles"]["Save Date"] = "Save Date"
         Config ["CartColumn_Sizes"]["Save Date"] = 99
     if Version < 34:
-        Config ["SC_Col_Sizes"] = [-1, -1, -1 ]
+        Config ["SC_Col_Sizes"] = [ - 1, - 1, - 1 ]
     if Version < 35:
         Config ["SC_Size"] = ( 800, 400 )
     if Version < 36:
@@ -552,6 +552,6 @@ def Load_Defaults( Version ):
 #            <imURL>http://www.retrocovers.com/offline/imgs/ADVANsCEne_NDS/</imURL>
 #            <icURL>http://www.advanscene.com/offline/imgs/NDSicon/</icURL>
 #            <ipsURL>http://www.advanscene.com/offline/ips/NDSips/</ipsURL>
-            Config ["imURL"]  = "http://www.retrocovers.com/offline/imgs/ADVANsCEne_NDS/"
-            Config ["icURL"]  = "http://www.advanscene.com/offline/imgs/NDSicon/"
+            Config ["imURL"] = "http://www.retrocovers.com/offline/imgs/ADVANsCEne_NDS/"
+            Config ["icURL"] = "http://www.advanscene.com/offline/imgs/NDSicon/"
             Config ["ipsURL"] = "http://www.advanscene.com/offline/ips/NDSips/"

@@ -41,20 +41,20 @@ import cWizard
 
 # end wxGlade
 
-STATUS_ROM    = 1
+STATUS_ROM = 1
 STATUS_DEVICE = 2
 STATUS_FILTER = 4
-STATUS_ALL    = 7
+STATUS_ALL = 7
 
 HIDDEN_ITEMS = 19
 
 # Various Toolbar Id's
-ID_TOGGLE_INFO   = wx.NewId()
+ID_TOGGLE_INFO = wx.NewId()
 ID_BROWSE_DEVICE = wx.NewId()
-ID_TAG_ADD       = wx.NewId()
-ID_TAG_REMOVE    = wx.NewId()
-ID_TAG_RENAME    = wx.NewId()
-ID_TAG_DELETE    = wx.NewId()
+ID_TAG_ADD = wx.NewId()
+ID_TAG_REMOVE = wx.NewId()
+ID_TAG_RENAME = wx.NewId()
+ID_TAG_DELETE = wx.NewId()
 
 class cMainFrame( wx.Frame ):
     def __init__( self, *args, **kwds ):
@@ -62,15 +62,15 @@ class cMainFrame( wx.Frame ):
         del kwds["DummyFrame"]
         self.In_Init = True
         # begin wxGlade: cMainFrame.__init__
-        kwds["style"] = wx.CAPTION|wx.CLOSE_BOX|wx.MINIMIZE_BOX|wx.MAXIMIZE_BOX|wx.SYSTEM_MENU|wx.RESIZE_BORDER|wx.TAB_TRAVERSAL|wx.CLIP_CHILDREN
-        wx.Frame.__init__(self, *args, **kwds)
-        self.MainFrame_Panel = wx.Panel(self, -1)
-        self.MainFrame_Splitter = wx.SplitterWindow(self.MainFrame_Panel, -1, style=wx.SP_LIVE_UPDATE)
-        self.Split_Panel2 = wx.Panel(self.MainFrame_Splitter, -1, style=wx.TAB_TRAVERSAL|wx.CLIP_CHILDREN)
-        self.Split_Panel1 = wx.Panel(self.MainFrame_Splitter, -1)
-        self.ROM_Information_Sizer_staticbox = wx.StaticBox(self.Split_Panel2, -1, _(" ROM Information "))
-        self.Device_Sizer_staticbox = wx.StaticBox(self.Split_Panel2, -1, _(" Linker Device "))
-        self.ROMList_Sizer_staticbox = wx.StaticBox(self.Split_Panel1, -1, _(" ROM List "))
+        kwds["style"] = wx.CAPTION | wx.CLOSE_BOX | wx.MINIMIZE_BOX | wx.MAXIMIZE_BOX | wx.SYSTEM_MENU | wx.RESIZE_BORDER | wx.TAB_TRAVERSAL | wx.CLIP_CHILDREN
+        wx.Frame.__init__( self, *args, **kwds )
+        self.MainFrame_Panel = wx.Panel( self, - 1 )
+        self.MainFrame_Splitter = wx.SplitterWindow( self.MainFrame_Panel, - 1, style = wx.SP_LIVE_UPDATE )
+        self.Split_Panel2 = wx.Panel( self.MainFrame_Splitter, - 1, style = wx.TAB_TRAVERSAL | wx.CLIP_CHILDREN )
+        self.Split_Panel1 = wx.Panel( self.MainFrame_Splitter, - 1 )
+        self.ROM_Information_Sizer_staticbox = wx.StaticBox( self.Split_Panel2, - 1, _( " ROM Information " ) )
+        self.Device_Sizer_staticbox = wx.StaticBox( self.Split_Panel2, - 1, _( " Linker Device " ) )
+        self.ROMList_Sizer_staticbox = wx.StaticBox( self.Split_Panel1, - 1, _( " ROM List " ) )
         
         # Menu Bar
         self.MenuBar = wx.MenuBar()
@@ -129,263 +129,263 @@ class cMainFrame( wx.Frame ):
         global ID_MENU_HIDE_LANGUAGE; ID_MENU_HIDE_LANGUAGE = wx.NewId()
         global ID_MENU_HIDE_TAGS; ID_MENU_HIDE_TAGS = wx.NewId()
         wxglade_tmp_menu = wx.Menu()
-        self.Copy_to_Device = wx.MenuItem(wxglade_tmp_menu, ID_MENU_COPY, _("Add ROMs to Device"), _("Add Selected ROMs to Device"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Copy_to_Device)
-        self.Delete_from_Device = wx.MenuItem(wxglade_tmp_menu, ID_MENU_DELETE, _("Delete ROMs from Device"), _("Delete Selected ROMs from Device"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Delete_from_Device)
-        self.Apply_Changes = wx.MenuItem(wxglade_tmp_menu, ID_MENU_APPLY, _("Apply Changes to Device"), _("Apply Changes to Device"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Apply_Changes)
+        self.Copy_to_Device = wx.MenuItem( wxglade_tmp_menu, ID_MENU_COPY, _( "Add ROMs to Device" ), _( "Add Selected ROMs to Device" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Copy_to_Device )
+        self.Delete_from_Device = wx.MenuItem( wxglade_tmp_menu, ID_MENU_DELETE, _( "Delete ROMs from Device" ), _( "Delete Selected ROMs from Device" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Delete_from_Device )
+        self.Apply_Changes = wx.MenuItem( wxglade_tmp_menu, ID_MENU_APPLY, _( "Apply Changes to Device" ), _( "Apply Changes to Device" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Apply_Changes )
         wxglade_tmp_menu.AppendSeparator()
-        self.Auto_Backup_Saved_Games = wx.MenuItem(wxglade_tmp_menu, ID_MENU_AUTO_BACKUP_SAVES, _("Auto Backup Save Games"), _("Auto Backup Save Games"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Auto_Backup_Saved_Games)
-        self.Copy_Saves_with_ROM = wx.MenuItem(wxglade_tmp_menu, ID_MENU_COPY_SAVES_WITH_ROM, _("Auto Copy Latest Save Game"), _("Auto Copy Latest Save Game"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Copy_Saves_with_ROM)
+        self.Auto_Backup_Saved_Games = wx.MenuItem( wxglade_tmp_menu, ID_MENU_AUTO_BACKUP_SAVES, _( "Auto Backup Save Games" ), _( "Auto Backup Save Games" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Auto_Backup_Saved_Games )
+        self.Copy_Saves_with_ROM = wx.MenuItem( wxglade_tmp_menu, ID_MENU_COPY_SAVES_WITH_ROM, _( "Auto Copy Latest Save Game" ), _( "Auto Copy Latest Save Game" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Copy_Saves_with_ROM )
         wxglade_tmp_menu.AppendSeparator()
-        self.Run_Startup_Wizard = wx.MenuItem(wxglade_tmp_menu, ID_MENU_WIZARD, _("Run Setup Wizard"), _("Run Setup Wizard"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Run_Startup_Wizard)
+        self.Run_Startup_Wizard = wx.MenuItem( wxglade_tmp_menu, ID_MENU_WIZARD, _( "Run Setup Wizard" ), _( "Run Setup Wizard" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Run_Startup_Wizard )
         wxglade_tmp_menu.AppendSeparator()
-        self.Options_Menu = wx.MenuItem(wxglade_tmp_menu, wx.ID_PREFERENCES, _("Options"), _("Options"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Options_Menu)
+        self.Options_Menu = wx.MenuItem( wxglade_tmp_menu, wx.ID_PREFERENCES, _( "Options" ), _( "Options" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Options_Menu )
         wxglade_tmp_menu.AppendSeparator()
-        wxglade_tmp_menu.Append(wx.ID_EXIT, _("&Quit\tCtrl+Q"), _("Quit the Application"), wx.ITEM_NORMAL)
-        self.MenuBar.Append(wxglade_tmp_menu, _("&File"))
+        wxglade_tmp_menu.Append( wx.ID_EXIT, _( "&Quit\tCtrl+Q" ), _( "Quit the Application" ), wx.ITEM_NORMAL )
+        self.MenuBar.Append( wxglade_tmp_menu, _( "&File" ) )
         wxglade_tmp_menu = wx.Menu()
-        self.ROM_Information = wx.MenuItem(wxglade_tmp_menu, ID_MENU_ROM_INFORMATION, _("ROM Information"), _("ROM Information"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.ROM_Information)
-        self.View_NFO_File = wx.MenuItem(wxglade_tmp_menu, ID_MENU_VIEW_NFO_FILE, _("View NFO File"), _("View NFO File"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.View_NFO_File)
-        self.Trim_Files = wx.MenuItem(wxglade_tmp_menu, ID_MENU_TRIM_FILES, _("Trim ROMs"), _("Trim ROMs"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Trim_Files)
-        self.UnTrim_Files = wx.MenuItem(wxglade_tmp_menu, ID_MENU_UNTRIM_FILES, _("UnTrim ROMs"), _("UnTrim ROMs"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.UnTrim_Files)
+        self.ROM_Information = wx.MenuItem( wxglade_tmp_menu, ID_MENU_ROM_INFORMATION, _( "ROM Information" ), _( "ROM Information" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.ROM_Information )
+        self.View_NFO_File = wx.MenuItem( wxglade_tmp_menu, ID_MENU_VIEW_NFO_FILE, _( "View NFO File" ), _( "View NFO File" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.View_NFO_File )
+        self.Trim_Files = wx.MenuItem( wxglade_tmp_menu, ID_MENU_TRIM_FILES, _( "Trim ROMs" ), _( "Trim ROMs" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Trim_Files )
+        self.UnTrim_Files = wx.MenuItem( wxglade_tmp_menu, ID_MENU_UNTRIM_FILES, _( "UnTrim ROMs" ), _( "UnTrim ROMs" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.UnTrim_Files )
         wxglade_tmp_menu.AppendSeparator()
-        self.Backup_All_Changed_Save_Games = wx.MenuItem(wxglade_tmp_menu, ID_MENU_BACKUP_ALL_SAVE_GAMES, _("Backup All Recent Save Games"), _("Backup All Recent Save Games"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Backup_All_Changed_Save_Games)
-        self.Backup_Save_Game = wx.MenuItem(wxglade_tmp_menu, ID_MENU_BACKUP_SAVE_GAME, _("Backup Selected Save Games"), _("Backup Selected Save Games"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Backup_Save_Game)
-        self.Import_Save_Game = wx.MenuItem(wxglade_tmp_menu, ID_MENU_IMPORT_SAVE_GAME, _("Import Save Game"), _("Import Save Game"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Import_Save_Game)
-        self.Save_Games_for_Selected_File = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SAVE_GAME_MANAGER_SELECTED, _("Save Games for Selected File"), _("Save Games for Selected File"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Save_Games_for_Selected_File)
-        self.Save_Game_Manager = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SAVE_GAME_MANAGER, _("Save Game Manager"), _("Save Game Manager"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.Save_Game_Manager)
+        self.Backup_All_Changed_Save_Games = wx.MenuItem( wxglade_tmp_menu, ID_MENU_BACKUP_ALL_SAVE_GAMES, _( "Backup All Recent Save Games" ), _( "Backup All Recent Save Games" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Backup_All_Changed_Save_Games )
+        self.Backup_Save_Game = wx.MenuItem( wxglade_tmp_menu, ID_MENU_BACKUP_SAVE_GAME, _( "Backup Selected Save Games" ), _( "Backup Selected Save Games" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Backup_Save_Game )
+        self.Import_Save_Game = wx.MenuItem( wxglade_tmp_menu, ID_MENU_IMPORT_SAVE_GAME, _( "Import Save Game" ), _( "Import Save Game" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Import_Save_Game )
+        self.Save_Games_for_Selected_File = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SAVE_GAME_MANAGER_SELECTED, _( "Save Games for Selected File" ), _( "Save Games for Selected File" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Save_Games_for_Selected_File )
+        self.Save_Game_Manager = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SAVE_GAME_MANAGER, _( "Save Game Manager" ), _( "Save Game Manager" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.Save_Game_Manager )
         wxglade_tmp_menu.AppendSeparator()
-        self.View_Statistics = wx.MenuItem(wxglade_tmp_menu, ID_MENU_VIEW_STATISTICS, _("View Statistics"), _("View Statistics"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.AppendItem(self.View_Statistics)
-        self.MenuBar.Append(wxglade_tmp_menu, _("&Actions"))
+        self.View_Statistics = wx.MenuItem( wxglade_tmp_menu, ID_MENU_VIEW_STATISTICS, _( "View Statistics" ), _( "View Statistics" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.AppendItem( self.View_Statistics )
+        self.MenuBar.Append( wxglade_tmp_menu, _( "&Actions" ) )
         wxglade_tmp_menu = wx.Menu()
-        wxglade_tmp_menu.Append(ID_MENU_UPDATE_EVERYTHING, _("Update Everything"), _("Update Everything"), wx.ITEM_NORMAL)
+        wxglade_tmp_menu.Append( ID_MENU_UPDATE_EVERYTHING, _( "Update Everything" ), _( "Update Everything" ), wx.ITEM_NORMAL )
         wxglade_tmp_menu.AppendSeparator()
-        wxglade_tmp_menu.Append(ID_MENU_UPDATE_MASTER_LIST, _("Update &Database"), _("Update Master List from Advanscene"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.Append(ID_MENU_UPDATE_ROMS, _("Find &New ROMs"), _("Find New ROMs"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.Append(ID_MENU_UPDATE_GFX, _("Update Image/NFO Database"), _("Update / Check Graphics"), wx.ITEM_NORMAL)
+        wxglade_tmp_menu.Append( ID_MENU_UPDATE_MASTER_LIST, _( "Update &Database" ), _( "Update Master List from Advanscene" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.Append( ID_MENU_UPDATE_ROMS, _( "Find &New ROMs" ), _( "Find New ROMs" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.Append( ID_MENU_UPDATE_GFX, _( "Update Image/NFO Database" ), _( "Update / Check Graphics" ), wx.ITEM_NORMAL )
         wxglade_tmp_menu.AppendSeparator()
-        wxglade_tmp_menu.Append(ID_MENU_RECOVER_TRIM, _("Recover Trimmed Sizes"), _("Recover Trimmed Sizes"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.Append(ID_MENU_RECOVER_TAGS, _("Recover Tags"), _("Recover Tags"), wx.ITEM_NORMAL)
-        self.MenuBar.Append(wxglade_tmp_menu, _("&Update"))
+        wxglade_tmp_menu.Append( ID_MENU_RECOVER_TRIM, _( "Recover Trimmed Sizes" ), _( "Recover Trimmed Sizes" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.Append( ID_MENU_RECOVER_TAGS, _( "Recover Tags" ), _( "Recover Tags" ), wx.ITEM_NORMAL )
+        self.MenuBar.Append( wxglade_tmp_menu, _( "&Update" ) )
         wxglade_tmp_menu = wx.Menu()
-        self.Show_Toolbar = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_TOOLBAR, _("Show Toolbar"), _("Show Toolbar"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Show_Toolbar)
+        self.Show_Toolbar = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SHOW_TOOLBAR, _( "Show Toolbar" ), _( "Show Toolbar" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Show_Toolbar )
         wxglade_tmp_menu_sub = wx.Menu()
-        self.Toolbar_Small = wx.MenuItem(wxglade_tmp_menu_sub, ID_MENU_TOOLBAR_SIZE_SMALL, _("Small"), _("Small Toolbar"), wx.ITEM_RADIO)
-        wxglade_tmp_menu_sub.AppendItem(self.Toolbar_Small)
-        self.Toolbar_Medium = wx.MenuItem(wxglade_tmp_menu_sub, ID_MENU_TOOLBAR_SIZE_MEDIUM, _("Medium"), _("Medium Toolbar"), wx.ITEM_RADIO)
-        wxglade_tmp_menu_sub.AppendItem(self.Toolbar_Medium)
-        self.Toolbar_Large = wx.MenuItem(wxglade_tmp_menu_sub, ID_MENU_TOOLBAR_SIZE_LARGE, _("Large"), _("Large Toolbar"), wx.ITEM_RADIO)
-        wxglade_tmp_menu_sub.AppendItem(self.Toolbar_Large)
-        wxglade_tmp_menu.AppendMenu(wx.NewId(), _("ToolbarSize"), wxglade_tmp_menu_sub, "")
+        self.Toolbar_Small = wx.MenuItem( wxglade_tmp_menu_sub, ID_MENU_TOOLBAR_SIZE_SMALL, _( "Small" ), _( "Small Toolbar" ), wx.ITEM_RADIO )
+        wxglade_tmp_menu_sub.AppendItem( self.Toolbar_Small )
+        self.Toolbar_Medium = wx.MenuItem( wxglade_tmp_menu_sub, ID_MENU_TOOLBAR_SIZE_MEDIUM, _( "Medium" ), _( "Medium Toolbar" ), wx.ITEM_RADIO )
+        wxglade_tmp_menu_sub.AppendItem( self.Toolbar_Medium )
+        self.Toolbar_Large = wx.MenuItem( wxglade_tmp_menu_sub, ID_MENU_TOOLBAR_SIZE_LARGE, _( "Large" ), _( "Large Toolbar" ), wx.ITEM_RADIO )
+        wxglade_tmp_menu_sub.AppendItem( self.Toolbar_Large )
+        wxglade_tmp_menu.AppendMenu( wx.NewId(), _( "ToolbarSize" ), wxglade_tmp_menu_sub, "" )
         wxglade_tmp_menu.AppendSeparator()
-        self.Show_Device_List = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_DEVICE_LIST, _("Show Device List"), _("Show Device List"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Show_Device_List)
-        self.Show_Search = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_SEARCH, _("Show Search Panel"), _("Show Search Panel"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Show_Search)
-        self.Show_Filter = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_FILTER, _("Show Filter Panel"), _("Show Filter Panel"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Show_Filter)
-        self.Show_Alternating_Colours = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_ALTERNATING_COLOURS, _("Show Alternating Colours"), _("Show Alternating Colours"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Show_Alternating_Colours)
+        self.Show_Device_List = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SHOW_DEVICE_LIST, _( "Show Device List" ), _( "Show Device List" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Show_Device_List )
+        self.Show_Search = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SHOW_SEARCH, _( "Show Search Panel" ), _( "Show Search Panel" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Show_Search )
+        self.Show_Filter = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SHOW_FILTER, _( "Show Filter Panel" ), _( "Show Filter Panel" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Show_Filter )
+        self.Show_Alternating_Colours = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SHOW_ALTERNATING_COLOURS, _( "Show Alternating Colours" ), _( "Show Alternating Colours" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Show_Alternating_Colours )
         wxglade_tmp_menu.AppendSeparator()
-        self.Use_Smaller_Pictures = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SMALL_PICTURES, _("Use Smaller Images"), _("Use Smaller Images"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Use_Smaller_Pictures)
+        self.Use_Smaller_Pictures = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SMALL_PICTURES, _( "Use Smaller Images" ), _( "Use Smaller Images" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Use_Smaller_Pictures )
         wxglade_tmp_menu.AppendSeparator()
-        self.Show_XXXX_Files = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_XXXX, _("Show XXXX ROMs"), _("Show XXXX (Demo) ROMs"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Show_XXXX_Files)
-        self.Show_Unknown_Files = wx.MenuItem(wxglade_tmp_menu, ID_MENU_SHOW_UNKNOWN, _("Show Unknown ROMs"), _("Show Unknown ROMs"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Show_Unknown_Files)
-        self.MenuBar.Append(wxglade_tmp_menu, _("&View"))
+        self.Show_XXXX_Files = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SHOW_XXXX, _( "Show XXXX ROMs" ), _( "Show XXXX (Demo) ROMs" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Show_XXXX_Files )
+        self.Show_Unknown_Files = wx.MenuItem( wxglade_tmp_menu, ID_MENU_SHOW_UNKNOWN, _( "Show Unknown ROMs" ), _( "Show Unknown ROMs" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Show_Unknown_Files )
+        self.MenuBar.Append( wxglade_tmp_menu, _( "&View" ) )
         wxglade_tmp_menu = wx.Menu()
-        wxglade_tmp_menu.Append(ID_MENU_SHOW_ALL, _("Show All Items"), _("Show All Items"), wx.ITEM_NORMAL)
-        wxglade_tmp_menu.Append(ID_MENU_HIDE_ALL, _("Hide All Items"), _("Hide All Items"), wx.ITEM_NORMAL)
+        wxglade_tmp_menu.Append( ID_MENU_SHOW_ALL, _( "Show All Items" ), _( "Show All Items" ), wx.ITEM_NORMAL )
+        wxglade_tmp_menu.Append( ID_MENU_HIDE_ALL, _( "Hide All Items" ), _( "Hide All Items" ), wx.ITEM_NORMAL )
         wxglade_tmp_menu.AppendSeparator()
-        self.Hide_Screenshots = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_SCREENSHOTS, _("Hide Screenshot Image"), _("Hide Screenshot Image"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Screenshots)
-        self.Hide_Case_Pictures = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_CASE_PICTURES, _("Hide Case Image"), _("Hide Case Image"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Case_Pictures)
-        self.Hide_Icon = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_ICON, _("Hide Icon"), _("Hide Icon"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Icon)
-        self.Hide_ReleaseNumber = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_RELEASENUMBER, _("Hide Release Number"), _("Hide Release Number"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_ReleaseNumber)
-        self.Hide_Title = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_TITLE, _("Hide Title"), _("Hide Title"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Title)
-        self.Hide_Location = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_LOCATION, _("Hide Region"), _("Hide Region"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Location)
-        self.Hide_Publisher = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_PUBLISHER, _("Hide Publisher"), _("Hide Publisher"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Publisher)
-        self.Hide_Release_Group = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_RELEASE_GROUP, _("Hide Release Group"), _("Hide Release Group"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Release_Group)
-        self.Hide_Genre = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_GENRE, _("Hide Genre"), _("Hide Genre"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Genre)
-        self.Hide_Internal_Name = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_INTERNAL_NAME, _("Hide Internal Name"), _("Hide Internal Name"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Internal_Name)
-        self.Hide_Serial = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_SERIAL, _("Hide Serial"), _("Hide Serial"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Serial)
-        self.Hide_Version = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_VERSION, _("Hide Version/Dumped"), _("Hide Version/Dumped"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Version)
-        self.Hide_CRC = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_CRC, _("Hide CRC"), _("Hide CRC"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_CRC)
-        self.Hide_Size = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_SIZE, _("Hide Size/Trimmed"), _("Hide Size/Trimmed"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Size)
-        self.Hide_Wifi = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_WIFI, _("Hide Wi-Fi"), _("Hide Wi-Fi"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Wifi)
-        self.Hide_Save_Game_Type = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_SAVE_GAME_TYPE, _("Hide Save Type"), _("Hide Save Type"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Save_Game_Type)
-        self.Hide_Backup_Save_Games = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_BACKUP_SAVE_GAMES, _("Hide Save Games"), _("Hide Save Games"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Backup_Save_Games)
-        self.Hide_Language = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_LANGUAGE, _("Hide Languages"), _("Hide Languages"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Language)
-        self.Hide_Tags = wx.MenuItem(wxglade_tmp_menu, ID_MENU_HIDE_TAGS, _("Hide Tags"), _("Hide Tags"), wx.ITEM_CHECK)
-        wxglade_tmp_menu.AppendItem(self.Hide_Tags)
-        self.MenuBar.Append(wxglade_tmp_menu, _("&Fields"))
+        self.Hide_Screenshots = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_SCREENSHOTS, _( "Hide Screenshot Image" ), _( "Hide Screenshot Image" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Screenshots )
+        self.Hide_Case_Pictures = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_CASE_PICTURES, _( "Hide Case Image" ), _( "Hide Case Image" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Case_Pictures )
+        self.Hide_Icon = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_ICON, _( "Hide Icon" ), _( "Hide Icon" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Icon )
+        self.Hide_ReleaseNumber = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_RELEASENUMBER, _( "Hide Release Number" ), _( "Hide Release Number" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_ReleaseNumber )
+        self.Hide_Title = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_TITLE, _( "Hide Title" ), _( "Hide Title" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Title )
+        self.Hide_Location = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_LOCATION, _( "Hide Region" ), _( "Hide Region" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Location )
+        self.Hide_Publisher = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_PUBLISHER, _( "Hide Publisher" ), _( "Hide Publisher" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Publisher )
+        self.Hide_Release_Group = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_RELEASE_GROUP, _( "Hide Release Group" ), _( "Hide Release Group" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Release_Group )
+        self.Hide_Genre = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_GENRE, _( "Hide Genre" ), _( "Hide Genre" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Genre )
+        self.Hide_Internal_Name = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_INTERNAL_NAME, _( "Hide Internal Name" ), _( "Hide Internal Name" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Internal_Name )
+        self.Hide_Serial = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_SERIAL, _( "Hide Serial" ), _( "Hide Serial" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Serial )
+        self.Hide_Version = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_VERSION, _( "Hide Version/Dumped" ), _( "Hide Version/Dumped" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Version )
+        self.Hide_CRC = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_CRC, _( "Hide CRC" ), _( "Hide CRC" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_CRC )
+        self.Hide_Size = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_SIZE, _( "Hide Size/Trimmed" ), _( "Hide Size/Trimmed" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Size )
+        self.Hide_Wifi = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_WIFI, _( "Hide Wi-Fi" ), _( "Hide Wi-Fi" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Wifi )
+        self.Hide_Save_Game_Type = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_SAVE_GAME_TYPE, _( "Hide Save Type" ), _( "Hide Save Type" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Save_Game_Type )
+        self.Hide_Backup_Save_Games = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_BACKUP_SAVE_GAMES, _( "Hide Save Games" ), _( "Hide Save Games" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Backup_Save_Games )
+        self.Hide_Language = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_LANGUAGE, _( "Hide Languages" ), _( "Hide Languages" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Language )
+        self.Hide_Tags = wx.MenuItem( wxglade_tmp_menu, ID_MENU_HIDE_TAGS, _( "Hide Tags" ), _( "Hide Tags" ), wx.ITEM_CHECK )
+        wxglade_tmp_menu.AppendItem( self.Hide_Tags )
+        self.MenuBar.Append( wxglade_tmp_menu, _( "&Fields" ) )
         self.Help_Menu1 = wx.Menu()
-        self.Help_Menu2 = wx.MenuItem(self.Help_Menu1, wx.NewId(), _("Contents"), _("Help"), wx.ITEM_NORMAL)
-        self.Help_Menu1.AppendItem(self.Help_Menu2)
-        self.About_Menu = wx.MenuItem(self.Help_Menu1, wx.ID_ABOUT, _("&About"), _("About"), wx.ITEM_NORMAL)
-        self.Help_Menu1.AppendItem(self.About_Menu)
-        self.MenuBar.Append(self.Help_Menu1, _("&Help"))
-        self.SetMenuBar(self.MenuBar)
+        self.Help_Menu2 = wx.MenuItem( self.Help_Menu1, wx.NewId(), _( "Contents" ), _( "Help" ), wx.ITEM_NORMAL )
+        self.Help_Menu1.AppendItem( self.Help_Menu2 )
+        self.About_Menu = wx.MenuItem( self.Help_Menu1, wx.ID_ABOUT, _( "&About" ), _( "About" ), wx.ITEM_NORMAL )
+        self.Help_Menu1.AppendItem( self.About_Menu )
+        self.MenuBar.Append( self.Help_Menu1, _( "&Help" ) )
+        self.SetMenuBar( self.MenuBar )
         # Menu Bar end
-        self.StatusBar = self.CreateStatusBar(3, wx.ST_SIZEGRIP)
+        self.StatusBar = self.CreateStatusBar( 3, wx.ST_SIZEGRIP )
         
         # Tool Bar
-        self.Toolbar = wx.ToolBar(self, -1)
-        self.SetToolBar(self.Toolbar)
+        self.Toolbar = wx.ToolBar( self, - 1 )
+        self.SetToolBar( self.Toolbar )
         # Tool Bar end
-        self.Search_Label = wx.StaticText(self.Split_Panel1, -1, _("Search :"))
-        self.Search_TextCtrl = wx.TextCtrl(self.Split_Panel1, -1, "", style=wx.TE_PROCESS_ENTER)
-        self.Search_Button = wx.Button(self.Split_Panel1, -1, _("Search"), style=wx.BU_EXACTFIT)
-        self.Clear_Button = wx.Button(self.Split_Panel1, -1, _("Clear"), style=wx.BU_EXACTFIT)
-        self.Clear_All_Button = wx.Button(self.Split_Panel1, -1, _("Clear All"), style=wx.BU_EXACTFIT)
-        self.Filter_Label = wx.StaticText(self.Split_Panel1, -1, _("Filter :"))
-        self.ROMList = cROMListCtrl(self.Split_Panel1, -1, style=wx.LC_REPORT|wx.LC_VIRTUAL|wx.SUNKEN_BORDER|wx.WANTS_CHARS)
-        self.Case_Bitmap = wx.StaticBitmap(self.Split_Panel2, -1, (GFX.catalog ["GFX_No_Case"].getBitmap()))
-        self.ScreenShot_Bitmap = wx.StaticBitmap(self.Split_Panel2, -1, (GFX.catalog ["GFX_No_ScreenShot"].getBitmap()))
-        self.ROM_Icon_Label = wx.StaticText(self.Split_Panel2, -1, _("Icon : "))
-        self.ROM_Icon = wx.StaticBitmap(self.Split_Panel2, -1, (GFX.catalog ["GFX_No_Icon"].getBitmap()))
-        self.ReleaseNumber = wx.StaticText(self.Split_Panel2, -1, _("Rel Num : "))
-        self.ROM_Title = wx.StaticText(self.Split_Panel2, -1, _("Title : "))
-        self.Location = wx.StaticText(self.Split_Panel2, -1, _("Region : "))
-        self.Publisher = wx.StaticText(self.Split_Panel2, -1, _("Publisher : "))
-        self.ReleaseGroup = wx.StaticText(self.Split_Panel2, -1, _("Release Group : "))
-        self.Genre = wx.StaticText(self.Split_Panel2, -1, _("Genre : "))
-        self.Internal_Name = wx.StaticText(self.Split_Panel2, -1, _("Internal Name : "))
-        self.Serial = wx.StaticText(self.Split_Panel2, -1, _("Serial : "))
-        self.Version = wx.StaticText(self.Split_Panel2, -1, _("Version : "))
-        self.ROMCRC = wx.StaticText(self.Split_Panel2, -1, _("CRC : "))
-        self.ROMSize = wx.StaticText(self.Split_Panel2, -1, _("Size : "))
-        self.Wifi = wx.StaticText(self.Split_Panel2, -1, _("Wi-Fi : "))
-        self.SaveType = wx.StaticText(self.Split_Panel2, -1, _("Save Type : "))
-        self.SavedGames = wx.StaticText(self.Split_Panel2, -1, _("Save Games : "))
-        self.Languages = wx.StaticText(self.Split_Panel2, -1, _("Languages : "))
-        self.Tags = wx.StaticText(self.Split_Panel2, -1, _("Tags : "))
-        self.Device_Dir_Picker = filebrowse.DirBrowseButton(self.Split_Panel2, -1, changeCallback = self.Device_Dir_Picker_Callback, dialogTitle = _("Select Device Directory") + " : ", startDirectory = Config.Config ["Device_Path"], labelText = _("Device") + " : ")
-        self.Device_Refresh_Button = wx.Button(self.Split_Panel2, -1, _("Refresh"), style=wx.BU_EXACTFIT)
-        self.Device_Apply_Button = wx.Button(self.Split_Panel2, -1, _("Apply"), style=wx.BU_EXACTFIT)
-        self.Device_List = cDeviceListCtrl(self.Split_Panel2, -1, style=wx.LC_REPORT|wx.LC_VIRTUAL|wx.SUNKEN_BORDER|wx.WANTS_CHARS)
+        self.Search_Label = wx.StaticText( self.Split_Panel1, - 1, _( "Search :" ) )
+        self.Search_TextCtrl = wx.TextCtrl( self.Split_Panel1, - 1, "", style = wx.TE_PROCESS_ENTER )
+        self.Search_Button = wx.Button( self.Split_Panel1, - 1, _( "Search" ), style = wx.BU_EXACTFIT )
+        self.Clear_Button = wx.Button( self.Split_Panel1, - 1, _( "Clear" ), style = wx.BU_EXACTFIT )
+        self.Clear_All_Button = wx.Button( self.Split_Panel1, - 1, _( "Clear All" ), style = wx.BU_EXACTFIT )
+        self.Filter_Label = wx.StaticText( self.Split_Panel1, - 1, _( "Filter :" ) )
+        self.ROMList = cROMListCtrl( self.Split_Panel1, - 1, style = wx.LC_REPORT | wx.LC_VIRTUAL | wx.SUNKEN_BORDER | wx.WANTS_CHARS )
+        self.Case_Bitmap = wx.StaticBitmap( self.Split_Panel2, - 1, ( GFX.catalog ["GFX_No_Case"].getBitmap() ) )
+        self.ScreenShot_Bitmap = wx.StaticBitmap( self.Split_Panel2, - 1, ( GFX.catalog ["GFX_No_ScreenShot"].getBitmap() ) )
+        self.ROM_Icon_Label = wx.StaticText( self.Split_Panel2, - 1, _( "Icon : " ) )
+        self.ROM_Icon = wx.StaticBitmap( self.Split_Panel2, - 1, ( GFX.catalog ["GFX_No_Icon"].getBitmap() ) )
+        self.ReleaseNumber = wx.StaticText( self.Split_Panel2, - 1, _( "Rel Num : " ) )
+        self.ROM_Title = wx.StaticText( self.Split_Panel2, - 1, _( "Title : " ) )
+        self.Location = wx.StaticText( self.Split_Panel2, - 1, _( "Region : " ) )
+        self.Publisher = wx.StaticText( self.Split_Panel2, - 1, _( "Publisher : " ) )
+        self.ReleaseGroup = wx.StaticText( self.Split_Panel2, - 1, _( "Release Group : " ) )
+        self.Genre = wx.StaticText( self.Split_Panel2, - 1, _( "Genre : " ) )
+        self.Internal_Name = wx.StaticText( self.Split_Panel2, - 1, _( "Internal Name : " ) )
+        self.Serial = wx.StaticText( self.Split_Panel2, - 1, _( "Serial : " ) )
+        self.Version = wx.StaticText( self.Split_Panel2, - 1, _( "Version : " ) )
+        self.ROMCRC = wx.StaticText( self.Split_Panel2, - 1, _( "CRC : " ) )
+        self.ROMSize = wx.StaticText( self.Split_Panel2, - 1, _( "Size : " ) )
+        self.Wifi = wx.StaticText( self.Split_Panel2, - 1, _( "Wi-Fi : " ) )
+        self.SaveType = wx.StaticText( self.Split_Panel2, - 1, _( "Save Type : " ) )
+        self.SavedGames = wx.StaticText( self.Split_Panel2, - 1, _( "Save Games : " ) )
+        self.Languages = wx.StaticText( self.Split_Panel2, - 1, _( "Languages : " ) )
+        self.Tags = wx.StaticText( self.Split_Panel2, - 1, _( "Tags : " ) )
+        self.Device_Dir_Picker = filebrowse.DirBrowseButton( self.Split_Panel2, - 1, changeCallback = self.Device_Dir_Picker_Callback, dialogTitle = _( "Select Device Directory" ) + " : ", startDirectory = Config.Config ["Device_Path"], labelText = _( "Device" ) + " : " )
+        self.Device_Refresh_Button = wx.Button( self.Split_Panel2, - 1, _( "Refresh" ), style = wx.BU_EXACTFIT )
+        self.Device_Apply_Button = wx.Button( self.Split_Panel2, - 1, _( "Apply" ), style = wx.BU_EXACTFIT )
+        self.Device_List = cDeviceListCtrl( self.Split_Panel2, - 1, style = wx.LC_REPORT | wx.LC_VIRTUAL | wx.SUNKEN_BORDER | wx.WANTS_CHARS )
 
         self.__set_properties()
         self.__do_layout()
 
-        self.Bind(wx.EVT_MENU, self.On_Copy_to_Device, self.Copy_to_Device)
-        self.Bind(wx.EVT_MENU, self.On_Delete_from_Device, self.Delete_from_Device)
-        self.Bind(wx.EVT_MENU, self.On_Apply_Changes, self.Apply_Changes)
-        self.Bind(wx.EVT_MENU, self.On_Auto_Backup_Saved_Games, self.Auto_Backup_Saved_Games)
-        self.Bind(wx.EVT_MENU, self.On_Copy_Saves_with_ROM, self.Copy_Saves_with_ROM)
-        self.Bind(wx.EVT_MENU, self.On_Run_Startup_Wizard, self.Run_Startup_Wizard)
-        self.Bind(wx.EVT_MENU, self.On_Options, self.Options_Menu)
-        self.Bind(wx.EVT_MENU, self.On_Menu_Quit, id=wx.ID_EXIT)
-        self.Bind(wx.EVT_MENU, self.On_ROM_Information, self.ROM_Information)
-        self.Bind(wx.EVT_MENU, self.On_View_NFO_File, self.View_NFO_File)
-        self.Bind(wx.EVT_MENU, self.On_Trim_Files, self.Trim_Files)
-        self.Bind(wx.EVT_MENU, self.On_UnTrim_Files, self.UnTrim_Files)
-        self.Bind(wx.EVT_MENU, self.On_Backup_All_Saves, self.Backup_All_Changed_Save_Games)
-        self.Bind(wx.EVT_MENU, self.On_Backup_Save_Game, self.Backup_Save_Game)
-        self.Bind(wx.EVT_MENU, self.On_Import_Save_Game, self.Import_Save_Game)
-        self.Bind(wx.EVT_MENU, self.On_Save_Games_for_Selected_File, self.Save_Games_for_Selected_File)
-        self.Bind(wx.EVT_MENU, self.On_Save_Game_Manager, self.Save_Game_Manager)
-        self.Bind(wx.EVT_MENU, self.On_View_Statistics, self.View_Statistics)
-        self.Bind(wx.EVT_MENU, self.On_Update_Everything, id=ID_MENU_UPDATE_EVERYTHING)
-        self.Bind(wx.EVT_MENU, self.On_Update_Master_List, id=ID_MENU_UPDATE_MASTER_LIST)
-        self.Bind(wx.EVT_MENU, self.On_Find_New_ROMS, id=ID_MENU_UPDATE_ROMS)
-        self.Bind(wx.EVT_MENU, self.On_Update_GFX, id=ID_MENU_UPDATE_GFX)
-        self.Bind(wx.EVT_MENU, self.On_Recover_Trimmed_Sizes, id=ID_MENU_RECOVER_TRIM)
-        self.Bind(wx.EVT_MENU, self.On_Recover_Tags, id=ID_MENU_RECOVER_TAGS)
-        self.Bind(wx.EVT_MENU, self.On_Show_Toolbar, self.Show_Toolbar)
-        self.Bind(wx.EVT_MENU, self.On_Toolbar_Size, self.Toolbar_Small)
-        self.Bind(wx.EVT_MENU, self.On_Toolbar_Size, self.Toolbar_Medium)
-        self.Bind(wx.EVT_MENU, self.On_Toolbar_Size, self.Toolbar_Large)
-        self.Bind(wx.EVT_MENU, self.On_Show_Device_List, self.Show_Device_List)
-        self.Bind(wx.EVT_MENU, self.On_Show_Search, self.Show_Search)
-        self.Bind(wx.EVT_MENU, self.On_Show_Filter, self.Show_Filter)
-        self.Bind(wx.EVT_MENU, self.On_Show_Alternating_Colours, self.Show_Alternating_Colours)
-        self.Bind(wx.EVT_MENU, self.On_Use_Smaller_Pictures, self.Use_Smaller_Pictures)
-        self.Bind(wx.EVT_MENU, self.On_Show_XXXX_Files, self.Show_XXXX_Files)
-        self.Bind(wx.EVT_MENU, self.On_Show_Unknown_Files, self.Show_Unknown_Files)
-        self.Bind(wx.EVT_MENU, self.On_Show_All_Items, id=ID_MENU_SHOW_ALL)
-        self.Bind(wx.EVT_MENU, self.On_Hide_All_Items, id=ID_MENU_HIDE_ALL)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Screenshots)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Case_Pictures)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Icon)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_ReleaseNumber)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Title)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Location)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Publisher)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Release_Group)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Genre)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Internal_Name)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Serial)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Version)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_CRC)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Size)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Wifi)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Save_Game_Type)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Backup_Save_Games)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Language)
-        self.Bind(wx.EVT_MENU, self.On_Hide_Item, self.Hide_Tags)
-        self.Bind(wx.EVT_MENU, self.On_Help, self.Help_Menu2)
-        self.Bind(wx.EVT_MENU, self.On_About, self.About_Menu)
-        self.Bind(wx.EVT_TEXT_ENTER, self.On_Search, self.Search_TextCtrl)
-        self.Bind(wx.EVT_TEXT, self.On_Search_Text, self.Search_TextCtrl)
-        self.Bind(wx.EVT_BUTTON, self.On_Search, self.Search_Button)
-        self.Bind(wx.EVT_BUTTON, self.On_Search_Clear, self.Clear_Button)
-        self.Bind(wx.EVT_BUTTON, self.On_Search_Clear_All, self.Clear_All_Button)
-        self.Bind(wx.EVT_LIST_BEGIN_DRAG, self.On_ROMList_Begin_Drag, self.ROMList)
-        self.Bind(wx.EVT_LIST_ITEM_FOCUSED, self.On_List_Item_Focused, self.ROMList)
-        self.Bind(wx.EVT_LIST_COL_CLICK, self.On_List_Col_Click, self.ROMList)
-        self.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.On_ROM_Information, self.ROMList)
-        self.Bind(wx.EVT_LIST_ITEM_SELECTED, self.On_List_Item_Selected, self.ROMList)
-        self.Bind(wx.EVT_LIST_COL_END_DRAG, self.On_List_Col_Resize, self.ROMList)
-        self.Bind(wx.EVT_LIST_ITEM_DESELECTED, self.On_List_Item_Deselected, self.ROMList)
-        self.Bind(wx.EVT_LIST_ITEM_RIGHT_CLICK, self.On_ROMList_Right_Click, self.ROMList)
-        self.Bind(wx.EVT_BUTTON, self.On_Device_Refresh, self.Device_Refresh_Button)
-        self.Bind(wx.EVT_BUTTON, self.On_Device_Apply, self.Device_Apply_Button)
-        self.Bind(wx.EVT_LIST_ITEM_SELECTED, self.On_List_Item_Selected, self.Device_List)
-        self.Bind(wx.EVT_LIST_ITEM_FOCUSED, self.On_List_Item_Focused, self.Device_List)
-        self.Bind(wx.EVT_LIST_COL_CLICK, self.On_Device_List_Col_Click, self.Device_List)
-        self.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.On_ROM_Information, self.Device_List)
-        self.Bind(wx.EVT_LIST_COL_END_DRAG, self.On_List_Col_Resize, self.Device_List)
-        self.Bind(wx.EVT_LIST_ITEM_DESELECTED, self.On_List_Item_Deselected, self.Device_List)
-        self.Bind(wx.EVT_SPLITTER_SASH_POS_CHANGING, self.On_Sash_Changed, self.MainFrame_Splitter)
-        self.Bind(wx.EVT_SPLITTER_SASH_POS_CHANGED, self.On_Sash_Changed, self.MainFrame_Splitter)
-        self.Bind(wx.EVT_SPLITTER_DCLICK, self.On_Sash_Dbl_Clock, self.MainFrame_Splitter)
+        self.Bind( wx.EVT_MENU, self.On_Copy_to_Device, self.Copy_to_Device )
+        self.Bind( wx.EVT_MENU, self.On_Delete_from_Device, self.Delete_from_Device )
+        self.Bind( wx.EVT_MENU, self.On_Apply_Changes, self.Apply_Changes )
+        self.Bind( wx.EVT_MENU, self.On_Auto_Backup_Saved_Games, self.Auto_Backup_Saved_Games )
+        self.Bind( wx.EVT_MENU, self.On_Copy_Saves_with_ROM, self.Copy_Saves_with_ROM )
+        self.Bind( wx.EVT_MENU, self.On_Run_Startup_Wizard, self.Run_Startup_Wizard )
+        self.Bind( wx.EVT_MENU, self.On_Options, self.Options_Menu )
+        self.Bind( wx.EVT_MENU, self.On_Menu_Quit, id = wx.ID_EXIT )
+        self.Bind( wx.EVT_MENU, self.On_ROM_Information, self.ROM_Information )
+        self.Bind( wx.EVT_MENU, self.On_View_NFO_File, self.View_NFO_File )
+        self.Bind( wx.EVT_MENU, self.On_Trim_Files, self.Trim_Files )
+        self.Bind( wx.EVT_MENU, self.On_UnTrim_Files, self.UnTrim_Files )
+        self.Bind( wx.EVT_MENU, self.On_Backup_All_Saves, self.Backup_All_Changed_Save_Games )
+        self.Bind( wx.EVT_MENU, self.On_Backup_Save_Game, self.Backup_Save_Game )
+        self.Bind( wx.EVT_MENU, self.On_Import_Save_Game, self.Import_Save_Game )
+        self.Bind( wx.EVT_MENU, self.On_Save_Games_for_Selected_File, self.Save_Games_for_Selected_File )
+        self.Bind( wx.EVT_MENU, self.On_Save_Game_Manager, self.Save_Game_Manager )
+        self.Bind( wx.EVT_MENU, self.On_View_Statistics, self.View_Statistics )
+        self.Bind( wx.EVT_MENU, self.On_Update_Everything, id = ID_MENU_UPDATE_EVERYTHING )
+        self.Bind( wx.EVT_MENU, self.On_Update_Master_List, id = ID_MENU_UPDATE_MASTER_LIST )
+        self.Bind( wx.EVT_MENU, self.On_Find_New_ROMS, id = ID_MENU_UPDATE_ROMS )
+        self.Bind( wx.EVT_MENU, self.On_Update_GFX, id = ID_MENU_UPDATE_GFX )
+        self.Bind( wx.EVT_MENU, self.On_Recover_Trimmed_Sizes, id = ID_MENU_RECOVER_TRIM )
+        self.Bind( wx.EVT_MENU, self.On_Recover_Tags, id = ID_MENU_RECOVER_TAGS )
+        self.Bind( wx.EVT_MENU, self.On_Show_Toolbar, self.Show_Toolbar )
+        self.Bind( wx.EVT_MENU, self.On_Toolbar_Size, self.Toolbar_Small )
+        self.Bind( wx.EVT_MENU, self.On_Toolbar_Size, self.Toolbar_Medium )
+        self.Bind( wx.EVT_MENU, self.On_Toolbar_Size, self.Toolbar_Large )
+        self.Bind( wx.EVT_MENU, self.On_Show_Device_List, self.Show_Device_List )
+        self.Bind( wx.EVT_MENU, self.On_Show_Search, self.Show_Search )
+        self.Bind( wx.EVT_MENU, self.On_Show_Filter, self.Show_Filter )
+        self.Bind( wx.EVT_MENU, self.On_Show_Alternating_Colours, self.Show_Alternating_Colours )
+        self.Bind( wx.EVT_MENU, self.On_Use_Smaller_Pictures, self.Use_Smaller_Pictures )
+        self.Bind( wx.EVT_MENU, self.On_Show_XXXX_Files, self.Show_XXXX_Files )
+        self.Bind( wx.EVT_MENU, self.On_Show_Unknown_Files, self.Show_Unknown_Files )
+        self.Bind( wx.EVT_MENU, self.On_Show_All_Items, id = ID_MENU_SHOW_ALL )
+        self.Bind( wx.EVT_MENU, self.On_Hide_All_Items, id = ID_MENU_HIDE_ALL )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Screenshots )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Case_Pictures )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Icon )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_ReleaseNumber )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Title )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Location )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Publisher )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Release_Group )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Genre )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Internal_Name )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Serial )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Version )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_CRC )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Size )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Wifi )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Save_Game_Type )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Backup_Save_Games )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Language )
+        self.Bind( wx.EVT_MENU, self.On_Hide_Item, self.Hide_Tags )
+        self.Bind( wx.EVT_MENU, self.On_Help, self.Help_Menu2 )
+        self.Bind( wx.EVT_MENU, self.On_About, self.About_Menu )
+        self.Bind( wx.EVT_TEXT_ENTER, self.On_Search, self.Search_TextCtrl )
+        self.Bind( wx.EVT_TEXT, self.On_Search_Text, self.Search_TextCtrl )
+        self.Bind( wx.EVT_BUTTON, self.On_Search, self.Search_Button )
+        self.Bind( wx.EVT_BUTTON, self.On_Search_Clear, self.Clear_Button )
+        self.Bind( wx.EVT_BUTTON, self.On_Search_Clear_All, self.Clear_All_Button )
+        self.Bind( wx.EVT_LIST_BEGIN_DRAG, self.On_ROMList_Begin_Drag, self.ROMList )
+        self.Bind( wx.EVT_LIST_ITEM_FOCUSED, self.On_List_Item_Focused, self.ROMList )
+        self.Bind( wx.EVT_LIST_COL_CLICK, self.On_List_Col_Click, self.ROMList )
+        self.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.On_ROM_Information, self.ROMList )
+        self.Bind( wx.EVT_LIST_ITEM_SELECTED, self.On_List_Item_Selected, self.ROMList )
+        self.Bind( wx.EVT_LIST_COL_END_DRAG, self.On_List_Col_Resize, self.ROMList )
+        self.Bind( wx.EVT_LIST_ITEM_DESELECTED, self.On_List_Item_Deselected, self.ROMList )
+        self.Bind( wx.EVT_LIST_ITEM_RIGHT_CLICK, self.On_ROMList_Right_Click, self.ROMList )
+        self.Bind( wx.EVT_BUTTON, self.On_Device_Refresh, self.Device_Refresh_Button )
+        self.Bind( wx.EVT_BUTTON, self.On_Device_Apply, self.Device_Apply_Button )
+        self.Bind( wx.EVT_LIST_ITEM_SELECTED, self.On_List_Item_Selected, self.Device_List )
+        self.Bind( wx.EVT_LIST_ITEM_FOCUSED, self.On_List_Item_Focused, self.Device_List )
+        self.Bind( wx.EVT_LIST_COL_CLICK, self.On_Device_List_Col_Click, self.Device_List )
+        self.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.On_ROM_Information, self.Device_List )
+        self.Bind( wx.EVT_LIST_COL_END_DRAG, self.On_List_Col_Resize, self.Device_List )
+        self.Bind( wx.EVT_LIST_ITEM_DESELECTED, self.On_List_Item_Deselected, self.Device_List )
+        self.Bind( wx.EVT_SPLITTER_SASH_POS_CHANGING, self.On_Sash_Changed, self.MainFrame_Splitter )
+        self.Bind( wx.EVT_SPLITTER_SASH_POS_CHANGED, self.On_Sash_Changed, self.MainFrame_Splitter )
+        self.Bind( wx.EVT_SPLITTER_DCLICK, self.On_Sash_Dbl_Clock, self.MainFrame_Splitter )
         # end wxGlade
 
         if self.Aborted == False:
@@ -412,8 +412,8 @@ class cMainFrame( wx.Frame ):
             
             self.Bind ( wx.EVT_CLOSE, self.On_Close )
             
-            self.Device_List.Bind (wx.EVT_CONTEXT_MENU, self.On_Device_List_Context_Menu)
-            self.ROMList.Bind     (wx.EVT_CONTEXT_MENU, self.On_ROMList_Context_Menu)
+            self.Device_List.Bind ( wx.EVT_CONTEXT_MENU, self.On_Device_List_Context_Menu )
+            self.ROMList.Bind     ( wx.EVT_CONTEXT_MENU, self.On_ROMList_Context_Menu )
             
             self.In_Init = False
     
@@ -426,17 +426,17 @@ class cMainFrame( wx.Frame ):
         
     def __set_properties( self ):
         # begin wxGlade: cMainFrame.__set_properties
-        self.SetTitle(_("RToolDS"))
+        self.SetTitle( _( "RToolDS" ) )
         _icon = wx.EmptyIcon()
-        _icon.CopyFromBitmap(GFX.catalog ["GFX_Icon"].getBitmap())
-        self.SetIcon(_icon)
-        self.SetSize((740, 566))
+        _icon.CopyFromBitmap( GFX.catalog ["GFX_Icon"].getBitmap() )
+        self.SetIcon( _icon )
+        self.SetSize( ( 740, 566 ) )
         self.SetFocus()
-        self.StatusBar.SetStatusWidths([-1, -1, -1])
+        self.StatusBar.SetStatusWidths( [ - 1, - 1, - 1] )
         # statusbar fields
         StatusBar_fields = ["", "", ""]
-        for i in range(len(StatusBar_fields)):
-            self.StatusBar.SetStatusText(StatusBar_fields[i], i)
+        for i in range( len( StatusBar_fields ) ):
+            self.StatusBar.SetStatusText( StatusBar_fields[i], i )
         self.Toolbar.Realize()
         self.ROMList.SetFocus()
         # end wxGlade
@@ -466,104 +466,104 @@ class cMainFrame( wx.Frame ):
         self.ScreenShot_Bitmap.Refresh()
         
         # begin wxGlade: cMainFrame.__do_layout
-        MainFrame_Sizer1 = wx.BoxSizer(wx.VERTICAL)
-        MainFrame_Sizer2 = wx.BoxSizer(wx.HORIZONTAL)
-        SplitPanel2_Sizer = wx.FlexGridSizer(2, 1, 0, 0)
-        Device_Sizer = wx.StaticBoxSizer(self.Device_Sizer_staticbox, wx.HORIZONTAL)
-        Device_Sizer2 = wx.FlexGridSizer(2, 1, 0, 0)
-        Device_Sizer3 = wx.FlexGridSizer(1, 3, 0, 0)
-        ROM_Information_Sizer = wx.StaticBoxSizer(self.ROM_Information_Sizer_staticbox, wx.HORIZONTAL)
-        ROM_Information_Sizer2 = wx.FlexGridSizer(2, 1, 0, 0)
-        sizer_8 = wx.FlexGridSizer(10, 1, 0, 0)
-        grid_sizer_5 = wx.GridSizer(1, 1, 0, 0)
-        grid_sizer_8 = wx.GridSizer(1, 2, 0, 0)
-        grid_sizer_9 = wx.GridSizer(1, 2, 0, 0)
-        grid_sizer_12 = wx.GridSizer(1, 2, 0, 0)
-        grid_sizer_13 = wx.GridSizer(1, 2, 0, 0)
-        grid_sizer_14 = wx.GridSizer(1, 2, 0, 0)
-        grid_sizer_15 = wx.GridSizer(1, 2, 0, 0)
-        grid_sizer_16 = wx.GridSizer(1, 1, 0, 0)
-        grid_sizer_21 = wx.GridSizer(1, 2, 0, 0)
-        ROM_Icon_Sizer = wx.FlexGridSizer(1, 2, 0, 0)
-        Picture_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        ROMList_Sizer = wx.StaticBoxSizer(self.ROMList_Sizer_staticbox, wx.HORIZONTAL)
-        ROMList_Sizer2 = wx.FlexGridSizer(2, 1, 0, 0)
-        Search_Filter_Sizer1 = wx.FlexGridSizer(2, 2, 0, 0)
-        Filter_Sizer = wx.FlexGridSizer(2, 4, 0, 0)
-        Search_Sizer = wx.FlexGridSizer(1, 4, 0, 0)
-        Search_Filter_Sizer1.Add(self.Search_Label, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 3)
-        Search_Sizer.Add(self.Search_TextCtrl, 0, wx.ALL|wx.EXPAND|wx.FIXED_MINSIZE, 3)
-        Search_Sizer.Add(self.Search_Button, 0, wx.ALL, 3)
-        Search_Sizer.Add(self.Clear_Button, 0, wx.ALL, 3)
-        Search_Sizer.Add(self.Clear_All_Button, 0, wx.ALL, 3)
-        Search_Sizer.AddGrowableCol(0)
-        Search_Filter_Sizer1.Add(Search_Sizer, 1, wx.EXPAND, 0)
-        Search_Filter_Sizer1.Add(self.Filter_Label, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 3)
-        Search_Filter_Sizer1.Add(Filter_Sizer, 1, wx.EXPAND, 0)
-        Search_Filter_Sizer1.AddGrowableCol(1)
-        ROMList_Sizer2.Add(Search_Filter_Sizer1, 1, wx.EXPAND, 0)
-        ROMList_Sizer2.Add(self.ROMList, 1, wx.EXPAND, 0)
-        ROMList_Sizer2.AddGrowableRow(1)
-        ROMList_Sizer2.AddGrowableCol(0)
-        ROMList_Sizer.Add(ROMList_Sizer2, 1, wx.EXPAND, 0)
-        self.Split_Panel1.SetSizer(ROMList_Sizer)
-        Picture_Sizer.Add(self.Case_Bitmap, 0, wx.RIGHT, 6)
-        Picture_Sizer.Add(self.ScreenShot_Bitmap, 0, 0, 0)
-        ROM_Information_Sizer2.Add(Picture_Sizer, 1, wx.EXPAND, 0)
-        ROM_Icon_Sizer.Add(self.ROM_Icon_Label, 0, wx.LEFT|wx.TOP|wx.BOTTOM, 3)
-        ROM_Icon_Sizer.Add(self.ROM_Icon, 0, wx.TOP, 3)
-        ROM_Icon_Sizer.AddGrowableRow(0)
-        ROM_Icon_Sizer.AddGrowableCol(1)
-        grid_sizer_21.Add(ROM_Icon_Sizer, 1, wx.EXPAND, 0)
-        grid_sizer_21.Add(self.ReleaseNumber, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.Add(grid_sizer_21, 1, wx.EXPAND, 0)
-        grid_sizer_16.Add(self.ROM_Title, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.Add(grid_sizer_16, 1, wx.EXPAND, 0)
-        grid_sizer_15.Add(self.Location, 0, wx.ALL|wx.EXPAND, 3)
-        grid_sizer_15.Add(self.Publisher, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.Add(grid_sizer_15, 1, wx.EXPAND, 0)
-        grid_sizer_14.Add(self.ReleaseGroup, 0, wx.ALL|wx.EXPAND, 3)
-        grid_sizer_14.Add(self.Genre, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.Add(grid_sizer_14, 1, wx.EXPAND, 0)
-        grid_sizer_13.Add(self.Internal_Name, 0, wx.ALL|wx.EXPAND, 3)
-        grid_sizer_13.Add(self.Serial, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.Add(grid_sizer_13, 1, wx.EXPAND, 0)
-        grid_sizer_12.Add(self.Version, 0, wx.ALL|wx.EXPAND, 3)
-        grid_sizer_12.Add(self.ROMCRC, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.Add(grid_sizer_12, 1, wx.EXPAND, 0)
-        grid_sizer_9.Add(self.ROMSize, 0, wx.ALL|wx.EXPAND, 3)
-        grid_sizer_9.Add(self.Wifi, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.Add(grid_sizer_9, 1, wx.EXPAND, 0)
-        grid_sizer_8.Add(self.SaveType, 0, wx.ALL|wx.EXPAND, 3)
-        grid_sizer_8.Add(self.SavedGames, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.Add(grid_sizer_8, 1, wx.EXPAND, 0)
-        grid_sizer_5.Add(self.Languages, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.Add(grid_sizer_5, 1, wx.EXPAND, 0)
-        sizer_8.Add(self.Tags, 0, wx.ALL|wx.EXPAND, 3)
-        sizer_8.AddGrowableCol(0)
-        ROM_Information_Sizer2.Add(sizer_8, 1, wx.EXPAND, 0)
-        ROM_Information_Sizer2.AddGrowableRow(0)
-        ROM_Information_Sizer2.AddGrowableCol(0)
-        ROM_Information_Sizer.Add(ROM_Information_Sizer2, 1, wx.EXPAND, 0)
-        SplitPanel2_Sizer.Add(ROM_Information_Sizer, 1, wx.EXPAND, 0)
-        Device_Sizer3.Add(self.Device_Dir_Picker, 0, wx.RIGHT|wx.TOP|wx.BOTTOM|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 3)
-        Device_Sizer3.Add(self.Device_Refresh_Button, 0, wx.LEFT|wx.RIGHT|wx.ALIGN_CENTER_VERTICAL, 3)
-        Device_Sizer3.Add(self.Device_Apply_Button, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 3)
-        Device_Sizer3.AddGrowableCol(0)
-        Device_Sizer2.Add(Device_Sizer3, 1, wx.EXPAND, 0)
-        Device_Sizer2.Add(self.Device_List, 1, wx.EXPAND, 0)
-        Device_Sizer2.AddGrowableRow(1)
-        Device_Sizer2.AddGrowableCol(0)
-        Device_Sizer.Add(Device_Sizer2, 1, wx.EXPAND, 0)
-        SplitPanel2_Sizer.Add(Device_Sizer, 1, wx.EXPAND, 0)
-        self.Split_Panel2.SetSizer(SplitPanel2_Sizer)
-        SplitPanel2_Sizer.AddGrowableRow(1)
-        SplitPanel2_Sizer.AddGrowableCol(0)
-        self.MainFrame_Splitter.SplitVertically(self.Split_Panel1, self.Split_Panel2)
-        MainFrame_Sizer2.Add(self.MainFrame_Splitter, 1, wx.ALL|wx.EXPAND, 3)
-        self.MainFrame_Panel.SetSizer(MainFrame_Sizer2)
-        MainFrame_Sizer1.Add(self.MainFrame_Panel, 1, wx.EXPAND, 0)
-        self.SetSizer(MainFrame_Sizer1)
+        MainFrame_Sizer1 = wx.BoxSizer( wx.VERTICAL )
+        MainFrame_Sizer2 = wx.BoxSizer( wx.HORIZONTAL )
+        SplitPanel2_Sizer = wx.FlexGridSizer( 2, 1, 0, 0 )
+        Device_Sizer = wx.StaticBoxSizer( self.Device_Sizer_staticbox, wx.HORIZONTAL )
+        Device_Sizer2 = wx.FlexGridSizer( 2, 1, 0, 0 )
+        Device_Sizer3 = wx.FlexGridSizer( 1, 3, 0, 0 )
+        ROM_Information_Sizer = wx.StaticBoxSizer( self.ROM_Information_Sizer_staticbox, wx.HORIZONTAL )
+        ROM_Information_Sizer2 = wx.FlexGridSizer( 2, 1, 0, 0 )
+        sizer_8 = wx.FlexGridSizer( 10, 1, 0, 0 )
+        grid_sizer_5 = wx.GridSizer( 1, 1, 0, 0 )
+        grid_sizer_8 = wx.GridSizer( 1, 2, 0, 0 )
+        grid_sizer_9 = wx.GridSizer( 1, 2, 0, 0 )
+        grid_sizer_12 = wx.GridSizer( 1, 2, 0, 0 )
+        grid_sizer_13 = wx.GridSizer( 1, 2, 0, 0 )
+        grid_sizer_14 = wx.GridSizer( 1, 2, 0, 0 )
+        grid_sizer_15 = wx.GridSizer( 1, 2, 0, 0 )
+        grid_sizer_16 = wx.GridSizer( 1, 1, 0, 0 )
+        grid_sizer_21 = wx.GridSizer( 1, 2, 0, 0 )
+        ROM_Icon_Sizer = wx.FlexGridSizer( 1, 2, 0, 0 )
+        Picture_Sizer = wx.BoxSizer( wx.HORIZONTAL )
+        ROMList_Sizer = wx.StaticBoxSizer( self.ROMList_Sizer_staticbox, wx.HORIZONTAL )
+        ROMList_Sizer2 = wx.FlexGridSizer( 2, 1, 0, 0 )
+        Search_Filter_Sizer1 = wx.FlexGridSizer( 2, 2, 0, 0 )
+        Filter_Sizer = wx.FlexGridSizer( 2, 4, 0, 0 )
+        Search_Sizer = wx.FlexGridSizer( 1, 4, 0, 0 )
+        Search_Filter_Sizer1.Add( self.Search_Label, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 3 )
+        Search_Sizer.Add( self.Search_TextCtrl, 0, wx.ALL | wx.EXPAND | wx.FIXED_MINSIZE, 3 )
+        Search_Sizer.Add( self.Search_Button, 0, wx.ALL, 3 )
+        Search_Sizer.Add( self.Clear_Button, 0, wx.ALL, 3 )
+        Search_Sizer.Add( self.Clear_All_Button, 0, wx.ALL, 3 )
+        Search_Sizer.AddGrowableCol( 0 )
+        Search_Filter_Sizer1.Add( Search_Sizer, 1, wx.EXPAND, 0 )
+        Search_Filter_Sizer1.Add( self.Filter_Label, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 3 )
+        Search_Filter_Sizer1.Add( Filter_Sizer, 1, wx.EXPAND, 0 )
+        Search_Filter_Sizer1.AddGrowableCol( 1 )
+        ROMList_Sizer2.Add( Search_Filter_Sizer1, 1, wx.EXPAND, 0 )
+        ROMList_Sizer2.Add( self.ROMList, 1, wx.EXPAND, 0 )
+        ROMList_Sizer2.AddGrowableRow( 1 )
+        ROMList_Sizer2.AddGrowableCol( 0 )
+        ROMList_Sizer.Add( ROMList_Sizer2, 1, wx.EXPAND, 0 )
+        self.Split_Panel1.SetSizer( ROMList_Sizer )
+        Picture_Sizer.Add( self.Case_Bitmap, 0, wx.RIGHT, 6 )
+        Picture_Sizer.Add( self.ScreenShot_Bitmap, 0, 0, 0 )
+        ROM_Information_Sizer2.Add( Picture_Sizer, 1, wx.EXPAND, 0 )
+        ROM_Icon_Sizer.Add( self.ROM_Icon_Label, 0, wx.LEFT | wx.TOP | wx.BOTTOM, 3 )
+        ROM_Icon_Sizer.Add( self.ROM_Icon, 0, wx.TOP, 3 )
+        ROM_Icon_Sizer.AddGrowableRow( 0 )
+        ROM_Icon_Sizer.AddGrowableCol( 1 )
+        grid_sizer_21.Add( ROM_Icon_Sizer, 1, wx.EXPAND, 0 )
+        grid_sizer_21.Add( self.ReleaseNumber, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.Add( grid_sizer_21, 1, wx.EXPAND, 0 )
+        grid_sizer_16.Add( self.ROM_Title, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.Add( grid_sizer_16, 1, wx.EXPAND, 0 )
+        grid_sizer_15.Add( self.Location, 0, wx.ALL | wx.EXPAND, 3 )
+        grid_sizer_15.Add( self.Publisher, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.Add( grid_sizer_15, 1, wx.EXPAND, 0 )
+        grid_sizer_14.Add( self.ReleaseGroup, 0, wx.ALL | wx.EXPAND, 3 )
+        grid_sizer_14.Add( self.Genre, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.Add( grid_sizer_14, 1, wx.EXPAND, 0 )
+        grid_sizer_13.Add( self.Internal_Name, 0, wx.ALL | wx.EXPAND, 3 )
+        grid_sizer_13.Add( self.Serial, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.Add( grid_sizer_13, 1, wx.EXPAND, 0 )
+        grid_sizer_12.Add( self.Version, 0, wx.ALL | wx.EXPAND, 3 )
+        grid_sizer_12.Add( self.ROMCRC, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.Add( grid_sizer_12, 1, wx.EXPAND, 0 )
+        grid_sizer_9.Add( self.ROMSize, 0, wx.ALL | wx.EXPAND, 3 )
+        grid_sizer_9.Add( self.Wifi, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.Add( grid_sizer_9, 1, wx.EXPAND, 0 )
+        grid_sizer_8.Add( self.SaveType, 0, wx.ALL | wx.EXPAND, 3 )
+        grid_sizer_8.Add( self.SavedGames, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.Add( grid_sizer_8, 1, wx.EXPAND, 0 )
+        grid_sizer_5.Add( self.Languages, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.Add( grid_sizer_5, 1, wx.EXPAND, 0 )
+        sizer_8.Add( self.Tags, 0, wx.ALL | wx.EXPAND, 3 )
+        sizer_8.AddGrowableCol( 0 )
+        ROM_Information_Sizer2.Add( sizer_8, 1, wx.EXPAND, 0 )
+        ROM_Information_Sizer2.AddGrowableRow( 0 )
+        ROM_Information_Sizer2.AddGrowableCol( 0 )
+        ROM_Information_Sizer.Add( ROM_Information_Sizer2, 1, wx.EXPAND, 0 )
+        SplitPanel2_Sizer.Add( ROM_Information_Sizer, 1, wx.EXPAND, 0 )
+        Device_Sizer3.Add( self.Device_Dir_Picker, 0, wx.RIGHT | wx.TOP | wx.BOTTOM | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 3 )
+        Device_Sizer3.Add( self.Device_Refresh_Button, 0, wx.LEFT | wx.RIGHT | wx.ALIGN_CENTER_VERTICAL, 3 )
+        Device_Sizer3.Add( self.Device_Apply_Button, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 3 )
+        Device_Sizer3.AddGrowableCol( 0 )
+        Device_Sizer2.Add( Device_Sizer3, 1, wx.EXPAND, 0 )
+        Device_Sizer2.Add( self.Device_List, 1, wx.EXPAND, 0 )
+        Device_Sizer2.AddGrowableRow( 1 )
+        Device_Sizer2.AddGrowableCol( 0 )
+        Device_Sizer.Add( Device_Sizer2, 1, wx.EXPAND, 0 )
+        SplitPanel2_Sizer.Add( Device_Sizer, 1, wx.EXPAND, 0 )
+        self.Split_Panel2.SetSizer( SplitPanel2_Sizer )
+        SplitPanel2_Sizer.AddGrowableRow( 1 )
+        SplitPanel2_Sizer.AddGrowableCol( 0 )
+        self.MainFrame_Splitter.SplitVertically( self.Split_Panel1, self.Split_Panel2 )
+        MainFrame_Sizer2.Add( self.MainFrame_Splitter, 1, wx.ALL | wx.EXPAND, 3 )
+        self.MainFrame_Panel.SetSizer( MainFrame_Sizer2 )
+        MainFrame_Sizer1.Add( self.MainFrame_Panel, 1, wx.EXPAND, 0 )
+        self.SetSizer( MainFrame_Sizer1 )
         self.Layout()
         # end wxGlade
         self.ROM_Information_Sizer = ROM_Information_Sizer
@@ -584,10 +584,10 @@ class cMainFrame( wx.Frame ):
 #            wx.App_CleanUp()
 
         if wx.Platform == "__WXMAC__":
-            wx.App_SetMacAboutMenuItemId(wx.ID_ABOUT)
-            wx.App_SetMacPreferencesMenuItemId(wx.ID_PREFERENCES)
-            wx.App_SetMacExitMenuItemId(wx.ID_EXIT)
-            wx.App_SetMacHelpMenuTitleName(_("&Help"))
+            wx.App_SetMacAboutMenuItemId( wx.ID_ABOUT )
+            wx.App_SetMacPreferencesMenuItemId( wx.ID_PREFERENCES )
+            wx.App_SetMacExitMenuItemId( wx.ID_EXIT )
+            wx.App_SetMacHelpMenuTitleName( _( "&Help" ) )
             
 #            wx.App_SetMacAboutMenuItemId(wx.ID_ABOUT)
 #            wx.App_SetMacPreferencesMenuItemId(ID_MENU_OPTIONS)
@@ -653,7 +653,7 @@ class cMainFrame( wx.Frame ):
         if "STARTUP" in Options:
             self.Maximize( False )
             self.SetSize( Config.Config ["Window_Size"] )
-            if Config.Config ["Window_Position"] [ 0 ] == -1:
+            if Config.Config ["Window_Position"] [ 0 ] == - 1:
                 self.CentreOnScreen ()
             else:
                 self.SetPosition( Config.Config ["Window_Position"] )
@@ -665,17 +665,17 @@ class cMainFrame( wx.Frame ):
 
             self.Set_Sash_Position ()
             
-            self.MainFrame_Splitter.SetMinimumPaneSize(1)
+            self.MainFrame_Splitter.SetMinimumPaneSize( 1 )
                 
 #            self.ROMList_Sizer_staticbox.SetForegroundColour( wx.SystemSettings.GetColour ( wx.SYS_COLOUR_WINDOWTEXT ) )
 #            self.ROM_Information_Sizer_staticbox.SetForegroundColour( wx.SystemSettings.GetColour ( wx.SYS_COLOUR_WINDOWTEXT ) )
 #            self.Device_Sizer_staticbox.SetForegroundColour( wx.SystemSettings.GetColour ( wx.SYS_COLOUR_WINDOWTEXT ) )
             
         if "STARTUP" in Options:
-            self.Location_Choice = wx.Choice( self.Split_Panel1, -1, choices=[] )
-            self.Language_Choice = wx.Choice( self.Split_Panel1, -1, choices=[] )
-            self.Genre_Choice    = wx.Choice( self.Split_Panel1, -1, choices=[] )
-            self.Size_Choice     = wx.Choice( self.Split_Panel1, -1, choices=[] )
+            self.Location_Choice = wx.Choice( self.Split_Panel1, - 1, choices = [] )
+            self.Language_Choice = wx.Choice( self.Split_Panel1, - 1, choices = [] )
+            self.Genre_Choice = wx.Choice( self.Split_Panel1, - 1, choices = [] )
+            self.Size_Choice = wx.Choice( self.Split_Panel1, - 1, choices = [] )
             
             self.Filter_Sizer.Add( self.Location_Choice, 0, wx.ALL, 3 )
             self.Filter_Sizer.Add( self.Language_Choice, 0, wx.ALL, 3 )
@@ -701,10 +701,10 @@ class cMainFrame( wx.Frame ):
             
         if "STARTUP" in Options:
             if Config.Config ["Show_Device_List"] == False:
-                self.Device_Sizer.ShowItems(False)
+                self.Device_Sizer.ShowItems( False )
                 self.Device_List.Disable()
             else:
-                self.Device_Sizer.ShowItems(True)
+                self.Device_Sizer.ShowItems( True )
                 self.Device_List.Enable()
 
         if "STARTUP" in Options or "COLUMNS" in Options:
@@ -716,15 +716,15 @@ class cMainFrame( wx.Frame ):
 
         if "STARTUP" in Options or "ROMS" in Options or "SEARCH" in Options or "SORT" in Options  or "TAGS" in Options:
             Row = self.ROMList.GetFirstSelected()
-            while Row != -1:# and not dlg.Abort:
-                self.ROMList.SetItemState(Row, 0, wx.LIST_STATE_SELECTED)
+            while Row != - 1:# and not dlg.Abort:
+                self.ROMList.SetItemState( Row, 0, wx.LIST_STATE_SELECTED )
                 Row = self.ROMList.GetNextSelected( Row )
 
             self.ROMList.SetItemCount ( MyROMS.Current_Count )
             if "TAGS" not in Options:
                 self.ROMList.Resize_Columns()
-                self.ROMList.SetItemState(0, wx.LIST_STATE_SELECTED, wx.LIST_STATE_SELECTED)
-                self.ROMList.Focus(0)
+                self.ROMList.SetItemState( 0, wx.LIST_STATE_SELECTED, wx.LIST_STATE_SELECTED )
+                self.ROMList.Focus( 0 )
             self.ROMList.Refresh()
             
         if "SORT" in Options:
@@ -734,7 +734,7 @@ class cMainFrame( wx.Frame ):
             if not self.In_Device_Dir_Callback:
                 self.Device_Dir_Picker.SetValue( Config.Config ["Device_Path"] )
             if self.Device_List.Populate() == False:
-                self.Device_List.Enable(False)
+                self.Device_List.Enable( False )
             self.Device_List.Resize_Columns()
             self.Device_List.Refresh()
             
@@ -794,7 +794,7 @@ class cMainFrame( wx.Frame ):
         
         if "STARTUP" in Options:
             if Config.Config ["Auto_Backup_Saved_Games"]:
-                self.On_Backup_Save_Game (None, All=True, In_Init=True)
+                self.On_Backup_Save_Game ( None, All = True, In_Init = True )
         
     def On_Window_Size ( self, event ):
         if self.In_Init == False:
@@ -843,7 +843,7 @@ class cMainFrame( wx.Frame ):
 
     def Set_Sash_Position ( self ):
 #        self.MainFrame_Splitter.SendSizeEvent()
-        if Config.Config ["Sash_Position"] == -1:
+        if Config.Config ["Sash_Position"] == - 1:
             tmpSize = self.GetSize() [ 0 ] - self.ROM_Information_Sizer.GetMinSize() [ 0 ] - 20
             self.MainFrame_Splitter.SetSashPosition( tmpSize, True )
 #            print tmpSize
@@ -887,7 +887,7 @@ class cMainFrame( wx.Frame ):
     def On_Menu_Quit( self, event ): # wxGlade: cMainFrame.<event_handler>
         self.Close()
         
-    def On_Close (self, event):
+    def On_Close ( self, event ):
         MyROMS.Save_Master_List()
         event.Skip()
         
@@ -915,7 +915,7 @@ class cMainFrame( wx.Frame ):
             Config.Config ["Save_Dir_On_Cart"] = My_Wizard.GetResult ( "Device_Path" )
             
             Config.Config ["Default_Device"] = My_Wizard.GetResult ( "Default_Device" )
-            Config.Config ["Parse_Subdirs"] = My_Wizard.GetResult ("SubDirs")
+            Config.Config ["Parse_Subdirs"] = My_Wizard.GetResult ( "SubDirs" )
     
             if UseDummy:
                 if My_Wizard.GetResult ( "Use_Trimmed" ):
@@ -949,16 +949,16 @@ class cMainFrame( wx.Frame ):
         
             if DLGFX == False:
                 if UseDummy:
-                    dlg = cLogDialog( self.DummyFrame, Todo = ["Master_List", "ROM_List"], Auto_Close=True )
+                    dlg = cLogDialog( self.DummyFrame, Todo = ["Master_List", "ROM_List"], Auto_Close = True )
                 else:
-                    dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List"], Auto_Close=Config.Config ["AutoCloseUpdate"] )
+                    dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List"], Auto_Close = Config.Config ["AutoCloseUpdate"] )
                 dlg.ShowModal()
                 dlg.Destroy()
             else:
                 if UseDummy:
-                    dlg = cLogDialog( self.DummyFrame, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close=True )
+                    dlg = cLogDialog( self.DummyFrame, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close = True )
                 else:
-                    dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close=Config.Config ["AutoCloseUpdate"] )
+                    dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close = Config.Config ["AutoCloseUpdate"] )
                 dlg.ShowModal()
                 dlg.Destroy()
                 
@@ -977,8 +977,8 @@ class cMainFrame( wx.Frame ):
             wx.Yield()
         except:
             pass
-        if os.path.isfile( "RToolDS_Trimmed.dat.new" ) and os.path.isfile ("RToolDS_Trimmed.dat"):
-            Res = wx.MessageBox( _('A New Trim Data File Has Been Created by the Installer\n\nDo You Wish to Overwrite Your Existing One?'), _('New Trim Data File'), wx.YES_NO| wx.ICON_QUESTION )
+        if os.path.isfile( "RToolDS_Trimmed.dat.new" ) and os.path.isfile ( "RToolDS_Trimmed.dat" ):
+            Res = wx.MessageBox( _( 'A New Trim Data File Has Been Created by the Installer\n\nDo You Wish to Overwrite Your Existing One?' ), _( 'New Trim Data File' ), wx.YES_NO | wx.ICON_QUESTION )
             if Res == wx.YES:
                 try:
                     MyROMS.Close_Trimmed_Shelve ()
@@ -994,7 +994,7 @@ class cMainFrame( wx.Frame ):
                 except:
                     pass
         else:
-            if os.path.isfile ("RToolDS_Trimmed.dat.new"):
+            if os.path.isfile ( "RToolDS_Trimmed.dat.new" ):
                 os.rename( "RToolDS_Trimmed.dat.new", "RToolDS_Trimmed.dat" )
                 os.utime( "RToolDS_Trimmed.dat", None )
                 
@@ -1007,7 +1007,7 @@ class cMainFrame( wx.Frame ):
 
         wx.FileSystem.AddHandler( wx.ZipFSHandler() )
         self.help = wx.html.HtmlHelpController()
-        _addBook( os.path.join ( os.path.split(sys.argv[0])[0], "Help.htb" ))
+        _addBook( os.path.join ( os.path.split( sys.argv[0] )[0], "Help.htb" ) )
 
     def LoadIcons ( self ):
         To_Process = MyROMS.Master_List_Count
@@ -1069,7 +1069,7 @@ class cMainFrame( wx.Frame ):
         except:
             pass
 #        self.ROMList.Freeze()
-        dlg = cLogDialog( self, Todo = ["Master_List"], Auto_Close=False )
+        dlg = cLogDialog( self, Todo = ["Master_List"], Auto_Close = False )
         dlg.ShowModal()
         
 #        if "Failed" in dlg.Todo:
@@ -1087,7 +1087,7 @@ class cMainFrame( wx.Frame ):
         except:
             pass
 #        self.ROMList.Freeze()
-        dlg = cLogDialog( self, Todo = ["ROM_List"], Auto_Close=False )
+        dlg = cLogDialog( self, Todo = ["ROM_List"], Auto_Close = False )
         dlg.ShowModal()
         
 #        if "Failed" in dlg.Todo:
@@ -1105,7 +1105,7 @@ class cMainFrame( wx.Frame ):
         except:
             pass
 #        self.ROMList.Freeze()
-        dlg = cLogDialog( self, Todo = ["GFX"], Auto_Close=False )
+        dlg = cLogDialog( self, Todo = ["GFX"], Auto_Close = False )
         dlg.ShowModal()
         
 #        if "Failed" in dlg.Todo:
@@ -1123,7 +1123,7 @@ class cMainFrame( wx.Frame ):
         except:
             pass
 #        self.ROMList.Freeze()
-        dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close=False )
+        dlg = cLogDialog( self, Todo = ["Master_List", "ROM_List", "GFX"], Auto_Close = False )
         dlg.ShowModal()
         
 #        if "Failed" in dlg.Todo:
@@ -1137,7 +1137,7 @@ class cMainFrame( wx.Frame ):
 
     def Resize_StatusBar ( self ):
         try:
-            self.StatusBar.SetStatusWidths( [self.MainFrame_Splitter.GetSashPosition()+4, -1, 80] )
+            self.StatusBar.SetStatusWidths( [self.MainFrame_Splitter.GetSashPosition() + 4, - 1, 80] )
         except:
             pass
 
@@ -1145,17 +1145,17 @@ class cMainFrame( wx.Frame ):
         if Position & STATUS_ROM:
             Count = self.ROMList.GetSelectedItemCount()
             Size = self.ROMList.Get_Selected_ROM_Size()
-            Text  = " " + _( "Total ROMs" )
+            Text = " " + _( "Total ROMs" )
             Text += " %d, " % MyROMS.Current_Count
-            Text += _( "Selected ROMs" ) +  " (%d / %s) " % ( Count, Utils.Format_Normal_Size( Size, True ) )
+            Text += _( "Selected ROMs" ) + " (%d / %s) " % ( Count, Utils.Format_Normal_Size( Size, True ) )
             self.StatusBar.SetStatusText ( Text, 0 )
         
         if Position & STATUS_DEVICE:
             Size = self.Device_List.Drive_Size
             Free = self.Device_List.Drive_Free
-            Text  = " " + _( "Device Size" )
+            Text = " " + _( "Device Size" )
             Text += " %s, " % Utils.Format_Normal_Size( Size )
-            Text += _( "Free Space" ) +  " %s" % Utils.Format_Normal_Size( Free )
+            Text += _( "Free Space" ) + " %s" % Utils.Format_Normal_Size( Free )
             if Config.Config ["Show_Device_List"] == False:
                 Text = ""
             self.StatusBar.SetStatusText ( Text, 1 )
@@ -1172,7 +1172,7 @@ class cMainFrame( wx.Frame ):
     def Search ( self ):
         Current_Search = self.Search_TextCtrl.GetValue()
 
-        if len ( Current_Search ) > -1 and not self.In_Search_Clear:
+        if len ( Current_Search ) > - 1 and not self.In_Search_Clear:
             Config.Config ["Current_Search"] = Current_Search
             self.__Local_Init( "SEARCH" )
     
@@ -1216,7 +1216,7 @@ class cMainFrame( wx.Frame ):
         
         self.Location_Choice.Clear()
         self.Location_Choice.Append ( Config.Config ["Locations"][255], 255 )
-        tmp = Utils.Sort_Dict(Config.Config ["Locations"])
+        tmp = Utils.Sort_Dict( Config.Config ["Locations"] )
         for LocationKey in tmp:
             if LocationKey != 255:
                 self.Location_Choice.Append ( Config.Config ["Locations"][LocationKey], LocationKey )
@@ -1224,11 +1224,11 @@ class cMainFrame( wx.Frame ):
 
         self.Language_Choice.Clear()
         self.Language_Choice.Append ( Config.Config ["Languages"][0], 0 )
-        tmp = Utils.Sort_Dict(Config.Config ["Languages"])
+        tmp = Utils.Sort_Dict( Config.Config ["Languages"] )
         for LanguageKey in tmp:
             if LanguageKey > 0:
                 self.Language_Choice.Append ( Config.Config ["Languages"][LanguageKey], LanguageKey )
-        self.Language_Choice.Append ( "Unknown", -1 )
+        self.Language_Choice.Append ( "Unknown", - 1 )
         self.Language_Choice.SetSelection( self.Language_Choice.FindString( Config.Config ["Languages"][Config.Config ["Filter_Language"]] ) )
         
         self.Genre_Choice.Clear()
@@ -1313,8 +1313,8 @@ class cMainFrame( wx.Frame ):
             return
 
         Item = self.Current_Ctrl.GetFocusedItem()
-        if Item == -1:
-            ROM=BlankROM()
+        if Item == - 1:
+            ROM = BlankROM()
         else:
             ROM = self.Current_Ctrl.Get_ROM ( Item )
             
@@ -1325,14 +1325,14 @@ class cMainFrame( wx.Frame ):
             if Language < 1:
                 continue
             if ROM.Language & Language:
-                Language_String +=  Config.Config ["Languages"][Language]+ ", "
-        Language_String = Language_String[:-2]
+                Language_String += Config.Config ["Languages"][Language] + ", "
+        Language_String = Language_String[: - 2]
         if Language_String == _( "Languages" ) + " ":
             Language_String = _( "Languages" ) + " : " + _( "Unknown" )
         self.Languages.SetLabel( Language_String )
         
         try:
-            self.Location.SetLabel( _( "Region" )  + " : " + Config.Config ["Locations"][ROM.Location] )
+            self.Location.SetLabel( _( "Region" ) + " : " + Config.Config ["Locations"][ROM.Location] )
         except:
             self.Location.SetLabel( _( "Region" ) + " : " + _( "Unknown" ) )
         
@@ -1358,8 +1358,8 @@ class cMainFrame( wx.Frame ):
 
         self.ROMSize.SetLabel( ROMSize_String )
         
-        if Item == -1:
-            self.SavedGames.SetLabel( _( "Save Games : N/A" ))    
+        if Item == - 1:
+            self.SavedGames.SetLabel( _( "Save Games : N/A" ) )    
         else:
             if self.Current_Ctrl == self.ROMList:
                 self.SavedGames.SetLabel( _( "Save Games : %d" ) % ROM.Saves )
@@ -1367,16 +1367,16 @@ class cMainFrame( wx.Frame ):
                 try:
                     Save = self.Device_List.Get_Save_Name ( Item )
                 except:
-                    Save = ["No","N/A","N/A","N/A"]
+                    Save = ["No", "N/A", "N/A", "N/A"]
                 if Save [0] == "No":
                     self.SavedGames.SetLabel( _( "Save on Device : None" ) )
                 else:
-                    self.SavedGames.SetLabel( _( "Save Date : %s" ) % Save [2])
+                    self.SavedGames.SetLabel( _( "Save Date : %s" ) % Save [2] )
                 
         self.ReleaseGroup.SetLabel( _( "Release Group : %s" ) % ROM.Source_ROM )
         
         if ROM.ROM_CRC == "":
-            self.ROMCRC.SetLabel( _( "CRC : Unknown" ))
+            self.ROMCRC.SetLabel( _( "CRC : Unknown" ) )
         else:
             self.ROMCRC.SetLabel( _( "CRC : %s" ) % ROM.ROM_CRC )
 
@@ -1389,14 +1389,14 @@ class cMainFrame( wx.Frame ):
         else:
             self.Serial.SetLabel( _( "Serial : %s" ) % ROM.Serial )
 
-        self.Version.SetLabel( _( "Version : %s, Dumped : %s" ) % (ROM.Version, ROM.Dump_Date ) )
+        self.Version.SetLabel( _( "Version : %s, Dumped : %s" ) % ( ROM.Version, ROM.Dump_Date ) )
 
-        self.Wifi.SetLabel( _( "Wi-Fi : " ) + ROM.Wifi)
+        self.Wifi.SetLabel( _( "Wi-Fi : " ) + ROM.Wifi )
 
         self.SaveType.SetLabel( _( "Save Type : %s" ) % ROM.Save_Type )
         
         Str = ", "
-        Str = Str.join ( Utils.cSort (ROM.Tags) )
+        Str = Str.join ( Utils.cSort ( ROM.Tags ) )
         if Str == "":
             Str = _( "Tags" ) + " : " + _( "None" )
         else:
@@ -1405,22 +1405,22 @@ class cMainFrame( wx.Frame ):
         self.Tags.SetLabel ( Str )
         
         if ROM.Title == "":
-            self.ROM_Title.SetLabel ( _("Title : Unknown"))
+            self.ROM_Title.SetLabel ( _( "Title : Unknown" ) )
         else:
-            self.ROM_Title.SetLabel ( _("Title : %s") % ROM.Title )
+            self.ROM_Title.SetLabel ( _( "Title : %s" ) % ROM.Title )
         
-        self.ReleaseNumber.SetLabel( _("Rel No : %s") % ROM.Comment)
+        self.ReleaseNumber.SetLabel( _( "Rel No : %s" ) % ROM.Comment )
         
         try:
-            if Item == -1:
-                self.ROM_Icon.SetBitmap(GFX.catalog ["GFX_No_Icon"].getBitmap())
+            if Item == - 1:
+                self.ROM_Icon.SetBitmap( GFX.catalog ["GFX_No_Icon"].getBitmap() )
             else:
-                self.ROM_Icon.SetBitmap(self.Current_Ctrl.Get_Item_Icon(Item))
+                self.ROM_Icon.SetBitmap( self.Current_Ctrl.Get_Item_Icon( Item ) )
         except:
-            self.ROM_Icon.SetBitmap(GFX.catalog ["GFX_No_Icon"].getBitmap())
+            self.ROM_Icon.SetBitmap( GFX.catalog ["GFX_No_Icon"].getBitmap() )
     
     def On_List_Focus ( self, event ):
-        if event.EventObject.FocusedItem != -1 and self.In_Init == False:
+        if event.EventObject.FocusedItem != - 1 and self.In_Init == False:
             self.Current_Ctrl = event.EventObject
             try:
                 self.Update_Fields ()
@@ -1433,7 +1433,7 @@ class cMainFrame( wx.Frame ):
     def On_List_Item_Focused( self, event ): # wxGlade: cMainFrame.<event_handler>
 #        print "Focus"
         self.Update_Fields ()
-        self.Update_StatusBar( STATUS_ROM|STATUS_DEVICE )
+        self.Update_StatusBar( STATUS_ROM | STATUS_DEVICE )
         self.Enable_Tasks()
         event.Skip()
 #        if self.Virtual:
@@ -1448,12 +1448,12 @@ class cMainFrame( wx.Frame ):
 
     def On_List_Item_Deselected( self, event ): # wxGlade: cMainFrame.<event_handler>
         self.Enable_Tasks()
-        self.Update_StatusBar( STATUS_ROM|STATUS_DEVICE )
+        self.Update_StatusBar( STATUS_ROM | STATUS_DEVICE )
         event.Skip()
 
     def On_List_Item_Selected( self, event ): # wxGlade: cMainFrame.<event_handler>
         self.Enable_Tasks()
-        self.Update_StatusBar( STATUS_ROM|STATUS_DEVICE )
+        self.Update_StatusBar( STATUS_ROM | STATUS_DEVICE )
         event.Skip()
 
     def On_List_Col_Click( self, event ): # wxGlade: cMainFrame.<event_handler>
@@ -1468,7 +1468,7 @@ class cMainFrame( wx.Frame ):
             self.Old_Sort_Col_Name = ColName
             self.Old_Sort_Col = ColNum
 
-    def On_Device_List_Col_Click(self, event): # wxGlade: cMainFrame.<event_handler>
+    def On_Device_List_Col_Click( self, event ): # wxGlade: cMainFrame.<event_handler>
         ColName = Config.Config ["CartColumns"][event.m_col]
         ColNum = event.m_col
         
@@ -1481,7 +1481,7 @@ class cMainFrame( wx.Frame ):
             self.Old_Cart_Sort_Col = ColNum
 
     def On_List_Col_Resize( self, event ): # wxGlade: cMainFrame.<event_handler>
-        ColNum  = event.Column
+        ColNum = event.Column
         
         if sys.platform == "win32":
             ColSize = event.m_item.Width
@@ -1570,10 +1570,10 @@ class cMainFrame( wx.Frame ):
         else:
             Nothing_Selected = False
             
-        if Config.Config ["Current_Tag"] == _("All ROMs"):
+        if Config.Config ["Current_Tag"] == _( "All ROMs" ):
             All_ROMS = True
             Hidden_ROMS = False
-        elif  Config.Config ["Current_Tag"] == _("Hidden ROMs"):
+        elif  Config.Config ["Current_Tag"] == _( "Hidden ROMs" ):
             All_ROMS = False
             Hidden_ROMS = True
         else:
@@ -1581,11 +1581,11 @@ class cMainFrame( wx.Frame ):
             Hidden_ROMS = False
         
         self.Apply_Changes.Enable( Device_Enabled and len ( self.Device_List.Pending ) > 0 )
-        self.Toolbar.EnableTool( ID_MENU_APPLY, Device_Enabled and len ( self.Device_List.Pending ) >0 )
-        self.Device_Apply_Button.Enable( Device_Enabled and len ( self.Device_List.Pending )>0 )
+        self.Toolbar.EnableTool( ID_MENU_APPLY, Device_Enabled and len ( self.Device_List.Pending ) > 0 )
+        self.Device_Apply_Button.Enable( Device_Enabled and len ( self.Device_List.Pending ) > 0 )
         
         self.Copy_to_Device.Enable( Device_Enabled and ROMList_Focus and MyROMS.Current_Count > 0 )
-        self.Toolbar.EnableTool( ID_MENU_COPY, Device_Enabled and ROMList_Focus and MyROMS.Current_Count>0 )
+        self.Toolbar.EnableTool( ID_MENU_COPY, Device_Enabled and ROMList_Focus and MyROMS.Current_Count > 0 )
         
         self.Delete_from_Device.Enable( Device_Enabled and Device_List_Focus and not Nothing_Selected )
         self.Toolbar.EnableTool( ID_MENU_DELETE, Device_Enabled and Device_List_Focus and not Nothing_Selected )
@@ -1602,23 +1602,23 @@ class cMainFrame( wx.Frame ):
         self.View_NFO_File.Enable( One_Selected )
         self.Toolbar.EnableTool( ID_MENU_VIEW_NFO_FILE, One_Selected )
         
-        self.Trim_Files.Enable( ROMList_Focus and MyROMS.Current_Count>0 )
-        self.Toolbar.EnableTool( ID_MENU_TRIM_FILES, ROMList_Focus and MyROMS.Current_Count>0 )
+        self.Trim_Files.Enable( ROMList_Focus and MyROMS.Current_Count > 0 )
+        self.Toolbar.EnableTool( ID_MENU_TRIM_FILES, ROMList_Focus and MyROMS.Current_Count > 0 )
         
-        self.UnTrim_Files.Enable( ROMList_Focus and MyROMS.Current_Count>0 )
-        self.Toolbar.EnableTool( ID_MENU_UNTRIM_FILES, ROMList_Focus and MyROMS.Current_Count>0 )
+        self.UnTrim_Files.Enable( ROMList_Focus and MyROMS.Current_Count > 0 )
+        self.Toolbar.EnableTool( ID_MENU_UNTRIM_FILES, ROMList_Focus and MyROMS.Current_Count > 0 )
 
-        self.View_Statistics.Enable( MyROMS.Master_List_Count>0 )
-        self.Toolbar.EnableTool( ID_MENU_VIEW_STATISTICS, MyROMS.Master_List_Count>0 )
+        self.View_Statistics.Enable( MyROMS.Master_List_Count > 0 )
+        self.Toolbar.EnableTool( ID_MENU_VIEW_STATISTICS, MyROMS.Master_List_Count > 0 )
         
-        self.Import_Save_Game.Enable( MyROMS.Master_List_Count>0 and ROMList_Focus and One_Selected )
-        self.Toolbar.EnableTool( ID_MENU_IMPORT_SAVE_GAME, MyROMS.Master_List_Count>0 and ROMList_Focus and One_Selected )
+        self.Import_Save_Game.Enable( MyROMS.Master_List_Count > 0 and ROMList_Focus and One_Selected )
+        self.Toolbar.EnableTool( ID_MENU_IMPORT_SAVE_GAME, MyROMS.Master_List_Count > 0 and ROMList_Focus and One_Selected )
         
         self.Backup_Save_Game.Enable( Device_Enabled and Device_List_Focus )
         self.Toolbar.EnableTool( ID_MENU_BACKUP_SAVE_GAME, Device_Enabled and Device_List_Focus )
         
-        self.Backup_All_Changed_Save_Games.Enable( Device_Enabled and self.Device_List.GetItemCount()>0)
-        self.Toolbar.EnableTool( ID_MENU_BACKUP_ALL_SAVE_GAMES, Device_Enabled and self.Device_List.GetItemCount()>0)
+        self.Backup_All_Changed_Save_Games.Enable( Device_Enabled and self.Device_List.GetItemCount() > 0 )
+        self.Toolbar.EnableTool( ID_MENU_BACKUP_ALL_SAVE_GAMES, Device_Enabled and self.Device_List.GetItemCount() > 0 )
 
         self.Save_Games_for_Selected_File.Enable( One_Selected and Save_Game )
         self.Toolbar.EnableTool( ID_MENU_SAVE_GAME_MANAGER_SELECTED, One_Selected and Save_Game )
@@ -1665,8 +1665,8 @@ class cMainFrame( wx.Frame ):
         self.Show_Filter.Check( Config.Config ["Show_Filter"] )
         self.Show_Alternating_Colours.Check( Config.Config ["Show_Alternate_Colours"] )
         
-        self.Auto_Backup_Saved_Games.Check(Config.Config ["Auto_Backup_Saved_Games"] )
-        self.Copy_Saves_with_ROM.Check(Config.Config ["AutoCopySaves"])
+        self.Auto_Backup_Saved_Games.Check( Config.Config ["Auto_Backup_Saved_Games"] )
+        self.Copy_Saves_with_ROM.Check( Config.Config ["AutoCopySaves"] )
         
         self.Show_XXXX_Files.Check ( Config.Config ["Show_XXXX_Files"] )
         self.Show_Unknown_Files.Check ( Config.Config ["Show_Unknown_Files"] )
@@ -1674,16 +1674,16 @@ class cMainFrame( wx.Frame ):
         self.Use_Smaller_Pictures.Check ( Config.Config ["Use_Smaller_Pictures"] )
         
         if self.ROM_Icon.IsShown() == False:
-            self.ROM_Icon_Label.Show(False)
+            self.ROM_Icon_Label.Show( False )
         else:
-            self.ROM_Icon_Label.Show(True)
+            self.ROM_Icon_Label.Show( True )
 
         self.SplitPanel2_Sizer.Layout()
         
     def On_Hide_Item( self, event ): # wxGlade: cMainFrame.<event_handler>
         if type ( event ) == types.BooleanType:
             All = True
-            Id = -1
+            Id = - 1
             Checked = event
         else:
             All = False
@@ -1749,12 +1749,12 @@ class cMainFrame( wx.Frame ):
             self.Show_Hide_Item ( self.Hide_Title, self.ROM_Title, "Hide_Title" )
 
         if Id == ID_MENU_HIDE_SCREENSHOTS or Id == ID_MENU_HIDE_CASE_PICTURES or All:
-            self.On_Use_Smaller_Pictures (event, Change=False)
+            self.On_Use_Smaller_Pictures ( event, Change = False )
             
         if self.ROM_Icon.IsShown() == False:
-            self.ROM_Icon_Label.Show(False)
+            self.ROM_Icon_Label.Show( False )
         else:
-            self.ROM_Icon_Label.Show(True)
+            self.ROM_Icon_Label.Show( True )
         
         self.SplitPanel2_Sizer.Layout()
 
@@ -1803,21 +1803,21 @@ class cMainFrame( wx.Frame ):
                 self.Update_Main_Menu()
         else:
             self.ToggleBackup = [
-                Config.Config ["Hide_Screenshots"], 
-                Config.Config ["Hide_Case_Pictures"], 
-                Config.Config ["Hide_Language"], 
-                Config.Config ["Hide_Location"], 
-                Config.Config ["Hide_Genre"], 
-                Config.Config ["Hide_Size"], 
-                Config.Config ["Hide_Backup_Save_Games"], 
-                Config.Config ["Hide_CRC"], 
-                Config.Config ["Hide_Publisher"], 
-                Config.Config ["Hide_Release_Group"], 
-                Config.Config ["Hide_Save_Game_Type"] , 
-                Config.Config ["Hide_Internal_Name"], 
-                Config.Config ["Hide_Serial"], 
-                Config.Config ["Hide_Version"] , 
-                Config.Config ["Hide_Wifi"], 
+                Config.Config ["Hide_Screenshots"],
+                Config.Config ["Hide_Case_Pictures"],
+                Config.Config ["Hide_Language"],
+                Config.Config ["Hide_Location"],
+                Config.Config ["Hide_Genre"],
+                Config.Config ["Hide_Size"],
+                Config.Config ["Hide_Backup_Save_Games"],
+                Config.Config ["Hide_CRC"],
+                Config.Config ["Hide_Publisher"],
+                Config.Config ["Hide_Release_Group"],
+                Config.Config ["Hide_Save_Game_Type"] ,
+                Config.Config ["Hide_Internal_Name"],
+                Config.Config ["Hide_Serial"],
+                Config.Config ["Hide_Version"] ,
+                Config.Config ["Hide_Wifi"],
                 Config.Config ["Hide_Tags"],
                 Config.Config ["Hide_Icon"],
                 Config.Config ["Hide_ReleaseNumber"],
@@ -1826,7 +1826,7 @@ class cMainFrame( wx.Frame ):
             self.On_Hide_Item( True )
 #        self.__Local_Init( ["DEVICE"] )
 #        self.Update_Fields()
-        self.On_Use_Smaller_Pictures(event, Change=False)
+        self.On_Use_Smaller_Pictures( event, Change = False )
 
     def Populate_Toolbar ( self ):
         if Config.Config ["Show_Toolbar"]:
@@ -1849,48 +1849,48 @@ class cMainFrame( wx.Frame ):
         
         self.Toolbar.SetToolBitmapSize( ( int( ToolSize ), int( ToolSize ) ) )
 
-        self.Toolbar.AddTool( ID_MENU_COPY, eval ( "GFX.getGFX_Icon_Add"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_("Add ROMs to Device"), longHelpString=self.Copy_to_Device.GetHelp() )
-        self.Toolbar.AddTool( ID_MENU_DELETE, eval ( "GFX.getGFX_Icon_DeleteFromCart"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_("Delete ROMs from Device"), longHelpString=self.Delete_from_Device.GetHelp() )
-        self.Toolbar.AddTool( ID_MENU_APPLY, eval ( "GFX.getGFX_Icon_Apply"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_("Apply Changes to Device"), longHelpString=self.Apply_Changes.GetHelp() )
+        self.Toolbar.AddTool( ID_MENU_COPY, eval ( "GFX.getGFX_Icon_Add" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Add ROMs to Device" ), longHelpString = self.Copy_to_Device.GetHelp() )
+        self.Toolbar.AddTool( ID_MENU_DELETE, eval ( "GFX.getGFX_Icon_DeleteFromCart" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Delete ROMs from Device" ), longHelpString = self.Delete_from_Device.GetHelp() )
+        self.Toolbar.AddTool( ID_MENU_APPLY, eval ( "GFX.getGFX_Icon_Apply" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Apply Changes to Device" ), longHelpString = self.Apply_Changes.GetHelp() )
 
         self.Toolbar.AddSeparator()
     
-        self.Toolbar.AddTool( ID_MENU_ROM_INFORMATION, eval ( "GFX.getGFX_Icon_MoreInfo"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "More ROM Information" ), longHelpString=_( "More ROM Information" ) )
-        self.Toolbar.AddTool( ID_MENU_VIEW_NFO_FILE, eval ( "GFX.getGFX_Icon_NFO"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "View NFO File" ), longHelpString=_( "View NFO File" ) )
-        self.Toolbar.AddTool( ID_MENU_TRIM_FILES, eval ( "GFX.getGFX_Icon_Trim"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Trim ROMs" ), longHelpString=_( "Trim ROMs" ) )
-        self.Toolbar.AddTool( ID_MENU_UNTRIM_FILES, eval ( "GFX.getGFX_Icon_UnTrim"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "UnTrim ROMs" ), longHelpString=_( "UnTrim ROMs" ) )
+        self.Toolbar.AddTool( ID_MENU_ROM_INFORMATION, eval ( "GFX.getGFX_Icon_MoreInfo" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "More ROM Information" ), longHelpString = _( "More ROM Information" ) )
+        self.Toolbar.AddTool( ID_MENU_VIEW_NFO_FILE, eval ( "GFX.getGFX_Icon_NFO" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "View NFO File" ), longHelpString = _( "View NFO File" ) )
+        self.Toolbar.AddTool( ID_MENU_TRIM_FILES, eval ( "GFX.getGFX_Icon_Trim" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Trim ROMs" ), longHelpString = _( "Trim ROMs" ) )
+        self.Toolbar.AddTool( ID_MENU_UNTRIM_FILES, eval ( "GFX.getGFX_Icon_UnTrim" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "UnTrim ROMs" ), longHelpString = _( "UnTrim ROMs" ) )
 
         self.Toolbar.AddSeparator()
 
-        self.Toolbar.AddTool( ID_MENU_BACKUP_ALL_SAVE_GAMES, eval ( "GFX.getGFX_Icon_SaveGame"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Backup All Recent Save Games" ), longHelpString=_( "Backup All Recent Save Games" ) )
-        self.Toolbar.AddTool( ID_MENU_IMPORT_SAVE_GAME, eval ( "GFX.getGFX_Icon_ImportSave"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Import Save Game" ), longHelpString=_( "Import Save Game" ) )
-        self.Toolbar.AddTool( ID_MENU_BACKUP_SAVE_GAME, eval ( "GFX.getGFX_Icon_SaveGameSelected"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Backup Selected Save Games" ), longHelpString=_( "Backup Selected Save Games" ) )
-        self.Toolbar.AddTool( ID_MENU_SAVE_GAME_MANAGER_SELECTED, eval ( "GFX.getGFX_Icon_SaveGameBackupSelected"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Save Game for Selected File" ), longHelpString=_( "Save Game for Selected File" ) )
-        self.Toolbar.AddTool( ID_MENU_SAVE_GAME_MANAGER, eval ( "GFX.getGFX_Icon_SaveGameMgr"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Save Game Manager" ), longHelpString=_( "Save Game Manager" ) )
+        self.Toolbar.AddTool( ID_MENU_BACKUP_ALL_SAVE_GAMES, eval ( "GFX.getGFX_Icon_SaveGame" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Backup All Recent Save Games" ), longHelpString = _( "Backup All Recent Save Games" ) )
+        self.Toolbar.AddTool( ID_MENU_IMPORT_SAVE_GAME, eval ( "GFX.getGFX_Icon_ImportSave" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Import Save Game" ), longHelpString = _( "Import Save Game" ) )
+        self.Toolbar.AddTool( ID_MENU_BACKUP_SAVE_GAME, eval ( "GFX.getGFX_Icon_SaveGameSelected" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Backup Selected Save Games" ), longHelpString = _( "Backup Selected Save Games" ) )
+        self.Toolbar.AddTool( ID_MENU_SAVE_GAME_MANAGER_SELECTED, eval ( "GFX.getGFX_Icon_SaveGameBackupSelected" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Save Game for Selected File" ), longHelpString = _( "Save Game for Selected File" ) )
+        self.Toolbar.AddTool( ID_MENU_SAVE_GAME_MANAGER, eval ( "GFX.getGFX_Icon_SaveGameMgr" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Save Game Manager" ), longHelpString = _( "Save Game Manager" ) )
 
         self.Toolbar.AddSeparator()
             
-        self.Toolbar.AddTool( ID_MENU_VIEW_STATISTICS, eval ( "GFX.getGFX_Icon_Statistics"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "View ROM Statistics" ), longHelpString=_( "View ROM Statistics" ) )
-        self.Toolbar.AddTool( wx.ID_PREFERENCES, eval ( "GFX.getGFX_Icon_Options"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Options" ), longHelpString=_( "Options" ) )
-        self.Toolbar.AddTool( ID_MENU_UPDATE_EVERYTHING, eval ( "GFX.getGFX_Icon_E"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Update Everything" ), longHelpString=_( "Update Release List, My ROMS and GFX Files" ) )
-        self.Toolbar.AddTool( ID_BROWSE_DEVICE, eval ( "GFX.getGFX_Icon_Browse"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Browse Device" ), longHelpString=_( "Browse Device" ) )
-        self.Toolbar.AddTool( ID_TOGGLE_INFO, eval ( "GFX.getGFX_Icon_InfoOn"+ToolSize+"Bitmap" )(), isToggle=True, shortHelpString=_( "Toggle ROM Information" ), longHelpString=_( "Toggle ROM Information" ) )
+        self.Toolbar.AddTool( ID_MENU_VIEW_STATISTICS, eval ( "GFX.getGFX_Icon_Statistics" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "View ROM Statistics" ), longHelpString = _( "View ROM Statistics" ) )
+        self.Toolbar.AddTool( wx.ID_PREFERENCES, eval ( "GFX.getGFX_Icon_Options" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Options" ), longHelpString = _( "Options" ) )
+        self.Toolbar.AddTool( ID_MENU_UPDATE_EVERYTHING, eval ( "GFX.getGFX_Icon_E" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Update Everything" ), longHelpString = _( "Update Release List, My ROMS and GFX Files" ) )
+        self.Toolbar.AddTool( ID_BROWSE_DEVICE, eval ( "GFX.getGFX_Icon_Browse" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Browse Device" ), longHelpString = _( "Browse Device" ) )
+        self.Toolbar.AddTool( ID_TOGGLE_INFO, eval ( "GFX.getGFX_Icon_InfoOn" + ToolSize + "Bitmap" )(), isToggle = True, shortHelpString = _( "Toggle ROM Information" ), longHelpString = _( "Toggle ROM Information" ) )
             
         self.Toolbar.AddSeparator()
     
-        self.Toolbar.AddControl( wx.StaticText( self.Toolbar, -1, label=_( "Current Tag" )+ " : ", style=wx.ALIGN_CENTER_HORIZONTAL ) )
+        self.Toolbar.AddControl( wx.StaticText( self.Toolbar, - 1, label = _( "Current Tag" ) + " : ", style = wx.ALIGN_CENTER_HORIZONTAL ) )
     
         cbID = wx.NewId()
-        self.Tag_Choice = wx.Choice( self.Toolbar, cbID, choices=[""], size=( 150, -1 ) )
+        self.Tag_Choice = wx.Choice( self.Toolbar, cbID, choices = [""], size = ( 150, - 1 ) )
         self.Toolbar.AddControl( self.Tag_Choice )
-        self.Bind ( wx.EVT_CHOICE, self.On_Choose_Tag, id=cbID )
+        self.Bind ( wx.EVT_CHOICE, self.On_Choose_Tag, id = cbID )
     
         self.Toolbar.AddSeparator()
     
-        self.Toolbar.AddTool( ID_TAG_ADD, eval ( "GFX.getGFX_Icon_TagAdd"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Add Tag to ROMs" ), longHelpString=_( "Add Tag to ROMs" ) )
-        self.Toolbar.AddTool( ID_TAG_REMOVE, eval ( "GFX.getGFX_Icon_TagRemove"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Remove Tag from ROMs" ), longHelpString=_( "Remove Tag from ROMs" ) )
-        self.Toolbar.AddTool( ID_TAG_RENAME, eval ( "GFX.getGFX_Icon_TagRename"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Rename Current Tag" ), longHelpString=_( "Rename Current Tag" ) )
-        self.Toolbar.AddTool( ID_TAG_DELETE, eval ( "GFX.getGFX_Icon_TagDelete"+ToolSize+"Bitmap" )(), isToggle=False, shortHelpString=_( "Delete Current Tag" ), longHelpString=_( "Delete Current Tag" ) )
+        self.Toolbar.AddTool( ID_TAG_ADD, eval ( "GFX.getGFX_Icon_TagAdd" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Add Tag to ROMs" ), longHelpString = _( "Add Tag to ROMs" ) )
+        self.Toolbar.AddTool( ID_TAG_REMOVE, eval ( "GFX.getGFX_Icon_TagRemove" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Remove Tag from ROMs" ), longHelpString = _( "Remove Tag from ROMs" ) )
+        self.Toolbar.AddTool( ID_TAG_RENAME, eval ( "GFX.getGFX_Icon_TagRename" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Rename Current Tag" ), longHelpString = _( "Rename Current Tag" ) )
+        self.Toolbar.AddTool( ID_TAG_DELETE, eval ( "GFX.getGFX_Icon_TagDelete" + ToolSize + "Bitmap" )(), isToggle = False, shortHelpString = _( "Delete Current Tag" ), longHelpString = _( "Delete Current Tag" ) )
 
         self.Toolbar.Realize()
         
@@ -1928,19 +1928,19 @@ class cMainFrame( wx.Frame ):
         self.ROMList_Sizer2.Layout()
         self.ROMList.Refresh()
     
-    def On_Show_Device_List(self, event): # wxGlade: cMainFrame.<event_handler>
+    def On_Show_Device_List( self, event ): # wxGlade: cMainFrame.<event_handler>
         Config.Config ["Show_Device_List"] = not Config.Config ["Show_Device_List"]
         if Config.Config ["Show_Device_List"] == False:
-            self.Device_Sizer.ShowItems(False)
+            self.Device_Sizer.ShowItems( False )
             self.Device_List.Disable()
         else:
-            self.Device_Sizer.ShowItems(True)
+            self.Device_Sizer.ShowItems( True )
             self.Device_List.Enable()
             
         self.Device_Sizer.Layout()
         self.SplitPanel2_Sizer.Layout()
         self.Enable_Tasks()
-        self.Update_StatusBar(STATUS_ALL)
+        self.Update_StatusBar( STATUS_ALL )
 
     def On_Show_Search( self, event ): # wxGlade: cMainFrame.<event_handler>
         Config.Config ["Show_Search"] = not Config.Config ["Show_Search"]
@@ -1971,11 +1971,11 @@ class cMainFrame( wx.Frame ):
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
 
         Row = self.ROMList.GetFirstSelected()
-        while Row != -1:
+        while Row != - 1:
             ROM = self.ROMList.Get_ROM ( Row )
             if self.Device_List.Add_Pending ( ROM ) == False:
-                wx.MessageBox("There is not enough space on the Device" ,
-                              "Out of Space", wx.OK|wx.ICON_EXCLAMATION)
+                wx.MessageBox( "There is not enough space on the Device" ,
+                              "Out of Space", wx.OK | wx.ICON_EXCLAMATION )
                 break
 
             Row = self.ROMList.GetNextSelected( Row )
@@ -2088,7 +2088,7 @@ class cMainFrame( wx.Frame ):
         else:
             From_Device = False
             
-        dlg = cROMInformation ( self, Current_Ctrl=self.Current_Ctrl, Save_Comments_Shelve=self.Save_Comments_Shelve, Device_List=self.Device_List, From_Device=From_Device )
+        dlg = cROMInformation ( self, Current_Ctrl = self.Current_Ctrl, Save_Comments_Shelve = self.Save_Comments_Shelve, Device_List = self.Device_List, From_Device = From_Device )
         dlg.ShowModal()
         dlg.Destroy()
 
@@ -2097,7 +2097,7 @@ class cMainFrame( wx.Frame ):
             wx.Yield()
         except:
             pass
-        dlg = cNFODialog ( self, Current_Ctrl=self.Current_Ctrl )
+        dlg = cNFODialog ( self, Current_Ctrl = self.Current_Ctrl )
         dlg.ShowModal()
         dlg.Destroy()
 
@@ -2130,7 +2130,7 @@ class cMainFrame( wx.Frame ):
 
         Processed = 0
         Row = self.ROMList.GetFirstSelected()
-        while Row != -1:# and not dlg.Abort:
+        while Row != - 1:# and not dlg.Abort:
             ROM = self.ROMList.Get_ROM( Row )
             self.ROMList.EnsureVisible( Row )
             if not ROM.Trimmed:
@@ -2160,7 +2160,7 @@ class cMainFrame( wx.Frame ):
         self.SetCursor( wx.StockCursor( wx.CURSOR_WAIT ) )
 
         Row = self.ROMList.GetFirstSelected()
-        while Row != -1:# and not dlg.Abort:
+        while Row != - 1:# and not dlg.Abort:
             ROM = self.ROMList.Get_ROM( Row )
             self.ROMList.EnsureVisible( Row )
             if ROM.Trimmed:
@@ -2208,14 +2208,14 @@ class cMainFrame( wx.Frame ):
 
         Tag = dlg.Tag_Combo.GetValue()
 
-        if Result == wx.ID_OK and Tag != _( "All ROMs" ) and Tag != _("Wi-Fi ROMs"):# and Tag != _( "Hidden ROMs" ):
+        if Result == wx.ID_OK and Tag != _( "All ROMs" ) and Tag != _( "Wi-Fi ROMs" ):# and Tag != _( "Hidden ROMs" ):
             Config.Config ["Last_Tag"] = Tag
                 
             Row = self.Current_Ctrl.GetFirstSelected()
-            while Row != -1:
+            while Row != - 1:
                 ROM = self.Current_Ctrl.Get_ROM ( Row )
                 
-                if ROM.Add_Tag ( Tag ) == True and Tag != _("Hidden ROMs"): # Tag isn't in the list...
+                if ROM.Add_Tag ( Tag ) == True and Tag != _( "Hidden ROMs" ): # Tag isn't in the list...
                     self.TagChoice.Append( Tag )
                     
                 Row = self.Current_Ctrl.GetNextSelected( Row )
@@ -2225,13 +2225,13 @@ class cMainFrame( wx.Frame ):
         self.__Local_Init( ["TAGS"] ) # had SORT
         self.Enable_Tasks()
         
-    def On_Tag_Last (self, event):
+    def On_Tag_Last ( self, event ):
         Tag = Config.Config ["Last_Tag"]
         Row = self.Current_Ctrl.GetFirstSelected()
-        while Row != -1:
+        while Row != - 1:
             ROM = self.Current_Ctrl.Get_ROM ( Row )
             
-            if ROM.Add_Tag ( Tag ) == True and Tag != _("Hidden ROMs"): # Tag isn't in the list...
+            if ROM.Add_Tag ( Tag ) == True and Tag != _( "Hidden ROMs" ): # Tag isn't in the list...
                 self.TagChoice.Append( Tag )
                 
             Row = self.Current_Ctrl.GetNextSelected( Row )
@@ -2240,7 +2240,7 @@ class cMainFrame( wx.Frame ):
     
     def On_Tag_Remove ( self, event ):
         Row = self.Current_Ctrl.GetFirstSelected()
-        while Row != -1:
+        while Row != - 1:
             ROM = self.Current_Ctrl.Get_ROM ( Row )
             
             ROM.Remove_Tag ( self.Tag_Choice.GetStringSelection() )
@@ -2257,7 +2257,7 @@ class cMainFrame( wx.Frame ):
         self.Enable_Tasks()
 
     def On_Tag_Rename ( self, event ):
-        dlg = wx.TextEntryDialog(self, _('New Tag Name for %s') % self.Tag_Choice.GetStringSelection(), _('Rename Tag'), '')
+        dlg = wx.TextEntryDialog( self, _( 'New Tag Name for %s' ) % self.Tag_Choice.GetStringSelection(), _( 'Rename Tag' ), '' )
         if dlg.ShowModal() == wx.ID_OK:
             Res = True
             New_Tag = dlg.GetValue()
@@ -2274,7 +2274,7 @@ class cMainFrame( wx.Frame ):
             self.Enable_Tasks()
     
     def On_Tag_Delete ( self, event ):
-        Res = wx.MessageBox( _( 'Are you sure you want to delete the current tag?' ), _( 'Delete Tag' ), wx.YES_NO| wx.ICON_QUESTION )
+        Res = wx.MessageBox( _( 'Are you sure you want to delete the current tag?' ), _( 'Delete Tag' ), wx.YES_NO | wx.ICON_QUESTION )
         if Res == wx.YES:
             MyROMS.Delete_Tag ( self.Tag_Choice.GetStringSelection() )
             
@@ -2315,9 +2315,9 @@ class cMainFrame( wx.Frame ):
         if old_unknown != Config.Config ["Unknown_Name"]:
             self.Rename_Unknowns()
         
-        self.Process_Options(Result, ColumnsChanged)
+        self.Process_Options( Result, ColumnsChanged )
         
-    def Process_Options (self, Result, ColumnsChanged):
+    def Process_Options ( self, Result, ColumnsChanged ):
         if Result == wx.ID_OK:
             self.In_Init = True
 #            self.In_Device_Dir_Callback = True
@@ -2328,7 +2328,7 @@ class cMainFrame( wx.Frame ):
                 self.__Local_Init ( ["ROMS", "DEVICE", "SEARCH"] )
             self.In_Init = False
 #            self.In_Device_Dir_Callback = False
-        self.On_Recover_Tags (None)
+        self.On_Recover_Tags ( None )
         self.ROMList.UpdateIcons()
         self.Device_List.UpdateIcons()
         self.ROMList.UpdateColour()
@@ -2344,9 +2344,9 @@ class cMainFrame( wx.Frame ):
             wx.Yield()
         except:
             pass
-        self.On_Backup_Save_Game( event, All=True )
+        self.On_Backup_Save_Game( event, All = True )
 
-    def On_Backup_Save_Game( self, event, All=False, In_Init=False ): # wxGlade: cMainFrame.<event_handler>
+    def On_Backup_Save_Game( self, event, All = False, In_Init = False ): # wxGlade: cMainFrame.<event_handler>
         try:
             wx.Yield()
         except:
@@ -2380,14 +2380,14 @@ class cMainFrame( wx.Frame ):
             except:
                 Finished = True
                 continue
-            if self.Device_List.Is_Pending(ROM) == False:
+            if self.Device_List.Is_Pending( ROM ) == False:
                 Save = self.Device_List.Get_Save_Name ( Row )
                 if Save[1] != "":
                     try:
                         if self.In_Init == False and In_Init == False:
                             Utils.Add_Save ( ROM, Save[1], self.Save_Comments_Shelve, Save_ROMS )
                         else:
-                            Utils.Add_Save ( ROM, Save[1], self.Save_Comments_Shelve, Save_ROMS, Auto=True )
+                            Utils.Add_Save ( ROM, Save[1], self.Save_Comments_Shelve, Save_ROMS, Auto = True )
                     except:
                         pass
             Processed += 1
@@ -2395,7 +2395,7 @@ class cMainFrame( wx.Frame ):
             dlg.Update()
             if not All:
                 Row = self.Device_List.GetNextSelected( Row )
-                if Row == -1:
+                if Row == - 1:
                     Finished = True
             else:
                 Row += 1
@@ -2416,9 +2416,9 @@ class cMainFrame( wx.Frame ):
                 dlg.ShowModal()
                 dlg.Destroy()
             elif Save_ROMS != []:
-                wx.MessageBox( _( 'Save Games Backup Successfull.' ), _( 'Save Backup' ), wx.OK| wx.ICON_INFORMATION )
+                wx.MessageBox( _( 'Save Games Backup Successfull.' ), _( 'Save Backup' ), wx.OK | wx.ICON_INFORMATION )
             else:
-                wx.MessageBox( _( 'Nothing to Backup.' ), _( 'Save Backup' ), wx.OK| wx.ICON_INFORMATION )
+                wx.MessageBox( _( 'Nothing to Backup.' ), _( 'Save Backup' ), wx.OK | wx.ICON_INFORMATION )
     
             self.__Local_Init( ["DEVICE", "SAVES"] ) # had SORT
             
@@ -2430,7 +2430,7 @@ class cMainFrame( wx.Frame ):
             pass
         ROM = self.ROMList.Get_ROM( self.ROMList.GetFocusedItem() )
 
-        dlg = wx.FileDialog( self, message=_( "Select a Save File to Import to %s" ) %( ROM.Title ), defaultDir=Config.Config["Last_Import_Path"], defaultFile="", style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST )
+        dlg = wx.FileDialog( self, message = _( "Select a Save File to Import to %s" ) % ( ROM.Title ), defaultDir = Config.Config["Last_Import_Path"], defaultFile = "", style = wx.FD_OPEN | wx.FD_FILE_MUST_EXIST )
 
         if dlg.ShowModal() != wx.ID_OK:
             return
@@ -2444,7 +2444,7 @@ class cMainFrame( wx.Frame ):
         shutil.copy2( Import_Filename, TempFilename )
 
         if Config.Config ["Convert_Imports"]:
-            dlg = cSaveGameConvert ( self, Save_File = TempFilename, ROM=ROM, InSGM=False )
+            dlg = cSaveGameConvert ( self, Save_File = TempFilename, ROM = ROM, InSGM = False )
             Result = dlg.ShowModal()
             dlg.Destroy()
         else:
@@ -2466,12 +2466,12 @@ class cMainFrame( wx.Frame ):
             dlg.ShowModal()
             dlg.Destroy()
         elif Save_ROMS != []:
-            wx.MessageBox( _( 'Save Game Import Successfull.' ), _( 'Save Import' ), wx.OK| wx.ICON_INFORMATION )
+            wx.MessageBox( _( 'Save Game Import Successfull.' ), _( 'Save Import' ), wx.OK | wx.ICON_INFORMATION )
         else:
-            wx.MessageBox( _( 'Nothing to Import.' ), _( 'Save Import' ), wx.OK| wx.ICON_INFORMATION )
+            wx.MessageBox( _( 'Nothing to Import.' ), _( 'Save Import' ), wx.OK | wx.ICON_INFORMATION )
 
 #        self.__Local_Init( ["DEVICE", "ROMS"] ) # had SORT
-        self.__Local_Init (["SAVES"])
+        self.__Local_Init ( ["SAVES"] )
 
     def On_Save_Games_for_Selected_File( self, event ): # wxGlade: cMainFrame.<event_handler>
         try:
@@ -2479,7 +2479,7 @@ class cMainFrame( wx.Frame ):
         except:
             pass
         ROM = self.Current_Ctrl.Get_ROM ( self.Current_Ctrl.GetFocusedItem() )
-        dlg = cSaveGameManager ( self, Save_Comments_Shelve=self.Save_Comments_Shelve, Select="%s - %s" % ( ROM.Comment, ROM.Title ) )
+        dlg = cSaveGameManager ( self, Save_Comments_Shelve = self.Save_Comments_Shelve, Select = "%s - %s" % ( ROM.Comment, ROM.Title ) )
         
         dlg.ShowModal ()
         
@@ -2492,14 +2492,14 @@ class cMainFrame( wx.Frame ):
         
         self.__Local_Init( ["SAVES"] )
         if Result == wx.ID_OK:
-            self.Process_Options(Result, ColumnsChanged)
+            self.Process_Options( Result, ColumnsChanged )
 
     def On_Save_Game_Manager( self, event ): # wxGlade: cMainFrame.<event_handler>
         try:
             wx.Yield()
         except:
             pass
-        dlg = cSaveGameManager ( self, Save_Comments_Shelve=self.Save_Comments_Shelve, Select="" )
+        dlg = cSaveGameManager ( self, Save_Comments_Shelve = self.Save_Comments_Shelve, Select = "" )
         
         dlg.ShowModal ()
     
@@ -2512,12 +2512,12 @@ class cMainFrame( wx.Frame ):
         
         self.__Local_Init( ["SAVES"] )
         if Result == wx.ID_OK:
-            self.Process_Options(Result, ColumnsChanged)
+            self.Process_Options( Result, ColumnsChanged )
 
     def On_ROMList_Right_Click( self, event ): # wxGlade: cMainFrame.<event_handler>
         event.Skip()
 
-    def On_Use_Smaller_Pictures(self, event, Change=True): # wxGlade: cMainFrame.<event_handler>
+    def On_Use_Smaller_Pictures( self, event, Change = True ): # wxGlade: cMainFrame.<event_handler>
         if Change:
             Config.Config ["Use_Smaller_Pictures"] = not Config.Config ["Use_Smaller_Pictures"]
         
@@ -2533,7 +2533,7 @@ class cMainFrame( wx.Frame ):
             self.SSH = 384 / 2
         
         if not self.In_Init:
-            self.Update_Pictures(self.Current_Ctrl.Get_ROM(self.Current_Ctrl.GetFocusedItem()))
+            self.Update_Pictures( self.Current_Ctrl.Get_ROM( self.Current_Ctrl.GetFocusedItem() ) )
             self.Case_Bitmap.Refresh()
             self.ScreenShot_Bitmap.Refresh()
 
@@ -2541,118 +2541,118 @@ class cMainFrame( wx.Frame ):
             self.SplitPanel2_Sizer.Layout()
             self.Layout()
             
-            self.__Local_Init("GFX")
+            self.__Local_Init( "GFX" )
 #            self.MainFrame_Splitter.SendSizeEvent()
 
-    def On_Run_Startup_Wizard(self, event): # wxGlade: cMainFrame.<event_handler>
-        Res = wx.MessageBox( _( "Are you sure you want to Run the Setup Wizard?\n\nThis will Delete All of RToolDS's Settings\nDownloaded Content will be Preserved" ), _( 'Setup Wizard' ), wx.YES_NO| wx.ICON_QUESTION )
+    def On_Run_Startup_Wizard( self, event ): # wxGlade: cMainFrame.<event_handler>
+        Res = wx.MessageBox( _( "Are you sure you want to Run the Setup Wizard?\n\nThis will Delete All of RToolDS's Settings\nDownloaded Content will be Preserved" ), _( 'Setup Wizard' ), wx.YES_NO | wx.ICON_QUESTION )
         if Res == wx.YES:
-            self.Run_Wizard(False)
+            self.Run_Wizard( False )
             self.Device_List.Clear_Pending()
             self.__Local_Init( ["SORT", "ROMS", "ICONS", "DEVICE", "SAVES" ] )
 
     def On_Device_List_Context_Menu( self, event ): # wxGlade: cMainFrame.<event_handler>
         if not hasattr( self, "Popup_Device_List_Delete" ):
             self.Popup_Device_List_Delete = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Delete_from_Device, id=self.Popup_Device_List_Delete )
+            self.Bind( wx.EVT_MENU, self.On_Delete_from_Device, id = self.Popup_Device_List_Delete )
             self.Popup_Device_List_Browse = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Browse_Device, id=self.Popup_Device_List_Browse )
+            self.Bind( wx.EVT_MENU, self.On_Browse_Device, id = self.Popup_Device_List_Browse )
             self.Popup_Device_List_Backup_Selected = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Backup_Save_Game, id=self.Popup_Device_List_Backup_Selected )
+            self.Bind( wx.EVT_MENU, self.On_Backup_Save_Game, id = self.Popup_Device_List_Backup_Selected )
             self.Popup_Device_List_Backup_All = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Backup_All_Saves, id=self.Popup_Device_List_Backup_All )
+            self.Bind( wx.EVT_MENU, self.On_Backup_All_Saves, id = self.Popup_Device_List_Backup_All )
             self.Popup_Device_List_Delete_Save = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Delete_Save, id=self.Popup_Device_List_Delete_Save )
+            self.Bind( wx.EVT_MENU, self.On_Delete_Save, id = self.Popup_Device_List_Delete_Save )
         Menu = wx.Menu()
         if self.Delete_from_Device.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_Device_List_Delete, _("Delete ROMs from Device") )
+            Item = wx.MenuItem( Menu, self.Popup_Device_List_Delete, _( "Delete ROMs from Device" ) )
             Menu.AppendItem( Item )
         if self.Backup_Save_Game.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_Device_List_Delete_Save, _("Delete Save Games from Device") )
+            Item = wx.MenuItem( Menu, self.Popup_Device_List_Delete_Save, _( "Delete Save Games from Device" ) )
             Menu.AppendItem( Item )
         if self.Device_List.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_Device_List_Browse, _("Browse Device with Explorer") )
+            Item = wx.MenuItem( Menu, self.Popup_Device_List_Browse, _( "Browse Device with Explorer" ) )
             Menu.AppendItem( Item )
         if self.Backup_Save_Game.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_Device_List_Backup_Selected, _("Backup Selected Save Games") )
+            Item = wx.MenuItem( Menu, self.Popup_Device_List_Backup_Selected, _( "Backup Selected Save Games" ) )
             Menu.AppendItem( Item )
         if self.Backup_All_Changed_Save_Games.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_Device_List_Backup_All, _("Backup All Recent Save Games") )
+            Item = wx.MenuItem( Menu, self.Popup_Device_List_Backup_All, _( "Backup All Recent Save Games" ) )
             Menu.AppendItem( Item )
         self.PopupMenu( Menu )
         Menu.Destroy()
 
-    def On_ROMList_Context_Menu (self, event):
+    def On_ROMList_Context_Menu ( self, event ):
         if not hasattr( self, "Popup_ROMList_Copy" ):
             self.Popup_ROMList_Copy = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Copy_to_Device, id=self.Popup_ROMList_Copy )
+            self.Bind( wx.EVT_MENU, self.On_Copy_to_Device, id = self.Popup_ROMList_Copy )
             self.Popup_ROMList_Trim = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Trim_Files, id=self.Popup_ROMList_Trim )
+            self.Bind( wx.EVT_MENU, self.On_Trim_Files, id = self.Popup_ROMList_Trim )
             self.Popup_ROMList_UnTrim = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_UnTrim_Files, id=self.Popup_ROMList_UnTrim )
+            self.Bind( wx.EVT_MENU, self.On_UnTrim_Files, id = self.Popup_ROMList_UnTrim )
             self.Popup_ROMList_ROM_Information = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_ROM_Information, id=self.Popup_ROMList_ROM_Information )
+            self.Bind( wx.EVT_MENU, self.On_ROM_Information, id = self.Popup_ROMList_ROM_Information )
             self.Popup_ROMList_View_NFO_File = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_View_NFO_File, id=self.Popup_ROMList_View_NFO_File )
+            self.Bind( wx.EVT_MENU, self.On_View_NFO_File, id = self.Popup_ROMList_View_NFO_File )
             self.Popup_ROMList_Save_Game_Manager = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Save_Game_Manager, id=self.Popup_ROMList_Save_Game_Manager )
+            self.Bind( wx.EVT_MENU, self.On_Save_Game_Manager, id = self.Popup_ROMList_Save_Game_Manager )
             self.Popup_ROMList_Import_Save_Game = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Import_Save_Game, id=self.Popup_ROMList_Import_Save_Game )
+            self.Bind( wx.EVT_MENU, self.On_Import_Save_Game, id = self.Popup_ROMList_Import_Save_Game )
             self.Popup_ROMList_Tag_Add = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Tag_Add, id=self.Popup_ROMList_Tag_Add )
+            self.Bind( wx.EVT_MENU, self.On_Tag_Add, id = self.Popup_ROMList_Tag_Add )
             self.Popup_ROMList_Tag_Last = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Tag_Last, id=self.Popup_ROMList_Tag_Last )
+            self.Bind( wx.EVT_MENU, self.On_Tag_Last, id = self.Popup_ROMList_Tag_Last )
             self.Popup_ROMList_Tag_Remove = wx.NewId()
-            self.Bind( wx.EVT_MENU, self.On_Tag_Remove, id=self.Popup_ROMList_Tag_Remove )
+            self.Bind( wx.EVT_MENU, self.On_Tag_Remove, id = self.Popup_ROMList_Tag_Remove )
 
         Menu = wx.Menu()
         if self.Device_List.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_ROMList_Copy, _("Add ROMs to Device") )
+            Item = wx.MenuItem( Menu, self.Popup_ROMList_Copy, _( "Add ROMs to Device" ) )
             Menu.AppendItem( Item )
         if self.Trim_Files.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_ROMList_Trim, _("Trim ROMs") )
+            Item = wx.MenuItem( Menu, self.Popup_ROMList_Trim, _( "Trim ROMs" ) )
             Menu.AppendItem( Item )
-            Item = wx.MenuItem( Menu, self.Popup_ROMList_UnTrim, _("UnTrim ROMs") )
+            Item = wx.MenuItem( Menu, self.Popup_ROMList_UnTrim, _( "UnTrim ROMs" ) )
             Menu.AppendItem( Item )
         if self.ROM_Information.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_ROMList_ROM_Information, _("More Information") )
+            Item = wx.MenuItem( Menu, self.Popup_ROMList_ROM_Information, _( "More Information" ) )
             Menu.AppendItem( Item )
         if self.View_NFO_File.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_ROMList_View_NFO_File, _("View NFO File") )
+            Item = wx.MenuItem( Menu, self.Popup_ROMList_View_NFO_File, _( "View NFO File" ) )
             Menu.AppendItem( Item )
         if self.Save_Game_Manager.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_ROMList_Save_Game_Manager, _("Save Game Manager") )
+            Item = wx.MenuItem( Menu, self.Popup_ROMList_Save_Game_Manager, _( "Save Game Manager" ) )
             Menu.AppendItem( Item )
         if self.Import_Save_Game.IsEnabled():
-            Item = wx.MenuItem( Menu, self.Popup_ROMList_Import_Save_Game, _("Import Save Game") )
+            Item = wx.MenuItem( Menu, self.Popup_ROMList_Import_Save_Game, _( "Import Save Game" ) )
             Menu.AppendItem( Item )
-        if self.Toolbar.GetToolEnabled(ID_TAG_ADD):
-            Item = wx.MenuItem( Menu, self.Popup_ROMList_Tag_Add, _("Add Tag to ROMs") )
+        if self.Toolbar.GetToolEnabled( ID_TAG_ADD ):
+            Item = wx.MenuItem( Menu, self.Popup_ROMList_Tag_Add, _( "Add Tag to ROMs" ) )
             Menu.AppendItem( Item )
             if Config.Config ["Last_Tag"] != "":
-                Item = wx.MenuItem( Menu, self.Popup_ROMList_Tag_Last, _("Add Tag to ROMs - %s") % (Config.Config ["Last_Tag"]))
+                Item = wx.MenuItem( Menu, self.Popup_ROMList_Tag_Last, _( "Add Tag to ROMs - %s" ) % ( Config.Config ["Last_Tag"] ) )
                 Menu.AppendItem( Item )
-        if self.Toolbar.GetToolEnabled(ID_TAG_REMOVE):
-            Item = wx.MenuItem( Menu, self.Popup_ROMList_Tag_Remove, _("Remove Tag from ROMs") )
+        if self.Toolbar.GetToolEnabled( ID_TAG_REMOVE ):
+            Item = wx.MenuItem( Menu, self.Popup_ROMList_Tag_Remove, _( "Remove Tag from ROMs" ) )
             Menu.AppendItem( Item )
             
         self.PopupMenu( Menu )
         Menu.Destroy()
 
-    def On_Auto_Backup_Saved_Games(self, event): # wxGlade: cMainFrame.<event_handler>
+    def On_Auto_Backup_Saved_Games( self, event ): # wxGlade: cMainFrame.<event_handler>
         Config.Config ["Auto_Backup_Saved_Games"] = not Config.Config ["Auto_Backup_Saved_Games"]
 
-    def On_Find_Serials(self, event): # wxGlade: cMainFrame.<event_handler>
-        File = open ("c:\serials.txt","wt")
+    def On_Find_Serials( self, event ): # wxGlade: cMainFrame.<event_handler>
+        File = open ( "c:\serials.txt", "wt" )
         for ROM in MyROMS:
             if ROM.Found:
-                if os.path.splitext(ROM.Archive_File)[1].lower() == ".zip":
+                if os.path.splitext( ROM.Archive_File )[1].lower() == ".zip":
                     Country, CalcSerial = ROM.Get_Country()
-                    File.write ( "%s - %s - %s - %s\n" % (Country, ROM.Serial, CalcSerial, os.path.split(ROM.Archive_File)[1]) )
+                    File.write ( "%s - %s - %s - %s\n" % ( Country, ROM.Serial, CalcSerial, os.path.split( ROM.Archive_File )[1] ) )
         File.close()
-        wx.MessageBox( _( 'Finished.' ), _( 'Serials' ), wx.OK| wx.ICON_INFORMATION )
+        wx.MessageBox( _( 'Finished.' ), _( 'Serials' ), wx.OK | wx.ICON_INFORMATION )
         
-    def On_Delete_Save (self, event):
+    def On_Delete_Save ( self, event ):
         try:
             wx.Yield()
         except:
@@ -2665,24 +2665,24 @@ class cMainFrame( wx.Frame ):
         
         self.__Local_Init( ["DEVICE"] )
 
-    def On_Copy_Saves_with_ROM(self, event): # wxGlade: cMainFrame.<event_handler>
+    def On_Copy_Saves_with_ROM( self, event ): # wxGlade: cMainFrame.<event_handler>
         Config.Config ["AutoCopySaves"] = not Config.Config ["AutoCopySaves"]
 
-    def Open_Save_Comments(self):
+    def Open_Save_Comments( self ):
         while True:
             try:
                 self.Save_Comments_Shelve = shelve.open( os.path.join ( Config.Config ["Save_Path"], "RToolDSComments.dat" ) )
                 break
             except:
-                wx.MessageBox( _('Save Game Database Path is Invalid.\n\nPlease Select a Valid Directory.'), _('Error'), wx.OK| wx.ICON_ERROR )
-                dlg = wx.DirDialog(self, "Choose a directory:",
-                                   style=wx.DD_DEFAULT_STYLE
-                                       | wx.DD_DIR_MUST_EXIST, defaultPath = os.getcwd()
+                wx.MessageBox( _( 'Save Game Database Path is Invalid.\n\nPlease Select a Valid Directory.' ), _( 'Error' ), wx.OK | wx.ICON_ERROR )
+                dlg = wx.DirDialog( self, "Choose a directory:",
+                                   style = wx.DD_DEFAULT_STYLE
+ | wx.DD_DIR_MUST_EXIST, defaultPath = os.getcwd()
                            )
                 if dlg.ShowModal() == wx.ID_OK:
                     Config.Config ["Save_Path"] = dlg.GetPath()
                     
-    def Rename_Unknowns (self):
+    def Rename_Unknowns ( self ):
         MyROMS.Process_All = True
 
         for ROM in MyROMS:

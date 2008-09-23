@@ -53,7 +53,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
     def Resize_Columns( self ):
         ColNum = 0
         for Column in Config.Config ["CartColumns"]:
-            if Config.Config ["CartColumn_Sizes"][Column] != -1:
+            if Config.Config ["CartColumn_Sizes"][Column] != - 1:
                 self.SetColumnWidth( ColNum, Config.Config ["CartColumn_Sizes"][Column] )
             else:
                 if Column != "Release Number":
@@ -68,11 +68,11 @@ class cDeviceListCtrl( wx.ListCtrl ):
         else:
             self.SetImageList( None, wx.IMAGE_LIST_SMALL )
             
-    def Has_Save (self, Dir, Filename):
+    def Has_Save ( self, Dir, Filename ):
         Save = ["No", "", "N/A"]
         for extension in Config.Config ["Save_Extensions"]:
-            Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext( Filename )[0] + extension)
-            if os.path.isfile(Save_Filename):
+            Save_Filename = os.path.join ( Config.Config ["Save_Dir_On_Cart"], os.path.splitext( Filename )[0] + extension )
+            if os.path.isfile( Save_Filename ):
                 try: # fix for OSX
                     FileDate = "%s %s" % ( win32api.GetDateFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Save_Filename ) ) ).lower(), win32api.GetTimeFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Save_Filename ) ) ) )
                 except:
@@ -81,9 +81,9 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 break
             elif sys.platform == "win32":
                 try:
-                    Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], Filename ))
-                    Short_Save_Filename = os.path.join (Config.Config ["Save_Dir_On_Cart"], os.path.splitext(Short_Save_Filename)[0] + Utils.Get_Save_Extension().upper())
-                    if os.path.isfile (Short_Save_Filename):
+                    Short_Save_Filename = win32api.GetShortPathName( os.path.join ( Config.Config ["Save_Dir_On_Cart"], Filename ) )
+                    Short_Save_Filename = os.path.join ( Config.Config ["Save_Dir_On_Cart"], os.path.splitext( Short_Save_Filename )[0] + Utils.Get_Save_Extension().upper() )
+                    if os.path.isfile ( Short_Save_Filename ):
                         FileDate = "%s %s" % ( win32api.GetDateFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Short_Save_Filename ) ) ).lower(), win32api.GetTimeFormat ( win32api.GetSystemDefaultLCID(), 0, time.localtime( os.path.getmtime ( Short_Save_Filename ) ) ) )
                         Save = ["Yes", Short_Save_Filename, FileDate]
                         break
@@ -91,7 +91,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     pass
         return Save
             
-    def Calc_FreeSpace (self):
+    def Calc_FreeSpace ( self ):
         self.Drive_Free = Utils.Drive_Free( Config.Config ["Device_Path"] )
         for ROM in self.Pending:
             self.Drive_Free -= ROM.Effective_Size
@@ -100,7 +100,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
 #        Result = ""
         self.CRC_List = []
         for ROM in self.ROM_List:
-            del (ROM)
+            del ( ROM )
         self.ROM_List = []
 #        self.Saves_List = []
 #        self.Size_List = []
@@ -108,7 +108,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
         self.ROM_Count = 0
         
         if os.path.isdir( Config.Config ["Device_Path"] ) == False:
-            self.Enable(False) 
+            self.Enable( False ) 
             self.Drive_Free = 0
             self.Drive_Size = 0
             self.SetItemCount ( 0 )
@@ -135,7 +135,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
 #                if os.path.isdir( File ) and File [0] != ".":
 #                    Dirs.append( File )
         
-        Dirs = Utils.Unique (Dirs)
+        Dirs = Utils.Unique ( Dirs )
 
         self.ROM_Count = 0
         for Dir in Dirs:
@@ -150,7 +150,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 if Ext.lower () in Config.Config ["ROM_Extensions"]:
                     try:
                         oROM = MyROMS.Lookup_ROM_Filename ( File )
-                        ROM = deepcopy (oROM)
+                        ROM = deepcopy ( oROM )
                         ROM.Name_On_Device = ""
                         Size = os.path.getsize( os.path.join ( Dir, File ) )
                         if Size == ROM.ROM_Size:
@@ -159,31 +159,31 @@ class cDeviceListCtrl( wx.ListCtrl ):
                             ROM.Trimmed_On_Device = True
                         if ROM.Found == False:  #TODO: Fix Me!!!!!
                             continue
-                        ROM.Name_On_Device = os.path.join (Dir, File)
-                        ROM.Size_On_Device = os.path.getsize( os.path.join ( Dir, File ))
+                        ROM.Name_On_Device = os.path.join ( Dir, File )
+                        ROM.Size_On_Device = os.path.getsize( os.path.join ( Dir, File ) )
 #                        self.Size_List.append ( os.path.getsize( os.path.join ( Dir, File ) ) )
-                        ROM.Saves_List = self.Has_Save(Dir, File)
+                        ROM.Saves_List = self.Has_Save( Dir, File )
 #                        self.Saves_List.append ( self.Has_Save ( Dir, File ) )
                         self.CRC_List.append( ROM.ROM_CRC )
-                        self.ROM_List.append( ROM)
+                        self.ROM_List.append( ROM )
                         self.ROM_Count += 1
                     except:
                         try:
-                            File_In = open (os.path.join ( Config.Config ["Device_Path"], File), "rb")
-                            Data = File_In.read (0x12)
+                            File_In = open ( os.path.join ( Config.Config ["Device_Path"], File ), "rb" )
+                            Data = File_In.read ( 0x12 )
                             File_In.close ()
-                            Serial = Utils.Get_Serial(Data)
+                            Serial = Utils.Get_Serial( Data )
                             oROM = MyROMS.Lookup_ROM_Serial ( Serial )
-                            ROM = deepcopy (oROM)
+                            ROM = deepcopy ( oROM )
                             if ROM.Found == False:
                                 continue
-                            ROM.Name_On_Device = os.path.join (Dir, File)
+                            ROM.Name_On_Device = os.path.join ( Dir, File )
                             self.CRC_List.append( ROM.ROM_CRC )
-                            self.ROM_List.append( ROM)
-                            ROM.Size_On_Device = os.path.getsize( os.path.join ( Dir, File ))
+                            self.ROM_List.append( ROM )
+                            ROM.Size_On_Device = os.path.getsize( os.path.join ( Dir, File ) )
 #                            self.Size_List.append ( os.path.getsize( os.path.join ( Dir, File ) ) )
 #                            self.Saves_List.append ( self.Has_Save ( Dir, File ) )
-                            ROM.Saves_List = self.Has_Save(Dir, File)
+                            ROM.Saves_List = self.Has_Save( Dir, File )
                             Size = os.path.getsize( os.path.join ( Dir, File ) )
                             if Size == ROM.ROM_Size:
                                 ROM.Trimmed_On_Device = False
@@ -201,7 +201,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
 #                del self.Pending[count]
 
         for oROM in self.Pending:
-            ROM = deepcopy (oROM)
+            ROM = deepcopy ( oROM )
             self.CRC_List.append( ROM.ROM_CRC )
             self.ROM_List.append( ROM )
             ROM.Size_On_Device = ROM.Effective_Size
@@ -209,11 +209,11 @@ class cDeviceListCtrl( wx.ListCtrl ):
 #            self.Saves_List.append ( [bool (ROM.Saves), None] )
 #            print ROM.Title + ":" + str (ROM.Saves)
             if Config.Config ["AutoCopySaves"]:
-                ROM.Saves_List = [ Utils.cbool (ROM.Saves), None, "N/A"]
+                ROM.Saves_List = [ Utils.cbool ( ROM.Saves ), None, "N/A"]
             else:
                 ROM.Saves_List = [ "No", None, "N/A"]
         
-            self.Pending_Positions.append (self.ROM_Count)
+            self.Pending_Positions.append ( self.ROM_Count )
             self.ROM_Count += 1
                         
 #            if self.CartList.GetItemCount() != 0:
@@ -231,8 +231,8 @@ class cDeviceListCtrl( wx.ListCtrl ):
         self.Calc_FreeSpace()
         return True
     
-    def Sort (self):
-        tmpList = deepcopy (self.ROM_List)
+    def Sort ( self ):
+        tmpList = deepcopy ( self.ROM_List )
         
         self.CRC_List = []
         self.ROM_List = []
@@ -241,113 +241,113 @@ class cDeviceListCtrl( wx.ListCtrl ):
         self.Pending_Positions = []
         
         if Config.Config ["Cart_Sort"] == "Size":
-            tmpList.sort ( key=lambda x:x.Title, reverse=False )
-            tmpList.sort ( key=lambda x:x.Effective_Size, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Title, reverse = False )
+            tmpList.sort ( key = lambda x:x.Effective_Size, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Trimmed":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Trimmed, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Trimmed, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Saves":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Saves, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Saves, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Archive":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Archive_File, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Archive_File, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "ROM File":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.ROM_File, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.ROM_File, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Location":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Location, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Location, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Genre":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Genre, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Genre, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Original Size":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.ROM_Size, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.ROM_Size, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Release Group":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Source_ROM, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Source_ROM, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "CRC":
-            tmpList.sort ( key=lambda x:x.ROM_CRC, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.ROM_CRC, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Save Type":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Save_Type, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Save_Type, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Publisher":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Publisher, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Publisher, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Internal Name":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Internal_Name, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Internal_Name, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Serial":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Serial, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Serial, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Version":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Version, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Version, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Tags":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Tags, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Tags, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Wi-Fi":
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
-            tmpList.sort ( key=lambda x:x.Wifi, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Wifi, reverse = Config.Config["Cart_Sort_Reverse"] )
         elif Config.Config ["Cart_Sort"] == "Name":
-            tmpList.sort ( key=lambda x:x.Title.lower(), reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Title.lower(), reverse = Config.Config["Cart_Sort_Reverse"] )
         else:
-            tmpList.sort ( key=lambda x:x.Title, reverse=False )
-            tmpList.sort ( key=lambda x:x.Comment, reverse=Config.Config["Cart_Sort_Reverse"] )
+            tmpList.sort ( key = lambda x:x.Title, reverse = False )
+            tmpList.sort ( key = lambda x:x.Comment, reverse = Config.Config["Cart_Sort_Reverse"] )
             
         for ROM in tmpList:
             self.CRC_List.append( ROM.ROM_CRC )
-            self.ROM_List.append (ROM)
+            self.ROM_List.append ( ROM )
 #            self.Size_List.append ( os.path.getsize( ROM.Name_On_Device ) )
 #            self.Saves_List.append ( self.Has_Save ( os.path.split (ROM.Name_On_Device )[0], os.path.split (ROM.Name_On_Device)[1]) )
-        del (tmpList)
+        del ( tmpList )
 
     def Get_ROM ( self, item ):
         return self.ROM_List [ item  ]
     
     def Get_Save_Name ( self, item ):
 #        return self.Saves_List[item][1]
-        return self.Get_ROM (item).Saves_List
+        return self.Get_ROM ( item ).Saves_List
 
-    def Get_Selected_ROM_Size (self):
+    def Get_Selected_ROM_Size ( self ):
         if self.GetItemCount() == 0:
             return 0
         
         Item = self.GetFirstSelected()
         
         Total = 0
-        while Item != -1:
+        while Item != - 1:
 #            Total += self.Size_List [Item]
-            Total += self.Get_ROM (Item).Size_On_Device
-            Item = self.GetNextSelected(Item)
+            Total += self.Get_ROM ( Item ).Size_On_Device
+            Item = self.GetNextSelected( Item )
             
         return Total
     
-    def Get_CRC_List (self):
+    def Get_CRC_List ( self ):
         CRC_List = []
         for CRC in self.CRC_List:
-            CRC_List.append (CRC)
+            CRC_List.append ( CRC )
         for CRC in self.Pending:
-            CRC_List.append (CRC)
+            CRC_List.append ( CRC )
             
         return CRC_List
     
-    def Is_Pending (self, ROM):
+    def Is_Pending ( self, ROM ):
         if ROM in self.Pending:
             return True
         return False
 
-    def Add_Pending (self, oROM):
+    def Add_Pending ( self, oROM ):
         Force = False
-        ROM = deepcopy (oROM)
-        ROM.Name_On_Device = Utils.Get_Name_on_Device (ROM)
+        ROM = deepcopy ( oROM )
+        ROM.Name_On_Device = Utils.Get_Name_on_Device ( ROM )
         if ROM.ROM_CRC in self.CRC_List or ROM in self.Pending:
-            Res = wx.MessageBox( _( '%s Already on Device\n\nDo you Want to Re-Copy it?' ) % ROM.ROM_File, _( 'ROM On Device' ), wx.YES_NO| wx.ICON_QUESTION )
+            Res = wx.MessageBox( _( '%s Already on Device\n\nDo you Want to Re-Copy it?' ) % ROM.ROM_File, _( 'ROM On Device' ), wx.YES_NO | wx.ICON_QUESTION )
             if Res == wx.YES:
                 Force = True
 
-        if (ROM.ROM_CRC not in self.CRC_List and ROM not in self.Pending) or Force:
+        if ( ROM.ROM_CRC not in self.CRC_List and ROM not in self.Pending ) or Force:
             if ROM.Trimmed:
                 ROM.Trimmed_On_Device = True
             else:
@@ -355,16 +355,16 @@ class cDeviceListCtrl( wx.ListCtrl ):
             if self.Drive_Free - ROM.Effective_Size < 0:
                 self.Calc_FreeSpace()
                 return False
-            self.Pending.append(ROM)
+            self.Pending.append( ROM )
 #            self.ROM_List.append ()
             if Config.Config ["AutoCopySaves"]:
-                ROM.Saves_List = [ Utils.cbool (ROM.Saves), None, "N/A"]
+                ROM.Saves_List = [ Utils.cbool ( ROM.Saves ), None, "N/A"]
             else:
                 ROM.Saves_List = ["No", None, "N/A"]
         self.Calc_FreeSpace()
         return True
     
-    def Clear_Pending (self):
+    def Clear_Pending ( self ):
         self.Pending = []
         self.Pending_Positions = []
         try:
@@ -372,12 +372,12 @@ class cDeviceListCtrl( wx.ListCtrl ):
         except:
             pass
 
-    def Apply_Pending (self):
+    def Apply_Pending ( self ):
         Processed_ROMS = []
         if Config.Config ["Use_Rename_Popup"]:
             RenameROMS = []
             for ROM in self.Pending:
-                RenameROMS.append (ROM)
+                RenameROMS.append ( ROM )
             dlg2 = cRenameFiles ( self )
             dlg2.Populate ( RenameROMS )
             dlg2.ShowModal()
@@ -388,7 +388,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
             dlg2.Destroy()
         
         dlg = cProgressFrame ( self )
-        dlg.Proccessing_Text.SetLabel ( _("Copying ROMs to Device") )
+        dlg.Proccessing_Text.SetLabel ( _( "Copying ROMs to Device" ) )
         dlg.Guage2.SetRange ( len ( self.Pending ) )
         dlg.MakeModal()
         dlg.CenterOnScreen()
@@ -411,27 +411,27 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     ES = Temp
                 Pos = 0
                 if Config.Config ["Use_Rename_Popup"] == False:
-                    FileOutName = Utils.Get_Name_on_Device (ROM)
+                    FileOutName = Utils.Get_Name_on_Device ( ROM )
                 else:
                     FileOutName = Renamimg [Processed]
                 try:
-                    FileOut = open (FileOutName,"wb")
+                    FileOut = open ( FileOutName, "wb" )
                 except:
-                    wx.MessageBox("Error Writing to Device" ,
-                                  "IO Error", wx.OK|wx.ICON_EXCLAMATION)
+                    wx.MessageBox( "Error Writing to Device" ,
+                                  "IO Error", wx.OK | wx.ICON_EXCLAMATION )
                     self.SetCursor( wx.StockCursor( wx.CURSOR_ARROW ) )
                     dlg.MakeModal( False )
                     dlg.Destroy()
                     return
 
                 while Temp > 0:
-                    FileOut.write ( Data[Pos:Pos+self.BLK_SIZE] )
+                    FileOut.write ( Data[Pos:Pos + self.BLK_SIZE] )
                     Temp = Temp - ( self.BLK_SIZE )
                     Pos = Pos + self.BLK_SIZE
                     if Temp > 0:
                         dlg.Guage1.SetValue ( ES - Temp )
                     else:
-                        FileOut.write ( Data[Pos+self.BLK_SIZE:] )
+                        FileOut.write ( Data[Pos + self.BLK_SIZE:] )
                     dlg.Update()
                     wx.YieldIfNeeded()
                     if dlg.Abort:
@@ -439,16 +439,16 @@ class cDeviceListCtrl( wx.ListCtrl ):
                         break
                 if Save != [] and Config.Config ["AutoCopySaves"]:
                     if Config.Config ["Use_Rename_Popup"] == False:
-                        Utils.Write_Save (ROM, Save)
+                        Utils.Write_Save ( ROM, Save )
                     else:
-                        Name = os.path.splitext(Renamimg [Processed])[0] + Utils.Get_Save_Extension()
-                        Utils.Write_Save (ROM, Save, Name)
+                        Name = os.path.splitext( Renamimg [Processed] )[0] + Utils.Get_Save_Extension()
+                        Utils.Write_Save ( ROM, Save, Name )
 
                 FileOut.close ()
                 
                 if not dlg.Abort:
-                    Processed_ROMS.append(ROM)
-                    dlg.Guage1.SetValue ( ES-1 )
+                    Processed_ROMS.append( ROM )
+                    dlg.Guage1.SetValue ( ES - 1 )
                 else:
                     try:
                         os.unlink ( os.path.join ( Config.Config["Device_Path"], ROM.ROM_File ) )
@@ -463,36 +463,36 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 break
         
         for ROM in Processed_ROMS:
-            Position = self.Pending.index (ROM)
-            del (self.Pending[Position])
-            del (self.Pending_Positions [Position])
+            Position = self.Pending.index ( ROM )
+            del ( self.Pending[Position] )
+            del ( self.Pending_Positions [Position] )
 
         self.SetCursor( wx.StockCursor( wx.CURSOR_ARROW ) )
         dlg.MakeModal( False )
         dlg.Destroy()
 
 
-    def Delete_Selected (self):
+    def Delete_Selected ( self ):
         ToProcess = self.GetSelectedItemCount()
 
         RealFiles = False
         ROMS = []
         Row = self.GetFirstSelected()
-        while Row != -1:
-            ROM = self.Get_ROM(Row)
+        while Row != - 1:
+            ROM = self.Get_ROM( Row )
             ROMS.append( ROM )
             if ROM not in self.Pending:
                 RealFiles = True
             Row = self.GetNextSelected( Row )
 
         if RealFiles and Config.Config ["Confirm_Delete"]:
-            Res = wx.MessageBox( _('Are you sure you want to remove files from the Device?'), _('Delete Confirmation'), wx.YES_NO| wx.ICON_QUESTION )
+            Res = wx.MessageBox( _( 'Are you sure you want to remove files from the Device?' ), _( 'Delete Confirmation' ), wx.YES_NO | wx.ICON_QUESTION )
             if Res != wx.YES:
                 return
                 
         dlg = cProgressFrame ( self )
         dlg.DisableGuage2()
-        dlg.Proccessing_Text.SetLabel ( _("Removing ROMS from Device" ))
+        dlg.Proccessing_Text.SetLabel ( _( "Removing ROMS from Device" ) )
         dlg.Guage1.SetRange ( ToProcess )
         dlg.MakeModal()
         dlg.CenterOnScreen()
@@ -502,9 +502,9 @@ class cDeviceListCtrl( wx.ListCtrl ):
         Processed = 0
         for ROM in ROMS:
             if ROM in self.Pending:
-                Position = self.Pending.index (ROM)
-                del (self.Pending[Position])
-                del (self.Pending_Positions [Position])
+                Position = self.Pending.index ( ROM )
+                del ( self.Pending[Position] )
+                del ( self.Pending_Positions [Position] )
             else:
 #                try:
 #                    Short_Save_Filename = win32api.GetShortPathName(os.path.join (Config.Config ["Save_Dir_On_Cart"], ROM.ROM_File ))
@@ -518,7 +518,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 if Config.Config ["Delete_Saves_with_ROM"]:
                     try:
                         Filename = ROM.Saves_List[1]
-                        os.unlink (Filename)
+                        os.unlink ( Filename )
                     except:
                         pass
 #                        try:
@@ -564,27 +564,27 @@ class cDeviceListCtrl( wx.ListCtrl ):
         dlg.Destroy()
         self.Calc_FreeSpace()
 
-    def Delete_Selected_Saves (self):
+    def Delete_Selected_Saves ( self ):
         ToProcess = self.GetSelectedItemCount()
 
         RealFiles = False
         ROMS = []
         Row = self.GetFirstSelected()
-        while Row != -1:
-            ROM = self.Get_ROM(Row)
+        while Row != - 1:
+            ROM = self.Get_ROM( Row )
             ROMS.append( ROM )
             if ROM not in self.Pending:
                 RealFiles = True
             Row = self.GetNextSelected( Row )
 
         if RealFiles and Config.Config ["Confirm_Delete"]:
-            Res = wx.MessageBox( _('Are you sure you want to remove Save Games from the Device?'), _('Delete Confirmation'), wx.YES_NO| wx.ICON_QUESTION )
+            Res = wx.MessageBox( _( 'Are you sure you want to remove Save Games from the Device?' ), _( 'Delete Confirmation' ), wx.YES_NO | wx.ICON_QUESTION )
             if Res != wx.YES:
                 return
 
         dlg = cProgressFrame ( self )
         dlg.DisableGuage2()
-        dlg.Proccessing_Text.SetLabel ( _("Removing Saves from Device" ))
+        dlg.Proccessing_Text.SetLabel ( _( "Removing Saves from Device" ) )
         dlg.Guage1.SetRange ( ToProcess )
         dlg.MakeModal()
         dlg.CenterOnScreen()
@@ -598,7 +598,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
             else:
                 try:
                     Filename = ROM.Saves_List[1]
-                    os.unlink (Filename)
+                    os.unlink ( Filename )
                 except:
                     pass
 #                try:
@@ -651,7 +651,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
         else:
             self.attr1 = None
         self.attr_pending = wx.ListItemAttr()
-        self.attr_pending.SetBackgroundColour( Config.Config ["Pending_Colour"])                
+        self.attr_pending.SetBackgroundColour( Config.Config ["Pending_Colour"] )                
     
     def OnGetItemText( self, item, col ):
         try:
@@ -664,7 +664,7 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 try:
                     s = Utils.Format_ROM_Size ( self.Get_ROM ( item ).Size_On_Device )
                 except:
-                    s = Utils.Format_ROM_Size(self.Get_ROM ( item ).ROM_Size)
+                    s = Utils.Format_ROM_Size( self.Get_ROM ( item ).ROM_Size )
                 return s
             elif Config.Config ["CartColumns"][col] == "Trimmed":
                 if self.Get_ROM ( item ).Trimmed_On_Device:
@@ -673,14 +673,14 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     return _( "No" )
             elif Config.Config ["CartColumns"][col] == "Saves":
 #                return self.Saves_List [ item ][0]
-                r = self.Get_ROM (item)
+                r = self.Get_ROM ( item )
                 try:
                     t = r.Saves_List [0]
                 except:
                     t = ""  
                 return t 
             elif Config.Config ["CartColumns"][col] == "Save Date":
-                r = self.Get_ROM (item)
+                r = self.Get_ROM ( item )
                 try:
                     t = r.Saves_List [2]
                 except:
@@ -708,9 +708,9 @@ class cDeviceListCtrl( wx.ListCtrl ):
             elif Config.Config ["CartColumns"][col] == "ROM File (No Ext)":
                 r = self.Get_ROM ( item )
                 if r.Name_On_Device != "":
-                    return os.path.splitext (r.Name_On_Device)[0]
+                    return os.path.splitext ( r.Name_On_Device )[0]
                 else:
-                    return os.path.splitext (r.ROM_File)[0]
+                    return os.path.splitext ( r.ROM_File )[0]
             elif Config.Config ["CartColumns"][col] == "CRC":
                 return self.Get_ROM ( item ).ROM_CRC
             elif Config.Config ["CartColumns"][col] == "Publisher":
@@ -727,15 +727,15 @@ class cDeviceListCtrl( wx.ListCtrl ):
                     except:
     #                    s = Utils.Format_ROM_Size(self.Get_ROM ( item ).Effective_Size)
                         if Config.Config ["Use_Trimmed"]:
-                            s = Utils.Format_ROM_Size (self.Get_ROM ( item ).Effective_Size)
+                            s = Utils.Format_ROM_Size ( self.Get_ROM ( item ).Effective_Size )
                         else:
-                            s = Utils.Format_ROM_Size (self.Get_ROM ( item ).ROM_Size)
+                            s = Utils.Format_ROM_Size ( self.Get_ROM ( item ).ROM_Size )
                     return s
                 else:
                     if Config.Config ["Use_Trimmed"]:
-                        s = Utils.Format_ROM_Size (self.Get_ROM ( item ).Effective_Size)
+                        s = Utils.Format_ROM_Size ( self.Get_ROM ( item ).Effective_Size )
                     else:
-                        s = Utils.Format_ROM_Size (self.Get_ROM ( item ).ROM_Size)
+                        s = Utils.Format_ROM_Size ( self.Get_ROM ( item ).ROM_Size )
                     return s
             elif Config.Config ["CartColumns"][col] == "Internal Name":
                 return self.Get_ROM ( item ).Internal_Name
@@ -743,17 +743,17 @@ class cDeviceListCtrl( wx.ListCtrl ):
                 a = self.Get_ROM ( item ).Serial
                 if a != "":
                     return a
-                return _("Unknown")
+                return _( "Unknown" )
             elif Config.Config ["CartColumns"][col] == "Version":
                 a = self.Get_ROM ( item ).Version
-                if a == _("Unknown"):
-                    return _("N/A")
+                if a == _( "Unknown" ):
+                    return _( "N/A" )
                 return a
             elif Config.Config ["CartColumns"][col] == "Tags":
                 Str = ", "
-                a = Str.join ( Utils.cSort (self.Get_ROM ( item ).Tags ))
+                a = Str.join ( Utils.cSort ( self.Get_ROM ( item ).Tags ) )
                 if a == "":
-                    return _("None")
+                    return _( "None" )
                 return a
             elif Config.Config ["CartColumns"][col] == "Wi-Fi":
                 return self.Get_ROM ( item ).Wifi
@@ -766,8 +766,8 @@ class cDeviceListCtrl( wx.ListCtrl ):
         except:
             return ""
 
-    def Get_Item_Icon (self, item):
-        return self.IconList.GetBitmap (self.IconDict [self.Get_ROM ( item ).Image_Number])
+    def Get_Item_Icon ( self, item ):
+        return self.IconList.GetBitmap ( self.IconDict [self.Get_ROM ( item ).Image_Number] )
 
     def OnGetItemImage( self, item ):
         try:

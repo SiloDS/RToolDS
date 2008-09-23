@@ -25,7 +25,7 @@ class cROMListCtrl( wx.ListCtrl ):
         
     def Add_Columns( self ):
         self.DeleteAllColumns()
-        self.SetImageList( None, wx.IMAGE_LIST_SMALL)
+        self.SetImageList( None, wx.IMAGE_LIST_SMALL )
         ColNum = 0
         for Column in Config.Config ["ROMColumns"]:
             if Column != "Size" and Column != "Trimmed Size" and Column != "Saves":
@@ -38,13 +38,13 @@ class cROMListCtrl( wx.ListCtrl ):
         ColNum = 0
         for Column in Config.Config ["ROMColumns"]:
 #            print "%s , %d" % (Column, Config.Config ["ROMColumn_Sizes"][Column])
-            if Config.Config ["ROMColumn_Sizes"][Column] != -1:
+            if Config.Config ["ROMColumn_Sizes"][Column] != - 1:
                 self.SetColumnWidth( ColNum, Config.Config ["ROMColumn_Sizes"][Column] )
             else:
                 if Column != "Release Number":
                     self.SetColumnWidth( ColNum, wx.LIST_AUTOSIZE )
                 else:
-                    self.SetColumnWidth( ColNum, 37)
+                    self.SetColumnWidth( ColNum, 37 )
             ColNum += 1
 
     def UpdateIcons ( self ):
@@ -56,24 +56,24 @@ class cROMListCtrl( wx.ListCtrl ):
     def Get_ROM ( self, item ):
         return MyROMS.Get_Current_List_ROM ( item )
     
-    def Get_Selected_ROM_Size (self):
+    def Get_Selected_ROM_Size ( self ):
         if self.GetItemCount() == 0:
             return 0
         
         Item = self.GetFirstSelected()
         
         Total = 0
-        while Item != -1:
-            ROM = self.Get_ROM(Item)
+        while Item != - 1:
+            ROM = self.Get_ROM( Item )
             Total += ROM.Effective_Size
-            Item = self.GetNextSelected(Item)
+            Item = self.GetNextSelected( Item )
             
         return Total
 
-    def UpdateColour (self):
+    def UpdateColour ( self ):
         if Config.Config ["Show_Alternate_Colours"]:
             self.attr1 = wx.ListItemAttr()
-            self.attr1.SetBackgroundColour(Config.Config ["Alternate_Colour"])
+            self.attr1.SetBackgroundColour( Config.Config ["Alternate_Colour"] )
         else:
             self.attr1 = None                
     
@@ -84,21 +84,21 @@ class cROMListCtrl( wx.ListCtrl ):
             elif Config.Config ["ROMColumns"][col] == "Name":
                 return self.Get_ROM ( item ).Title
             elif Config.Config ["ROMColumns"][col] == "Original Size":
-                return Utils.Format_ROM_Size (self.Get_ROM ( item ).ROM_Size)
+                return Utils.Format_ROM_Size ( self.Get_ROM ( item ).ROM_Size )
             elif Config.Config ["ROMColumns"][col] == "Trimmed":
                 if Config.Config ["Use_Trimmed"] == False:
-                    return _("No")
+                    return _( "No" )
                 if self.Get_ROM ( item ).Trimmed:
-                    return _("Yes")
+                    return _( "Yes" )
                 else:
-                    return _("No")
+                    return _( "No" )
             elif Config.Config ["ROMColumns"][col] == "Saves":
-                return str (self.Get_ROM ( item ).Saves)
+                return str ( self.Get_ROM ( item ).Saves )
             elif Config.Config ["ROMColumns"][col] == "Location":
                 try:
                     Str = Config.Config ["Locations"][self.Get_ROM ( item ).Location]
                 except:
-                    Str = _("Unknown")
+                    Str = _( "Unknown" )
                 return Str
             elif Config.Config ["ROMColumns"][col] == "Genre":
                 return self.Get_ROM ( item ).Genre
@@ -107,7 +107,7 @@ class cROMListCtrl( wx.ListCtrl ):
             elif Config.Config ["ROMColumns"][col] == "ROM File":
                 return self.Get_ROM ( item ).ROM_File
             elif Config.Config ["ROMColumns"][col] == "ROM File (No Ext)":
-                return os.path.splitext (self.Get_ROM ( item ).ROM_File)[0]
+                return os.path.splitext ( self.Get_ROM ( item ).ROM_File )[0]
             elif Config.Config ["ROMColumns"][col] == "CRC":
                 return self.Get_ROM ( item ).ROM_CRC
             elif Config.Config ["ROMColumns"][col] == "Publisher":
@@ -118,26 +118,26 @@ class cROMListCtrl( wx.ListCtrl ):
                 return self.Get_ROM ( item ).Save_Type
             elif Config.Config ["ROMColumns"][col] == "Size":
                 if Config.Config ["Use_Trimmed"]:
-                    return Utils.Format_ROM_Size (self.Get_ROM ( item ).Effective_Size)
+                    return Utils.Format_ROM_Size ( self.Get_ROM ( item ).Effective_Size )
                 else:
-                    return Utils.Format_ROM_Size (self.Get_ROM ( item ).ROM_Size)
+                    return Utils.Format_ROM_Size ( self.Get_ROM ( item ).ROM_Size )
             elif Config.Config ["ROMColumns"][col] == "Internal Name":
                 return self.Get_ROM ( item ).Internal_Name
             elif Config.Config ["ROMColumns"][col] == "Serial":
                 Serial = self.Get_ROM ( item ).Serial
                 if Serial == "":
-                    return _("Unknown")
+                    return _( "Unknown" )
                 return Serial
             elif Config.Config ["ROMColumns"][col] == "Version":
                 a = self.Get_ROM ( item ).Version
-                if a == _("Unknown"):
-                    return _("N/A")
+                if a == _( "Unknown" ):
+                    return _( "N/A" )
                 return a
             elif Config.Config ["ROMColumns"][col] == "Tags":
                 Str = ", "
-                a = Str.join (Utils.cSort (self.Get_ROM ( item ).Tags))
+                a = Str.join ( Utils.cSort ( self.Get_ROM ( item ).Tags ) )
                 if a == "":
-                    return _("None")
+                    return _( "None" )
                 return a
             elif Config.Config ["ROMColumns"][col] == "Wi-Fi":
                 return self.Get_ROM ( item ).Wifi
@@ -150,14 +150,14 @@ class cROMListCtrl( wx.ListCtrl ):
         except:
             return ""
         
-    def Get_Item_Icon (self, item):
-        return self.IconList.GetBitmap (self.IconDict [self.Get_ROM ( item ).Image_Number])
+    def Get_Item_Icon ( self, item ):
+        return self.IconList.GetBitmap ( self.IconDict [self.Get_ROM ( item ).Image_Number] )
 
     def OnGetItemImage( self, item ):
         try:
             Icon_Num = self.IconDict [self.Get_ROM ( item ).Image_Number]
         except:
-            Icon_Num = -1
+            Icon_Num = - 1
   
         return Icon_Num
 
