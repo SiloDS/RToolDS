@@ -2026,7 +2026,7 @@ class cMainFrame( wx.Frame ):
         except:
             pass
         if sys.platform == "win32":
-            os.startfile( Config.Config ["Device_Path"] )
+            os.startfile( Config.Config ["Device_Path"] ) #@UndefinedVariable
                 
     def Device_Dir_Picker_Callback ( self, event ):
         if self.In_Init:
