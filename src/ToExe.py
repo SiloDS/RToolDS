@@ -1,5 +1,5 @@
 from distutils.core import setup
-import py2exe #@UnusedImport
+import py2exe #@UnusedImport #@UnresolvedImport
 import os
 
 manifest = """

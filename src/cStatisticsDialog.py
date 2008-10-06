@@ -7,7 +7,7 @@ import sys
 import time
 from ColumnListCtrlMixin import StatsListCtrlMixin
 if sys.platform == "win32":
-    import win32api
+    import win32api #@UnresolvedImport
 
 import Config
 import Utils

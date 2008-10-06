@@ -8,7 +8,7 @@ import glob
 from stat import ST_SIZE
 import sys
 if sys.platform == "win32":
-    import win32api
+    import win32api #@UnresolvedImport
 import shutil
 import time
 

@@ -5,7 +5,7 @@ import os
 import sys
 from copy import deepcopy
 if sys.platform == "win32":
-    import win32api
+    import win32api #@UnresolvedImport
 import time
 
 import Config

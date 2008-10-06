@@ -18,7 +18,7 @@ from PIL import Image #@UnresolvedImport
 if sys.platform != "win32":
     from statvfs import F_BLOCKS, F_BAVAIL, F_FRSIZE
 if sys.platform == "win32":
-    import win32api
+    import win32api #@UnresolvedImport
 if ( sys.version_info[0] * 10 ) + sys.version_info[1] >= 25: #TODO: Version Fixme...
     import hashlib
 else:
