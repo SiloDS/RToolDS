@@ -33,6 +33,8 @@ from cSaveGameManager import cSaveGameManager
 from cSaveGameComments import cSaveGameComments
 from cSaveGameConvert import cSaveGameConvert
 import cWizard
+import IconThread
+import Queue
 
 # begin wxGlade: dependencies
 # end wxGlade
@@ -607,6 +609,9 @@ class cMainFrame( wx.Frame ):
         if "STARTUP" in Options:
             self.Device_Dir_Picker.browseButton.SetWindowStyle( wx.BU_EXACTFIT )
             self.Device_Dir_Picker.Refresh()
+            self.IconQueue = Queue.Queue(0)
+            self.IconThread = IconThread.IconThread(self.IconQueue)
+            self.IconThread.start()
 
         if "STARTUP" in Options:
             self.In_Search_Clear = False
@@ -888,6 +893,8 @@ class cMainFrame( wx.Frame ):
         self.Close()
         
     def On_Close ( self, event ):
+        self.IconQueue.put ([None,None,None,None])
+        self.IconThread.join()
         MyROMS.Save_Master_List()
         event.Skip()
         
@@ -1010,6 +1017,12 @@ class cMainFrame( wx.Frame ):
         _addBook( os.path.join ( os.path.split( sys.argv[0] )[0], "Help.htb" ) )
 
     def LoadIcons ( self ):
+        self.Device_List.IconDict = {}
+        self.Device_List.IconList = wx.ImageList ( 32, 32 )
+        No_Icon = GFX.getGFX_No_IconBitmap()
+        self.Device_List.IconList.Add ( No_Icon )
+        self.Device_List.IconDict [0] = 0
+        self.IconQueue.put((self.ROMList,self.Device_List,self.Device_List.IconList,self.Device_List.IconDict))
 #        To_Process = MyROMS.Master_List_Count
 #
 #        dlg = cProgressFrame ( self )
@@ -1021,13 +1034,13 @@ class cMainFrame( wx.Frame ):
 #        dlg.CenterOnScreen()
 #        dlg.Show()
 #        dlg.Update()
-
-        self.ROMList.IconDict = {}
-        self.ROMList.IconList = wx.ImageList ( 32, 32 )
-        
-        No_Icon = GFX.getGFX_No_IconBitmap()
-        self.ROMList.IconList.Add ( No_Icon )
-        self.ROMList.IconDict [0] = 0
+#
+#        self.ROMList.IconDict = {}
+#        self.ROMList.IconList = wx.ImageList ( 32, 32 )
+#        
+#        No_Icon = GFX.getGFX_No_IconBitmap()
+#        self.ROMList.IconList.Add ( No_Icon )
+#        self.ROMList.IconDict [0] = 0
 #        Count = 1
 #        MyROMS.Process_All = True
 #        Processed = 0
@@ -1056,12 +1069,12 @@ class cMainFrame( wx.Frame ):
 #        dlg.Destroy()
 #
 #        MyROMS.Process_All = False
-        
-        self.Device_List.IconDict = self.ROMList.IconDict
-        self.Device_List.IconList = self.ROMList.IconList
-        
-        self.ROMList.UpdateIcons()
-        self.Device_List.UpdateIcons()
+#
+#        self.Device_List.IconDict = self.ROMList.IconDict
+#        self.Device_List.IconList = self.ROMList.IconList
+#        
+#        self.ROMList.UpdateIcons()
+#        self.Device_List.UpdateIcons()
         
     def On_Update_Master_List( self, event ): # wxGlade: cMainFrame.<event_handler>
         try:
