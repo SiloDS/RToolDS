@@ -6,6 +6,7 @@ import os
 from ROMS import MyROMS
 import Config
 import Utils
+import GFX
 
 class cROMListCtrl( wx.ListCtrl ):
     def __init__( self, *args, **kwds ):
@@ -157,7 +158,9 @@ class cROMListCtrl( wx.ListCtrl ):
         try:
             Icon_Num = self.IconDict [self.Get_ROM ( item ).Image_Number]
         except:
+            self.LoadIcon (self.Get_ROM (item))
             Icon_Num = - 1
+            self.RefreshItem(item)
   
         return Icon_Num
 
@@ -166,3 +169,23 @@ class cROMListCtrl( wx.ListCtrl ):
             return self.attr1
         else:
             return None
+        
+    def LoadIcon (self, ROM):
+        No_Icon = GFX.getGFX_No_IconBitmap()
+        if ROM.Found:
+            if ROM.Comment [0] != "U":
+                Image_Filename = os.path.join ( Config.Config ["Image_Path"], "%04d.png" % ROM.Image_Number )
+            else:
+                Image_Filename = os.path.join ( Config.Config ["Image_Path"], os.path.splitext( os.path.basename ( ROM.Archive_File ) )[0] + ".png" )
+            if os.path.isfile( Image_Filename ):
+                try:
+                    self.IconList.Add ( wx.Image( Image_Filename, wx.BITMAP_TYPE_PNG ).ConvertToBitmap() )
+                except:
+                    self.IconList.Add ( No_Icon )
+            else:
+                self.IconList.Add ( No_Icon )
+            self.IconDict [ROM.Image_Number] = self.IconList.GetImageCount()
+            
+            return self.IconDict[ROM.Image_Number]
+        else:
+            return -1

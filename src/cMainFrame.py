@@ -1010,17 +1010,17 @@ class cMainFrame( wx.Frame ):
         _addBook( os.path.join ( os.path.split( sys.argv[0] )[0], "Help.htb" ) )
 
     def LoadIcons ( self ):
-        To_Process = MyROMS.Master_List_Count
-
-        dlg = cProgressFrame ( self )
-        dlg.DisableGuage2()
-        dlg.DisableCancelButton ()
-        dlg.Proccessing_Text.SetLabel ( _( "Loading Icons..." ) )
-        dlg.Guage1.SetRange ( To_Process )
-        dlg.MakeModal()
-        dlg.CenterOnScreen()
-        dlg.Show()
-        dlg.Update()
+#        To_Process = MyROMS.Master_List_Count
+#
+#        dlg = cProgressFrame ( self )
+#        dlg.DisableGuage2()
+#        dlg.DisableCancelButton ()
+#        dlg.Proccessing_Text.SetLabel ( _( "Loading Icons..." ) )
+#        dlg.Guage1.SetRange ( To_Process )
+#        dlg.MakeModal()
+#        dlg.CenterOnScreen()
+#        dlg.Show()
+#        dlg.Update()
 
         self.ROMList.IconDict = {}
         self.ROMList.IconList = wx.ImageList ( 32, 32 )
@@ -1028,34 +1028,34 @@ class cMainFrame( wx.Frame ):
         No_Icon = GFX.getGFX_No_IconBitmap()
         self.ROMList.IconList.Add ( No_Icon )
         self.ROMList.IconDict [0] = 0
-        Count = 1
-        MyROMS.Process_All = True
-        Processed = 0
-        for ROM in MyROMS:
-            if ROM.Found:
-                if ROM.Comment [0] != "U":
-                    Image_Filename = os.path.join ( Config.Config ["Image_Path"], "%04d.png" % ROM.Image_Number )
-                else:
-                    Image_Filename = os.path.join ( Config.Config ["Image_Path"], os.path.splitext( os.path.basename ( ROM.Archive_File ) )[0] + ".png" )
-                if os.path.isfile( Image_Filename ):
-                    try:
-                        self.ROMList.IconList.Add ( wx.Image( Image_Filename, wx.BITMAP_TYPE_PNG ).ConvertToBitmap() )
-                    except:
-                        self.ROMList.IconList.Add ( No_Icon )
-                else:
-                    self.ROMList.IconList.Add ( No_Icon )
-                self.ROMList.IconDict [ROM.Image_Number] = Count
-                Count += 1
-            Processed += 1
-            dlg.Guage1.SetValue ( Processed )
-            if Processed % 100 == 0:
-                wx.YieldIfNeeded()
-                dlg.Update()
-
-        dlg.MakeModal( False )
-        dlg.Destroy()
-
-        MyROMS.Process_All = False
+#        Count = 1
+#        MyROMS.Process_All = True
+#        Processed = 0
+#        for ROM in MyROMS:
+#            if ROM.Found:
+#                if ROM.Comment [0] != "U":
+#                    Image_Filename = os.path.join ( Config.Config ["Image_Path"], "%04d.png" % ROM.Image_Number )
+#                else:
+#                    Image_Filename = os.path.join ( Config.Config ["Image_Path"], os.path.splitext( os.path.basename ( ROM.Archive_File ) )[0] + ".png" )
+#                if os.path.isfile( Image_Filename ):
+#                    try:
+#                        self.ROMList.IconList.Add ( wx.Image( Image_Filename, wx.BITMAP_TYPE_PNG ).ConvertToBitmap() )
+#                    except:
+#                        self.ROMList.IconList.Add ( No_Icon )
+#                else:
+#                    self.ROMList.IconList.Add ( No_Icon )
+#                self.ROMList.IconDict [ROM.Image_Number] = Count
+#                Count += 1
+#            Processed += 1
+#            dlg.Guage1.SetValue ( Processed )
+#            if Processed % 100 == 0:
+#                wx.YieldIfNeeded()
+#                dlg.Update()
+#
+#        dlg.MakeModal( False )
+#        dlg.Destroy()
+#
+#        MyROMS.Process_All = False
         
         self.Device_List.IconDict = self.ROMList.IconDict
         self.Device_List.IconList = self.ROMList.IconList
