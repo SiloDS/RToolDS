@@ -1,17 +1,18 @@
 @Echo Off
 
 set SRC="C:\Documents and Settings\Rich\workspace\RToolDS"
-set WX="C:\Python25\Lib\site-packages\wx-2.8-msw-unicode\wx"
+set WX="C:\Python26\Lib\site-packages\wx-2.8-msw-unicode\wx"
 set NSIS="C:\Program Files\NSIS\makensis.exe"
 
 cd %SRC%\src
-c:\python25\python ToExe.py py2exe
+c:\python26\python ToExe.py py2exe
 
 cd %SRC%\src\dist
 rem rename RToolDS.exe RToolDS6.exe
 
 copy %SRC%\Installer.nsi %SRC%\src\dist
-copy %WX%\msvcp71.dll %SRC%\src\dist
+rem copy %WX%\msvcp71.dll %SRC%\src\dist
+copy %WX%\msvcp90.dll %SRC%\src\dist
 copy %WX%\gdiplus.dll %SRC%\src\dist
 
 cd %SRC%\Help
