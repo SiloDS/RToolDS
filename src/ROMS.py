@@ -52,15 +52,15 @@ class ROM:
         self.Dump_Date = _( "Unknown" )
         self.Duplicate_ID = "0"
         self.Orig_Filename = _( "Unknown" )
-        
+
     def Trim ( self ):
         global TrimmedShelve
-        
+
         OK, TempFileName, Data = Utils.Read_Data ( self.Archive_File, self.ROM_File )
 
         if OK:
             First = True
-            Count = self.ROM_Size
+            Count = len( Data )
             c = 0
             while Count > 0:
                 c += 1
@@ -80,41 +80,41 @@ class ROM:
             Trimmed_CRC = Utils.Get_Data_CRC ( Data )
             Trimmed_Shelve [str ( self.ROM_CRC )] = ( TrimSize, Trimmed_CRC )
             Trimmed_Shelve.sync()
-            
+
             self.Trimmed = True
             self.Effective_Size = TrimSize + Config.Config ["Safe_Trim"]
             self.Trimmed_CRC = Trimmed_CRC
         else:
-            TrimSize = - 1
-            
+            TrimSize = -1
+
         if TempFileName:
             try:
                 os.unlink( TempFileName )
             except:
                 pass
-            
+
         del Data
-        
+
         return ( OK, TrimSize )
 
     def Un_Trim ( self ):
         global Trimmed_Shelve
-        
+
         try:
             del ( Trimmed_Shelve [str ( self.ROM_CRC )] )
             Trimmed_Shelve.sync()
         except:
             pass
-        
+
         self.Trimmed = False
         self.Effective_Size = self.ROM_Size
         self.Trimmed_CRC = ""
 
         return ( True, self.Effective_Size )
-    
+
     def Add_Tag ( self, Tag ):
         global Tag_Shelve
-        
+
         if Tag not in self.Tags:
             if self.Tags == []:
                 Tag_Shelve [str ( self.ROM_CRC )] = [ Tag ]
@@ -141,23 +141,23 @@ class ROM:
 
     def Remove_Tag ( self, Tag ):
         global Tag_Shelve
-        
+
         if Tag in self.Tags:
             self.Tags.remove ( Tag )
             Tag_Shelve [str ( self.ROM_CRC )] = self.Tags
             Tag_Shelve.sync()
-            
+
     def Get_ROM_Data ( self, Get_Save = False ):
         Save = []
 
         OK, TempFilename, Data = Utils.Read_Data ( self.Archive_File, self.ROM_File )
-            
+
         if TempFilename:
             try:
                 os.unlink( TempFilename )
             except:
                 pass
-        
+
         if Get_Save:
             try:
                 File = open ( os.path.join ( Config.Config ["Save_Path"], self.ROM_CRC + ".sav.001" ), "rb" )
@@ -179,14 +179,14 @@ class ROM:
             pass
 
         return ( Save )
-    
+
     def Get_Country ( self ):
         OK, dummy_TempFilename, Data = Utils.Read_Data ( self.Archive_File, self.ROM_File, 0x20 )
-            
+
         if OK:
             return str ( Data [0x0F] ), Utils.Get_Serial( Data )
 
-    
+
 class ROMS:
     def __init__ ( self ):
         global Unknown_Shelve
@@ -200,9 +200,9 @@ class ROMS:
         self.Master_List_Filename_Dict = {}
         self.Master_List_Serial_Dict = {}
         self.Genres = []
-        
+
         self.Process_All = False
-        
+
         self._AllGenres = _( "All Genres" )
         self._AllTags = _( "All ROMs" )
         self._Hidden_ROMs = _( "Hidden ROMs" )
@@ -211,15 +211,15 @@ class ROMS:
         self.Open_Unknown_Shelve ()
         self.Open_Trimmed_Shelve ()
         self.Open_Tag_Shelve ()
-        
+
     def Get_XML_Version( self ):
         Version = 0
-        
+
         try:
             File = open ( Config.Config ["Master_XML_File"], "rt" )
         except:
             return Version
-        
+
         for Line in File:
             Line = Line.strip()
             if Line[0:12] == "<datVersion>":
@@ -228,9 +228,9 @@ class ROMS:
                 except:
                     pass
                 break
-        
+
         File.close()
-        
+
         return Version
 
     def Load_Master_List ( self, AltName = False ):
@@ -238,17 +238,17 @@ class ROMS:
 
         Create_Master_List = False
         Merge_Master_List = False
-        
+
         try:
             if AltName == False:
                 Pickle_File = open ( "RToolDS_Master_List.dat", "rb" )
             else:
                 Pickle_File = open ( "RToolDS_Master_List.dat.bak", "rb" )
-            
+
             tmp = cPickle.load( Pickle_File )
             if Master_List_Dat_Version != tmp:
                 Create_Master_List = True
-            
+
             self.Master_List_XML_Version = cPickle.load( Pickle_File )
             if self.Master_List_XML_Version != self.Get_XML_Version():
                 Merge_Master_List = True
@@ -266,23 +266,23 @@ class ROMS:
             Result = True
         except:
             Create_Master_List = True
-        
+
         if Create_Master_List:
             Result = self.Create_Master_List( False )
-            
+
         if Merge_Master_List:
             Result = self.Create_Master_List ( True )
-            
+
         self.Merge_Saves ()
         self.Merge_Trim ()
         self.Sort_Current_List ()
         self.Populate_Current_List ()
-        
+
         return Result
-        
+
     def Create_Master_List( self, Merge ):
         global Master_List_Dat_Version
-        
+
         if Merge:
             old_Master_List = copy.copy ( self.Master_List )
             old_Master_List_Count = copy.copy ( self.Master_List_Count )
@@ -296,7 +296,7 @@ class ROMS:
         self.Master_List_Filename_Dict = {}
         self.Master_List_Serial_Dict = {}
         self.Genres = []
-       
+
         try:
             dom = xml.dom.minidom.parse( Config.Config ["Master_XML_File"] )
         except:
@@ -308,20 +308,20 @@ class ROMS:
                 self.Master_List_Serial_Dict = old_Master_List_Serial_Dict
                 self.Genres = old_Genres
             return False
-        
+
         self.Master_List_XML_Version = int ( dom.getElementsByTagName ( "datVersion" )[0].childNodes[0].data )
 
 #            <imURL>http://www.retrocovers.com/offline/imgs/ADVANsCEne_NDS/</imURL>
 #            <icURL>http://www.advanscene.com/offline/imgs/NDSicon/</icURL>
 #            <ipsURL>http://www.advanscene.com/offline/ips/NDSips/</ipsURL>
-        
+
         Config.Config ["imURL"] = self.getText( dom.getElementsByTagName ( "imURL" ) )
         Config.Config ["icURL"] = self.getText( dom.getElementsByTagName ( "icURL" ) )
         Config.Config ["ipsURL"] = self.getText( dom.getElementsByTagName ( "ipsURL" ) )
         for key in ["imURL", "icURL", "ipsURL"]:
-            if Config.Config[key][ - 1] != "/":
+            if Config.Config[key][ -1] != "/":
                 Config.Config[key] += "/"
-        
+
         Games = dom.getElementsByTagName( "game" )
 
         for Game in Games:
@@ -350,12 +350,12 @@ class ROMS:
             tmpROM.Dump_Date = self.getText( Game.getElementsByTagName( "dumpdate" ) )
             tmpROM.Duplicate_ID = self.getText( Game.getElementsByTagName( "duplicateid" ) )
             tmpROM.Orig_Filename = self.getText( Game.getElementsByTagName( "filename" ) )
-            
+
             if self.getText( Game.getElementsByTagName( "wifi" ) ).lower () == "no":
                 tmpROM.Wifi = _( "No" )
             else:
                 tmpROM.Wifi = _( "Yes" )
-                
+
             # Copy Over Original Fields
             if Merge:
                 try:
@@ -373,11 +373,11 @@ class ROMS:
                     self.Master_List_Filename_Dict [tmpROM.ROM_File] = tmpROM.Release_Number
                 except:
                     pass
-                
+
             if tmpROM.Genre not in self.Genres:
                 self.Genres.append( tmpROM.Genre )
                 self.Genres.sort()
-                
+
             self.Master_List.append ( tmpROM )
             self.Master_List_CRC_Dict [tmpROM.ROM_CRC] = self.Master_List_Count
             self.Master_List_Serial_Dict [str ( tmpROM.Serial )] = self.Master_List_Count
@@ -385,7 +385,7 @@ class ROMS:
             self.Master_List_Count += 1
 
         dom.unlink()
-        
+
         self.Unknown_Count = 1
 #        if Merge:
 #            for tmpROM in old_Master_List:
@@ -402,11 +402,11 @@ class ROMS:
 #                    Unknown_Shelve.sync() 
 #                    self.Unknown_Count += 1
 #            self.Master_List_Count += self.Unknown_Count - 1
-        
+
         self.Save_Master_List ()
-        
+
         return True
-    
+
     def Save_Master_List ( self, AltName = False ):
         global Master_List_Dat_Version
 
@@ -424,7 +424,7 @@ class ROMS:
         cPickle.dump( self.Genres, Pickle_File )
 #        cPickle.dump( self.Unknown_Count, Pickle_File )
         Pickle_File.close()
-        
+
     def Merge_Saves ( self ):
         for ROM in self.Master_List:
             ROM.Saves = 0
@@ -459,16 +459,16 @@ class ROMS:
             if node.nodeType == node.TEXT_NODE:
                 rc = rc + node.data
         return rc
-    
+
     def Lookup_ROM_CRC ( self, CRC ):
         return self.Master_List [ self.Master_List_CRC_Dict [CRC]]
-    
+
     def Lookup_ROM_Filename ( self, Filename ):
         return self.Master_List [ self.Master_List_Filename_Dict [Filename]]
-    
+
     def Lookup_ROM_Serial ( self, MySerial ):
         return self.Master_List [ self.Master_List_Serial_Dict [str ( MySerial )]]
-    
+
     def Get_Current_List_ROM ( self, Position ):
         try:
             return self.Master_List [ self.Current_List [Position]]
@@ -535,7 +535,7 @@ class ROMS:
         self.Master_List_CRC_Dict = {}
         self.Master_List_Filename_Dict = {}
         self.Master_List_Serial_Dict = {}
-        
+
         Count = 0
         for ROM in self.Master_List:
             self.Master_List_CRC_Dict [ROM.ROM_CRC] = Count
@@ -546,14 +546,14 @@ class ROMS:
     def Populate_Current_List ( self ):
         self.Current_List = []
         self.Current_Count = 0
-        
+
         for Count in range ( 0, len ( self.Master_List ) ):
             ROM = self.Master_List[Count]
             if ROM.Found:
-                if ( Config.Config ["Search_Method"] == 0 and ROM.Title.lower().find ( Config.Config ["Current_Search"].lower() ) != - 1 ) or ( Config.Config ["Search_Method"] == 1 and ROM.ROM_File.lower().find ( Config.Config ["Current_Search"].lower() ) != - 1 ) or ( Config.Config ["Search_Method"] == 2 and ROM.Archive_File.lower().find ( Config.Config ["Current_Search"].lower() ) != - 1 ) or str ( ROM.Comment ).find ( Config.Config ["Current_Search"] ) != - 1 or Config.Config ["Current_Search"] == "" or len ( Config.Config ["Current_Search"] ) == 1:
-                    if len ( Config.Config ["Current_Search"] ) != 1 or ( len ( Config.Config ["Current_Search"] ) == 1 and ( Config.Config ["Search_Method"] == 0 and ROM.Title.lower().find ( Config.Config ["Current_Search"].lower() ) == 0 ) or ( Config.Config ["Search_Method"] == 1 and ROM.ROM_File.lower().find ( Config.Config ["Current_Search"].lower() ) == 0 ) or ( Config.Config ["Search_Method"] == 2 and ROM.Archive_File.lower().find ( Config.Config ["Current_Search"].lower() ) == 0 ) or str ( ROM.Comment ).find ( Config.Config ["Current_Search"] ) == 0 ): 
+                if ( Config.Config ["Search_Method"] == 0 and ROM.Title.lower().find ( Config.Config ["Current_Search"].lower() ) != -1 ) or ( Config.Config ["Search_Method"] == 1 and ROM.ROM_File.lower().find ( Config.Config ["Current_Search"].lower() ) != -1 ) or ( Config.Config ["Search_Method"] == 2 and ROM.Archive_File.lower().find ( Config.Config ["Current_Search"].lower() ) != -1 ) or str ( ROM.Comment ).find ( Config.Config ["Current_Search"] ) != -1 or Config.Config ["Current_Search"] == "" or len ( Config.Config ["Current_Search"] ) == 1:
+                    if len ( Config.Config ["Current_Search"] ) != 1 or ( len ( Config.Config ["Current_Search"] ) == 1 and ( Config.Config ["Search_Method"] == 0 and ROM.Title.lower().find ( Config.Config ["Current_Search"].lower() ) == 0 ) or ( Config.Config ["Search_Method"] == 1 and ROM.ROM_File.lower().find ( Config.Config ["Current_Search"].lower() ) == 0 ) or ( Config.Config ["Search_Method"] == 2 and ROM.Archive_File.lower().find ( Config.Config ["Current_Search"].lower() ) == 0 ) or str ( ROM.Comment ).find ( Config.Config ["Current_Search"] ) == 0 ):
                         if Config.Config ["Filter_Location"] == 255 or ROM.Location == Config.Config ["Filter_Location"] or ( Config.Config ["Filter_Location"] == 26 and ROM.Location == 254 ):
-                            if Config.Config ["Filter_Language"] == 0 or ( Config.Config ["Filter_Language"] != - 1 and ROM.Language & Config.Config ["Filter_Language"] ) or ( Config.Config ["Filter_Language"] == - 1 and ROM.Language == 0 ):
+                            if Config.Config ["Filter_Language"] == 0 or ( Config.Config ["Filter_Language"] != -1 and ROM.Language & Config.Config ["Filter_Language"] ) or ( Config.Config ["Filter_Language"] == -1 and ROM.Language == 0 ):
                                 if ( Config.Config ["Filter_Exact_Size"] == False and ( Config.Config ["Filter_Size"] == 0 or ROM.Effective_Size <= Config.Config ["Filter_Size"] ) ) or ( Config.Config ["Filter_Exact_Size"] == True and ( Config.Config ["Filter_Size"] == 0 or ROM.ROM_Size == Config.Config ["Filter_Size"] ) ):
                                     if Config.Config ["Filter_Genre"] == self._AllGenres or ROM.Genre == Config.Config ["Filter_Genre"]:
                                         if ( ROM.Comment.lower() != "xxxx" or Config.Config["Show_XXXX_Files"] ):
@@ -563,12 +563,12 @@ class ROMS:
                                                         if self._Hidden_ROMs not in ROM.Tags or Config.Config ["Current_Tag"] == self._Hidden_ROMs or ( self._Hidden_ROMs in ROM.Tags and Config.Config["Current_Tag"] != self._AllTags ):
                                                             self.Current_List.append ( Count )
                                                             self.Current_Count += 1
-    
+
     def Start_ROM_Find ( self ):
         self.Save_Master_List( AltName = True )
         self.Duplicates = []
         self.Originally_Found = []
-        for Count in range ( len ( self.Master_List ) - 1, - 1, - 1 ):
+        for Count in range ( len ( self.Master_List ) - 1, -1, -1 ):
             ROM = self.Master_List[Count]
             if ROM.Found:
                 self.Originally_Found.append ( ROM.ROM_CRC )
@@ -581,26 +581,26 @@ class ROMS:
 #        if self.Unknown_Count > 1:
 #            self.Master_List = self.Master_List[:-(self.Unknown_Count)]
         self.Unknown_Count = 1
-            
+
     def Close_ROM_Find ( self ):
         global Tag_Shelve
 
         del ( self.Duplicates )
         del ( self.Originally_Found )
-        
+
         self.Master_List_Count = len ( self.Master_List )
-        for Count in range ( len ( self.Master_List ) - 1, - 1, - 1 ):
+        for Count in range ( len ( self.Master_List ) - 1, -1, -1 ):
             ROM = self.Master_List[Count]
             if Tag_Shelve.has_key( str ( ROM.ROM_CRC ) ):
                 ROM.Tags = Tag_Shelve [str ( ROM.ROM_CRC )]
 
         self.Save_Master_List()
-    
+
     def Process_ROM ( self, Filename ):
         m_CRC, m_Date, m_ROMFile = Utils.Get_CRC_or_Date ( Filename )
         Result = ""
         Result_Array = []
-        
+
         for c in range ( 0, len( m_CRC ) ):
             CRC = m_CRC [c]
             Date = m_Date [c]
@@ -616,12 +616,12 @@ class ROMS:
                         CRC = TheROM.ROM_CRC
                 except:
                     CRC = Utils.Get_File_CRC ( Filename )
-                
+
             if CRC != "": # Archive Found
                 if CRC in self.Duplicates:
                     return ""
                 self.Duplicates.append( CRC )
-                
+
                 try:
                     TheROM = self.Lookup_ROM_CRC( CRC )
     #                Position = self.Master_List_CRC_Dict [CRC]
@@ -641,10 +641,10 @@ class ROMS:
                     Result = ""
                     if Config.Config ["Find_Unknown"] == True:
                         Result = self.Process_Unknown ( Filename, ROMFile, CRC )
-    
+
                 Result_Array.append( Result )
-        return Result_Array 
-    
+        return Result_Array
+
     def Process_Unknown ( self, Filename, ROMFile, CRC ):
         global Unknown_Shelve
 
@@ -655,21 +655,21 @@ class ROMS:
 #            OK = True
 #            TempFilename = ""
 #            Data = []
-            
+
         if OK:
             if Unknown_Shelve.has_key( str ( CRC ) ) == False: # A New One
                 Result = _( "Unknown" ) + " : %s" % ( os.path.basename( Filename ) )
-            
+
             tmpROM = ROM()
             tmpROM.Comment = "U%03d" % self.Unknown_Count
             tmpROM.Image_Number = self.Master_List_Count + self.Unknown_Count
             tmpROM.Release_Number = tmpROM.Image_Number
-            
+
             if Config.Config ["Unknown_Name"] == "FILENAME":
                 tmpROM.Title = os.path.splitext( ROMFile )[0]
             else:
                 tmpROM.Title = os.path.splitext( os.path.basename ( Filename ) )[0]
-                
+
             tmpROM.ROM_Size = Utils.Get_File_Size( Filename, ROMFile, TempFilename )
             tmpROM.Effective_Size = tmpROM.ROM_Size
             tmpROM.ROM_CRC = CRC
@@ -678,7 +678,7 @@ class ROMS:
             tmpROM.ROM_File = ROMFile
 
             tmpROM.Found = True
-            
+
             Icon_Filename = os.path.join ( Config.Config ["Image_Path"], os.path.splitext( os.path.basename ( Filename ) )[0] + ".png" )
             if not os.path.isfile( Icon_Filename ):
                 Icon_CRC = Utils.Extract_Icon ( Filename, ROMFile, TempFilename, Data )
@@ -686,20 +686,20 @@ class ROMS:
                     tmpROM.Ico_CRC = Icon_CRC
             else:
                 tmpROM.Ico_CRC = Utils.Get_File_CRC ( Icon_Filename )
-                
+
             tmpROM.Serial = Utils.Get_Serial ( Data )
             if tmpROM.Serial != "":
-                Location = tmpROM.Serial[ - 3:]
+                Location = tmpROM.Serial[ -3:]
                 try:
                     tmpROM.Location = Config.Config ["Country_Codes_Lookup"][Location]
                 except:
                     pass
-                
+
             self.Master_List.append ( tmpROM )
             self.Master_List_CRC_Dict [CRC] = tmpROM.Release_Number
             self.Master_List_Filename_Dict [ROMFile] = tmpROM.Release_Number
             self.Master_List_Serial_Dict [str ( tmpROM.Serial )] = tmpROM.Release_Number
-            
+
 #            if Unknown_Shelve.has_key( str ( CRC ) ) == False: # A New One
             if TempFilename != "":
                 try:
@@ -709,20 +709,20 @@ class ROMS:
 
             Unknown_Shelve [str ( CRC )] = tmpROM
             Unknown_Shelve [str ( tmpROM.Release_Number ) ] = str ( CRC )
-            Unknown_Shelve.sync() 
+            Unknown_Shelve.sync()
 
             self.Unknown_Count += 1
-            
+
         return Result
 
     def Open_Unknown_Shelve ( self ):
         global Unknown_Shelve
-        
+
         Unknown_Shelve = shelve.open ( "RToolDS_Unknown.dat" )
 
     def Clear_Unknown_Shelve ( self ):
         global Unknown_Shelve
-        
+
         Unknown_Shelve.close ()
         try:
             os.unlink( "RToolDS_Unknown.dat" )
@@ -732,32 +732,32 @@ class ROMS:
 
     def Open_Trimmed_Shelve ( self ):
         global Trimmed_Shelve
-        
+
         Trimmed_Shelve = shelve.open ( "RToolDS_Trimmed.dat" )
-        
+
     def Close_Trimmed_Shelve ( self ):
         global Trimmed_Shelve
-        
+
         Trimmed_Shelve.close ()
-        
+
     def Get_Trimmed_Shelve ( self ):
         global Trimmed_Shelve
-        
+
         return Trimmed_Shelve
 
     def Open_Tag_Shelve ( self ):
         global Tag_Shelve
-        
+
         Tag_Shelve = shelve.open ( "RToolDS_Tags.dat" )
-        
+
     def Get_Tag_Shelve ( self ):
         global Tag_Shelve
-        
+
         return Tag_Shelve
 
     def Get_All_Tags ( self ):
         global Tag_Shelve
-        
+
         try:
             return Utils.cSort ( Tag_Shelve ["Tags"] )
         except:
@@ -765,7 +765,7 @@ class ROMS:
 
     def Remove_Tag ( self, Tag ):
         global Tag_Shelve
-        
+
         try:
             tmp = Tag_Shelve ["Tags"]
             if Tag in tmp:
@@ -774,10 +774,10 @@ class ROMS:
         except:
             pass
         Tag_Shelve.sync()
-        
+
     def Delete_Tag ( self, Tag ):
         global Tag_Shelve
-        
+
 
         for CRC in Tag_Shelve.iterkeys():
             if CRC != "Tags":
@@ -791,10 +791,10 @@ class ROMS:
                     except:
                         pass
         self.Remove_Tag ( Tag )
-        
+
     def Rename_Tag ( self, Tag, New_Name ):
         global Tag_Shelve
-        
+
 
         for CRC in Tag_Shelve.iterkeys():
             if CRC != "Tags":
@@ -811,11 +811,11 @@ class ROMS:
         t [t.index ( Tag )] = New_Name
         Tag_Shelve ["Tags"] = t
         Tag_Shelve.sync ()
-        
+
     def __iter__( self ):
         self.Current_ROM = 0
         return self
-    
+
     def next ( self ):
         if self.Process_All:
             if self.Current_ROM == self.Master_List_Count:
