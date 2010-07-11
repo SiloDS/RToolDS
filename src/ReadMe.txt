@@ -31,7 +31,7 @@
    Downloads all Rom information (thanks to Advanscene)
    Custom Tags for ROMs (Think of Lists)
    And more when I think of it.
-
+73
  -----------------------
  |:. Version History .:|
  -----------------------
@@ -49,6 +49,9 @@
  -----------------
  |:. Changelog .:|
  -----------------
+v0.3.1973 - Release v0.3.1973
+v0.3.1972 - Fixed trimming of files that are released as trimmed
+v0.3.1400 - Fixed Focus on Mac
 v0.3.1382 - Release v0.3.1382
 v0.3.1380 - Fixed Image Downloads
 v0.3.1345 - Fixed Linux Cache Directories

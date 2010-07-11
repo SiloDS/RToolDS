@@ -16,7 +16,7 @@ Ignore = [
 ]
 
 def Process (ReleasePre, ReleaseSuf, START_ENTRY, END_ENTRY):
-    CMD = '"c:\\Program Files\\CollabNet Subversion\\svn.exe" log https://silo.dynalias.org/svn/RToolDS -r' + START_ENTRY + ':' + END_ENTRY
+    CMD = '"svn.exe" log https://server/svn/RToolDS -r' + START_ENTRY + ':' + END_ENTRY
     
     File = os.popen (CMD)
     
