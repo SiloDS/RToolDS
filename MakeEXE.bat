@@ -8,11 +8,13 @@ cd %SRC%\src
 c:\python26\python ToExe.py py2exe
 
 cd %SRC%\src\dist
+del POWRPROF.dll
 rem rename RToolDS.exe RToolDS6.exe
 
 copy %SRC%\Installer.nsi %SRC%\src\dist
 rem copy %WX%\msvcp71.dll %SRC%\src\dist
-copy %WX%\msvcp90.dll %SRC%\src\dist
+rem copy %WX%\msvcp90.dll %SRC%\src\dist
+copy "..\..\..\Python DLLs\*" .
 copy %WX%\gdiplus.dll %SRC%\src\dist
 
 cd %SRC%\Help
@@ -25,7 +27,7 @@ rem rename Help.zip Help.htb
 
 rem rename Trimmed.dat Trimmed.dat.new
 
-upx --best *.*
+rem upx --best *.*
 
 %NSIS% Installer.nsi
 

@@ -7,15 +7,15 @@ import os
 import Utils
 
 Config_Version = 42
-Version_String = "0.3.1382 Beta"
+Version_String = "0.3.1973 Beta"
 
 Config = {}
 
 def Load():
     global Config_Version, Config
-    
+
     Config = {}
-    
+
     try:
         Config_File = open ( "RToolDS.cfg", 'rb' )
     except:
@@ -24,10 +24,10 @@ def Load():
 
     File_Version = cPickle.load ( Config_File )
     Config = cPickle.load ( Config_File )
-    
+
     if File_Version != Config_Version:
         Load_Defaults ( File_Version )
-        
+
     Config_File.close()
 
     Config ["Current_Search"] = ""
@@ -35,7 +35,7 @@ def Load():
 #    Config ["Device_Path"] = "L:\\"
 #    Config ["Image_Path"] = "E:\\Misc\\Emulators\\DS\\ndscrc\\Cache\\img"
 #    Config ["NFO_Path"] = "E:\\Misc\\Emulators\\DS\\ndscrc\\Cache\\nfo"    
-    
+
 #    Config ["ROM_Path"] = "/home/rich/ds/roms"
 #    Config ["Device_Path"] = "/device"
 #    Config ["Image_Path"] = "/home/rich/ds/ndscrc/Cache/img"
@@ -44,26 +44,26 @@ def Load():
 
 def Save():
     global Config_Version, Config
-    
+
     try:
         Config_File = open ( "RToolDS.cfg", 'wb' )
     except:
         return False
-    
+
     cPickle.dump ( Config_Version, Config_File )
     cPickle.dump ( Config, Config_File )
 
     Config_File.close()
-    
+
     return True
-    
+
 def Load_Defaults( Version ):
     if Version < 1: # No Config File so set Version 1 Defaults
         Config ["Window_Size"] = ( 994, 726 )
-        Config ["Window_Position"] = ( - 1, - 1 )
+        Config ["Window_Position"] = ( -1, -1 )
         Config ["Window_Maximized"] = False
-        Config ["Sash_Position"] = - 1
-        Config ["Sash_Position_Maximized"] = - 1
+        Config ["Sash_Position"] = -1
+        Config ["Sash_Position_Maximized"] = -1
         Config ["Master_XML_URL"] = "http://www.advanscene.com/offline/datas/ADVANsCEne_RToolDS.zip"
         Config ["Master_XML_File"] = "ADVANsCEne_RToolDS.xml"
         Config ["Master_XML_Version_URL"] = "http://www.advanscene.com/offline/version/ADVANsCEne_RToolDS.txt"
@@ -74,7 +74,7 @@ def Load_Defaults( Version ):
         Config ["NFO_Path"] = ""
         Config ["Save_Path"] = ""
         Config ["Log_Size"] = ( 500, 400 )
-        Config ["Log_Position"] = ( - 1, - 1 )
+        Config ["Log_Position"] = ( -1, -1 )
         Config ["ROM_Extensions"] = [".nds"]
         Config ["Find_Unknown"] = True
         Config ["Unknown_Name"] = "ARCHIVE" # or "FILENAME" 
@@ -94,7 +94,7 @@ def Load_Defaults( Version ):
         Config ["Use_Trimmed"] = True
         Config ["SwapSSCase"] = False
         Config ["Show_Splash"] = True
-        
+
         Config ["Hide_Screenshots"] = False
         Config ["Hide_Case_Pictures"] = False
         Config ["Hide_Language"] = False
@@ -111,14 +111,14 @@ def Load_Defaults( Version ):
         Config ["Hide_Version"] = True
         Config ["Hide_Wifi"] = False
         Config ["Hide_Tags"] = True
-        
+
         Config ["Show_Toolbar"] = True
         Config ["Toolbar_Size"] = "24"
         Config ["Show_Search"] = True
         Config ["Show_Filter"] = True
         Config ["Sort"] = "Release Number"
         Config ["Sort_Reverse"] = False
-        
+
         Config ["Show_XXXX_Files"] = True
         Config ["Show_Unknown_Files"] = True
 
@@ -129,31 +129,31 @@ def Load_Defaults( Version ):
         Config ["Exclude_Dirs_on_Device_Lower"] = ["recycled", "system volume information"]
 
         Config ["ROM_Extensions"] = [ ".nds" ]
-        
+
         Config ["NFO_Size"] = ( 600, 500 )
-        Config ["NFO_Position"] = ( - 1, - 1 )
+        Config ["NFO_Position"] = ( -1, -1 )
         Config ["NFO_Zoom"] = 8
 
         Config ["Statistics_Size"] = ( 500, 400 )
-        Config ["Statistics_Position"] = ( - 1, - 1 )
-        
+        Config ["Statistics_Position"] = ( -1, -1 )
+
         Config ["Safe_Trim"] = 188
-        
+
         Config ["Current_Tag"] = _( "All ROMs" )
         Config ["Last_Tag"] = ""
-        
+
         Config ["Confirm_Delete"] = True
-        
+
         Config ["First_Run"] = True
 
-        Config ["SGM_Position"] = ( - 1, - 1 )
+        Config ["SGM_Position"] = ( -1, -1 )
         Config ["SGM_Size"] = ( 600, 400 )
         Config ["SGM_Col_Sizes"] = [330, 25, 125, 100]
         Config ["Save_Games_to_Keep"] = 5
 
-        Config ["SC_Position"] = ( - 1, - 1 )
+        Config ["SC_Position"] = ( -1, -1 )
         Config ["SC_Size"] = ( 600, 400 )
-        Config ["SC_Col_Sizes"] = [ - 1, - 1 ]
+        Config ["SC_Col_Sizes"] = [ -1, -1 ]
         Config ["Use_Save_Comments"] = True
 
         Config ["Columns"] = ["Icon", "Release Number", "Name", "Size", "Trimmed",
@@ -315,7 +315,7 @@ def Load_Defaults( Version ):
         Config ["Parse_Subdirs"] = False
         Config ["Device_Dirs_to_Search"] = []
     if Version < 18:
-        Config ["Rename_Position"] = ( - 1, - 1 )
+        Config ["Rename_Position"] = ( -1, -1 )
         Config ["Rename_Size"] = ( 700, 400 )
     if Version < 19:
         Config ["Use_Rename_Popup"] = False
@@ -364,7 +364,7 @@ def Load_Defaults( Version ):
 #                2048:"Portuguese", 
                 131072:_( "Russian" ),
                 4096:_( "Spanish" ),
-                8192:_( "Swedish" )} 
+                8192:_( "Swedish" )}
 #                16384:"English (UK)", 
         Config ["Locations"] = {
                 255:_( "All Regions" ),
@@ -424,7 +424,7 @@ def Load_Defaults( Version ):
         Config ["CartColumn_Titles"]["ROM File (No Ext)"] = "ROM File"
         Config ["CartColumn_Sizes"]["ROM File (No Ext)"] = 321
     if Version < 28:
-        Config ["Languages"][ - 1] = "Unknown"
+        Config ["Languages"][ -1] = "Unknown"
     if Version < 29:
         Config ["Sizes"] = [0, 8 * 1024 * 1024, 16 * 1024 * 1024,
                             32 * 1024 * 1024, 64 * 1024 * 1024, 128 * 1024 * 1024, 256 * 1024 * 1024 ]
@@ -452,7 +452,7 @@ def Load_Defaults( Version ):
         Config ["CartColumn_Titles"]["Save Date"] = "Save Date"
         Config ["CartColumn_Sizes"]["Save Date"] = 99
     if Version < 34:
-        Config ["SC_Col_Sizes"] = [ - 1, - 1, - 1 ]
+        Config ["SC_Col_Sizes"] = [ -1, -1, -1 ]
     if Version < 35:
         Config ["SC_Size"] = ( 800, 400 )
     if Version < 36:
