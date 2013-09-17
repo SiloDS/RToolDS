@@ -6,7 +6,7 @@ from wx.lib.mixins.listctrl import TextEditMixin
 from wx.lib.mixins.listctrl import ListCtrlAutoWidthMixin
 
 class ColumnListCtrlMixin( wx.ListCtrl, CheckListCtrlMixin, TextEditMixin ):
-    def __init__( self, parent, id, ColumnsToSkip = [ 0 ] ):
+    def __init__( self, parent, m_id, ColumnsToSkip = [ 0 ] ):
         wx.ListCtrl.__init__( self, parent, - 1, style = wx.LC_REPORT | wx.LC_SINGLE_SEL )
         CheckListCtrlMixin.__init__( self )
         TextEditMixin.__init__( self )
@@ -23,7 +23,7 @@ class ColumnListCtrlMixin( wx.ListCtrl, CheckListCtrlMixin, TextEditMixin ):
             event.Skip()
             
 class SGCListCtrlMixin( wx.ListCtrl, TextEditMixin, ListCtrlAutoWidthMixin ):
-    def __init__( self, parent, id, ColumnsToSkip = [ 0 ] ):
+    def __init__( self, parent, m_id, ColumnsToSkip = [ 0 ] ):
         wx.ListCtrl.__init__( self, parent, - 1, style = wx.LC_REPORT | wx.LC_SINGLE_SEL )
         TextEditMixin.__init__( self )
         ListCtrlAutoWidthMixin.__init__ ( self )

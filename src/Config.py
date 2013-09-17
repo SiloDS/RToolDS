@@ -79,8 +79,8 @@ def Load_Defaults( Version ):
         Config ["Find_Unknown"] = True
         Config ["Unknown_Name"] = "ARCHIVE" # or "FILENAME" 
         Config ["Show_Alternate_Colours"] = True
-        Config ["Alternate_Colour"] = wx.Color ( 245, 245, 245 )
-        Config ["Pending_Colour"] = wx.Color ( 173, 216, 230 )
+        Config ["Alternate_Colour"] = wx.Colour ( 245, 245, 245 )
+        Config ["Pending_Colour"] = wx.Colour ( 173, 216, 230 )
 
         Config ["Show_ROM_Size_In"] = "MegaBytes"
         Config ["RealTime_Search"] = True
