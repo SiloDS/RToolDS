@@ -1,18 +1,17 @@
-from distutils.core import setup
-import py2exe #@UnusedImport #@UnresolvedImport
 import os
+import sys
+from cx_Freeze import setup, Executable
 
-setup( 
-        name = "RToolDS",
-        options = {"py2exe": {"compressed": 2,
-                              "optimize": 2,
-                              "bundle_files": 3}},
-        windows = [
-        {
-            "script": "RToolDS.py",
-            "icon_resources": [( 1, os.path.join ( "..", "gfx", "GFX_Icon.ico" ) )]
-        }
-    ],
-        data_files = [( ".",
-                   ["ReadMe.txt", "License.txt", "unrar.dll", "RToolDS_Trimmed.dat.new", "ADVANsCEne_RToolDS.xml"] )]
+build_exe_options = {"packages": ["os"], "excludes": ["tkinter"]}
+
+base = None
+if sys.platform == "win32":
+    base = "Win32GUI"
+
+setup( name = "RToolDS",
+        version = "0.1.1",
+        description = "RToolDS ROM Manager",
+        options = {"build_exe": build_exe_options},
+        executables = [Executable( "RToolDS.py", base = base, icon = os.path.join ( "..", "gfx", "GFX_Icon.ico" ) )],
+        data_files = [( '.', ["ReadMe.txt", "License.txt", "unrar.dll", "RToolDS_Trimmed.dat.new", "ADVANsCEne_RToolDS.xml"] )]
  )
